@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://gs5te8wl28dd"]
+
+[ext_resource type="Script" uid="uid://haqlh81b4li1" path="res://Assets/Scripts/loading.gd" id="1_gmskc"]
+[ext_resource type="Texture2D" uid="uid://bt850ne6r4w1h" path="res://Assets/Arte2d/banner.png" id="1_op1nx"]
+[ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="2_gmskc"]
+[ext_resource type="Script" uid="uid://dk641opvpnquv" path="res://Assets/Scripts/loading_negro.gd" id="4_h6lew"]
+
+[sub_resource type="Animation" id="Animation_h6lew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uw7yb"]
+resource_name = "animacion"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kais2"]
+_data = {
+&"RESET": SubResource("Animation_h6lew"),
+&"animacion": SubResource("Animation_uw7yb")
+}
+
+[node name="loading" type="Node2D" unique_id=1594368151]
+script = ExtResource("1_gmskc")
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1134051179]
+modulate = Color(0.42352942, 0.7372549, 0.47843137, 1)
+position = Vector2(364.00003, 799.9999)
+scale = Vector2(0.538889, 0.5135802)
+texture = ExtResource("1_op1nx")
+hframes = 4
+
+[node name="CLICKSPEED" parent="." unique_id=40769402 instance=ExtResource("2_gmskc")]
+position = Vector2(-32, 456)
+scale = Vector2(1.0421083, 1.1870617)
+
+[node name="LOADING NEGRO" type="RichTextLabel" parent="." unique_id=498953473]
+modulate = Color(0, 0, 0, 1)
+offset_left = 72.00001
+offset_top = 824.0
+offset_right = 1079.0571
+offset_bottom = 1116.1398
+scale = Vector2(0.6449542, 1.1955374)
+theme_override_constants/line_separation = -97
+theme_override_font_sizes/normal_font_size = 105
+bbcode_enabled = true
+text = "LOADING"
+script = ExtResource("4_h6lew")
+
+[node name="LOADING" type="RichTextLabel" parent="." unique_id=1662047977]
+offset_left = 80.0
+offset_top = 832.0
+offset_right = 1087.0571
+offset_bottom = 1124.1398
+scale = Vector2(0.6449542, 1.1955374)
+theme_override_constants/line_separation = -97
+theme_override_font_sizes/normal_font_size = 105
+bbcode_enabled = true
+text = "LOADING"
+script = ExtResource("4_h6lew")
+
+[node name="Banner2" type="Sprite2D" parent="." unique_id=1483650390]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(368, 802.00006)
+scale = Vector2(0.68055546, 0.5123457)
+texture = ExtResource("1_op1nx")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Banner2" unique_id=1964172858]
+libraries/ = SubResource("AnimationLibrary_kais2")

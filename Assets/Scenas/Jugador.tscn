@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://s63xc8ryt5ia"]
+
+[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/boton.svg" id="1_eat6h"]
+[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/boton1.svg" id="2_eat6h"]
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="3_rlhsd"]
+[ext_resource type="Script" uid="uid://dolq2d206wgrw" path="res://Assets/Scripts/counter_black.gd" id="4_ol33o"]
+[ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_rlhsd"]
+
+[node name="Boton" type="TouchScreenButton" unique_id=585335164]
+scale = Vector2(0.362, 0.391)
+texture_normal = ExtResource("1_eat6h")
+texture_pressed = ExtResource("2_eat6h")
+action = "Añadir_Counter"
+
+[node name="prueba" type="Node2D" parent="." unique_id=428262479]
+scale = Vector2(7, 7)
+
+[node name="counter" type="Label" parent="prueba" unique_id=676548854]
+modulate = Color(0, 0, 0, 1)
+offset_left = 3.150769
+offset_top = -27.7151
+offset_right = 386.49908
+offset_bottom = 90.2849
+scale = Vector2(0.326, 0.273)
+theme_override_fonts/font = ExtResource("3_rlhsd")
+theme_override_font_sizes/font_size = 110
+text = "0"
+horizontal_alignment = 1
+
+[node name="counter2" type="Label" parent="prueba" unique_id=1333891274]
+offset_left = 5.5248613
+offset_top = -29.594446
+offset_right = 388.8732
+offset_bottom = 88.405556
+scale = Vector2(0.326, 0.273)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_rlhsd")
+theme_override_font_sizes/font_size = 110
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("4_ol33o")
+
+[node name="xxx" type="Node2D" parent="prueba" unique_id=1422759750]
+visible = false
+position = Vector2(-5.130229, 0.36536354)
+
+[node name="1" type="Sprite2D" parent="prueba/xxx" unique_id=232296241]
+position = Vector2(9.865826, 3.288272)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="2" type="Sprite2D" parent="prueba/xxx" unique_id=401551347]
+position = Vector2(-33.14917, 67.22689)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="3" type="Sprite2D" parent="prueba/xxx" unique_id=1341094613]
+position = Vector2(-68.666145, 53.70844)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="4" type="Sprite2D" parent="prueba/xxx" unique_id=113124932]
+position = Vector2(13.022889, 68.32298)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="5" type="Sprite2D" parent="prueba/xxx" unique_id=297998705]
+position = Vector2(-29.992107, 14.979906)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="6" type="Sprite2D" parent="prueba/xxx" unique_id=1059914267]
+position = Vector2(10.260459, 93.89843)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="7" type="Sprite2D" parent="prueba/xxx" unique_id=104678833]
+position = Vector2(-2.7624307, 40.920715)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="8" type="Sprite2D" parent="prueba/xxx" unique_id=2069913022]
+position = Vector2(-37.490143, 109.2437)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="9" type="Sprite2D" parent="prueba/xxx" unique_id=1335220993]
+position = Vector2(-12.628257, 5.8458166)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="10" type="Sprite2D" parent="prueba/xxx" unique_id=825670883]
+position = Vector2(-47.535908, 63.86262)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="11" type="Sprite2D" parent="prueba/xxx" unique_id=380081893]
+position = Vector2(-62.352013, 24.113995)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="12" type="Sprite2D" parent="prueba/xxx" unique_id=793320355]
+position = Vector2(12.628257, 50.42017)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="13" type="Sprite2D" parent="prueba/xxx" unique_id=1211690814]
+position = Vector2(-31.176006, 29.95981)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="14" type="Sprite2D" parent="prueba/xxx" unique_id=940861575]
+position = Vector2(-13.20284, 90.89953)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="15" type="Sprite2D" parent="prueba/xxx" unique_id=477465429]
+position = Vector2(-21.310183, 52.977715)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")
+
+[node name="16" type="Sprite2D" parent="prueba/xxx" unique_id=1980047616]
+position = Vector2(-57.221786, 92.43698)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rlhsd")

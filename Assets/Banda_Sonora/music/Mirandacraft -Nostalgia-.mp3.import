@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3p7fni847p21"
+path="res://.godot/imported/Mirandacraft -Nostalgia-.mp3-11f88f823f5c7b125e672d2b12f3bb0f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Banda_Sonora/music/Mirandacraft -Nostalgia-.mp3"
+dest_files=["res://.godot/imported/Mirandacraft -Nostalgia-.mp3-11f88f823f5c7b125e672d2b12f3bb0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

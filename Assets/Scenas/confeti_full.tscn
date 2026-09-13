@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cycvexhf65jbf"]
+
+[ext_resource type="PackedScene" uid="uid://b4ieuuyydyaki" path="res://Assets/Scenas/confeti.tscn" id="1_82akf"]
+[ext_resource type="Script" uid="uid://djul3ggb7m607" path="res://Assets/Scripts/confeti_full.gd" id="1_vf0dl"]
+[ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="2_fe2u8"]
+
+[sub_resource type="Animation" id="Animation_vf0dl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("confeti_2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.68606323]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("confeti_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.7151938]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("confeti_2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.0517578e-05, 1016.00006)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("confeti_1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, 959.99994)]
+}
+
+[sub_resource type="Animation" id="Animation_u2n5n"]
+resource_name = "confetiar"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("confeti_2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.52004963, 0.68606323]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("confeti_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.3657002, -0.7151938]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("confeti_2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-101, 1037), Vector2(3.0517578e-05, 1016.00006), Vector2(-22.000004, 1046.9999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("confeti_1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(884.00006, 1043), Vector2(752, 959.99994), Vector2(721, 969.99994)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0nnqp"]
+_data = {
+&"RESET": SubResource("Animation_vf0dl"),
+&"confetiar": SubResource("Animation_u2n5n")
+}
+
+[node name="confeti_full" type="Node2D" unique_id=351680083]
+script = ExtResource("1_vf0dl")
+
+[node name="confeti_1" parent="." unique_id=838177522 instance=ExtResource("1_82akf")]
+position = Vector2(752, 959.99994)
+rotation = -0.7151938
+scale = Vector2(15.721026, 38.74835)
+
+[node name="confeti_2" parent="." unique_id=626546815 instance=ExtResource("1_82akf")]
+position = Vector2(3.0517578e-05, 1016.00006)
+rotation = 0.68606323
+scale = Vector2(15.721025, 38.748344)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1698232360]
+texture_normal = ExtResource("2_fe2u8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635737964]
+libraries/ = SubResource("AnimationLibrary_0nnqp")
+
+[connection signal="pressed" from="TouchScreenButton" to="confeti_1" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="confeti_2" method="_on_touch_screen_button_pressed"]

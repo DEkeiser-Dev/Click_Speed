@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dbu2hflbocdtw"]
+
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="1_o6lrd"]
+[ext_resource type="Script" uid="uid://enfgqtd15wpq" path="res://Assets/Scripts/click_text.gd" id="2_3ffnc"]
+
+[node name="ClickText" type="Label" unique_id=1919216058]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_o6lrd")
+theme_override_font_sizes/font_size = 114
+text = "                 +1"
+horizontal_alignment = 1
+script = ExtResource("2_3ffnc")
+altura = 150.0
+duracion = 0.9
+
+[node name="Label" type="Label" parent="." unique_id=1875037749]
+layout_mode = 0
+offset_left = 124.0
+offset_top = -5.0
+offset_right = 827.0
+offset_bottom = 160.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_o6lrd")
+theme_override_font_sizes/font_size = 114
+text = "                +1"

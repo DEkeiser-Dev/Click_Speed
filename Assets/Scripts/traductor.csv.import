@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dquknpet5xe5f"
+
+[deps]
+
+files=["res://Assets/Scripts/traductor.ESP.translation", "res://Assets/Scripts/traductor.ING.translation", "res://Assets/Scripts/traductor.POR.translation", "res://Assets/Scripts/traductor.FRA.translation", "res://Assets/Scripts/traductor.ITA.translation", "res://Assets/Scripts/traductor.RUS.translation", "res://Assets/Scripts/traductor.JPN.translation", "res://Assets/Scripts/traductor.KOR.translation"]
+
+source_file="res://Assets/Scripts/traductor.csv"
+dest_files=["res://Assets/Scripts/traductor.ESP.translation", "res://Assets/Scripts/traductor.ING.translation", "res://Assets/Scripts/traductor.POR.translation", "res://Assets/Scripts/traductor.FRA.translation", "res://Assets/Scripts/traductor.ITA.translation", "res://Assets/Scripts/traductor.RUS.translation", "res://Assets/Scripts/traductor.JPN.translation", "res://Assets/Scripts/traductor.KOR.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

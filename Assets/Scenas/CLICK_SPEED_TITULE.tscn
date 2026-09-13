@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://3w2jt7jy0bgx"]
+
+[ext_resource type="Texture2D" uid="uid://cnh3cthhc1jow" path="res://Assets/Arte2d/icon/icon.svg" id="1_v07rk"]
+[ext_resource type="Texture2D" uid="uid://cjh721rldodee" path="res://Assets/Arte2d/icon/iconTEXT.svg" id="2_v07rk"]
+
+[node name="CLICKSPEED" type="Node2D" unique_id=40769402]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=903326052]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(547, 170.00002)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("1_v07rk")
+
+[node name="Icon2" type="Sprite2D" parent="Icon" unique_id=1354164077]
+position = Vector2(22.222221, -18.518576)
+texture = ExtResource("1_v07rk")
+
+[node name="IconText" type="Sprite2D" parent="Icon" unique_id=561821210]
+position = Vector2(-1114.8148, 155.55551)
+scale = Vector2(1.54, 1.54)
+texture = ExtResource("2_v07rk")

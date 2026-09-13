@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crsd0jqub086c"
+path="res://.godot/imported/Mirandacraft -Paz-.mp3-fa0a425d4b75d96dc480a37c3d558240.mp3str"
+
+[deps]
+
+source_file="res://Assets/Banda_Sonora/music/Mirandacraft -Paz-.mp3"
+dest_files=["res://.godot/imported/Mirandacraft -Paz-.mp3-fa0a425d4b75d96dc480a37c3d558240.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

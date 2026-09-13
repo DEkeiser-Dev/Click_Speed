@@ -1,0 +1,922 @@
+[gd_scene format=3 uid="uid://6i8bc05nm2cc"]
+
+[ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="2_eylje"]
+[ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
+[ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
+[ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
+[ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_h3ung"]
+[ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="6_0euow"]
+[ext_resource type="Texture2D" uid="uid://boxj7xhx2g80m" path="res://Assets/Arte2d/Colores_posicion_botones/t4.jpg" id="7_2acba"]
+[ext_resource type="Texture2D" uid="uid://bnbg8orqp5ij" path="res://Assets/Arte2d/botones/estadistica normal.svg" id="8_eivc3"]
+[ext_resource type="Texture2D" uid="uid://72c2gvafdy83" path="res://Assets/Arte2d/Colores_posicion_botones/X.jpg" id="8_o60jk"]
+[ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="10_0euow"]
+[ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector.svg" id="10_4sls0"]
+[ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Mouse-Click-Sound-Effect.mp3" id="10_h3ung"]
+[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/boton1.svg" id="11_e57pv"]
+[ext_resource type="Script" uid="uid://b4hixud6p63b3" path="res://Assets/Scripts/scroll_container.gd" id="12_2acba"]
+[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/boton.svg" id="12_bj8ic"]
+[ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
+[ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
+[ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
+[ext_resource type="Texture2D" uid="uid://c2yuhtiqx803j" path="res://Assets/Arte2d/opciones/idiomas/Italy.svg" id="18_ygdgh"]
+[ext_resource type="Texture2D" uid="uid://dltbuvtg4cn12" path="res://Assets/Arte2d/opciones/idiomas/Japan.svg" id="19_oawn5"]
+[ext_resource type="Texture2D" uid="uid://ci8xywt0lt0a7" path="res://Assets/Arte2d/opciones/idiomas/Portugal.svg" id="20_x2jev"]
+[ext_resource type="Texture2D" uid="uid://bvtvg27khggkm" path="res://Assets/Arte2d/opciones/idiomas/Russia.svg" id="21_eivc3"]
+[ext_resource type="Texture2D" uid="uid://dw0mxasvvrrx" path="res://Assets/Arte2d/opciones/idiomas/South_Korea.svg" id="22_4sls0"]
+[ext_resource type="Texture2D" uid="uid://c5wgx8bunstqb" path="res://Assets/Arte2d/opciones/idiomas/Spain.svg" id="23_364dt"]
+[ext_resource type="Texture2D" uid="uid://fb8nn1107rtw" path="res://Assets/Arte2d/opciones/idiomas/the_United_States.svg" id="24_lnhiw"]
+[ext_resource type="Script" uid="uid://ls0lnqhy6smh" path="res://Assets/Scripts/h_slider.gd" id="25_ygdgh"]
+[ext_resource type="Texture2D" uid="uid://i0s7m20oci4c" path="res://Assets/Arte2d/botones/reinicio.svg" id="27_4sls0"]
+[ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/botones/configuracion.svg" id="28_364dt"]
+[ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/botones/casa_normal.svg" id="29_364dt"]
+
+[sub_resource type="Animation" id="Animation_h3ung"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-445, 155.83334)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0euow"]
+resource_name = "UNICA"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -66.666), Vector2(0, -75.816)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.12861535, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2acba"]
+_data = {
+&"RESET": SubResource("Animation_h3ung"),
+&"UNICA": SubResource("Animation_0euow")
+}
+
+[node name="Boton" type="CanvasLayer" unique_id=2051950697]
+script = ExtResource("1_rkc3o")
+posicion_noto_botones_x = Vector2(0, -91)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=482278800]
+position = Vector2(0, 168)
+
+[node name="Timer" type="Timer" parent="Node2D" unique_id=1812203028]
+autostart = true
+
+[node name="Boton" parent="Node2D" unique_id=585335164 instance=ExtResource("2_l5g0r")]
+position = Vector2(768, 1509)
+
+[node name="Boton2" parent="Node2D" unique_id=2048963771 instance=ExtResource("2_l5g0r")]
+position = Vector2(768, 1925)
+
+[node name="Boton3" parent="Node2D" unique_id=593215789 instance=ExtResource("2_l5g0r")]
+position = Vector2(1088.0001, 1509)
+
+[node name="Boton4" parent="Node2D" unique_id=1851618136 instance=ExtResource("2_l5g0r")]
+position = Vector2(1088, 1925)
+
+[node name="Botones_ocultar desafio" type="Node2D" parent="Node2D" unique_id=1353211713]
+position = Vector2(0, -91)
+scale = Vector2(1.2, 1.2)
+
+[node name="fondo" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=965917376]
+modulate = Color(0.14919278, 5.264301e-08, 0.06947935, 1)
+self_modulate = Color(0.003921569, 0.003921569, 0.003921569, 0.4509804)
+position = Vector2(-300, 602.5)
+scale = Vector2(4.6874995, 10.416666)
+texture = ExtResource("6_0euow")
+
+[node name="reset_counter" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1243961932]
+position = Vector2(466.66666, 75.83333)
+scale = Vector2(0.8333333, 0.8333333)
+texture_normal = ExtResource("7_2acba")
+
+[node name="opciones" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=755310281]
+position = Vector2(26.666666, 73.333664)
+scale = Vector2(0.8333333, 0.8333333)
+texture_normal = ExtResource("5_h3ung")
+
+[node name="opciones2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1109510672]
+position = Vector2(-133.33333, 73.33333)
+scale = Vector2(0.8333333, 0.8333333)
+texture_normal = ExtResource("5_h3ung")
+
+[node name="desafio1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1749066580]
+position = Vector2(-588.33325, 96.66666)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="desafio10" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=669472700]
+position = Vector2(-588.3333, 232.49997)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="desafio20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1826377171]
+position = Vector2(-294.99997, 232.99997)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="desafio30" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=538206312]
+position = Vector2(-588.3333, 366.33328)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="desafio60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=962976418]
+position = Vector2(-294.99997, 365.83328)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="desafioPerson" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1153556199]
+position = Vector2(-380.83328, 510)
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=681282382]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-594.1667, 522.8333)
+scale = Vector2(1.6015626, 0.88541675)
+texture_normal = ExtResource("3_h3ung")
+
+[node name="EntradaPersonalizada" type="LineEdit" parent="Node2D/Botones_ocultar desafio" unique_id=1855945156]
+offset_left = -587.5
+offset_top = 520.0001
+offset_right = -385.1667
+offset_bottom = 639.0001
+theme_override_font_sizes/font_size = 40
+placeholder_text = "NUMBER"
+virtual_keyboard_type = 2
+
+[node name="1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1589552217]
+position = Vector2(-593.3333, 698.3333)
+texture_normal = ExtResource("8_o60jk")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=930876900]
+position = Vector2(-593.3333, 831.6667)
+texture_normal = ExtResource("8_o60jk")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="1 contra todos(3)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1747207377]
+position = Vector2(-300, 698.3333)
+scale = Vector2(1.0000001, 1.0000001)
+texture_normal = ExtResource("8_o60jk")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="1 contra todos(4)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1941161697]
+position = Vector2(-299.99994, 830.55554)
+texture_normal = ExtResource("8_o60jk")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=529785854]
+position = Vector2(-593.3333, 964.9999)
+scale = Vector2(1.9945914, 1.0000001)
+texture_normal = ExtResource("8_o60jk")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_activa_1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=6231200]
+position = Vector2(-446.66666, 698.3333)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_activa_2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1537581526]
+position = Vector2(-446.66666, 831.6666)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_activa_solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=415701514]
+position = Vector2(-319.99997, 964.99994)
+scale = Vector2(1.04, 1.04)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_activa_tct3" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1177730683]
+position = Vector2(-153.33334, 698.3333)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_activa_tct4" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1294460862]
+position = Vector2(-153.33334, 831.6666)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_10s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1131449366]
+position = Vector2(-441.66666, 232.49995)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_30s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=951400409]
+position = Vector2(-441.6667, 365.83328)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1430490188]
+position = Vector2(-441.66656, 96.66668)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=650669554]
+position = Vector2(-148.33327, 232.49995)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=720157285]
+position = Vector2(-148.3333, 365.8333)
+scale = Vector2(1.04, 1.04)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Estadisticas_x" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1278077996]
+position = Vector2(-234.16667, 509.99997)
+scale = Vector2(1.041062, 1.0397822)
+texture_normal = ExtResource("8_eivc3")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="MODO" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1913307801]
+position = Vector2(-593.3333, 965)
+texture = ExtResource("10_4sls0")
+offset = Vector2(64.16669, 64.16667)
+
+[node name="MODO_ESTADISTICAS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=315467894]
+position = Vector2(-320, 964.99994)
+texture = ExtResource("10_4sls0")
+offset = Vector2(64.16669, 64.16667)
+
+[node name="TIEMPOS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1014676879]
+position = Vector2(-754.1666, 280.8333)
+texture = ExtResource("10_4sls0")
+offset = Vector2(64.16669, 64.16667)
+
+[node name="texto desaparecedor" type="Node2D" parent="Node2D/Botones_ocultar desafio" unique_id=1113205047]
+position = Vector2(-247.5, 289.16666)
+
+[node name="TEXTO" type="Node2D" parent="Node2D/Botones_ocultar desafio/texto desaparecedor" unique_id=2022531388]
+position = Vector2(-445, 155.83334)
+
+[node name="Label" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO" unique_id=696205623]
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 207.0
+offset_bottom = 64.0
+theme_override_constants/line_spacing = -12
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 35
+text = "mode_1sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label" unique_id=1530345414]
+layout_mode = 0
+offset_left = 4.166677
+offset_top = 0.83334607
+offset_right = 211.16667
+offset_bottom = 64.83334
+theme_override_constants/line_spacing = -12
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 35
+text = "mode_1sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label" unique_id=1422387204]
+libraries/ = SubResource("AnimationLibrary_2acba")
+
+[node name="Botones_aparecer desafio" type="Node2D" parent="Node2D" unique_id=163182019]
+position = Vector2(0, -91)
+
+[node name="Salir_desafios" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=661339132]
+position = Vector2(64, 1296.0001)
+scale = Vector2(0.248, 0.24)
+texture_normal = ExtResource("12_bj8ic")
+texture_pressed = ExtResource("11_e57pv")
+
+[node name="repetidor_desafios_indefinidos" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=1329555792]
+position = Vector2(432, 1296.0001)
+scale = Vector2(0.248, 0.24)
+texture_normal = ExtResource("12_bj8ic")
+texture_pressed = ExtResource("11_e57pv")
+
+[node name="barra de quien va ganando" type="Node2D" parent="Node2D/Botones_aparecer desafio" unique_id=964667121]
+position = Vector2(0, -88)
+
+[node name="barra_negro" type="Sprite2D" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=1485015997]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(352, 215)
+scale = Vector2(4.55, 0.52)
+texture = ExtResource("4_44gm8")
+
+[node name="barra_roja" type="Sprite2D" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=559417548]
+position = Vector2(352.205, 214.71992)
+scale = Vector2(4.5, 0.47999883)
+texture = ExtResource("4_44gm8")
+
+[node name="barra_verde2" type="Sprite2D" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=1061529078]
+position = Vector2(64.20497, 214.71992)
+scale = Vector2(4.5016017, 0.47999877)
+texture = ExtResource("5_h3ung")
+offset = Vector2(63.954468, 0)
+
+[node name="lado a" type="Label" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=722610616]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 212.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 91
+text = "0"
+
+[node name="lado a" type="Label" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando/lado a" unique_id=677268536]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 178.0
+offset_bottom = 98.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 91
+text = "0"
+
+[node name="lado b" type="Label" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=2044309728]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 480.0
+offset_top = 160.0
+offset_right = 652.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 91
+text = "0"
+horizontal_alignment = 2
+
+[node name="lado b" type="Label" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando/lado b" unique_id=2120229054]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 180.0
+offset_bottom = 101.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 91
+text = "0"
+horizontal_alignment = 2
+
+[node name="posicion_botones" type="Node2D" parent="Node2D" unique_id=995325296]
+
+[node name="solitario" type="Node2D" parent="Node2D/posicion_botones" unique_id=224618118]
+
+[node name="posicion_boton_solitario" type="Sprite2D" parent="Node2D/posicion_botones/solitario" unique_id=1282518567]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(96, 421)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_44gm8")
+
+[node name="1c1" type="Node2D" parent="Node2D/posicion_botones" unique_id=1359823746]
+position = Vector2(0, -45)
+
+[node name="posicion_boton_1c1" type="Sprite2D" parent="Node2D/posicion_botones/1c1" unique_id=772013961]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(128, 186)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_h3ung")
+
+[node name="posicion_boton2_1c1" type="Sprite2D" parent="Node2D/posicion_botones/1c1" unique_id=1702249345]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(128, 682)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_h3ung")
+
+[node name="t3" type="Node2D" parent="Node2D/posicion_botones" unique_id=1891662437]
+position = Vector2(0, -45)
+
+[node name="posicion_boton_t3" type="Sprite2D" parent="Node2D/posicion_botones/t3" unique_id=1583038021]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(24, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_0euow")
+
+[node name="posicion_boton2_t3" type="Sprite2D" parent="Node2D/posicion_botones/t3" unique_id=970072138]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(181, 748)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_0euow")
+
+[node name="posicion_boton3_t3" type="Sprite2D" parent="Node2D/posicion_botones/t3" unique_id=1588569285]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(372, 252)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_0euow")
+
+[node name="t4 2c2" type="Node2D" parent="Node2D/posicion_botones" unique_id=1379257726]
+position = Vector2(0, -45)
+
+[node name="posicion_boton_t4" type="Sprite2D" parent="Node2D/posicion_botones/t4 2c2" unique_id=1663179029]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(0, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2acba")
+
+[node name="posicion_boton2_t4" type="Sprite2D" parent="Node2D/posicion_botones/t4 2c2" unique_id=1582346337]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(0, 751)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2acba")
+
+[node name="posicion_boton3_t4" type="Sprite2D" parent="Node2D/posicion_botones/t4 2c2" unique_id=2025308016]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(368, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2acba")
+
+[node name="posicion_boton4_t4" type="Sprite2D" parent="Node2D/posicion_botones/t4 2c2" unique_id=2052712453]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(368, 749)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2acba")
+
+[node name="posicion_botonX" type="Sprite2D" parent="Node2D/posicion_botones" unique_id=1022128400]
+position = Vector2(844, 1605)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_o60jk")
+
+[node name="Time" type="Label" parent="Node2D" unique_id=956847629]
+self_modulate = Color(0, 0, 0, 1)
+offset_top = 101.0
+offset_right = 306.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 76
+text = "Time"
+
+[node name="Time" type="Label" parent="Node2D/Time" unique_id=201671634]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 311.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 76
+text = "Time"
+
+[node name="click" type="AudioStreamPlayer" parent="Node2D" unique_id=975210684]
+stream = ExtResource("10_h3ung")
+volume_db = 4.497
+pitch_scale = 2.34
+bus = &"effect"
+
+[node name="letreros_effects" type="Node2D" parent="Node2D" unique_id=1814750671]
+
+[node name="confeti_full" parent="Node2D/letreros_effects" unique_id=351680083 instance=ExtResource("13_e57pv")]
+position = Vector2(0, -168)
+
+[node name="Apartado de opciones abajo" type="Node2D" parent="." unique_id=1289389049]
+
+[node name="estadistica" type="Node2D" parent="Apartado de opciones abajo" unique_id=1223475967]
+position = Vector2(1080, 0)
+
+[node name="estadisticas" type="Sprite2D" parent="Apartado de opciones abajo/estadistica" unique_id=950871634]
+modulate = Color(0.14919278, 5.264301e-08, 0.06947935, 1)
+self_modulate = Color(0.003921569, 0.003921569, 0.003921569, 0.4509804)
+position = Vector2(0, 800)
+scale = Vector2(5.6249995, 12.5)
+texture = ExtResource("6_0euow")
+
+[node name="CLICKSPEED" parent="Apartado de opciones abajo/estadistica" unique_id=40769402 instance=ExtResource("10_0euow")]
+position = Vector2(-272, 152)
+scale = Vector2(0.74, 0.74)
+
+[node name="Control" type="Control" parent="Apartado de opciones abajo/estadistica" unique_id=1591290965]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=553377540]
+layout_mode = 0
+offset_left = -312.0
+offset_top = 376.0
+offset_right = 296.0
+offset_bottom = 1432.0
+script = ExtResource("12_2acba")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer" unique_id=239312140]
+layout_mode = 2
+
+[node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(667.94, 1156)
+custom_maximum_size = Vector2(720, 10000.63)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = -17
+theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_font_sizes/normal_font_size = 57
+bbcode_enabled = true
+text = "clicks"
+fit_content = true
+scroll_active = false
+
+[node name="Control" type="Control" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB" unique_id=1842320778]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB/Control" unique_id=1910896087]
+custom_minimum_size = Vector2(667.94, 1156)
+custom_maximum_size = Vector2(720, 10000.63)
+layout_mode = 0
+offset_left = 6.0
+offset_top = -5.0
+offset_right = 673.94
+offset_bottom = 4184.0
+mouse_filter = 2
+theme_override_constants/line_separation = -17
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_font_sizes/normal_font_size = 57
+bbcode_enabled = true
+text = "clicks"
+fit_content = true
+scroll_active = false
+
+[node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=1855660259]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(674.675, 1157.9)
+custom_maximum_size = Vector2(720, 10000)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = -21
+theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_font_sizes/normal_font_size = 69
+bbcode_enabled = true
+text = "clicks"
+fit_content = true
+scroll_active = false
+
+[node name="Control" type="Control" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA" unique_id=1817063641]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA/Control" unique_id=1974459090]
+custom_minimum_size = Vector2(674.675, 1157.9)
+custom_maximum_size = Vector2(720, 10000)
+layout_mode = 0
+offset_left = 8.0
+offset_top = -6.0
+offset_right = 682.675
+offset_bottom = 1151.9
+mouse_filter = 2
+theme_override_constants/line_separation = -21
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_font_sizes/normal_font_size = 69
+bbcode_enabled = true
+text = "clicks"
+fit_content = true
+scroll_active = false
+
+[node name="skin" type="Node2D" parent="Apartado de opciones abajo" unique_id=1240035059]
+position = Vector2(1800, 0)
+
+[node name="skins" type="Sprite2D" parent="Apartado de opciones abajo/skin" unique_id=1961528441]
+modulate = Color(0.8782825, 0.36641097, 0.2116237, 1)
+self_modulate = Color(0.37036446, 0.3703645, 0.37036443, 0.4509804)
+position = Vector2(0.00012207031, 800)
+scale = Vector2(5.6249995, 12.5)
+texture = ExtResource("6_0euow")
+
+[node name="Label" type="Label" parent="Apartado de opciones abajo/skin" unique_id=935039429]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -360.00003
+offset_top = 560.0
+offset_right = 501.88535
+offset_bottom = 785.0
+scale = Vector2(0.8353779, 0.8832577)
+theme_override_constants/line_spacing = -64
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 104
+text = "coming_soon"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Apartado de opciones abajo/skin/Label" unique_id=1964820988]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 861.8854
+offset_bottom = 219.0
+theme_override_constants/line_spacing = -64
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_font_sizes/font_size = 104
+text = "coming_soon"
+horizontal_alignment = 1
+
+[node name="opcion" type="Node2D" parent="Apartado de opciones abajo" unique_id=1655673289]
+position = Vector2(2520, 0)
+
+[node name="opciones" type="Sprite2D" parent="Apartado de opciones abajo/opcion" unique_id=903706275]
+modulate = Color(1, 0.66491157, 0.79277563, 1)
+self_modulate = Color(0.14415187, 0.17837456, 0.16702345, 0.4509804)
+position = Vector2(0, 800)
+scale = Vector2(5.6249995, 12.5)
+texture = ExtResource("6_0euow")
+
+[node name="dekeiser" type="Label" parent="Apartado de opciones abajo/opcion" unique_id=692585679]
+offset_left = -28.0
+offset_top = 272.0
+offset_right = 329.0
+offset_bottom = 397.0
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("15_pigga")
+theme_override_font_sizes/font_size = 91
+text = "IDIOMA"
+
+[node name="pantalla" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1906272266]
+position = Vector2(-272, 136)
+
+[node name="vibracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1103808206]
+texture_normal = ExtResource("4_44gm8")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="confeti" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=2122153803]
+position = Vector2(0, 136)
+texture_normal = ExtResource("4_44gm8")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="+1" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1266345753]
+position = Vector2(0, 272)
+texture_normal = ExtResource("4_44gm8")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="Idioma" type="Node2D" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=390482085]
+position = Vector2(0, 400)
+
+[node name="ESP" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=35910034]
+position = Vector2(0, 8)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="ING" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2012596579]
+position = Vector2(0, 80)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="POR" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=105321391]
+position = Vector2(0, 152)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="FRA" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=69105822]
+position = Vector2(0, 224)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="ITA" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1736809148]
+position = Vector2(0, 296)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="RUS" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=828344158]
+position = Vector2(0, 367.99994)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="JPN" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2042382874]
+position = Vector2(0, 440)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="KOR" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=481111107]
+position = Vector2(0, 512.0001)
+scale = Vector2(0.517, 0.5)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="France" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=490544736]
+position = Vector2(127.999985, 256.00006)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_v81rw")
+
+[node name="Italy" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1039010595]
+position = Vector2(127.999985, 328)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("18_ygdgh")
+
+[node name="Japan" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1975265954]
+position = Vector2(127.999985, 472)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("19_oawn5")
+
+[node name="Portugal" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1601799366]
+position = Vector2(127.999985, 184.00005)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_x2jev")
+
+[node name="Russia" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1531426598]
+position = Vector2(127.999985, 400.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21_eivc3")
+
+[node name="SouthKorea" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2089212877]
+position = Vector2(127.999985, 544)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("22_4sls0")
+
+[node name="Spain" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=468992085]
+position = Vector2(127.999985, 40.00004)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_364dt")
+
+[node name="TheUnitedStates" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=532250457]
+position = Vector2(128, 112)
+scale = Vector2(0.073684216, 0.09230772)
+texture = ExtResource("24_lnhiw")
+
+[node name="Audio" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=637116357]
+position = Vector2(-272, 1128)
+
+[node name="effectos" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=39176644]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 64.0
+offset_right = 40.0
+offset_bottom = 104.0
+scale = Vector2(0.8971373, 1.1004884)
+
+[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/effectos" unique_id=2011115709]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 16.0
+scale = Vector2(2.5973647, 3.023998)
+max_value = 2.5
+step = 0.001
+value = 1.5
+script = ExtResource("25_ygdgh")
+
+[node name="musica" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=1107455137]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/musica" unique_id=2016219631]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 16.0
+scale = Vector2(2.5973647, 3.023998)
+max_value = 2.5
+step = 0.001
+value = 1.5
+script = ExtResource("25_ygdgh")
+
+[node name="datos" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=2057147427]
+position = Vector2(-272, 1240)
+
+[node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
+texture_normal = ExtResource("27_4sls0")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="palabras_de_desarrolador_deker" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1554042705]
+position = Vector2(-272, 1376)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
+texture_normal = ExtResource("6_0euow")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="barraabajo" type="Node2D" parent="." unique_id=969783502]
+position = Vector2(0, 16)
+
+[node name="Iconn" type="Sprite2D" parent="barraabajo" unique_id=303155693]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(360, 1516)
+scale = Vector2(5.625, 1.3125002)
+texture = ExtResource("5_h3ung")
+
+[node name="1home" type="TouchScreenButton" parent="barraabajo" unique_id=319836846]
+position = Vector2(32, 1448)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("29_364dt")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="2estadist" type="TouchScreenButton" parent="barraabajo" unique_id=374504798]
+position = Vector2(200.00002, 1448)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="3skins" type="TouchScreenButton" parent="barraabajo" unique_id=1395828209]
+position = Vector2(368, 1448)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_h3ung")
+texture_pressed = ExtResource("6_0euow")
+
+[node name="4opcion" type="TouchScreenButton" parent="barraabajo" unique_id=870882020]
+position = Vector2(536, 1448)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("28_364dt")
+texture_pressed = ExtResource("6_0euow")
+
+[connection signal="timeout" from="Node2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Node2D/Boton" to="." method="_on_boton_pressed"]
+[connection signal="pressed" from="Node2D/Boton2" to="." method="_on_boton_2_pressed"]
+[connection signal="pressed" from="Node2D/Boton3" to="." method="_on_boton_3_pressed"]
+[connection signal="pressed" from="Node2D/Boton4" to="." method="_on_boton_4_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/reset_counter" to="." method="_on_reset_counter_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/opciones2" to="." method="_on_opciones_2_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafio1" to="." method="_on_desafio_1_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafio10" to="." method="_on_desafio_10_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafio20" to="." method="_on_desafio_20_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafio30" to="." method="_on_desafio_30_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafio60" to="." method="_on_desafio_60_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/desafioPerson" to="." method="_on_desafio_person_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/1c1" to="." method="_on_c_1_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/2c2" to="." method="_on_c_2_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/1 contra todos(3)" to="." method="_on__contra_todos_3_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/1 contra todos(4)" to="." method="_on__contra_todos_4_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Solitario" to="." method="_on_solitario_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1" to="." method="_on_estadisticas_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_activa_2c2" to="." method="_on_estadisticas_2_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_activa_solitario" to="." method="_on_estadisticas_3_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_activa_tct3" to="." method="_on_estadisticas_4_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_activa_tct4" to="." method="_on_estadisticas_5_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_10s" to="." method="_on_estadisticas_6_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_30s" to="." method="_on_estadisticas_7_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_1" to="." method="_on_estadisticas_8_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_20" to="." method="_on_estadisticas_9_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_60" to="." method="_on_estadisticas_10_pressed"]
+[connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_x" to="." method="_on_estadisticas_11_pressed"]
+[connection signal="pressed" from="Node2D/Botones_aparecer desafio/Salir_desafios" to="." method="_on_salir_desafios_pressed"]
+[connection signal="pressed" from="Node2D/Botones_aparecer desafio/repetidor_desafios_indefinidos" to="." method="_on_repetidor_desafios_indefinidos_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/vibracion" to="." method="_on_vibracion_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/confeti" to="." method="_on_confeti_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/+1" to="." method="_on_plus_1_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ESP" to="." method="_on_esp_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ING" to="." method="_on_ing_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/POR" to="." method="_on_por_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/FRA" to="." method="_on_fra_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ITA" to="." method="_on_ita_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/RUS" to="." method="_on_rus_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/JPN" to="." method="_on_jpn_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/KOR" to="." method="_on_kor_pressed"]
+[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/effectos/HSlider" to="." method="_on_effect_volume"]
+[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/musica/HSlider" to="." method="_on_music_volume"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/datos/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="barraabajo/1home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="barraabajo/2estadist" to="." method="_on_estadist_pressed"]
+[connection signal="pressed" from="barraabajo/3skins" to="." method="_on_skins_pressed"]
+[connection signal="pressed" from="barraabajo/4opcion" to="." method="_on_opcion_pressed"]

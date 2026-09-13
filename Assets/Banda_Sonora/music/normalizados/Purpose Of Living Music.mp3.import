@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0fskwqypawkn"
+path="res://.godot/imported/Purpose Of Living Music.mp3-93192aa660c48eee06842b93dd839188.mp3str"
+
+[deps]
+
+source_file="res://Assets/Banda_Sonora/music/normalizados/Purpose Of Living Music.mp3"
+dest_files=["res://.godot/imported/Purpose Of Living Music.mp3-93192aa660c48eee06842b93dd839188.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,71 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[admob]
+
+general/android/app_id="ca-app-pub-5066256392694449~4271412296"
+general/ios/enabled=false
+
+[application]
+
+config/name="ClickSpeed CPS test"
+config/version="1.0.0"
+run/main_scene="uid://gs5te8wl28dd"
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0.10982164, 0.014018827, 0.2609844, 1)
+boot_splash/image="uid://c4m1oodvo5fwg"
+config/icon="uid://cnh3cthhc1jow"
+
+[debug]
+
+shapes/navigation/3d/geometry_edge_disabled_color=Color(0.44313726, 0.1882353, 1, 1)
+shapes/navigation/2d/geometry_edge_disabled_color=Color(0.44313726, 0.1882353, 1, 1)
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1600
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/admob/plugin.cfg")
+
+[input]
+
+"Añadir_Counter"={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":86,"key_label":0,"unicode":118,"location":0,"echo":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://addons/admob/gdscript/sample/translations/admob_sample.en.translation", "res://addons/admob/gdscript/sample/translations/admob_sample.pt_BR.translation", "res://addons/admob/gdscript/sample/translations/admob_sample.es.translation", "res://addons/admob/gdscript/sample/translations/admob_sample.zh_CN.translation", "res://addons/admob/gdscript/sample/translations/admob_sample.ja.translation", "res://Assets/Scripts/traductor.ESP.translation", "res://Assets/Scripts/traductor.FRA.translation", "res://Assets/Scripts/traductor.ING.translation", "res://Assets/Scripts/traductor.ITA.translation", "res://Assets/Scripts/traductor.JPN.translation", "res://Assets/Scripts/traductor.KOR.translation", "res://Assets/Scripts/traductor.POR.translation", "res://Assets/Scripts/traductor.RUS.translation")
+locale/locale_filter_mode=1
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.4392157, 0.18431373, 1, 1)

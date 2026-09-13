@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjgwj28n4joxn"]
+
+[ext_resource type="Script" uid="uid://dwouubihn2rsn" path="res://Assets/Scripts/main.gd" id="1_3mi76"]
+[ext_resource type="PackedScene" uid="uid://6i8bc05nm2cc" path="res://Assets/Scenas/boton.tscn" id="2_msta6"]
+[ext_resource type="AudioStream" uid="uid://ky0su8mtjeh7" path="res://Assets/Banda_Sonora/effects/BipPC.mp3" id="4_dq40c"]
+
+[node name="Main" type="Node2D" unique_id=149142383]
+script = ExtResource("1_3mi76")
+
+[node name="Boton" parent="." unique_id=2051950697 instance=ExtResource("2_msta6")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=647373237]
+stream = ExtResource("4_dq40c")
+volume_db = -20.577
+autoplay = true
+mix_target = 2
+bus = &"music"
