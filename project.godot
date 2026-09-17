@@ -33,11 +33,16 @@ shapes/navigation/2d/geometry_edge_disabled_color=Color(0.44313726, 0.1882353, 1
 window/size/viewport_width=720
 window/size/viewport_height=1600
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 window/handheld/orientation=1
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/admob/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://4efwrsde3nam"
 
 [input]
 

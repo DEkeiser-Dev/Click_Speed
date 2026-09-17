@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bnshho006w1wy"]
+
+[ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="2_23ax2"]
+[ext_resource type="Theme" uid="uid://4efwrsde3nam" path="res://Assets/themes/theme.tres" id="2_wdibr"]
+[ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/botones/casa_normal.svg" id="3_q46r4"]
+[ext_resource type="Texture2D" uid="uid://comxfgoqjnc0i" path="res://Assets/Arte2d/botones/casa_salir.svg" id="4_uwm72"]
+
+[node name="Node2D" type="Node2D" unique_id=2000155004]
+
+[node name="1c1" type="Sprite2D" parent="." unique_id=211107735]
+position = Vector2(662, 1534)
+texture = ExtResource("2_23ax2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=277465399]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=477687263]
+offset_left = -13.0
+offset_top = 5.0
+offset_right = 854.0
+offset_bottom = 557.0
+scale = Vector2(0.83836794, 0.6608163)
+theme = ExtResource("2_wdibr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=1211483498]
+layout_mode = 2
+theme_override_constants/margin_left = -82
+theme_override_constants/margin_top = -82
+theme_override_constants/margin_right = -82
+theme_override_constants/margin_bottom = -56
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1356801590]
+layout_mode = 2
+theme = ExtResource("2_wdibr")
+theme_override_constants/separation = 23
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1029414627]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "esterno"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer" unique_id=543954624]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1629380064]
+layout_mode = 2
+theme_override_constants/margin_left = -18
+theme_override_constants/margin_top = -18
+theme_override_constants/margin_right = -18
+theme_override_constants/margin_bottom = -18
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1738095278]
+layout_mode = 2
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1530675071]
+layout_mode = 2
+texture = ExtResource("3_q46r4")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=601735407]
+layout_mode = 2
+texture = ExtResource("4_uwm72")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=623525472]
+visible = false
+layout_mode = 2
+text = "NUMBER"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1231647062]
+layout_mode = 2
+text = "NUMBER"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1770565250]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1578124494]
+layout_mode = 2
+size_flags_vertical = 3
+text = "hola"
+
+[node name="Button2" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=638503426]
+layout_mode = 2
+size_flags_vertical = 3
+text = "gggggg"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1292074832]
+position = Vector2(922, 1003)
