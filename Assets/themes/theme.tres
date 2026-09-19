@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://4efwrsde3nam"]
 
-[ext_resource type="FontFile" uid="uid://qy0uq0mhij1t" path="res://Assets/Fuente/Combinada/Super Starfish Combined.ttf" id="1_tmwc1"]
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="1_tmwc1"]
 [ext_resource type="Texture2D" uid="uid://22kmf8kos8qr" path="res://Assets/Arte2d/botones/fondo_retro2_2.svg" id="2_tmwc1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqxm2"]
