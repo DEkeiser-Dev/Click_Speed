@@ -299,7 +299,7 @@ var ram_dic = {
 }
 #14 / 12
 #fuentes y tamañp
-var fuente_1 = preload("res://Assets/Fuente/Combinada/Combinada/Super Starfish Combined.ttf")
+var fuente_1 = preload("res://Assets/Fuente/Super Starfish.ttf")
 var menos_6 = 10
 #confeti
 var confeti_señal

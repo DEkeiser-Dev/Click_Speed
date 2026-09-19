@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c2xyhmwlkgrd6"
-path="res://.godot/imported/Super Starfish Combined.ttf-77920ef78ba8fe5729588645aecf6b22.fontdata"
+uid="uid://coibqqkl6ucp4"
+path="res://.godot/imported/Super Starfish.ttf-08f3023846fae0fee74d1d472c448a85.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fuente/Combinada/Combinada/Super Starfish Combined.ttf"
-dest_files=["res://.godot/imported/Super Starfish Combined.ttf-77920ef78ba8fe5729588645aecf6b22.fontdata"]
+source_file="res://Assets/Fuente/fuente original/Super Starfish.ttf"
+dest_files=["res://.godot/imported/Super Starfish.ttf-08f3023846fae0fee74d1d472c448a85.fontdata"]
 
 [params]
 
