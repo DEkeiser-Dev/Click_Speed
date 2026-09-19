@@ -299,16 +299,16 @@ var ram_dic = {
 }
 #14 / 12
 #fuentes y tamañp
-var fuente_1 = preload("res://Assets/Fuente/MPLUSRounded1c-Black.ttf")
-var fuente_2 = preload("res://Assets/Fuente/Super Starfish.ttf")
-var menos_6 = 6
-var menos_14 = 14
-var menos_16 = 16
+var fuente_1 = preload("res://Assets/Fuente/Combinada/Combinada/Super Starfish Combined.ttf")
+var menos_6 = 10
 #confeti
 var confeti_señal
 #volumen
 var barra_vol_effect
 var barra_vol_music
+#fondo
+var F_verde_2c2
+var F_rojo_2c2
 
 
 #--------------------------LOGICA DEL JUEGO-------------------------------------:
@@ -482,8 +482,8 @@ func _procesardor_de_objetos():
 	a_click = $Node2D/click
 	#AVISOS O TEXTOS QUE APARECEN
 	A_texto = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO"
-	A_label = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label"
-	A_animation_valor_valido = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label/AnimationPlayer"
+	A_label = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label"
+	A_animation_valor_valido = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label/AnimationPlayer"
 	A_texto_desaparecedor = $"Node2D/Botones_ocultar desafio/texto desaparecedor"
 	#Posiciones posibles de avisos
 	AD_1 = _posicionamiento_del_texto(b_desafio_p_oculto,0) #Xs
@@ -515,7 +515,7 @@ func _procesardor_de_objetos():
 	SD_Modo_t3 = str(ram_dic[13])
 	SD_Modo_t4 = str(ram_dic[14])
 	SD_DESACTIVADO = str(ram_dic[15])
-	SD_negro = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label/Label2"
+	SD_negro = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label/Label2"
 	#ASIGNADORES
 	A_modo = $"Node2D/Botones_ocultar desafio/MODO"
 	A_tiempos = $"Node2D/Botones_ocultar desafio/TIEMPOS"
@@ -537,6 +537,9 @@ func _procesardor_de_objetos():
 	barra_vol_music = $"Apartado de opciones abajo/opcion/Audio/musica/HSlider"
 	#el boton de home de la barra abajo
 	hme1 = $"barraabajo/1home"
+	#fondo
+	F_rojo_2c2 = $Node2D/rojo
+	F_verde_2c2 = $Node2D/verde
 
 
 #sirve para decirle al texto en donde colocarse exactamente segun los datos
@@ -576,6 +579,7 @@ func _finalizar_desafio():
 	segundos = 0
 	_opciones_no_desafiadas_aparecen_o_no()
 	t_tiempo.wait_time = 0.006
+	fondo_1c1_2c2_aparecer(false)
 	iniciar_desafio = 0
 
 #CONFIGURACION PARA UN DESAFIO INFINITO O NO
@@ -612,6 +616,10 @@ func _opciones_no_desafiadas_aparecen_o_no():
 		n_aparecer_botones_si_necesarios_desafio.position.x = posicion_noto_botones_x.x
 		n_aparecer_botones_si_necesarios_desafio.position.y = posicion_noto_botones_x.y
 		n_barra_abajo_total.position = Vector2(-1000,-100)
+		if tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores < 3:
+			fondo_1c1_2c2_aparecer(true)
+		else:
+			fondo_1c1_2c2_aparecer(false)
 		return
 
 
@@ -714,7 +722,7 @@ func _para_estadisticas_opciones(_a,_b,_c = 0):
 	if _b == 1:
 		_botones_abajo(1)
 	else:
-		_textos_explicativos(_c.position.x-35,_c.position.y+20,SD_ACTIVADO)
+		_textos_explicativos(_c.position.x-120,_c.position.y-20,SD_ACTIVADO)
 	v_dessfios_o_total = _a
 	_que_estadistica_mostrar()
 
@@ -1228,6 +1236,7 @@ func _modo_jugadores():
 		b_contador4.position = p_botonX
 		A_modo.position.x = b_solitario.position.x+63
 		A_modo.texture = th_textura_selector_solo
+		fondo_1c1_2c2_aparecer(false)
 		return
 	elif tipo_de_modo_jugadores == 1:
 		_textos_explicativos(AD_8.x,AD_8.y,SD_Modo_1c1,1)
@@ -1238,6 +1247,7 @@ func _modo_jugadores():
 		b_contador3.position = p_botonX
 		b_contador4.position = p_botonX
 		A_modo.texture = th_texture_selector
+		fondo_1c1_2c2_aparecer(true)
 		return
 	elif tipo_de_modo_jugadores == 2:
 		_textos_explicativos(AD_9.x,AD_9.y,SD_Modo_2c2,1)
@@ -1250,6 +1260,7 @@ func _modo_jugadores():
 		b_contador4.position = p_boton4_t4
 		b_contador4.scale = s_2c2_t4
 		A_modo.texture = th_texture_selector
+		fondo_1c1_2c2_aparecer(true)
 		return
 	elif tipo_de_modo_jugadores == 3:
 		_textos_explicativos(AD_10.x,AD_10.y,SD_Modo_t3,1)
@@ -1261,6 +1272,7 @@ func _modo_jugadores():
 		b_contador3.scale = s_t3
 		b_contador4.position = p_botonX
 		A_modo.texture = th_texture_selector
+		fondo_1c1_2c2_aparecer(false)
 		return
 	elif tipo_de_modo_jugadores == 4:
 		_textos_explicativos(AD_11.x,AD_11.y,SD_Modo_t4,1)
@@ -1273,7 +1285,12 @@ func _modo_jugadores():
 		b_contador4.position = p_boton4_t4
 		b_contador4.scale = s_2c2_t4
 		A_modo.texture = th_texture_selector
+		fondo_1c1_2c2_aparecer(false)
 		return
+
+func fondo_1c1_2c2_aparecer(_A):
+	F_rojo_2c2.visible = _A
+	F_verde_2c2.visible = _A
 
 #Logica de que pasa si das un click a un boton jugable.
 #ESTE SE ESPECIALIZA EN SUMAR UNA UNIDAD A EL VALOR TOTAL CLISKS, Y ESTE ES EL RESPONSABLE
@@ -1486,54 +1503,54 @@ func guardar():
 		"Mejor_cliks": Mejor_cliks,
 		"Mejor_cps_1": Mejor_cps_1,
 		"Mejor_cliks_1": Mejor_cliks_1,
-		"Mejor_cps_10": Mejor_cps_10,
+		"Mejor_cps_10": r(Mejor_cps_10),
 		"Mejor_cliks_10": Mejor_cliks_10,
-		"Mejor_cps_20": Mejor_cps_20,
+		"Mejor_cps_20": r(Mejor_cps_20),
 		"Mejor_cliks_20": Mejor_cliks_20,
-		"Mejor_cps_30": Mejor_cps_30,
+		"Mejor_cps_30": r(Mejor_cps_30),
 		"Mejor_cliks_30": Mejor_cliks_30,
-		"Mejor_cps_60": Mejor_cps_60,
+		"Mejor_cps_60": r(Mejor_cps_60),
 		"Mejor_cliks_60": Mejor_cliks_60,
-		"Mejor_cps_Personalizado": Mejor_cps_x,
+		"Mejor_cps_Personalizado": r(Mejor_cps_x),
 		"Mejor_cliks_Personalizado": Mejor_cliks_x,
 		"Mejor_cliks_J2": Mejor_cliks_J2,
-		"Mejor_cps_1_J2": Mejor_cps_1_J2,
+		"Mejor_cps_1_J2": r(Mejor_cps_1_J2),
 		"Mejor_cliks_1_J2": Mejor_cliks_1_J2,
-		"Mejor_cps_10_J2": Mejor_cps_10_J2,
+		"Mejor_cps_10_J2": r(Mejor_cps_10_J2),
 		"Mejor_cliks_10_J2": Mejor_cliks_10_J2,
-		"Mejor_cps_20_J2": Mejor_cps_20_J2,
+		"Mejor_cps_20_J2": r(Mejor_cps_20_J2),
 		"Mejor_cliks_20_J2": Mejor_cliks_20_J2,
-		"Mejor_cps_30_J2": Mejor_cps_30_J2,
+		"Mejor_cps_30_J2": r(Mejor_cps_30_J2),
 		"Mejor_cliks_30_J2": Mejor_cliks_30_J2,
-		"Mejor_cps_60_J2": Mejor_cps_60_J2,
+		"Mejor_cps_60_J2": r(Mejor_cps_60_J2),
 		"Mejor_cliks_60_J2": Mejor_cliks_60_J2,
-		"Mejor_cps_Personalizado_J2": Mejor_cps_x_J2,
+		"Mejor_cps_Personalizado_J2": r(Mejor_cps_x_J2),
 		"Mejor_cliks_Personalizado_J2": Mejor_cliks_x_J2,
 		"Mejor_cliks_J3": Mejor_cliks_J3,
-		"Mejor_cps_1_J3": Mejor_cps_1_J3,
+		"Mejor_cps_1_J3": r(Mejor_cps_1_J3),
 		"Mejor_cliks_1_J3": Mejor_cliks_1_J3,
-		"Mejor_cps_10_J3": Mejor_cps_10_J3,
+		"Mejor_cps_10_J3": r(Mejor_cps_10_J3),
 		"Mejor_cliks_10_J3": Mejor_cliks_10_J3,
-		"Mejor_cps_20_J3": Mejor_cps_20_J3,
+		"Mejor_cps_20_J3": r(Mejor_cps_20_J3),
 		"Mejor_cliks_20_J3": Mejor_cliks_20_J3,
-		"Mejor_cps_30_J3": Mejor_cps_30_J3,
+		"Mejor_cps_30_J3": r(Mejor_cps_30_J3),
 		"Mejor_cliks_30_J3": Mejor_cliks_30_J3,
-		"Mejor_cps_60_J3": Mejor_cps_60_J3,
+		"Mejor_cps_60_J3": r(Mejor_cps_60_J3),
 		"Mejor_cliks_60_J3": Mejor_cliks_60_J3,
-		"Mejor_cps_Personalizado_J3": Mejor_cps_x_J3,
+		"Mejor_cps_Personalizado_J3": r(Mejor_cps_x_J3),
 		"Mejor_cliks_Personalizado_J3": Mejor_cliks_x_J3,
 		"Mejor_cliks_J4": Mejor_cliks_J4,
-		"Mejor_cps_1_J4": Mejor_cps_1_J4,
+		"Mejor_cps_1_J4": r(Mejor_cps_1_J4),
 		"Mejor_cliks_1_J4": Mejor_cliks_1_J4,
-		"Mejor_cps_10_J4": Mejor_cps_10_J4,
+		"Mejor_cps_10_J4": r(Mejor_cps_10_J4),
 		"Mejor_cliks_10_J4": Mejor_cliks_10_J4,
-		"Mejor_cps_20_J4": Mejor_cps_20_J4,
+		"Mejor_cps_20_J4": r(Mejor_cps_20_J4),
 		"Mejor_cliks_20_J4": Mejor_cliks_20_J4,
-		"Mejor_cps_30_J4": Mejor_cps_30_J4,
+		"Mejor_cps_30_J4": r(Mejor_cps_30_J4),
 		"Mejor_cliks_30_J4": Mejor_cliks_30_J4,
-		"Mejor_cps_60_J4": Mejor_cps_60_J4,
+		"Mejor_cps_60_J4": r(Mejor_cps_60_J4),
 		"Mejor_cliks_60_J4": Mejor_cliks_60_J4,
-		"Mejor_cps_Personalizado_J4": Mejor_cps_x_J4,
+		"Mejor_cps_Personalizado_J4": r(Mejor_cps_x_J4),
 		"Mejor_cliks_Personalizado_J4": Mejor_cliks_x_J4,
 		"Total_Clicks": total_counter,
 		"Idioma": columna,
@@ -1545,6 +1562,10 @@ func guardar():
 	}
 	archivo.store_var(datos)
 	archivo.close()
+
+func r(_a,_c = 0):
+	_c = round(_a * 100.0 /100.0)
+	return _c
 
 #sistema de cargado de archivos
 func cargar():
@@ -1652,46 +1673,33 @@ func _textos():
 	t_time_contorno_text.text = t_time_text.text
 
 func _texto_tamaño_fuente():
-	var _inde = 0 
 	var _inde3 = 0 # richs
 	var _inde2  = 0# labels
-	#rich
-	_datos_texto(0,t_estadistica_global_negro,_inde,_inde3,57,1)
-	_datos_texto(0,t_estadistica_global,_inde,_inde3,57,1)
-	_datos_texto(0,t_estadistica_local_negro,_inde,_inde3,69,1)
-	_datos_texto(0,t_estadistica_local,_inde,_inde3,69,1)
-	#label
-	_datos_texto(1,t_proximamente,_inde,_inde2,104,1)
-	_datos_texto(1,t_proximamente_negro,_inde,_inde2,104,1)
-	_datos_texto(1,SD_negro,_inde,_inde2,35,1)
-	_datos_texto(1,A_label,_inde,_inde2,35,1)
+	_datos_texto(0,t_estadistica_global_negro,57,_inde3,fuente_1,1)
+	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1,1)
+	_datos_texto(0,t_estadistica_local_negro,69,_inde3,fuente_1,1)
+	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1,1)
 	if columna > -1 and columna < 5:
-		_inde = fuente_2
 		_inde2 = 0
 		_inde3 = 0
 	elif columna > 4 and columna <7:
-		_inde = fuente_1
-		_inde3 = menos_14
-		if columna == 5:
-			_inde2 = menos_16
-		else:
-			_inde2 = menos_6
+		_inde3 = menos_6
+		_inde2 = menos_6
 	elif columna == 7:
-		_inde = fuente_1
 		_inde2 = 0
-		_inde3 = menos_14
+		_inde3 = 0
 	#rich
-	_datos_texto(0,t_estadistica_global_negro,_inde,_inde3,57)
-	_datos_texto(0,t_estadistica_global,_inde,_inde3,57)
-	_datos_texto(0,t_estadistica_local_negro,_inde,_inde3,69)
-	_datos_texto(0,t_estadistica_local,_inde,_inde3,69)
+	_datos_texto(0,t_estadistica_global_negro,57,_inde3,fuente_1)
+	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1)
+	_datos_texto(0,t_estadistica_local_negro,69,_inde3,fuente_1)
+	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1)
 	#label
-	_datos_texto(1,t_proximamente,_inde,_inde2,104)
-	_datos_texto(1,t_proximamente_negro,_inde,_inde2,104)
-	_datos_texto(1,SD_negro,_inde,_inde2,35)
-	_datos_texto(1,A_label,_inde,_inde2,35)
+	_datos_texto(1,t_proximamente,104)
+	_datos_texto(1,t_proximamente_negro,104)
+	_datos_texto(1,SD_negro,35)
+	_datos_texto(1,A_label,35)
 
-func _datos_texto(_0,_a,_b,_c,_d = 0,_e = 0):
+func _datos_texto(_0,_a,_d = 0,_c = 0,_b = fuente_1,_e = 0):
 	if _e == 0:
 		if _0 == 1:
 			_a.add_theme_font_override("font",_b)
@@ -1863,4 +1871,8 @@ func _opciones_pantalla_efectos(_a):
 	else:
 		_a = 0
 	return _a
+
 #aver github intentalo
+#hola mundo
+#estoy aburrido 
+#bueno si estas leyendo esto ya estoy en la linea 1890

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="245.761pt"
+    height="245.761pt"
+    viewBox="0 0 245.761 245.761">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.382843017578126" y1="0.371063232421875" x2="0.384710991695961" y2="1.1109619140625" spreadMethod="pad">
+   <stop stop-color="#ff7941" offset="0.352941185235977" stop-opacity="1"/>
+   <stop stop-color="#f8e54c" offset="0.937254905700684" stop-opacity="1"/>
+   <stop stop-color="#f8ca4c" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient1" gradientUnits="objectBoundingBox" x1="-0.248737679996632" y1="1.02249488752556" x2="1.34682404819805" y2="0.244947312555918" spreadMethod="pad">
+   <stop stop-color="#64143e" offset="0.441612899303436" stop-opacity="1"/>
+   <stop stop-color="#66442a" offset="0.650537610054016" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffa38b" offset="0.96078431372549" stop-opacity="1"/>
+   <stop stop-color="#d146cc" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient3" gradientUnits="objectBoundingBox" x1="0.60708263069148" y1="-5.55111512312578e-17" x2="0.473861720067376" y2="1.00520833333333" spreadMethod="pad">
+   <stop stop-color="#a001fe" offset="0.576470613479614" stop-opacity="1"/>
+   <stop stop-color="#d146cc" offset="0.894117653369904" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient4" gradientUnits="objectBoundingBox" x1="1.00000000000008" y1="0.00925925925925876" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffa38b" offset="0.594901978969574" stop-opacity="1"/>
+   <stop stop-color="#faca49" offset="0.823529422283173" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient5" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffa38b" offset="0.96078431372549" stop-opacity="1"/>
+   <stop stop-color="#d146cc" offset="1" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<rect id="shape0" transform="matrix(0.984615384615384 0 0 0.984615384615384 4.31999999999994 6.24000179104754)" fill="url(#gradient0)" fill-rule="evenodd" stroke="url(#gradient1)" stroke-width="7.404" stroke-linecap="square" stroke-linejoin="bevel" width="239.3925" height="238.3875" rx="24.7808642578124" ry="24.6768310546874"/><rect id="shape1" transform="translate(25.74, 13.32)" fill="#d38bff" fill-rule="evenodd" stroke="url(#gradient2)" stroke-width="7.68" stroke-linecap="square" stroke-linejoin="bevel" width="196.38" height="4.2" rx="1.82037640449451" ry="1.92326966292148"/><rect id="shape2" transform="translate(228, 20.52)" fill="url(#gradient3)" fill-rule="evenodd" stroke="url(#gradient4)" stroke-width="7.68" stroke-linecap="square" stroke-linejoin="bevel" width="4.33499999999867" height="203.52" rx="2.16749999999934" ry="7.31001140250858"/><path id="shape3" transform="matrix(0.612089863463761 -0.790788213774661 0.790788213774661 0.612089863463761 220.426709472061 15.7312917937056)" sodipodi:type="arc" sodipodi:rx="1.35976790513249" sodipodi:ry="5.0409098448501" sodipodi:cx="1.35976790513249" sodipodi:cy="5.0409098448501" sodipodi:start="6.28318530717959" sodipodi:end="6.28318530717959" d="M2.71954 5.04091C2.71954 2.25689 2.11075 1.29958e-14 1.35977 3.55271e-15C0.608789 -5.8904e-15 2.75998e-15 2.25689 0 5.04091C-2.75998e-15 7.82493 0.608789 10.0818 1.35977 10.0818C2.11075 10.0818 2.71954 7.82493 2.71954 5.04091L1.35977 5.04091Z" fill="none" stroke="url(#gradient5)" stroke-width="9.6" stroke-linecap="square" stroke-linejoin="bevel"/>
+</svg>

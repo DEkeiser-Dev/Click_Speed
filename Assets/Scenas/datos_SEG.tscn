@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dr8ipeprjodob"]
+
+[ext_resource type="Script" uid="uid://baegnjw4wbt1e" path="res://Assets/Scripts/datos_seg.gd" id="1_jgcwk"]
+[ext_resource type="FontFile" uid="uid://c2xyhmwlkgrd6" path="res://Assets/Fuente/Combinada/Combinada/Super Starfish Combined.ttf" id="2_bpvn0"]
+
+[node name="datos" type="Control" unique_id=495864468]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.333307
+offset_top = 16.0
+offset_right = 123.333305
+offset_bottom = 176.66667
+script = ExtResource("1_jgcwk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=483453160]
+layout_mode = 0
+offset_left = -8.333307
+offset_right = 119.666695
+offset_bottom = 148.0
+
+[node name="datos" type="VBoxContainer" parent="MarginContainer" unique_id=2072527142]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="num" type="Label" parent="MarginContainer/datos" unique_id=1047686459]
+layout_mode = 2
+theme_override_font_sizes/font_size = 68
+text = "60"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="seg" type="Label" parent="MarginContainer/datos" unique_id=1257220312]
+layout_mode = 2
+theme_override_constants/line_spacing = -15
+theme_override_fonts/font = ExtResource("2_bpvn0")
+theme_override_font_sizes/font_size = 28
+text = "sec"
+horizontal_alignment = 1
+autowrap_mode = 3

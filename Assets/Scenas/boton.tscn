@@ -1,21 +1,27 @@
 [gd_scene format=3 uid="uid://6i8bc05nm2cc"]
 
 [ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
+[ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/fondo_retro_rojo.svg" id="2_8yer3"]
+[ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/fondo_retro_verde.svg" id="2_71wrj"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="2_eylje"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
 [ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
 [ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
+[ext_resource type="Texture2D" uid="uid://y08ns4be5xra" path="res://Assets/Arte2d/botones/opciones.svg" id="5_4b525"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_h3ung"]
 [ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="6_0euow"]
+[ext_resource type="Texture2D" uid="uid://biyax6ejmj8ja" path="res://Assets/Arte2d/botones/fondo_retro2.svg" id="6_82jgd"]
 [ext_resource type="Texture2D" uid="uid://boxj7xhx2g80m" path="res://Assets/Arte2d/Colores_posicion_botones/t4.jpg" id="7_2acba"]
 [ext_resource type="Texture2D" uid="uid://bnbg8orqp5ij" path="res://Assets/Arte2d/botones/estadistica normal.svg" id="8_eivc3"]
 [ext_resource type="Texture2D" uid="uid://72c2gvafdy83" path="res://Assets/Arte2d/Colores_posicion_botones/X.jpg" id="8_o60jk"]
+[ext_resource type="PackedScene" uid="uid://dr8ipeprjodob" path="res://Assets/Scenas/datos_SEG.tscn" id="9_pjjqg"]
 [ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="10_0euow"]
 [ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector.svg" id="10_4sls0"]
 [ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Mouse-Click-Sound-Effect.mp3" id="10_h3ung"]
 [ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/boton1.svg" id="11_e57pv"]
 [ext_resource type="Script" uid="uid://b4hixud6p63b3" path="res://Assets/Scripts/scroll_container.gd" id="12_2acba"]
 [ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/boton.svg" id="12_bj8ic"]
+[ext_resource type="FontFile" uid="uid://qy0uq0mhij1t" path="res://Assets/Fuente/Combinada/Super Starfish Combined.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
@@ -29,7 +35,9 @@
 [ext_resource type="Script" uid="uid://ls0lnqhy6smh" path="res://Assets/Scripts/h_slider.gd" id="25_ygdgh"]
 [ext_resource type="Texture2D" uid="uid://i0s7m20oci4c" path="res://Assets/Arte2d/botones/reinicio.svg" id="27_4sls0"]
 [ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/botones/configuracion.svg" id="28_364dt"]
+[ext_resource type="Theme" uid="uid://4efwrsde3nam" path="res://Assets/themes/theme.tres" id="28_h0h6r"]
 [ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/botones/casa_normal.svg" id="29_364dt"]
+[ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/botones/tienda.svg" id="31_h0h6r"]
 
 [sub_resource type="Animation" id="Animation_h3ung"]
 length = 0.001
@@ -100,6 +108,20 @@ posicion_noto_botones_x = Vector2(0, -91)
 [node name="Node2D" type="Node2D" parent="." unique_id=482278800]
 position = Vector2(0, 168)
 
+[node name="verde" type="Sprite2D" parent="Node2D" unique_id=1145517439]
+visible = false
+modulate = Color(1, 1, 1, 0.5176471)
+position = Vector2(363.00003, 412)
+scale = Vector2(2.2256095, 1.5853658)
+texture = ExtResource("2_71wrj")
+
+[node name="rojo" type="Sprite2D" parent="Node2D" unique_id=1455316317]
+visible = false
+modulate = Color(1, 1, 1, 0.5176471)
+position = Vector2(362, 908)
+scale = Vector2(2.2317073, 1.585366)
+texture = ExtResource("2_8yer3")
+
 [node name="Timer" type="Timer" parent="Node2D" unique_id=1812203028]
 autostart = true
 
@@ -134,42 +156,60 @@ texture_normal = ExtResource("7_2acba")
 [node name="opciones" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=755310281]
 position = Vector2(26.666666, 73.333664)
 scale = Vector2(0.8333333, 0.8333333)
-texture_normal = ExtResource("5_h3ung")
+texture_normal = ExtResource("5_4b525")
 
 [node name="opciones2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1109510672]
 position = Vector2(-133.33333, 73.33333)
 scale = Vector2(0.8333333, 0.8333333)
-texture_normal = ExtResource("5_h3ung")
+texture_normal = ExtResource("5_4b525")
 
 [node name="desafio1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1749066580]
 position = Vector2(-588.33325, 96.66666)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafio1" unique_id=1199175717 instance=ExtResource("9_pjjqg")]
+NUM = "1"
 
 [node name="desafio10" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=669472700]
 position = Vector2(-588.3333, 232.49997)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafio10" unique_id=1476423800 instance=ExtResource("9_pjjqg")]
+NUM = "10"
 
 [node name="desafio20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1826377171]
 position = Vector2(-294.99997, 232.99997)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafio20" unique_id=224585722 instance=ExtResource("9_pjjqg")]
+NUM = "20"
 
 [node name="desafio30" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=538206312]
 position = Vector2(-588.3333, 366.33328)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafio30" unique_id=320764944 instance=ExtResource("9_pjjqg")]
+NUM = "30"
 
 [node name="desafio60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=962976418]
 position = Vector2(-294.99997, 365.83328)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafio60" unique_id=777495598 instance=ExtResource("9_pjjqg")]
+NUM = "60"
 
 [node name="desafioPerson" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1153556199]
 position = Vector2(-380.83328, 510)
-texture_normal = ExtResource("6_0euow")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/desafioPerson" unique_id=1332555838 instance=ExtResource("9_pjjqg")]
+NUM = "X"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=681282382]
 modulate = Color(1, 1, 1, 0)
@@ -188,30 +228,54 @@ virtual_keyboard_type = 2
 
 [node name="1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1589552217]
 position = Vector2(-593.3333, 698.3333)
-texture_normal = ExtResource("8_o60jk")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/1c1" unique_id=2016613429 instance=ExtResource("9_pjjqg")]
+NUM = "UNO_CONTRA_UNO"
+TIPO = "MODE"
 
 [node name="2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=930876900]
 position = Vector2(-593.3333, 831.6667)
-texture_normal = ExtResource("8_o60jk")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/2c2" unique_id=2097522813 instance=ExtResource("9_pjjqg")]
+NUM = "DOS_CONTRA_DOS"
+TIPO = "MODE"
 
 [node name="1 contra todos(3)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1747207377]
 position = Vector2(-300, 698.3333)
 scale = Vector2(1.0000001, 1.0000001)
-texture_normal = ExtResource("8_o60jk")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/1 contra todos(3)" unique_id=1596832092 instance=ExtResource("9_pjjqg")]
+NUM = "3"
+TIPO = "PLAYERS"
 
 [node name="1 contra todos(4)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1941161697]
 position = Vector2(-299.99994, 830.55554)
-texture_normal = ExtResource("8_o60jk")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio/1 contra todos(4)" unique_id=495864468 instance=ExtResource("9_pjjqg")]
+NUM = "4"
+TIPO = "PLAYERS"
 
 [node name="Solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=529785854]
 position = Vector2(-593.3333, 964.9999)
 scale = Vector2(1.9945914, 1.0000001)
-texture_normal = ExtResource("8_o60jk")
+texture_normal = ExtResource("6_82jgd")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="datos" parent="Node2D/Botones_ocultar desafio" unique_id=1190148670 instance=ExtResource("9_pjjqg")]
+offset_left = -520.0
+offset_top = 975.83325
+offset_right = -405.0
+offset_bottom = 1135.8333
+NUM = "1"
+TIPO = "MODE"
 
 [node name="Estadisticas_activa_1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=6231200]
 position = Vector2(-446.66666, 698.3333)
@@ -295,37 +359,51 @@ texture = ExtResource("10_4sls0")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="texto desaparecedor" type="Node2D" parent="Node2D/Botones_ocultar desafio" unique_id=1113205047]
-position = Vector2(-247.5, 289.16666)
+position = Vector2(-1053.3333, 548.3333)
 
 [node name="TEXTO" type="Node2D" parent="Node2D/Botones_ocultar desafio/texto desaparecedor" unique_id=2022531388]
-position = Vector2(-445, 155.83334)
+position = Vector2(31.666655, 0.8333511)
 
-[node name="Label" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO" unique_id=696205623]
-self_modulate = Color(0, 0, 0, 1)
-offset_right = 207.0
-offset_bottom = 64.0
-theme_override_constants/line_spacing = -12
-theme_override_fonts/font = ExtResource("2_eylje")
-theme_override_font_sizes/font_size = 35
-text = "mode_1sec"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Control" type="Control" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO" unique_id=307328692]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label2" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label" unique_id=1530345414]
+[node name="MarginContainer" type="MarginContainer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control" unique_id=1124186658]
 layout_mode = 0
-offset_left = 4.166677
-offset_top = 0.83334607
-offset_right = 211.16667
-offset_bottom = 64.83334
-theme_override_constants/line_spacing = -12
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_eylje")
+offset_left = -445.0
+offset_top = 155.83334
+offset_right = -196.66669
+offset_bottom = 289.16666
+
+[node name="Label" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer" unique_id=696205623]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 35
 text = "mode_1sec"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Label" unique_id=1422387204]
+[node name="Label2" type="Label" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label" unique_id=1530345414]
+layout_mode = 0
+offset_left = 1.6666675
+offset_top = -17.666676
+offset_right = 255.0
+offset_bottom = 78.33333
+theme_override_constants/line_spacing = -6
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("13_57s6u")
+theme_override_font_sizes/font_size = 35
+text = "mode_1sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label" unique_id=1422387204]
 libraries/ = SubResource("AnimationLibrary_2acba")
 
 [node name="Botones_aparecer desafio" type="Node2D" parent="Node2D" unique_id=163182019]
@@ -349,7 +427,7 @@ position = Vector2(0, -88)
 [node name="barra_negro" type="Sprite2D" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=1485015997]
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(352, 215)
-scale = Vector2(4.55, 0.52)
+scale = Vector2(4.625, 0.56249994)
 texture = ExtResource("4_44gm8")
 
 [node name="barra_roja" type="Sprite2D" parent="Node2D/Botones_aparecer desafio/barra de quien va ganando" unique_id=559417548]
@@ -541,7 +619,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = -312.0
 offset_top = 376.0
-offset_right = 296.0
+offset_right = 448.0
 offset_bottom = 1432.0
 script = ExtResource("12_2acba")
 
@@ -550,11 +628,11 @@ layout_mode = 2
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
 self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(667.94, 1156)
-custom_maximum_size = Vector2(720, 10000.63)
+custom_minimum_size = Vector2(630, 1156)
+custom_maximum_size = Vector2(679.13, 10000.63)
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/line_separation = -17
+theme_override_constants/line_separation = -6
 theme_override_fonts/normal_font = ExtResource("2_eylje")
 theme_override_font_sizes/normal_font_size = 57
 bbcode_enabled = true
@@ -568,15 +646,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB/Control" unique_id=1910896087]
-custom_minimum_size = Vector2(667.94, 1156)
-custom_maximum_size = Vector2(720, 10000.63)
+custom_minimum_size = Vector2(600, 1156)
+custom_maximum_size = Vector2(630, 10000.63)
 layout_mode = 0
-offset_left = 6.0
-offset_top = -5.0
-offset_right = 673.94
-offset_bottom = 4184.0
+offset_left = 7.0
+offset_top = -6.0
+offset_right = 607.0
+offset_bottom = 4183.0
 mouse_filter = 2
-theme_override_constants/line_separation = -17
+theme_override_constants/line_separation = -6
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_eylje")
 theme_override_font_sizes/normal_font_size = 57
@@ -587,11 +665,11 @@ scroll_active = false
 
 [node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=1855660259]
 self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(674.675, 1157.9)
-custom_maximum_size = Vector2(720, 10000)
+custom_minimum_size = Vector2(630, 1157.9)
+custom_maximum_size = Vector2(630, 10000)
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/line_separation = -21
+theme_override_constants/line_separation = -6
 theme_override_fonts/normal_font = ExtResource("2_eylje")
 theme_override_font_sizes/normal_font_size = 69
 bbcode_enabled = true
@@ -605,15 +683,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA/Control" unique_id=1974459090]
-custom_minimum_size = Vector2(674.675, 1157.9)
-custom_maximum_size = Vector2(720, 10000)
+custom_minimum_size = Vector2(630, 1157.9)
+custom_maximum_size = Vector2(630, 10000)
 layout_mode = 0
 offset_left = 8.0
 offset_top = -6.0
 offset_right = 682.675
 offset_bottom = 1151.9
 mouse_filter = 2
-theme_override_constants/line_separation = -21
+theme_override_constants/line_separation = -6
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_eylje")
 theme_override_font_sizes/normal_font_size = 69
@@ -801,6 +879,7 @@ layout_mode = 0
 offset_right = 235.0
 offset_bottom = 16.0
 scale = Vector2(2.5973647, 3.023998)
+theme = ExtResource("28_h0h6r")
 max_value = 2.5
 step = 0.001
 value = 1.5
@@ -817,6 +896,7 @@ layout_mode = 0
 offset_right = 235.0
 offset_bottom = 16.0
 scale = Vector2(2.5973647, 3.023998)
+theme = ExtResource("28_h0h6r")
 max_value = 2.5
 step = 0.001
 value = 1.5
@@ -836,35 +916,41 @@ position = Vector2(-272, 1376)
 texture_normal = ExtResource("6_0euow")
 texture_pressed = ExtResource("6_0euow")
 
-[node name="barraabajo" type="Node2D" parent="." unique_id=969783502]
-position = Vector2(0, 16)
+[node name="barraabajo" type="Control" parent="." unique_id=190655670]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Iconn" type="Sprite2D" parent="barraabajo" unique_id=303155693]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(360, 1516)
-scale = Vector2(5.625, 1.3125002)
+position = Vector2(360, 1520)
+scale = Vector2(5.625, 1.3750013)
 texture = ExtResource("5_h3ung")
 
 [node name="1home" type="TouchScreenButton" parent="barraabajo" unique_id=319836846]
-position = Vector2(32, 1448)
+position = Vector2(32, 1448.0001)
 scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("29_364dt")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="2estadist" type="TouchScreenButton" parent="barraabajo" unique_id=374504798]
-position = Vector2(200.00002, 1448)
+position = Vector2(200.00002, 1448.0001)
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("5_h3ung")
+texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="3skins" type="TouchScreenButton" parent="barraabajo" unique_id=1395828209]
-position = Vector2(368, 1448)
+position = Vector2(368, 1448.0001)
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("5_h3ung")
+texture_normal = ExtResource("31_h0h6r")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="4opcion" type="TouchScreenButton" parent="barraabajo" unique_id=870882020]
-position = Vector2(536, 1448)
+position = Vector2(536, 1448.0001)
 scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("28_364dt")
 texture_pressed = ExtResource("6_0euow")

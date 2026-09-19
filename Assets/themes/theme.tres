@@ -1,16 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://4efwrsde3nam"]
 
-[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="1_tmwc1"]
-[ext_resource type="Texture2D" uid="uid://dofv1a6obrkwx" path="res://Assets/Arte2d/Icon.frames/frame00011-00000.png" id="2_wfdmo"]
+[ext_resource type="FontFile" uid="uid://qy0uq0mhij1t" path="res://Assets/Fuente/Combinada/Super Starfish Combined.ttf" id="1_tmwc1"]
+[ext_resource type="Texture2D" uid="uid://22kmf8kos8qr" path="res://Assets/Arte2d/botones/fondo_retro2_2.svg" id="2_tmwc1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqxm2"]
-texture = ExtResource("2_wfdmo")
+texture = ExtResource("2_tmwc1")
 texture_margin_left = 126.0
 texture_margin_top = 112.0
 texture_margin_right = 149.0
 texture_margin_bottom = 119.0
 
 [resource]
+HSlider/constants/grabber_offset = -2
 Label/constants/outline_size = 14
 Label/font_sizes/font_size = 46
 Label/fonts/font = ExtResource("1_tmwc1")
