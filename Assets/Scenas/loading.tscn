@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt850ne6r4w1h" path="res://Assets/Arte2d/banner.png" id="1_op1nx"]
 [ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="2_gmskc"]
 [ext_resource type="Script" uid="uid://dk641opvpnquv" path="res://Assets/Scripts/loading_negro.gd" id="4_h6lew"]
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="4_uw7yb"]
 
 [sub_resource type="Animation" id="Animation_h6lew"]
 length = 0.001
@@ -64,7 +65,8 @@ offset_right = 1079.0571
 offset_bottom = 1116.1398
 scale = Vector2(0.6449542, 1.1955374)
 theme_override_constants/line_separation = -97
-theme_override_font_sizes/normal_font_size = 105
+theme_override_fonts/normal_font = ExtResource("4_uw7yb")
+theme_override_font_sizes/normal_font_size = 125
 bbcode_enabled = true
 text = "LOADING"
 script = ExtResource("4_h6lew")
@@ -76,7 +78,8 @@ offset_right = 1087.0571
 offset_bottom = 1124.1398
 scale = Vector2(0.6449542, 1.1955374)
 theme_override_constants/line_separation = -97
-theme_override_font_sizes/normal_font_size = 105
+theme_override_fonts/normal_font = ExtResource("4_uw7yb")
+theme_override_font_sizes/normal_font_size = 125
 bbcode_enabled = true
 text = "LOADING"
 script = ExtResource("4_h6lew")

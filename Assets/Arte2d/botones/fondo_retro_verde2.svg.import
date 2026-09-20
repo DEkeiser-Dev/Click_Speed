@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5wgx8bunstqb"
-path="res://.godot/imported/Spain.svg-359447acf98f726b211364b54732949a.ctex"
+uid="uid://bdyc0ylckbj4d"
+path="res://.godot/imported/fondo_retro_verde2.svg-da2381233b8bfb50846e092ea159cce7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arte2d/opciones/idiomas/Spain.svg"
-dest_files=["res://.godot/imported/Spain.svg-359447acf98f726b211364b54732949a.ctex"]
+source_file="res://Assets/Arte2d/botones/fondo_retro_verde2.svg"
+dest_files=["res://.godot/imported/fondo_retro_verde2.svg-da2381233b8bfb50846e092ea159cce7.ctex"]
 
 [params]
 
@@ -38,6 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=0.08
+svg/scale=0.4
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

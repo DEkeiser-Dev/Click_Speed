@@ -14,7 +14,8 @@ var ocho = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft-El
 var nueve = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft-La-búsqueda-.mp3")
 
 var _ad_view: AdView
-
+var _interstitial_ad: InterstitialAd
+var _interstitial_loader: InterstitialAdLoader
 
 func _ready() -> void:
 	a_music = $AudioStreamPlayer
@@ -22,6 +23,8 @@ func _ready() -> void:
 	MobileAds.initialize()
 	await get_tree().create_timer(1.0).timeout
 	_crear_banner()
+	_cargar_intersticial()
+	$Boton.Interticial_apoyo_dekeiser.connect(mostrar_intersticial)
 
 
 func _crear_banner():
@@ -33,6 +36,47 @@ func _crear_banner():
 	)
 	var ad_request = AdRequest.new()
 	_ad_view.load_ad(ad_request)
+
+func _cargar_intersticial() -> void:
+	var ad_unit_id = _random_intersticial()
+
+	_interstitial_loader = InterstitialAdLoader.new()
+
+	var ad_request = AdRequest.new()
+
+	var callback = InterstitialAdLoadCallback.new()
+
+	callback.on_ad_loaded = func(ad: InterstitialAd):
+		print("Intersticial cargado")
+		_interstitial_ad = ad
+
+	callback.on_ad_failed_to_load = func(error):
+		print("Error cargando intersticial: ", error)
+
+	_interstitial_loader.load(
+		ad_unit_id,
+		ad_request,
+		callback
+	)
+
+func _random_intersticial() -> String:
+	var numero = randi_range(1, 10)
+	if numero <= 7:
+		# 70%
+		return "ca-app-pub-5066256392694449/2693262811"
+	else:
+		# 30%
+		return "ca-app-pub-5066256392694449/1004776624"
+
+func mostrar_intersticial() -> void:
+	print("Intentando mostrar intersticial")
+	if _interstitial_ad:
+		_interstitial_ad.show()
+		# Preparamos el siguiente
+		_interstitial_ad = null
+		_cargar_intersticial()
+	else:
+		print("El intersticial todavía no está cargado")
 
 func _poner_otra_cancion() -> void:
 	var nueva = randi_range(0, 8)

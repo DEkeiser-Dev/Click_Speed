@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
 [ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/fondo_retro_rojo.svg" id="2_8yer3"]
 [ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/fondo_retro_verde.svg" id="2_71wrj"]
-[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="2_eylje"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
 [ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
 [ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
@@ -21,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/boton1.svg" id="11_e57pv"]
 [ext_resource type="Script" uid="uid://b4hixud6p63b3" path="res://Assets/Scripts/scroll_container.gd" id="12_2acba"]
 [ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/boton.svg" id="12_bj8ic"]
-[ext_resource type="FontFile" uid="uid://qy0uq0mhij1t" path="res://Assets/Fuente/Combinada/Super Starfish Combined.ttf" id="13_57s6u"]
+[ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
@@ -447,7 +446,7 @@ offset_left = 40.0
 offset_top = 160.0
 offset_right = 212.0
 offset_bottom = 258.0
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 91
 text = "0"
 
@@ -457,7 +456,7 @@ offset_left = 6.0
 offset_right = 178.0
 offset_bottom = 98.0
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 91
 text = "0"
 
@@ -467,7 +466,7 @@ offset_left = 480.0
 offset_top = 160.0
 offset_right = 652.0
 offset_bottom = 258.0
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 91
 text = "0"
 horizontal_alignment = 2
@@ -479,7 +478,7 @@ offset_top = 3.0
 offset_right = 180.0
 offset_bottom = 101.0
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 91
 text = "0"
 horizontal_alignment = 2
@@ -567,7 +566,7 @@ self_modulate = Color(0, 0, 0, 1)
 offset_top = 101.0
 offset_right = 306.0
 offset_bottom = 252.0
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 76
 text = "Time"
 
@@ -578,7 +577,7 @@ offset_top = -1.0
 offset_right = 311.0
 offset_bottom = 150.0
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 76
 text = "Time"
 
@@ -617,7 +616,7 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=553377540]
 layout_mode = 0
-offset_left = -312.0
+offset_left = -288.0
 offset_top = 376.0
 offset_right = 448.0
 offset_bottom = 1432.0
@@ -627,36 +626,13 @@ script = ExtResource("12_2acba")
 layout_mode = 2
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
-self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(630, 1156)
 custom_maximum_size = Vector2(679.13, 10000.63)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/line_separation = -6
-theme_override_fonts/normal_font = ExtResource("2_eylje")
-theme_override_font_sizes/normal_font_size = 57
-bbcode_enabled = true
-text = "clicks"
-fit_content = true
-scroll_active = false
-
-[node name="Control" type="Control" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB" unique_id=1842320778]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB/Control" unique_id=1910896087]
-custom_minimum_size = Vector2(600, 1156)
-custom_maximum_size = Vector2(630, 10000.63)
-layout_mode = 0
-offset_left = 7.0
-offset_top = -6.0
-offset_right = 607.0
-offset_bottom = 4183.0
-mouse_filter = 2
-theme_override_constants/line_separation = -6
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("13_57s6u")
 theme_override_font_sizes/normal_font_size = 57
 bbcode_enabled = true
 text = "clicks"
@@ -664,36 +640,13 @@ fit_content = true
 scroll_active = false
 
 [node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=1855660259]
-self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(630, 1157.9)
 custom_maximum_size = Vector2(630, 10000)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/line_separation = -6
-theme_override_fonts/normal_font = ExtResource("2_eylje")
-theme_override_font_sizes/normal_font_size = 69
-bbcode_enabled = true
-text = "clicks"
-fit_content = true
-scroll_active = false
-
-[node name="Control" type="Control" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA" unique_id=1817063641]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ESTA LOCA" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA/Control" unique_id=1974459090]
-custom_minimum_size = Vector2(630, 1157.9)
-custom_maximum_size = Vector2(630, 10000)
-layout_mode = 0
-offset_left = 8.0
-offset_top = -6.0
-offset_right = 682.675
-offset_bottom = 1151.9
-mouse_filter = 2
-theme_override_constants/line_separation = -6
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("2_eylje")
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("13_57s6u")
 theme_override_font_sizes/normal_font_size = 69
 bbcode_enabled = true
 text = "clicks"
@@ -718,7 +671,7 @@ offset_right = 501.88535
 offset_bottom = 785.0
 scale = Vector2(0.8353779, 0.8832577)
 theme_override_constants/line_spacing = -64
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 104
 text = "coming_soon"
 horizontal_alignment = 1
@@ -730,7 +683,7 @@ offset_right = 861.8854
 offset_bottom = 219.0
 theme_override_constants/line_spacing = -64
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_eylje")
+theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 104
 text = "coming_soon"
 horizontal_alignment = 1
@@ -745,7 +698,196 @@ position = Vector2(0, 800)
 scale = Vector2(5.6249995, 12.5)
 texture = ExtResource("6_0euow")
 
+[node name="Control" type="Control" parent="Apartado de opciones abajo/opcion" unique_id=1313585598]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -360.0
+offset_top = 208.0
+offset_right = 360.0
+offset_bottom = 1456.0
+
+[node name="OPCIONES" type="VBoxContainer" parent="Apartado de opciones abajo/opcion/Control" unique_id=882108305]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 720.0
+offset_bottom = 1264.0
+theme_override_constants/separation = 340
+
+[node name="EFECTOS" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES" unique_id=354793792]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS" unique_id=740419868]
+self_modulate = Color(0.68235296, 0.68235296, 0.68235296, 1)
+layout_mode = 0
+offset_left = -140.0
+offset_right = 143.0
+offset_bottom = 337.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer" unique_id=1633514088]
+layout_mode = 2
+
+[node name="EFECTOS" type="VBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer" unique_id=878796268]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PANTALLA" type="Label" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=705828586]
+layout_mode = 2
+text = "PANTALLA"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=550519785]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer" unique_id=1106178989]
+layout_mode = 2
+
+[node name="Vibracion" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer/MarginContainer" unique_id=418019568]
+layout_mode = 2
+text = "Vibracion"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=128379681]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2" unique_id=223551702]
+layout_mode = 2
+
+[node name="Confeti" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2/MarginContainer" unique_id=381345984]
+layout_mode = 2
+text = "Confeti"
+
+[node name="PanelContainer3" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=759104678]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3" unique_id=125532468]
+layout_mode = 2
+
+[node name="+1" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3/MarginContainer" unique_id=1961018545]
+layout_mode = 2
+text = "+1"
+
+[node name="IDIOMA_CONTROL" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES" unique_id=1567171598]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PANEL_IDIOMA" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL" unique_id=1646932063]
+self_modulate = Color(0.68307734, 0.6830774, 0.68307734, 1)
+layout_mode = 0
+offset_left = -356.0
+offset_top = 4.0
+offset_right = 144.0
+offset_bottom = 308.0
+scale = Vector2(1.002581, 1)
+
+[node name="MARGEN_IDIOMA" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA" unique_id=2133656964]
+layout_mode = 2
+theme_override_constants/margin_left = -7
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA" unique_id=398333064]
+layout_mode = 2
+
+[node name="IDIOMA_TEXT" type="Label" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer" unique_id=2070918848]
+layout_mode = 2
+text = "IDIOMA"
+horizontal_alignment = 1
+
+[node name="IDIOMA_AGRUPACION" type="GridContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer" unique_id=1543146004]
+layout_mode = 2
+theme_override_constants/v_separation = 7
+columns = 2
+
+[node name="ESP" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=190409866]
+layout_mode = 2
+
+[node name="ESP" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ESP" unique_id=1400224185]
+layout_mode = 2
+text = "ESP"
+
+[node name="ESPP" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ESP" unique_id=1317279608]
+layout_mode = 2
+texture = ExtResource("23_364dt")
+
+[node name="ING" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=602940341]
+layout_mode = 2
+
+[node name="ING" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING" unique_id=1391672368]
+layout_mode = 2
+text = "ING"
+
+[node name="INGG" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING" unique_id=1555135283]
+layout_mode = 2
+texture = ExtResource("24_lnhiw")
+
+[node name="FRA" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=384071745]
+layout_mode = 2
+
+[node name="FRA" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/FRA" unique_id=942457410]
+layout_mode = 2
+text = "FRA"
+
+[node name="FRAA" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/FRA" unique_id=357250133]
+layout_mode = 2
+texture = ExtResource("17_v81rw")
+
+[node name="ITA" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=1446228335]
+layout_mode = 2
+
+[node name="ITA" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ITA" unique_id=1368128794]
+layout_mode = 2
+text = "ITA"
+
+[node name="ITAA" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ITA" unique_id=1405657325]
+layout_mode = 2
+texture = ExtResource("18_ygdgh")
+
+[node name="POR" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=113040874]
+layout_mode = 2
+
+[node name="POR" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/POR" unique_id=940973270]
+layout_mode = 2
+text = "POR"
+
+[node name="PORR" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/POR" unique_id=1120658907]
+layout_mode = 2
+texture = ExtResource("20_x2jev")
+
+[node name="RUS" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=1418730825]
+layout_mode = 2
+
+[node name="RUS" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/RUS" unique_id=221477373]
+layout_mode = 2
+text = "RUS"
+
+[node name="RUSS" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/RUS" unique_id=1958762107]
+layout_mode = 2
+texture = ExtResource("21_eivc3")
+
+[node name="KOR" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=422913480]
+layout_mode = 2
+
+[node name="KOR" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/KOR" unique_id=395047993]
+layout_mode = 2
+text = "KOR"
+
+[node name="KORR" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/KOR" unique_id=1898910963]
+layout_mode = 2
+texture = ExtResource("22_4sls0")
+
+[node name="JPN" type="HBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION" unique_id=579040339]
+layout_mode = 2
+
+[node name="JPN" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/JPN" unique_id=887769380]
+layout_mode = 2
+text = "JPN"
+
+[node name="JPNN" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/JPN" unique_id=595506979]
+layout_mode = 2
+texture = ExtResource("19_oawn5")
+
 [node name="dekeiser" type="Label" parent="Apartado de opciones abajo/opcion" unique_id=692585679]
+visible = false
 offset_left = -28.0
 offset_top = 272.0
 offset_right = 329.0
@@ -759,120 +901,31 @@ text = "IDIOMA"
 position = Vector2(-272, 136)
 
 [node name="vibracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1103808206]
+visible = false
 texture_normal = ExtResource("4_44gm8")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="confeti" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=2122153803]
+visible = false
 position = Vector2(0, 136)
 texture_normal = ExtResource("4_44gm8")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="+1" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1266345753]
+visible = false
 position = Vector2(0, 272)
 texture_normal = ExtResource("4_44gm8")
 texture_pressed = ExtResource("6_0euow")
 
-[node name="Idioma" type="Node2D" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=390482085]
-position = Vector2(0, 400)
-
-[node name="ESP" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=35910034]
-position = Vector2(0, 8)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="ING" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2012596579]
-position = Vector2(0, 80)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="POR" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=105321391]
-position = Vector2(0, 152)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="FRA" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=69105822]
-position = Vector2(0, 224)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="ITA" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1736809148]
-position = Vector2(0, 296)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="RUS" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=828344158]
-position = Vector2(0, 367.99994)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="JPN" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2042382874]
-position = Vector2(0, 440)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="KOR" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=481111107]
-position = Vector2(0, 512.0001)
-scale = Vector2(0.517, 0.5)
-texture_normal = ExtResource("5_h3ung")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="France" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=490544736]
-position = Vector2(127.999985, 256.00006)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("17_v81rw")
-
-[node name="Italy" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1039010595]
-position = Vector2(127.999985, 328)
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("18_ygdgh")
-
-[node name="Japan" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1975265954]
-position = Vector2(127.999985, 472)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("19_oawn5")
-
-[node name="Portugal" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1601799366]
-position = Vector2(127.999985, 184.00005)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("20_x2jev")
-
-[node name="Russia" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=1531426598]
-position = Vector2(127.999985, 400.00003)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("21_eivc3")
-
-[node name="SouthKorea" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=2089212877]
-position = Vector2(127.999985, 544)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("22_4sls0")
-
-[node name="Spain" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=468992085]
-position = Vector2(127.999985, 40.00004)
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("23_364dt")
-
-[node name="TheUnitedStates" type="Sprite2D" parent="Apartado de opciones abajo/opcion/pantalla/Idioma" unique_id=532250457]
-position = Vector2(128, 112)
-scale = Vector2(0.073684216, 0.09230772)
-texture = ExtResource("24_lnhiw")
-
 [node name="Audio" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=637116357]
-position = Vector2(-272, 1128)
+position = Vector2(-272, 920)
 
 [node name="effectos" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=39176644]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -40.0
 offset_top = 64.0
-offset_right = 40.0
 offset_bottom = 104.0
-scale = Vector2(0.8971373, 1.1004884)
 
 [node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/effectos" unique_id=2011115709]
 layout_mode = 0
@@ -888,7 +941,7 @@ script = ExtResource("25_ygdgh")
 [node name="musica" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=1107455137]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -40.0
 offset_bottom = 40.0
 
 [node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/musica" unique_id=2016219631]
@@ -903,14 +956,14 @@ value = 1.5
 script = ExtResource("25_ygdgh")
 
 [node name="datos" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=2057147427]
-position = Vector2(-272, 1240)
+position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
 texture_normal = ExtResource("27_4sls0")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="palabras_de_desarrolador_deker" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1554042705]
-position = Vector2(-272, 1376)
+position = Vector2(-272, 1168)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
 texture_normal = ExtResource("6_0euow")
@@ -988,20 +1041,21 @@ texture_pressed = ExtResource("6_0euow")
 [connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_x" to="." method="_on_estadisticas_11_pressed"]
 [connection signal="pressed" from="Node2D/Botones_aparecer desafio/Salir_desafios" to="." method="_on_salir_desafios_pressed"]
 [connection signal="pressed" from="Node2D/Botones_aparecer desafio/repetidor_desafios_indefinidos" to="." method="_on_repetidor_desafios_indefinidos_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ESP/ESP" to="." method="_on_esp_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING/ING" to="." method="_on_ing_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/FRA/FRA" to="." method="_on_fra_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ITA/ITA" to="." method="_on_ita_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/POR/POR" to="." method="_on_por_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/RUS/RUS" to="." method="_on_rus_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/KOR/KOR" to="." method="_on_kor_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/JPN/JPN" to="." method="_on_jpn_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/vibracion" to="." method="_on_vibracion_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/confeti" to="." method="_on_confeti_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/+1" to="." method="_on_plus_1_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ESP" to="." method="_on_esp_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ING" to="." method="_on_ing_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/POR" to="." method="_on_por_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/FRA" to="." method="_on_fra_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/ITA" to="." method="_on_ita_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/RUS" to="." method="_on_rus_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/JPN" to="." method="_on_jpn_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/Idioma/KOR" to="." method="_on_kor_pressed"]
 [connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/effectos/HSlider" to="." method="_on_effect_volume"]
 [connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/musica/HSlider" to="." method="_on_music_volume"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/datos/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker/TouchScreenButton" to="." method="_on_interticial_prueba_pressed"]
 [connection signal="pressed" from="barraabajo/1home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="barraabajo/2estadist" to="." method="_on_estadist_pressed"]
 [connection signal="pressed" from="barraabajo/3skins" to="." method="_on_skins_pressed"]

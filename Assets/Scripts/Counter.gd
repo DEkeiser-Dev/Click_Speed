@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal Interticial_apoyo_dekeiser
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
 #contador normal:
@@ -128,8 +129,6 @@ var t_lado_a_negro
 var t_lado_b_negro
 var t_estadistica_local 
 var t_estadistica_global
-var t_estadistica_local_negro
-var t_estadistica_global_negro
 var t_proximamente
 var t_proximamente_negro
 #nodos
@@ -309,6 +308,12 @@ var barra_vol_music
 #fondo
 var F_verde_2c2
 var F_rojo_2c2
+#paneles
+var P_efectos
+var P_idioma
+#margen
+var M_efectos
+var M_idioma
 
 
 #--------------------------LOGICA DEL JUEGO-------------------------------------:
@@ -318,7 +323,8 @@ var F_rojo_2c2
 #UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,
 func _ready() -> void:
 	call_deferred("_carga_inicial")
-	#await get_tree().process_frame
+	await get_tree().process_frame
+	_paneles_para_centrar()
 	#barra.custom_minimum_size.x = 18
 
 func _carga_inicial() -> void:
@@ -440,10 +446,8 @@ func _procesardor_de_objetos():
 	t_lado_b = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/lado b"
 	t_lado_a_negro = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/lado a/lado a"
 	t_lado_b_negro = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/lado b/lado b"
-	t_estadistica_local = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA/Control/ESTA LOCA"
-	t_estadistica_global = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB/Control/ESTA GLOB"
-	t_estadistica_local_negro = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA"
-	t_estadistica_global_negro = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB"
+	t_estadistica_local = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA LOCA"
+	t_estadistica_global = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB"
 	t_proximamente = $"Apartado de opciones abajo/skin/Label/Label"
 	t_proximamente_negro = $"Apartado de opciones abajo/skin/Label"
 	#nodos
@@ -540,6 +544,11 @@ func _procesardor_de_objetos():
 	#fondo
 	F_rojo_2c2 = $Node2D/rojo
 	F_verde_2c2 = $Node2D/verde
+	#PANELES
+	P_efectos = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer"
+	P_idioma = $"Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA"
+	M_efectos = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer"
+	M_idioma = $"Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA"
 
 
 #sirve para decirle al texto en donde colocarse exactamente segun los datos
@@ -731,10 +740,7 @@ func _que_estadistica_mostrar():
 	match v_dessfios_o_total:
 		0:
 			t_estadistica_local.visible = false
-			t_estadistica_local_negro.text = ""
 			t_estadistica_global.visible = true
-			t_estadistica_local_negro.visible = false
-			t_estadistica_global_negro.visible = true
 			t_estadistica_global.text = SD_estadisticas
 		1:
 			v_que_modo_de_juego_ver_opciones = 2
@@ -771,9 +777,6 @@ func _que_muestran_las_estadisticas(_a,_b,_c,_a2,_b2,_a3,_b3,_a4,_b4):
 	SD_estadisticas = SD_esta
 	t_estadistica_local.visible = true
 	t_estadistica_global.visible = false
-	t_estadistica_local_negro.visible = true
-	t_estadistica_global_negro.visible = false
-	t_estadistica_global_negro.text = ""
 
 	if v_que_modo_de_juego_ver_opciones == 1:
 		t_estadistica_local.text = (
@@ -827,7 +830,6 @@ func _que_muestran_las_estadisticas(_a,_b,_c,_a2,_b2,_a3,_b3,_a4,_b4):
 		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b4) + "/s[/color]\n\n\n\n\n\n"
 		)
 
-	t_estadistica_local_negro.text = t_estadistica_local.text
 
 # visor estadisticas globales
 func _estadisticas_mostrar_texto_parasiempre():
@@ -955,7 +957,6 @@ func _estadisticas_mostrar_texto_parasiempre():
 	"\n\n\n\n\n\n\n\n"
 	)
 
-	t_estadistica_global_negro.text = SD_esta
 
 
 #--------------------------LOGICA BOTONES---------------------------------------:
@@ -1675,9 +1676,7 @@ func _textos():
 func _texto_tamaño_fuente():
 	var _inde3 = 0 # richs
 	var _inde2  = 0# labels
-	_datos_texto(0,t_estadistica_global_negro,57,_inde3,fuente_1,1)
 	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1,1)
-	_datos_texto(0,t_estadistica_local_negro,69,_inde3,fuente_1,1)
 	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1,1)
 	if columna > -1 and columna < 5:
 		_inde2 = 0
@@ -1689,9 +1688,7 @@ func _texto_tamaño_fuente():
 		_inde2 = 0
 		_inde3 = 0
 	#rich
-	_datos_texto(0,t_estadistica_global_negro,57,_inde3,fuente_1)
 	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1)
-	_datos_texto(0,t_estadistica_local_negro,69,_inde3,fuente_1)
 	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1)
 	#label
 	_datos_texto(1,t_proximamente,104)
@@ -1808,6 +1805,17 @@ func _columnas():
 			_As = "KOR"
 	return _As
 
+func _centrar_panel(_panel):
+	var _izq = _panel.position.x
+	var _der = _panel.position.x + _panel.size.x
+	var _centro_x = (_izq - _der) / 2.0
+	return _centro_x
+
+func _paneles_para_centrar():
+	P_efectos.reset_size()
+	P_idioma.reset_size()
+	P_efectos.position.x = _centrar_panel(P_efectos)
+	P_idioma.position.x = _centrar_panel(P_idioma)
 
 func _on_esp_pressed() -> void:
 	_traductor(0)
@@ -1838,6 +1846,7 @@ func _traductor(_a):
 	columna = _a
 	guardar()
 	TranslationServer.set_locale(_columnas())
+	_paneles_para_centrar()
 
 
 func _on_effect_volume(value: float) -> void:
@@ -1876,3 +1885,8 @@ func _opciones_pantalla_efectos(_a):
 #hola mundo
 #estoy aburrido 
 #bueno si estas leyendo esto ya estoy en la linea 1890
+
+
+func _on_interticial_prueba_pressed() -> void:
+	a_click.play()
+	Interticial_apoyo_dekeiser.emit()
