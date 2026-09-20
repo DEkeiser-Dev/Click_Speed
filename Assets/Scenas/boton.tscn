@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6i8bc05nm2cc"]
 
 [ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
-[ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/copias/fondo_retro_rojo.svg" id="2_8yer3"]
-[ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/copias/fondo_retro_verde.svg" id="2_71wrj"]
+[ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_rojo.svg" id="2_8yer3"]
+[ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_verde.svg" id="2_71wrj"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
 [ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
 [ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://biyax6ejmj8ja" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro2.svg" id="8_pjjqg"]
 [ext_resource type="PackedScene" uid="uid://dr8ipeprjodob" path="res://Assets/Scenas/datos_SEG.tscn" id="9_pjjqg"]
 [ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="10_0euow"]
-[ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Mouse-Click-Sound-Effect.mp3" id="10_h3ung"]
-[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/copias/boton1.svg" id="11_e57pv"]
+[ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Click.mp3" id="10_h3ung"]
 [ext_resource type="Script" uid="uid://b4hixud6p63b3" path="res://Assets/Scripts/scroll_container.gd" id="12_2acba"]
-[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/copias/boton.svg" id="12_bj8ic"]
 [ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector/selector.svg" id="12_pjjqg"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
+[ext_resource type="Texture2D" uid="uid://co6j5umprsfjs" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="14_pjjqg"]
+[ext_resource type="Texture2D" uid="uid://du2yunto3p26w" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="15_57s6u"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
 [ext_resource type="Texture2D" uid="uid://c2yuhtiqx803j" path="res://Assets/Arte2d/opciones/idiomas/Italy.svg" id="18_ygdgh"]
@@ -411,14 +411,14 @@ position = Vector2(0, -91)
 [node name="Salir_desafios" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=661339132]
 position = Vector2(64, 1296.0001)
 scale = Vector2(0.248, 0.24)
-texture_normal = ExtResource("12_bj8ic")
-texture_pressed = ExtResource("11_e57pv")
+texture_normal = ExtResource("14_pjjqg")
+texture_pressed = ExtResource("15_57s6u")
 
 [node name="repetidor_desafios_indefinidos" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=1329555792]
 position = Vector2(432, 1296.0001)
 scale = Vector2(0.248, 0.24)
-texture_normal = ExtResource("12_bj8ic")
-texture_pressed = ExtResource("11_e57pv")
+texture_normal = ExtResource("14_pjjqg")
+texture_pressed = ExtResource("15_57s6u")
 
 [node name="barra de quien va ganando" type="Node2D" parent="Node2D/Botones_aparecer desafio" unique_id=964667121]
 position = Vector2(0, -88)
