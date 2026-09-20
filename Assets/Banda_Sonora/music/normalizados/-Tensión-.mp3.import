@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2k3o62pvg2nx"
+path="res://.godot/imported/ -Tensión-.mp3-d3b8fb9334b1e24b6e53a34b5749a942.mp3str"
+
+[deps]
+
+source_file="res://Assets/Banda_Sonora/music/normalizados/ -Tensión-.mp3"
+dest_files=["res://.godot/imported/ -Tensión-.mp3-d3b8fb9334b1e24b6e53a34b5749a942.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

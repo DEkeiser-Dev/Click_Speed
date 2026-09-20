@@ -1,25 +1,25 @@
 [gd_scene format=3 uid="uid://6i8bc05nm2cc"]
 
 [ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
-[ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/fondo_retro_rojo.svg" id="2_8yer3"]
-[ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/fondo_retro_verde.svg" id="2_71wrj"]
+[ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/copias/fondo_retro_rojo.svg" id="2_8yer3"]
+[ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/copias/fondo_retro_verde.svg" id="2_71wrj"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
 [ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
 [ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
-[ext_resource type="Texture2D" uid="uid://y08ns4be5xra" path="res://Assets/Arte2d/botones/opciones.svg" id="5_4b525"]
+[ext_resource type="Texture2D" uid="uid://y08ns4be5xra" path="res://Assets/Arte2d/opciones/opciones_cuadrado/opciones.svg" id="5_4b525"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_h3ung"]
 [ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="6_0euow"]
-[ext_resource type="Texture2D" uid="uid://biyax6ejmj8ja" path="res://Assets/Arte2d/botones/fondo_retro2.svg" id="6_82jgd"]
 [ext_resource type="Texture2D" uid="uid://boxj7xhx2g80m" path="res://Assets/Arte2d/Colores_posicion_botones/t4.jpg" id="7_2acba"]
-[ext_resource type="Texture2D" uid="uid://bnbg8orqp5ij" path="res://Assets/Arte2d/botones/estadistica normal.svg" id="8_eivc3"]
+[ext_resource type="Texture2D" uid="uid://bnbg8orqp5ij" path="res://Assets/Arte2d/opciones/opciones_cuadrado/estadistica normal.svg" id="8_eivc3"]
 [ext_resource type="Texture2D" uid="uid://72c2gvafdy83" path="res://Assets/Arte2d/Colores_posicion_botones/X.jpg" id="8_o60jk"]
+[ext_resource type="Texture2D" uid="uid://biyax6ejmj8ja" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro2.svg" id="8_pjjqg"]
 [ext_resource type="PackedScene" uid="uid://dr8ipeprjodob" path="res://Assets/Scenas/datos_SEG.tscn" id="9_pjjqg"]
 [ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="10_0euow"]
-[ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector.svg" id="10_4sls0"]
 [ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Mouse-Click-Sound-Effect.mp3" id="10_h3ung"]
-[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/boton1.svg" id="11_e57pv"]
+[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/copias/boton1.svg" id="11_e57pv"]
 [ext_resource type="Script" uid="uid://b4hixud6p63b3" path="res://Assets/Scripts/scroll_container.gd" id="12_2acba"]
-[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/boton.svg" id="12_bj8ic"]
+[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/copias/boton.svg" id="12_bj8ic"]
+[ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector/selector.svg" id="12_pjjqg"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
@@ -32,11 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://c5wgx8bunstqb" path="res://Assets/Arte2d/opciones/idiomas/Spain.svg" id="23_364dt"]
 [ext_resource type="Texture2D" uid="uid://fb8nn1107rtw" path="res://Assets/Arte2d/opciones/idiomas/the_United_States.svg" id="24_lnhiw"]
 [ext_resource type="Script" uid="uid://ls0lnqhy6smh" path="res://Assets/Scripts/h_slider.gd" id="25_ygdgh"]
-[ext_resource type="Texture2D" uid="uid://i0s7m20oci4c" path="res://Assets/Arte2d/botones/reinicio.svg" id="27_4sls0"]
-[ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/botones/configuracion.svg" id="28_364dt"]
+[ext_resource type="Texture2D" uid="uid://i0s7m20oci4c" path="res://Assets/Arte2d/opciones/opciones_cuadrado/reinicio.svg" id="27_4sls0"]
+[ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/opciones/opciones_cuadrado/configuracion.svg" id="28_364dt"]
 [ext_resource type="Theme" uid="uid://4efwrsde3nam" path="res://Assets/themes/theme.tres" id="28_h0h6r"]
-[ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/botones/casa_normal.svg" id="29_364dt"]
-[ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/botones/tienda.svg" id="31_h0h6r"]
+[ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg" id="29_364dt"]
+[ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/opciones/opciones_cuadrado/tienda.svg" id="31_h0h6r"]
 
 [sub_resource type="Animation" id="Animation_h3ung"]
 length = 0.001
@@ -164,7 +164,7 @@ texture_normal = ExtResource("5_4b525")
 
 [node name="desafio1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1749066580]
 position = Vector2(-588.33325, 96.66666)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio1" unique_id=1199175717 instance=ExtResource("9_pjjqg")]
@@ -172,7 +172,7 @@ NUM = "1"
 
 [node name="desafio10" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=669472700]
 position = Vector2(-588.3333, 232.49997)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio10" unique_id=1476423800 instance=ExtResource("9_pjjqg")]
@@ -180,7 +180,7 @@ NUM = "10"
 
 [node name="desafio20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1826377171]
 position = Vector2(-294.99997, 232.99997)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio20" unique_id=224585722 instance=ExtResource("9_pjjqg")]
@@ -188,7 +188,7 @@ NUM = "20"
 
 [node name="desafio30" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=538206312]
 position = Vector2(-588.3333, 366.33328)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio30" unique_id=320764944 instance=ExtResource("9_pjjqg")]
@@ -196,7 +196,7 @@ NUM = "30"
 
 [node name="desafio60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=962976418]
 position = Vector2(-294.99997, 365.83328)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio60" unique_id=777495598 instance=ExtResource("9_pjjqg")]
@@ -204,7 +204,7 @@ NUM = "60"
 
 [node name="desafioPerson" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1153556199]
 position = Vector2(-380.83328, 510)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafioPerson" unique_id=1332555838 instance=ExtResource("9_pjjqg")]
@@ -227,7 +227,7 @@ virtual_keyboard_type = 2
 
 [node name="1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1589552217]
 position = Vector2(-593.3333, 698.3333)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/1c1" unique_id=2016613429 instance=ExtResource("9_pjjqg")]
@@ -236,7 +236,7 @@ TIPO = "MODE"
 
 [node name="2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=930876900]
 position = Vector2(-593.3333, 831.6667)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/2c2" unique_id=2097522813 instance=ExtResource("9_pjjqg")]
@@ -246,7 +246,7 @@ TIPO = "MODE"
 [node name="1 contra todos(3)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1747207377]
 position = Vector2(-300, 698.3333)
 scale = Vector2(1.0000001, 1.0000001)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/1 contra todos(3)" unique_id=1596832092 instance=ExtResource("9_pjjqg")]
@@ -255,7 +255,7 @@ TIPO = "PLAYERS"
 
 [node name="1 contra todos(4)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1941161697]
 position = Vector2(-299.99994, 830.55554)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/1 contra todos(4)" unique_id=495864468 instance=ExtResource("9_pjjqg")]
@@ -265,7 +265,7 @@ TIPO = "PLAYERS"
 [node name="Solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=529785854]
 position = Vector2(-593.3333, 964.9999)
 scale = Vector2(1.9945914, 1.0000001)
-texture_normal = ExtResource("6_82jgd")
+texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio" unique_id=1190148670 instance=ExtResource("9_pjjqg")]
@@ -344,17 +344,17 @@ texture_pressed = ExtResource("6_0euow")
 
 [node name="MODO" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1913307801]
 position = Vector2(-593.3333, 965)
-texture = ExtResource("10_4sls0")
+texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="MODO_ESTADISTICAS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=315467894]
 position = Vector2(-320, 964.99994)
-texture = ExtResource("10_4sls0")
+texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="TIEMPOS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1014676879]
 position = Vector2(-754.1666, 280.8333)
-texture = ExtResource("10_4sls0")
+texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="texto desaparecedor" type="Node2D" parent="Node2D/Botones_ocultar desafio" unique_id=1113205047]
@@ -633,7 +633,7 @@ mouse_filter = 2
 theme_override_constants/line_separation = -6
 theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("13_57s6u")
-theme_override_font_sizes/normal_font_size = 57
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "clicks"
 fit_content = true
@@ -738,6 +738,7 @@ text = "PANTALLA"
 horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=550519785]
+self_modulate = Color(0.7490196, 0.9529412, 0.8784314, 1)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer" unique_id=1106178989]
@@ -745,9 +746,11 @@ layout_mode = 2
 
 [node name="Vibracion" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer/MarginContainer" unique_id=418019568]
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
 text = "Vibracion"
 
 [node name="PanelContainer2" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=128379681]
+self_modulate = Color(0.7490196, 0.9529412, 0.8784314, 1)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2" unique_id=223551702]
@@ -755,9 +758,11 @@ layout_mode = 2
 
 [node name="Confeti" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2/MarginContainer" unique_id=381345984]
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
 text = "Confeti"
 
 [node name="PanelContainer3" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS" unique_id=759104678]
+self_modulate = Color(0.7503122, 0.95245546, 0.87726766, 1)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3" unique_id=125532468]
@@ -765,6 +770,7 @@ layout_mode = 2
 
 [node name="+1" type="CheckButton" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3/MarginContainer" unique_id=1961018545]
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
 text = "+1"
 
 [node name="IDIOMA_CONTROL" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES" unique_id=1567171598]
@@ -775,9 +781,9 @@ size_flags_horizontal = 4
 self_modulate = Color(0.68307734, 0.6830774, 0.68307734, 1)
 layout_mode = 0
 offset_left = -356.0
-offset_top = 4.0
-offset_right = 144.0
-offset_bottom = 308.0
+offset_top = 60.0
+offset_right = 194.0
+offset_bottom = 382.0
 scale = Vector2(1.002581, 1)
 
 [node name="MARGEN_IDIOMA" type="MarginContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA" unique_id=2133656964]
@@ -814,6 +820,7 @@ layout_mode = 2
 
 [node name="ING" type="Button" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING" unique_id=1391672368]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "ING"
 
 [node name="INGG" type="TextureRect" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING" unique_id=1555135283]
@@ -886,6 +893,59 @@ text = "JPN"
 layout_mode = 2
 texture = ExtResource("19_oawn5")
 
+[node name="AUDIO" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES" unique_id=1020382671]
+layout_mode = 2
+
+[node name="AUDIO_PANEL" type="PanelContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO" unique_id=622956045]
+self_modulate = Color(0.68235296, 0.68235296, 0.68235296, 1)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 608.0
+offset_bottom = 264.0
+
+[node name="AUDIO_CONTENDER" type="VBoxContainer" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL" unique_id=1428992460]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Volumen Efectos" type="Label" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER" unique_id=1700535355]
+layout_mode = 2
+text = "Volumen Efectos"
+
+[node name="effectos" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER" unique_id=39176644]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/effectos" unique_id=2011115709]
+layout_mode = 0
+offset_top = -28.0
+offset_right = 235.0
+offset_bottom = -12.0
+scale = Vector2(2, 2)
+theme = ExtResource("28_h0h6r")
+max_value = 2.5
+step = 0.001
+value = 1.5
+script = ExtResource("25_ygdgh")
+
+[node name="Volumen Musica" type="Label" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER" unique_id=214734615]
+layout_mode = 2
+text = "Volumen Musica"
+
+[node name="musica" type="Control" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER" unique_id=1107455137]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/musica" unique_id=2016219631]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 235.0
+offset_bottom = -12.0
+scale = Vector2(2, 2)
+theme = ExtResource("28_h0h6r")
+max_value = 2.5
+step = 0.001
+value = 1.5
+script = ExtResource("25_ygdgh")
+
 [node name="dekeiser" type="Label" parent="Apartado de opciones abajo/opcion" unique_id=692585679]
 visible = false
 offset_left = -28.0
@@ -897,68 +957,14 @@ theme_override_fonts/font = ExtResource("15_pigga")
 theme_override_font_sizes/font_size = 91
 text = "IDIOMA"
 
-[node name="pantalla" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1906272266]
-position = Vector2(-272, 136)
-
-[node name="vibracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1103808206]
-visible = false
-texture_normal = ExtResource("4_44gm8")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="confeti" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=2122153803]
-visible = false
-position = Vector2(0, 136)
-texture_normal = ExtResource("4_44gm8")
-texture_pressed = ExtResource("6_0euow")
-
-[node name="+1" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/pantalla" unique_id=1266345753]
-visible = false
-position = Vector2(0, 272)
-texture_normal = ExtResource("4_44gm8")
-texture_pressed = ExtResource("6_0euow")
-
 [node name="Audio" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=637116357]
 position = Vector2(-272, 920)
-
-[node name="effectos" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=39176644]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -40.0
-offset_top = 64.0
-offset_bottom = 104.0
-
-[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/effectos" unique_id=2011115709]
-layout_mode = 0
-offset_right = 235.0
-offset_bottom = 16.0
-scale = Vector2(2.5973647, 3.023998)
-theme = ExtResource("28_h0h6r")
-max_value = 2.5
-step = 0.001
-value = 1.5
-script = ExtResource("25_ygdgh")
-
-[node name="musica" type="Control" parent="Apartado de opciones abajo/opcion/Audio" unique_id=1107455137]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -40.0
-offset_bottom = 40.0
-
-[node name="HSlider" type="HSlider" parent="Apartado de opciones abajo/opcion/Audio/musica" unique_id=2016219631]
-layout_mode = 0
-offset_right = 235.0
-offset_bottom = 16.0
-scale = Vector2(2.5973647, 3.023998)
-theme = ExtResource("28_h0h6r")
-max_value = 2.5
-step = 0.001
-value = 1.5
-script = ExtResource("25_ygdgh")
 
 [node name="datos" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=2057147427]
 position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
+position = Vector2(200, 136)
 texture_normal = ExtResource("27_4sls0")
 texture_pressed = ExtResource("6_0euow")
 
@@ -966,6 +972,7 @@ texture_pressed = ExtResource("6_0euow")
 position = Vector2(-272, 1168)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
+position = Vector2(200, 136)
 texture_normal = ExtResource("6_0euow")
 texture_pressed = ExtResource("6_0euow")
 
@@ -1041,6 +1048,9 @@ texture_pressed = ExtResource("6_0euow")
 [connection signal="pressed" from="Node2D/Botones_ocultar desafio/Estadisticas_x" to="." method="_on_estadisticas_11_pressed"]
 [connection signal="pressed" from="Node2D/Botones_aparecer desafio/Salir_desafios" to="." method="_on_salir_desafios_pressed"]
 [connection signal="pressed" from="Node2D/Botones_aparecer desafio/repetidor_desafios_indefinidos" to="." method="_on_repetidor_desafios_indefinidos_pressed"]
+[connection signal="toggled" from="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer/MarginContainer/Vibracion" to="." method="_on_vibracion_toggled"]
+[connection signal="toggled" from="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2/MarginContainer/Confeti" to="." method="_on_confeti_toggled"]
+[connection signal="toggled" from="Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3/MarginContainer/+1" to="." method="_on_PLUS1_toggled"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ESP/ESP" to="." method="_on_esp_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/ING/ING" to="." method="_on_ing_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/FRA/FRA" to="." method="_on_fra_pressed"]
@@ -1049,11 +1059,8 @@ texture_pressed = ExtResource("6_0euow")
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/RUS/RUS" to="." method="_on_rus_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/KOR/KOR" to="." method="_on_kor_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA/VBoxContainer/IDIOMA_AGRUPACION/JPN/JPN" to="." method="_on_jpn_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/vibracion" to="." method="_on_vibracion_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/confeti" to="." method="_on_confeti_pressed"]
-[connection signal="pressed" from="Apartado de opciones abajo/opcion/pantalla/+1" to="." method="_on_plus_1_pressed"]
-[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/effectos/HSlider" to="." method="_on_effect_volume"]
-[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Audio/musica/HSlider" to="." method="_on_music_volume"]
+[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/effectos/HSlider" to="." method="_on_effect_volume"]
+[connection signal="value_changed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/musica/HSlider" to="." method="_on_music_volume"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/datos/reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker/TouchScreenButton" to="." method="_on_interticial_prueba_pressed"]
 [connection signal="pressed" from="barraabajo/1home" to="." method="_on_home_pressed"]

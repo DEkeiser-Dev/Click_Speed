@@ -1,7 +1,11 @@
 [gd_resource type="Theme" format=3 uid="uid://4efwrsde3nam"]
 
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="1_tmwc1"]
-[ext_resource type="Texture2D" uid="uid://chaj7cts4h60y" path="res://Assets/Arte2d/botones/fondo_retro.svg" id="2_tmwc1"]
+[ext_resource type="Texture2D" uid="uid://x444cfboqb0q" path="res://Assets/Arte2d/botones/CheckButton/toggle-on.svg" id="2_ghdfx"]
+[ext_resource type="Texture2D" uid="uid://chaj7cts4h60y" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro.svg" id="2_tmwc1"]
+[ext_resource type="Texture2D" uid="uid://dpeaei66diiqu" path="res://Assets/Arte2d/botones/CheckButton/stepper-field.svg" id="3_ghdfx"]
+[ext_resource type="Texture2D" uid="uid://f8nd0p7fo3r" path="res://Assets/Arte2d/botones/CheckButton/toggle-off.svg" id="3_p3fws"]
+[ext_resource type="Texture2D" uid="uid://djdvko1bpbs60" path="res://Assets/Arte2d/botones/CheckButton/radio-on.svg" id="5_mxs74"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqxm2"]
 texture = ExtResource("2_tmwc1")
@@ -12,10 +16,18 @@ texture_margin_bottom = 19.0
 
 [resource]
 Button/constants/outline_size = 7
-Button/font_sizes/font_size = 34
+Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_tmwc1")
 CheckButton/constants/icon_max_width = 620
-HSlider/constants/grabber_offset = -2
+CheckButton/icons/checked = ExtResource("2_ghdfx")
+CheckButton/icons/checked_disabled = ExtResource("2_ghdfx")
+CheckButton/icons/checked_disabled_mirrored = ExtResource("3_ghdfx")
+CheckButton/icons/checked_mirrored = ExtResource("3_ghdfx")
+CheckButton/icons/unchecked = ExtResource("3_p3fws")
+CheckButton/icons/unchecked_disabled = ExtResource("3_p3fws")
+CheckButton/icons/unchecked_disabled_mirrored = ExtResource("5_mxs74")
+CheckButton/icons/unchecked_mirrored = ExtResource("5_mxs74")
+HSlider/constants/center_grabber = 0
 Label/constants/outline_size = 14
 Label/font_sizes/font_size = 46
 Label/fonts/font = ExtResource("1_tmwc1")

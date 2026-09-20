@@ -6,12 +6,12 @@ var ramdom = -1
 var uno = preload("res://Assets/Banda_Sonora/music/normalizados/Fatherday.mp3")
 var dos = preload("res://Assets/Banda_Sonora/music/normalizados/Game.mp3")
 var tres = preload("res://Assets/Banda_Sonora/music/normalizados/Purpose Of Living Music.mp3")
-var cuatro = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft -Nostalgia-.mp3")
-var cinco = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft -Paz-.mp3")
-var seis = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft -Run-.mp3")
-var siete = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft -Tensión-.mp3")
-var ocho = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft-El-momento-de-llorar-.mp3")
-var nueve = preload("res://Assets/Banda_Sonora/music/normalizados/Mirandacraft-La-búsqueda-.mp3")
+var cuatro = preload("res://Assets/Banda_Sonora/music/normalizados/-Nostalgia-.mp3")
+var cinco = preload("res://Assets/Banda_Sonora/music/normalizados/-Paz-.mp3")
+var seis = preload("res://Assets/Banda_Sonora/music/normalizados/-Run-.mp3")
+var siete = preload("res://Assets/Banda_Sonora/music/normalizados/-Tensión-.mp3")
+var ocho = preload("res://Assets/Banda_Sonora/music/normalizados/-El-momento-de-llorar-.mp3")
+var nueve = preload("res://Assets/Banda_Sonora/music/normalizados/-La-búsqueda-.mp3")
 
 var _ad_view: AdView
 var _interstitial_ad: InterstitialAd

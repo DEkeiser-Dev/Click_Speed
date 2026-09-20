@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://gs5te8wl28dd"]
 
 [ext_resource type="Script" uid="uid://haqlh81b4li1" path="res://Assets/Scripts/loading.gd" id="1_gmskc"]
-[ext_resource type="Texture2D" uid="uid://bt850ne6r4w1h" path="res://Assets/Arte2d/banner.png" id="1_op1nx"]
 [ext_resource type="PackedScene" uid="uid://3w2jt7jy0bgx" path="res://Assets/Scenas/CLICK_SPEED_TITULE.tscn" id="2_gmskc"]
+[ext_resource type="Texture2D" uid="uid://dsx2xonaogl5h" path="res://Assets/Arte2d/fondo/banner.png" id="2_uw7yb"]
 [ext_resource type="Script" uid="uid://dk641opvpnquv" path="res://Assets/Scripts/loading_negro.gd" id="4_h6lew"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="4_uw7yb"]
 
@@ -50,7 +50,7 @@ script = ExtResource("1_gmskc")
 modulate = Color(0.42352942, 0.7372549, 0.47843137, 1)
 position = Vector2(360, 800.0001)
 scale = Vector2(0.49999997, 0.49382713)
-texture = ExtResource("1_op1nx")
+texture = ExtResource("2_uw7yb")
 hframes = 4
 
 [node name="CLICKSPEED" parent="." unique_id=40769402 instance=ExtResource("2_gmskc")]
@@ -88,7 +88,7 @@ script = ExtResource("4_h6lew")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(368, 802.00006)
 scale = Vector2(0.68055546, 0.5123457)
-texture = ExtResource("1_op1nx")
+texture = ExtResource("2_uw7yb")
 hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Banner2" unique_id=1964172858]

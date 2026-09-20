@@ -237,17 +237,17 @@ var be_tct4
 var barra
 #repetidor de desafios(boton y texturas la vdd)
 var rd_repetidor_desafios
-var rd_texture1 = preload("res://Assets/Arte2d/botones/boton1.svg")
-var rd_texture2 = preload("res://Assets/Arte2d/botones/boton.svg")
+var rd_texture1 = preload("res://Assets/Arte2d/botones/Boton_Click/boton1.svg")
+var rd_texture2 = preload("res://Assets/Arte2d/botones/Boton_Click/boton.svg")
 #barra competitiva
 var escala_actual = 0
 var escala
 var suma_total
 #textura del boton home cuando eleiges una estadistica lcoal
-var th_texture1 = preload("res://Assets/Arte2d/botones/casa_normal.svg")
-var th_texture2 = preload("res://Assets/Arte2d/botones/casa_salir.svg")
-var th_textura_selector_solo = preload("res://Assets/Arte2d/botones/selector_solo.svg")
-var th_texture_selector = preload("res://Assets/Arte2d/botones/selector.svg")
+var th_texture1 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg")
+var th_texture2 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_salir.svg")
+var th_textura_selector_solo = preload("res://Assets/Arte2d/botones/selector/selector_solo.svg")
+var th_texture_selector = preload("res://Assets/Arte2d/botones/selector/selector.svg")
 var hme1
 #traducion
 var columna = 0
@@ -311,9 +311,10 @@ var F_rojo_2c2
 #paneles
 var P_efectos
 var P_idioma
-#margen
-var M_efectos
-var M_idioma
+#checkbuttons
+var CB_plus1
+var CB_confeti
+var CB_vibracion
 
 
 #--------------------------LOGICA DEL JUEGO-------------------------------------:
@@ -537,8 +538,8 @@ func _procesardor_de_objetos():
 	#confeti
 	confeti_señal = $Node2D/letreros_effects/confeti_full
 	#volumen
-	barra_vol_effect = $"Apartado de opciones abajo/opcion/Audio/effectos/HSlider"
-	barra_vol_music = $"Apartado de opciones abajo/opcion/Audio/musica/HSlider"
+	barra_vol_effect = $"Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/effectos/HSlider"
+	barra_vol_music = $"Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/musica/HSlider"
 	#el boton de home de la barra abajo
 	hme1 = $"barraabajo/1home"
 	#fondo
@@ -547,9 +548,10 @@ func _procesardor_de_objetos():
 	#PANELES
 	P_efectos = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer"
 	P_idioma = $"Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA"
-	M_efectos = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer"
-	M_idioma = $"Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA/MARGEN_IDIOMA"
-
+	#checkbutton
+	CB_confeti = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2/MarginContainer/Confeti"
+	CB_vibracion = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer/MarginContainer/Vibracion"
+	CB_plus1 = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3/MarginContainer/+1"
 
 #sirve para decirle al texto en donde colocarse exactamente segun los datos
 func _posicionamiento_del_texto(_a,_b): #dato,,x
@@ -1637,10 +1639,22 @@ func cargar():
 			volumen_music = datos.get("volumen_music",1)
 		if datos.has("volumen_effect"):
 			barra_vol_effect.value = datos["volumen_effect"]
-
 		if datos.has("volumen_music"):
 			barra_vol_music.value = datos["volumen_music"]
+		CB_plus1.button_pressed = CheckButtons(datos,"+1",plus1,CB_plus1)
+		CB_confeti.button_pressed = CheckButtons(datos,"confeti",confeti,CB_confeti)
+		CB_vibracion.button_pressed = CheckButtons(datos,"vibracion",vibration,CB_vibracion)
 		archivo.close()
+
+
+func CheckButtons(_a,_b,_c,_d):
+	var _e
+	if _a.has(_b):
+		if _c == 1:
+			_e = true
+		else:
+			_e = false
+	return _e
 
 #sistema de ver el guardado.
 func ver_guardado_texto():
@@ -1805,15 +1819,15 @@ func _columnas():
 			_As = "KOR"
 	return _As
 
-func _centrar_panel(_panel):
+func _centrar_panel(_panel,_a = 0):
+	if _a == 0:
+		_panel.reset_size()
 	var _izq = _panel.position.x
 	var _der = _panel.position.x + _panel.size.x
 	var _centro_x = (_izq - _der) / 2.0
 	return _centro_x
 
 func _paneles_para_centrar():
-	P_efectos.reset_size()
-	P_idioma.reset_size()
 	P_efectos.position.x = _centrar_panel(P_efectos)
 	P_idioma.position.x = _centrar_panel(P_idioma)
 
@@ -1861,32 +1875,31 @@ func _on_music_volume(value: float) -> void:
 	guardar()
 
 
-func _on_vibracion_pressed() -> void:
-	vibration = _opciones_pantalla_efectos(vibration)
-	guardar()
-
-func _on_confeti_pressed() -> void:
-	confeti = _opciones_pantalla_efectos(confeti)
-	guardar()
-
-func _on_plus_1_pressed() -> void:
-	plus1 = _opciones_pantalla_efectos(plus1)
-	guardar()
-
-func _opciones_pantalla_efectos(_a):
+func _opciones_pantalla_efectos(_a,_b: bool):
 	a_click.play()
-	if _a == 0:
+	if _b:
 		_a = 1
 	else:
 		_a = 0
 	return _a
 
-#aver github intentalo
-#hola mundo
-#estoy aburrido 
-#bueno si estas leyendo esto ya estoy en la linea 1890
-
-
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
+
+
+
+
+func _on_PLUS1_toggled(_toggled_on: bool) -> void:
+	plus1 = _opciones_pantalla_efectos(plus1,_toggled_on)
+	guardar()
+
+
+func _on_confeti_toggled(_toggled_on: bool) -> void:
+	confeti = _opciones_pantalla_efectos(confeti,_toggled_on)
+	guardar()
+
+
+func _on_vibracion_toggled(_toggled_on: bool) -> void:
+	vibration = _opciones_pantalla_efectos(vibration,_toggled_on)
+	guardar()
