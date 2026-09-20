@@ -48,8 +48,8 @@ script = ExtResource("1_gmskc")
 
 [node name="Banner" type="Sprite2D" parent="." unique_id=1134051179]
 modulate = Color(0.42352942, 0.7372549, 0.47843137, 1)
-position = Vector2(364.00003, 799.9999)
-scale = Vector2(0.538889, 0.5135802)
+position = Vector2(360, 800.0001)
+scale = Vector2(0.49999997, 0.49382713)
 texture = ExtResource("1_op1nx")
 hframes = 4
 

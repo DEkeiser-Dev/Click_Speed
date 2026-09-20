@@ -616,9 +616,9 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=553377540]
 layout_mode = 0
-offset_left = -288.0
+offset_left = -312.0
 offset_top = 376.0
-offset_right = 448.0
+offset_right = 432.0
 offset_bottom = 1432.0
 script = ExtResource("12_2acba")
 
