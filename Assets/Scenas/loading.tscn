@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsx2xonaogl5h" path="res://Assets/Arte2d/fondo/banner.png" id="2_uw7yb"]
 [ext_resource type="Script" uid="uid://dk641opvpnquv" path="res://Assets/Scripts/loading_negro.gd" id="4_h6lew"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="4_uw7yb"]
+[ext_resource type="AudioStream" uid="uid://dp6teimmiojtn" path="res://Assets/Banda_Sonora/effects/Loading.mp3" id="6_kais2"]
 
 [sub_resource type="Animation" id="Animation_h6lew"]
 length = 0.001
@@ -93,3 +94,7 @@ hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Banner2" unique_id=1964172858]
 libraries/ = SubResource("AnimationLibrary_kais2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2057362209]
+stream = ExtResource("6_kais2")
+volume_db = -11.624

@@ -327,7 +327,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_paneles_para_centrar()
 	#barra.custom_minimum_size.x = 18
-
 func _carga_inicial() -> void:
 	_procesardor_de_objetos()
 	cargar()
@@ -760,17 +759,76 @@ func _que_estadistica_mostrar():
 			v_que_modo_de_juego_ver_opciones = 4
 			_asignadores(1,be_tct4)
 		6:
-			_que_muestran_las_estadisticas(Mejor_cliks_10,Mejor_cps_10,10,Mejor_cliks_10_J2,Mejor_cps_10_J2,Mejor_cliks_10_J3,Mejor_cps_10_J3,Mejor_cliks_10_J4,Mejor_cps_10_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_10,
+				Mejor_cps_10,
+				10,
+				Mejor_cliks_10_J2,
+				Mejor_cps_10_J2,
+				Mejor_cliks_10_J3,
+				Mejor_cps_10_J3,
+				Mejor_cliks_10_J4,
+				Mejor_cps_10_J4
+				)
 		7:
-			_que_muestran_las_estadisticas(Mejor_cliks_30,Mejor_cps_30,30,Mejor_cliks_30_J2,Mejor_cps_30_J2,Mejor_cliks_30_J3,Mejor_cps_30_J3,Mejor_cliks_30_J4,Mejor_cps_30_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_30,Mejor_cps_30,
+				30,
+				Mejor_cliks_30_J2,
+				Mejor_cps_30_J2,
+				Mejor_cliks_30_J3,
+				Mejor_cps_30_J3,
+				Mejor_cliks_30_J4,
+				Mejor_cps_30_J4
+				)
 		8:
-			_que_muestran_las_estadisticas(Mejor_cliks_1,Mejor_cps_1,1,Mejor_cliks_1_J2,Mejor_cps_1_J2,Mejor_cliks_1_J3,Mejor_cps_1_J3,Mejor_cliks_1_J4,Mejor_cps_1_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_1,
+				Mejor_cps_1,
+				1,
+				Mejor_cliks_1_J2,
+				Mejor_cps_1_J2,
+				Mejor_cliks_1_J3,
+				Mejor_cps_1_J3,
+				Mejor_cliks_1_J4,
+				Mejor_cps_1_J4
+				)
 		9:
-			_que_muestran_las_estadisticas(Mejor_cliks_20,Mejor_cps_20,20,Mejor_cliks_20_J2,Mejor_cps_20_J2,Mejor_cliks_20_J3,Mejor_cps_20_J3,Mejor_cliks_20_J4,Mejor_cps_20_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_20,
+				Mejor_cps_20,
+				20,
+				Mejor_cliks_20_J2,
+				Mejor_cps_20_J2,
+				Mejor_cliks_20_J3,
+				Mejor_cps_20_J3,
+				Mejor_cliks_20_J4,
+				Mejor_cps_20_J4
+				)
 		10:
-			_que_muestran_las_estadisticas(Mejor_cliks_60,Mejor_cps_60,60,Mejor_cliks_60_J2,Mejor_cps_60_J2,Mejor_cliks_60_J3,Mejor_cps_60_J3,Mejor_cliks_60_J4,Mejor_cps_60_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_60,
+				Mejor_cps_60,
+				60,
+				Mejor_cliks_60_J2,
+				Mejor_cps_60_J2,
+				Mejor_cliks_60_J3,
+				Mejor_cps_60_J3,
+				Mejor_cliks_60_J4,
+				Mejor_cps_60_J4
+				)
 		11:
-			_que_muestran_las_estadisticas(Mejor_cliks_x,Mejor_cps_x,"X",Mejor_cliks_x_J2,Mejor_cps_x_J2,Mejor_cliks_x_J3,Mejor_cps_x_J3,Mejor_cliks_x_J4,Mejor_cps_x_J4)
+			_que_muestran_las_estadisticas(
+				Mejor_cliks_x,
+				Mejor_cps_x,
+				"X",
+				Mejor_cliks_x_J2,
+				Mejor_cps_x_J2,
+				Mejor_cliks_x_J3,
+				Mejor_cps_x_J3,
+				Mejor_cliks_x_J4,
+				Mejor_cps_x_J4
+				)
 
 #visor estadisticas locales
 func _que_muestran_las_estadisticas(_a,_b,_c,_a2,_b2,_a3,_b3,_a4,_b4):
@@ -968,22 +1026,55 @@ func _estadisticas_mostrar_texto_parasiempre():
 #logica de precionar el boton 1
 func _on_boton_pressed() -> void:
 	_texto_presionar_plus_one(b_contador)
-	_logica_botones_jugadores(1,counter,Mejor_cliks,Mejor_cliks_1,Mejor_cliks_10,Mejor_cliks_20,Mejor_cliks_30,Mejor_cliks_60,Mejor_cliks_x)
-
+	_logica_botones_jugadores(1,
+	counter,
+	Mejor_cliks,
+	Mejor_cliks_1,
+	Mejor_cliks_10,
+	Mejor_cliks_20,
+	Mejor_cliks_30,
+	Mejor_cliks_60,
+	Mejor_cliks_x
+	)
 #logica de precionar el boton 2
 func _on_boton_2_pressed() -> void:
 	_texto_presionar_plus_one(b_contador2)
-	_logica_botones_jugadores(2,counter_J2,Mejor_cliks_J2,Mejor_cliks_1_J2,Mejor_cliks_10_J2,Mejor_cliks_20_J2,Mejor_cliks_30_J2,Mejor_cliks_60_J2,Mejor_cliks_x_J2)
-
+	_logica_botones_jugadores(2,
+	counter_J2,
+	Mejor_cliks_J2,
+	Mejor_cliks_1_J2,
+	Mejor_cliks_10_J2,
+	Mejor_cliks_20_J2,
+	Mejor_cliks_30_J2,
+	Mejor_cliks_60_J2,
+	Mejor_cliks_x_J2
+	)
 #logica de precionar el boton 3
 func _on_boton_3_pressed() -> void:
 	_texto_presionar_plus_one(b_contador3)
-	_logica_botones_jugadores(3,counter_J3,Mejor_cliks_J3,Mejor_cliks_1_J3,Mejor_cliks_10_J3,Mejor_cliks_20_J3,Mejor_cliks_30_J3,Mejor_cliks_60_J3,Mejor_cliks_x_J3)
-
+	_logica_botones_jugadores(3,
+	counter_J3,
+	Mejor_cliks_J3,
+	Mejor_cliks_1_J3,
+	Mejor_cliks_10_J3,
+	Mejor_cliks_20_J3,
+	Mejor_cliks_30_J3,
+	Mejor_cliks_60_J3,
+	Mejor_cliks_x_J3
+	)
 #logica de precionar el boton 4
 func _on_boton_4_pressed() -> void:
 	_texto_presionar_plus_one(b_contador4)
-	_logica_botones_jugadores(4,counter_J4,Mejor_cliks_J4,Mejor_cliks_1_J4,Mejor_cliks_10_J4,Mejor_cliks_20_J4,Mejor_cliks_30_J4,Mejor_cliks_60_J4,Mejor_cliks_x_J4)
+	_logica_botones_jugadores(4,
+	counter_J4,
+	Mejor_cliks_J4,
+	Mejor_cliks_1_J4,
+	Mejor_cliks_10_J4,
+	Mejor_cliks_20_J4,
+	Mejor_cliks_30_J4,
+	Mejor_cliks_60_J4,
+	Mejor_cliks_x_J4
+	)
 
 
 #BOTONES REINICIO:
@@ -1073,7 +1164,6 @@ func _on_opciones_pressed() -> void:
 		Input.vibrate_handheld(40)
 	a_click.play()
 	opciones = 0
-
 #irse de las opciones
 func _on_opciones_2_pressed() -> void:
 	if vibration == 1:
@@ -1085,24 +1175,34 @@ func _on_opciones_2_pressed() -> void:
 #DESAFIOS:
 #logica de activar desafio 1 s
 func _on_desafio_1_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,AD_2,b_desafio_1,SD_Modo_1s)
-
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,
+	AD_2,
+	b_desafio_1,
+	SD_Modo_1s)
 #logica de activar desafio 10 s
 func _on_desafio_10_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(2,10,AD_3,b_desafio_10,SD_Modo_10s)
-
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(2,10,
+	AD_3,
+	b_desafio_10,
+	SD_Modo_10s)
 #logica de activar desafio 20 s
 func _on_desafio_20_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(3,20,AD_4,b_desafio_20,SD_Modo_20s)
-
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(3,20,
+	AD_4,
+	b_desafio_20,
+	SD_Modo_20s)
 #logica de activar desafio 30 s
 func _on_desafio_30_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(4,30,AD_5,b_desafio_30,SD_Modo_30s)
-
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(4,30,
+	AD_5,
+	b_desafio_30,
+	SD_Modo_30s)
 #logica de activar desafio 60 s
 func _on_desafio_60_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(5,60,AD_6,b_desafio_60,SD_Modo_60s)
-
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(5,60,
+	AD_6,
+	b_desafio_60,
+	SD_Modo_60s)
 #logica de activar desafio x (y limitandolo)
 func _on_desafio_person_pressed() -> void:
 	a_click.play()
@@ -1116,7 +1216,12 @@ func _on_desafio_person_pressed() -> void:
 		Segundos_personalizados = int(t_entrado_personalizada.text)
 		var SD_Modo_Xs2
 		SD_Modo_Xs2 = (t(SD_Modo_Xs) + str(Segundos_personalizados) + t(SD_SEG))
-		_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,Segundos_personalizados,AD_1,b_desafio_personalizado,SD_Modo_Xs2)
+		_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
+		Segundos_personalizados,
+		AD_1,
+		b_desafio_personalizado,
+		SD_Modo_Xs2
+		)
 	else:
 		if vibration == 1:
 			Input.vibrate_handheld(110)
@@ -1187,37 +1292,6 @@ func _on_repetidor_desafios_indefinidos_pressed() -> void:
 
 
 #MODOS DE JUEGO (UNO O MAS JUGADORES):
-#AQUI SON LOS BOTONES QUE DIRAN EN QUE MODO DE JUEGO ESTAS 
-#activar modo solitario
-func _on_solitario_pressed() -> void:
-	tipo_de_modo_jugadores = 0
-	_asignadores(0,b_solitario)
-	_modo_jugadores()
-
-#activar modo uno contra uno
-func _on_c_1_pressed() -> void:
-	tipo_de_modo_jugadores = 1
-	_asignadores(0,b_ucu)
-	_modo_jugadores()
-
-#activar modo dos contra dos
-func _on_c_2_pressed() -> void:
-	tipo_de_modo_jugadores = 2
-	_asignadores(0,b_dcd)
-	_modo_jugadores()
-
-#activar modo todos contra todos (3 personas)
-func _on__contra_todos_3_pressed() -> void:
-	_asignadores(0,b_uct3)
-	tipo_de_modo_jugadores = 3
-	_modo_jugadores()
-
-#activar modo todos contra todos (4 personas)
-func _on__contra_todos_4_pressed() -> void:
-	_asignadores(0,b_uct4)
-	tipo_de_modo_jugadores = 4
-	_modo_jugadores()
-
 #logica de reposicionamiento(botones jugadores) de los modos de juego
 #ESTE SE ESPECIALIZA EN DECIRLE A LOS BOTONES EN QUE UBICACION COLOCARSE
 #SI DEBEN DE ESCALAR O DONDE POSICIONARSE O SIMPLEMENTE OCULTARSE
@@ -1290,10 +1364,61 @@ func _modo_jugadores():
 		A_modo.texture = th_texture_selector
 		fondo_1c1_2c2_aparecer(false)
 		return
+#AQUI SON LOS BOTONES QUE DIRAN EN QUE MODO DE JUEGO ESTAS 
+#activar modo solitario
+func _on_solitario_pressed() -> void:
+	tipo_de_modo_jugadores = 0
+	_asignadores(0,b_solitario)
+	_modo_jugadores()
+#activar modo uno contra uno
+func _on_c_1_pressed() -> void:
+	tipo_de_modo_jugadores = 1
+	_asignadores(0,b_ucu)
+	_modo_jugadores()
+#activar modo dos contra dos
+func _on_c_2_pressed() -> void:
+	tipo_de_modo_jugadores = 2
+	_asignadores(0,b_dcd)
+	_modo_jugadores()
+#activar modo todos contra todos (3 personas)
+func _on__contra_todos_3_pressed() -> void:
+	_asignadores(0,b_uct3)
+	tipo_de_modo_jugadores = 3
+	_modo_jugadores()
+#activar modo todos contra todos (4 personas)
+func _on__contra_todos_4_pressed() -> void:
+	_asignadores(0,b_uct4)
+	tipo_de_modo_jugadores = 4
+	_modo_jugadores()
 
 func fondo_1c1_2c2_aparecer(_A):
 	F_rojo_2c2.visible = _A
 	F_verde_2c2.visible = _A
+
+#BOTONES QUE SON DE ESTADISTICAS Y SU LOGICA
+func _on_estadisticas_pressed() -> void: #1c1
+	_para_estadisticas_opciones(1,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1")
+func _on_estadisticas_2_pressed() -> void: #2c2
+	_para_estadisticas_opciones(2,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_2c2")
+func _on_estadisticas_3_pressed() -> void: #solo
+	_para_estadisticas_opciones(3,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_solitario")
+func _on_estadisticas_4_pressed() -> void: #3 jugadores
+	_para_estadisticas_opciones(4,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct3")
+func _on_estadisticas_5_pressed() -> void: #4 jugadores
+	_para_estadisticas_opciones(5,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct4")
+func _on_estadisticas_8_pressed() -> void: # 1 s
+	_para_estadisticas_opciones(8,1)
+func _on_estadisticas_6_pressed() -> void: # 10 s
+	_para_estadisticas_opciones(6,1)
+func _on_estadisticas_9_pressed() -> void: # 20 s
+	_para_estadisticas_opciones(9,1)
+func _on_estadisticas_7_pressed() -> void: # 30 s
+	_para_estadisticas_opciones(7,1)
+func _on_estadisticas_10_pressed() -> void: # 60 s
+	_para_estadisticas_opciones(10,1)
+func _on_estadisticas_11_pressed() -> void: # X s
+	_para_estadisticas_opciones(11,1)
+
 
 #Logica de que pasa si das un click a un boton jugable.
 #ESTE SE ESPECIALIZA EN SUMAR UNA UNIDAD A EL VALOR TOTAL CLISKS, Y ESTE ES EL RESPONSABLE
@@ -1400,25 +1525,6 @@ func _asignadores(_a,_b):#tipo de dato, nodo/boton/etc
 
 
 #botones de abajo:
-#SIRVE PARA VER LAS DEMAS OPCIONES O DEMAS COSAS.
-func _on_home_pressed() -> void:#MODO CASA/HOGAR(NORMAL)
-	a_click.play()
-	_botones_abajo(0)
-	hme1.texture_normal = th_texture1
-
-func _on_estadist_pressed() -> void:#MODO DE ESTADISTICAS
-	_estadisticas_mostrar_texto_parasiempre()
-	SD_estadisticas = SD_esta
-	_para_estadisticas_opciones(0,1)
-
-func _on_skins_pressed() -> void:#MODO DE SKINS
-	a_click.play()
-	_botones_abajo(2)
-
-func _on_opcion_pressed() -> void:#MODO DE OPCIONES
-	a_click.play()
-	_botones_abajo(3)
-
 #LOGICA DE BOTONES ABAJO:
 func _botones_abajo(_a):
 	if desafio == false or opciones == 0:
@@ -1450,52 +1556,69 @@ func _botones_abajo(_a):
 				n_opciones_opciones_down.position.x = 360
 				n_todo.position.x = -1000
 				v_home = 1
+#SIRVE PARA VER LAS DEMAS OPCIONES O DEMAS COSAS.
+func _on_home_pressed() -> void: # MODO CASA/HOGAR(NORMAL)
+	a_click.play()
+	_botones_abajo(0)
+	hme1.texture_normal = th_texture1
+func _on_estadist_pressed() -> void: # MODO DE ESTADISTICAS
+	_estadisticas_mostrar_texto_parasiempre()
+	SD_estadisticas = SD_esta
+	_para_estadisticas_opciones(0,1)
+func _on_skins_pressed() -> void: #M ODO DE SKINS
+	a_click.play()
+	_botones_abajo(2)
+func _on_opcion_pressed() -> void: # MODO DE OPCIONES
+	a_click.play()
+	_botones_abajo(3)
 
 
-#BOTONES QUE SON DE ESTADISTICAS Y SU LOGICA
-#1c1
-func _on_estadisticas_pressed() -> void:
-	_para_estadisticas_opciones(1,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1")
+#-------------------------LOGICA MENU DE OPCIONES-------------------------------:
+func CheckButtons(_a,_b,_c,_d):
+	var _e
+	if _a.has(_b):
+		if _c == 1:
+			_e = true
+		else:
+			_e = false
+	return _e
+func _on_PLUS1_toggled(_toggled_on: bool) -> void:
+	plus1 = _opciones_pantalla_efectos(plus1,_toggled_on)
+	guardar()
+func _on_confeti_toggled(_toggled_on: bool) -> void:
+	confeti = _opciones_pantalla_efectos(confeti,_toggled_on)
+	guardar()
+func _on_vibracion_toggled(_toggled_on: bool) -> void:
+	vibration = _opciones_pantalla_efectos(vibration,_toggled_on)
+	guardar()
 
-#2c2
-func _on_estadisticas_2_pressed() -> void:
-	_para_estadisticas_opciones(2,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_2c2")
+func _opciones_pantalla_efectos(_a,_b: bool):
+	a_click.play()
+	if _b:
+		_a = 1
+	else:
+		_a = 0
+	return _a
 
-#solo
-func _on_estadisticas_3_pressed() -> void:
-	_para_estadisticas_opciones(3,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_solitario")
+func _centrar_panel(_panel,_a = 0):
+	if _a == 0:
+		_panel.reset_size()
+	var _izq = _panel.position.x
+	var _der = _panel.position.x + _panel.size.x
+	var _centro_x = (_izq - _der) / 2.0
+	return _centro_x
+func _paneles_para_centrar():
+	P_efectos.position.x = _centrar_panel(P_efectos)
+	P_idioma.position.x = _centrar_panel(P_idioma)
 
-#tct3
-func _on_estadisticas_4_pressed() -> void:
-	_para_estadisticas_opciones(4,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct3")
-
-#tct4
-func _on_estadisticas_5_pressed() -> void:
-	_para_estadisticas_opciones(5,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct4")
-
-#10s
-func _on_estadisticas_6_pressed() -> void:
-	_para_estadisticas_opciones(6,1)
-
-#30s
-func _on_estadisticas_7_pressed() -> void:
-	_para_estadisticas_opciones(7,1)
-
-#1s
-func _on_estadisticas_8_pressed() -> void:
-	_para_estadisticas_opciones(8,1)
-
-#20s
-func _on_estadisticas_9_pressed() -> void:
-	_para_estadisticas_opciones(9,1)
-
-#60s
-func _on_estadisticas_10_pressed() -> void:
-	_para_estadisticas_opciones(10,1)
-
-#Xs
-func _on_estadisticas_11_pressed() -> void:
-	_para_estadisticas_opciones(11,1)
+func _on_effect_volume(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("effect"),linear_to_db(value))
+	volumen_effect = barra_vol_effect.value
+	guardar()
+func _on_music_volume(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"),linear_to_db(value))
+	volumen_music = barra_vol_music.value
+	guardar()
 
 
 #--------------------------LOGICA GUARDAR_CARGAR--------------------------------:
@@ -1566,6 +1689,7 @@ func guardar():
 	archivo.store_var(datos)
 	archivo.close()
 
+#sistema de simplificado decial(redondeo) para mayor comodidad (de 1.99999999... a 1.99)
 func r(_a,_c = 0):
 	_c = round(_a * 100.0 /100.0)
 	return _c
@@ -1646,16 +1770,6 @@ func cargar():
 		CB_vibracion.button_pressed = CheckButtons(datos,"vibracion",vibration,CB_vibracion)
 		archivo.close()
 
-
-func CheckButtons(_a,_b,_c,_d):
-	var _e
-	if _a.has(_b):
-		if _c == 1:
-			_e = true
-		else:
-			_e = false
-	return _e
-
 #sistema de ver el guardado.
 func ver_guardado_texto():
 	if FileAccess.file_exists(RUTA_GUARDADO):
@@ -1671,8 +1785,6 @@ func ver_guardado_texto():
 
 
 #--------------------------LOGICA TEXTO-----------------------------------------:
-
-
 #textos importantes del juego.
 #ES EL ENCARGADO DE ACTUALIZAR LOS TEXTOS QUE SI O SI SE VEAN EN EL JUEGO
 #COMO CONTADORES Y EL TIEMPO
@@ -1714,16 +1826,19 @@ func _datos_texto(_0,_a,_d = 0,_c = 0,_b = fuente_1,_e = 0):
 	if _e == 0:
 		if _0 == 1:
 			_a.add_theme_font_override("font",_b)
-			_a.add_theme_font_size_override("font_size",_a.get_theme_font_size("font_size")-_c)
+			_a.add_theme_font_size_override("font_size",
+			_a.get_theme_font_size("font_size")-_c
+			)
 		else:
 			_a.add_theme_font_override("normal_font",_b)
-			_a.add_theme_font_size_override("normal_font_size",_a.get_theme_font_size("normal_font_size")-_c)
+			_a.add_theme_font_size_override("normal_font_size",
+			_a.get_theme_font_size("normal_font_size")-_c
+			)
 	elif _e == 1:
 		if _0 == 1:
 			_a.add_theme_font_size_override("font_size",_d)
 		else:
 			_a.add_theme_font_size_override("normal_font_size",_d)
-
 
 #textos que aparecen cuando haces click a las opciones
 #ES EL ENCARGADO LOGICO DE DECIR EN QUE POSICION Y QUE DEBE DE DECIR EL TEXTO 
@@ -1794,12 +1909,45 @@ func _texto_presionar_plus_one(_a):
 
 
 #--------------------------TRADUCCIONES----------------------------------------:
+#hace una modificacion para poder hacer un salto de linea
+#ya que en los strings puede q los interprete \\n envez de \n
 func t(id: String) -> String:
 	return tr(id).replace("\\n", "\n")
 
+#envian el tipo de valor que representa un idioma
+#como se pueda ver a continuacion
+func _on_esp_pressed() -> void: # español
+	_traductor(0)
+func _on_ing_pressed() -> void: # ingles
+	_traductor(1)
+func _on_por_pressed() -> void: # portugal
+	_traductor(2)
+func _on_fra_pressed() -> void: # frances
+	_traductor(3)
+func _on_ita_pressed() -> void: # italiano
+	_traductor(4)
+func _on_rus_pressed() -> void: # ruso
+	_traductor(5)
+func _on_jpn_pressed() -> void: # japones
+	_traductor(6)
+func _on_kor_pressed() -> void: # coreano
+	_traductor(7)
+
+#esta funcion sirve para definir el idioma(por medio de una variable local de la funcion)
+#poner el sonido (click) guarda el idioma(columna) y
+#actualiza la traducion global y llama a centrar paneles
+func _traductor(_a):
+	a_click.play()
+	columna = _a
+	guardar()
+	TranslationServer.set_locale(_columnas())
+	_paneles_para_centrar()
+
+#define con exactitud que idioma es el colocado segun la varible columna
+#y con la variable _As guarda el STR del idioma(gracias a match columna) para retornarlo
 func _columnas():
 	var _As
-	_texto_tamaño_fuente()
+	_texto_tamaño_fuente() # ajusta el tamaño segun el idioma(columna)
 	match columna:
 		0:
 			_As = "ESP"
@@ -1819,87 +1967,9 @@ func _columnas():
 			_As = "KOR"
 	return _As
 
-func _centrar_panel(_panel,_a = 0):
-	if _a == 0:
-		_panel.reset_size()
-	var _izq = _panel.position.x
-	var _der = _panel.position.x + _panel.size.x
-	var _centro_x = (_izq - _der) / 2.0
-	return _centro_x
-
-func _paneles_para_centrar():
-	P_efectos.position.x = _centrar_panel(P_efectos)
-	P_idioma.position.x = _centrar_panel(P_idioma)
-
-func _on_esp_pressed() -> void:
-	_traductor(0)
-
-func _on_ing_pressed() -> void:
-	_traductor(1)
-
-func _on_por_pressed() -> void:
-	_traductor(2)
-
-func _on_fra_pressed() -> void:
-	_traductor(3)
-
-func _on_ita_pressed() -> void:
-	_traductor(4)
-
-func _on_rus_pressed() -> void:
-	_traductor(5)
-
-func _on_jpn_pressed() -> void:
-	_traductor(6)
-
-func _on_kor_pressed() -> void:
-	_traductor(7)
-
-func _traductor(_a):
-	a_click.play()
-	columna = _a
-	guardar()
-	TranslationServer.set_locale(_columnas())
-	_paneles_para_centrar()
-
-
-func _on_effect_volume(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("effect"),linear_to_db(value))
-	volumen_effect = barra_vol_effect.value
-	guardar()
-
-
-func _on_music_volume(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"),linear_to_db(value))
-	volumen_music = barra_vol_music.value
-	guardar()
-
-
-func _opciones_pantalla_efectos(_a,_b: bool):
-	a_click.play()
-	if _b:
-		_a = 1
-	else:
-		_a = 0
-	return _a
-
+#----------------------------ANUNCIOS------------------------------------------:
+#llama a_click para el sonido(click) 
+#y envia(emite) una señal a main.gd para poner un anuncio interticial
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
-
-
-
-
-func _on_PLUS1_toggled(_toggled_on: bool) -> void:
-	plus1 = _opciones_pantalla_efectos(plus1,_toggled_on)
-	guardar()
-
-
-func _on_confeti_toggled(_toggled_on: bool) -> void:
-	confeti = _opciones_pantalla_efectos(confeti,_toggled_on)
-	guardar()
-
-
-func _on_vibracion_toggled(_toggled_on: bool) -> void:
-	vibration = _opciones_pantalla_efectos(vibration,_toggled_on)
-	guardar()
