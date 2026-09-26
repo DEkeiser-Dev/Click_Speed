@@ -1622,7 +1622,7 @@ func _on_music_volume(value: float) -> void:
 
 
 #--------------------------LOGICA GUARDAR_CARGAR--------------------------------:
-#sistema de guardado de archivos
+# sistema de guardado de archivos
 func guardar():
 	var archivo = FileAccess.open(RUTA_GUARDADO,FileAccess.WRITE)
 	var datos = {
@@ -1689,18 +1689,20 @@ func guardar():
 	archivo.store_var(datos)
 	archivo.close()
 
-#sistema de simplificado decial(redondeo) para mayor comodidad (de 1.99999999... a 1.99)
+# sistema de simplificado decial
+# (redondeo) 
+# para mayor comodidad 
+# util para guardar cifras muy grandes a pequeñas
+#(de 1.99999999... guarda 1.99)
 func r(_a,_c = 0):
 	_c = round(_a * 100.0 /100.0)
 	return _c
 
-#sistema de cargado de archivos
+# sistema de cargado de archivos
 func cargar():
 	if FileAccess.file_exists(RUTA_GUARDADO):
 		var archivo = FileAccess.open(RUTA_GUARDADO, FileAccess.READ)
-		
 		var datos = archivo.get_var()
-		
 		if datos is Dictionary:
 			Mejor_cliks = datos.get("Mejor_cliks", 0)
 			Mejor_cps_1 = datos.get("Mejor_cps_1", 0.0)
@@ -1770,7 +1772,7 @@ func cargar():
 		CB_vibracion.button_pressed = CheckButtons(datos,"vibracion",vibration,CB_vibracion)
 		archivo.close()
 
-#sistema de ver el guardado.
+# sistema de ver el guardado encriptado
 func ver_guardado_texto():
 	if FileAccess.file_exists(RUTA_GUARDADO):
 		var archivo = FileAccess.open(RUTA_GUARDADO, FileAccess.READ)
@@ -1785,9 +1787,9 @@ func ver_guardado_texto():
 
 
 #--------------------------LOGICA TEXTO-----------------------------------------:
-#textos importantes del juego.
-#ES EL ENCARGADO DE ACTUALIZAR LOS TEXTOS QUE SI O SI SE VEAN EN EL JUEGO
-#COMO CONTADORES Y EL TIEMPO
+# ES EL ENCARGADO DE ACTUALIZAR LOS TEXTOS QUE SI O SI SE VEAN EN EL JUEGO
+# COMO CONTADORES Y EL TIEMPO 
+# ( mediante nodo.text = texto.text )
 func _textos():
 	t_lado_a_negro.text = t_lado_a.text
 	t_lado_b_negro.text = t_lado_b.text
@@ -1799,51 +1801,71 @@ func _textos():
 	t_time_text.text = (str(segundos) + "S - " + str(max_segundos) + "S")
 	t_time_contorno_text.text = t_time_text.text
 
+# ES EL QUE DA LOS DATOS EXACTOS A CADA TEXTO IMPORTANTE
+# primero se define (_inde = 0) (es la variable que dice cuanto se va a reducir)
+# despues se define como es el texto original 
+# (los unicos que cambian son los richs asi que se definen solo ellos)
+# el el condicional if se busca cuanto valdra _inde dependiendo el valor columna
+# (colimna = idioma)
+# se actualizan los datos
 func _texto_tamaño_fuente():
-	var _inde3 = 0 # richs
-	var _inde2  = 0# labels
-	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1,1)
-	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1,1)
-	if columna > -1 and columna < 5:
-		_inde2 = 0
-		_inde3 = 0
-	elif columna > 4 and columna <7:
-		_inde3 = menos_6
-		_inde2 = menos_6
-	elif columna == 7:
-		_inde2 = 0
-		_inde3 = 0
+	var _inde = 0
+	_datos_texto(0,t_estadistica_global,57,_inde,fuente_1,1)
+	_datos_texto(0,t_estadistica_local,69,_inde,fuente_1,1)
+	if columna > 4 and columna <7:
+		_inde = menos_6
+	else:
+		_inde = 0
 	#rich
-	_datos_texto(0,t_estadistica_global,57,_inde3,fuente_1)
-	_datos_texto(0,t_estadistica_local,69,_inde3,fuente_1)
+	_datos_texto(0,t_estadistica_global,57,_inde)
+	_datos_texto(0,t_estadistica_local,69,_inde)
 	#label
 	_datos_texto(1,t_proximamente,104)
 	_datos_texto(1,t_proximamente_negro,104)
 	_datos_texto(1,SD_negro,35)
 	_datos_texto(1,A_label,35)
 
-func _datos_texto(_0,_a,_d = 0,_c = 0,_b = fuente_1,_e = 0):
+# se dedica a cambiar el tamaño del texto o la tipografia 
+# (tecnicamente es como una class)
+func _datos_texto(
+_0,# _0 que tipo de texto es (label(1) o richs(0))
+_a, # _a nodo del text
+_b = 0, # _b tamaño del text(original)
+_c = 0, # _c reduccion de tamaño texto
+_d = fuente_1, # tipografia
+_e = 0 # variable que define si se vuelve al tamaño original (1 = si)
+): 
 	if _e == 0:
 		if _0 == 1:
-			_a.add_theme_font_override("font",_b)
+			_a.add_theme_font_override("font",_d)
 			_a.add_theme_font_size_override("font_size",
 			_a.get_theme_font_size("font_size")-_c
 			)
 		else:
-			_a.add_theme_font_override("normal_font",_b)
+			_a.add_theme_font_override("normal_font",_d)
 			_a.add_theme_font_size_override("normal_font_size",
 			_a.get_theme_font_size("normal_font_size")-_c
 			)
 	elif _e == 1:
 		if _0 == 1:
-			_a.add_theme_font_size_override("font_size",_d)
+			_a.add_theme_font_size_override("font_size",_b)
 		else:
-			_a.add_theme_font_size_override("normal_font_size",_d)
+			_a.add_theme_font_size_override("normal_font_size",_b)
 
-#textos que aparecen cuando haces click a las opciones
-#ES EL ENCARGADO LOGICO DE DECIR EN QUE POSICION Y QUE DEBE DE DECIR EL TEXTO 
-#QUE APARECERA
-func _textos_explicativos(_a,_b,_c,_d = 0):
+# ES EL ENCARGADO LOGICO DE DECIR EN QUE POSICION Y QUE DEBE DE DECIR EL TEXTO 
+# QUE APARECERA.
+# Define donde el texto aparecera dependiendo de (_a) (_b) y lo coloca visible
+# en los condicinales se elige que tipo de mensaje se va a mostrar:
+# (solo el mensaje o el mensaje + SD_ACTIVADO)
+# (t(...) es para saltos de lineas correctos)
+# y por ultimo detiene la animacion (si esque se estaba reproduciendo)
+# y inicia la animacion
+func _textos_explicativos(
+_a, # _a coordenada X
+_b, # _b coordenada Y
+_c, # _c texto
+_d = 0 # _d tipo de impresion
+):
 	A_texto_desaparecedor.position = Vector2(_a,_b)
 	A_texto.visible = true
 	if _d != 1:
@@ -1853,8 +1875,19 @@ func _textos_explicativos(_a,_b,_c,_d = 0):
 	A_animation_valor_valido.stop()
 	A_animation_valor_valido.play("UNICA")
 
-#AL PRESIONAR SALE UNA COPIA DE +1
-func _texto_presionar_plus_one(_a):
+# AL PRESIONAR SALE UNA COPIA DE +1
+# primero se define la variable texto con la direccion del +1 (click_text)
+# se invoca el texto, despues se crea (__a) y saca un numero ramdom (entre 0-16)
+# se define (_tex), (_size) se crea y se saca un numero de (1.8-2.3)
+# depues desde el match (__a) segun el numero sacado(__a) _tex es igual a alguna ruta
+# (estas rutas son puntos de generacion que estan en los botones)
+# despues se define la posicion global de (texto) que sea igual a la 
+# posicion global de (_tex)(ruta objeto generativo)
+# despues siguene unas ecuaciones para poner el (texto) en el eje correcto(x,y) (limitarlo)
+# y dependiendo el (tipo_de_modo_jugadores) la escala del texto varia
+# y al final se ejecuta la animacion (la de subir y desvanecer) 
+# (llama en realidad una func dentro de (click_text) llamada (animar())
+func _texto_presionar_plus_one(_a): # _a es la ruta del boton(donde suele salir el +1)
 	if plus1 == 1:
 		var texto = click_text.instantiate()
 		add_child(texto)
@@ -1909,13 +1942,13 @@ func _texto_presionar_plus_one(_a):
 
 
 #--------------------------TRADUCCIONES----------------------------------------:
-#hace una modificacion para poder hacer un salto de linea
-#ya que en los strings puede q los interprete \\n envez de \n
+# hace una modificacion para poder hacer un salto de linea
+# ya que en los strings puede q los interprete \\n envez de \n
 func t(id: String) -> String:
 	return tr(id).replace("\\n", "\n")
 
-#envian el tipo de valor que representa un idioma
-#como se pueda ver a continuacion
+# envian el tipo de valor que representa un idioma
+# como se pueda ver a continuacion
 func _on_esp_pressed() -> void: # español
 	_traductor(0)
 func _on_ing_pressed() -> void: # ingles
@@ -1933,9 +1966,9 @@ func _on_jpn_pressed() -> void: # japones
 func _on_kor_pressed() -> void: # coreano
 	_traductor(7)
 
-#esta funcion sirve para definir el idioma(por medio de una variable local de la funcion)
-#poner el sonido (click) guarda el idioma(columna) y
-#actualiza la traducion global y llama a centrar paneles
+# esta funcion sirve para definir el idioma(por medio de una variable local de la funcion)
+# poner el sonido (click) guarda el idioma(columna) y
+# actualiza la traducion global y llama a centrar paneles
 func _traductor(_a):
 	a_click.play()
 	columna = _a
@@ -1943,8 +1976,8 @@ func _traductor(_a):
 	TranslationServer.set_locale(_columnas())
 	_paneles_para_centrar()
 
-#define con exactitud que idioma es el colocado segun la varible columna
-#y con la variable _As guarda el STR del idioma(gracias a match columna) para retornarlo
+# define con exactitud que idioma es el colocado segun la varible (columna)
+# y con la variable (_As) guarda el STR del idioma(gracias a match columna) para retornarlo
 func _columnas():
 	var _As
 	_texto_tamaño_fuente() # ajusta el tamaño segun el idioma(columna)
@@ -1967,9 +2000,10 @@ func _columnas():
 			_As = "KOR"
 	return _As
 
+
 #----------------------------ANUNCIOS------------------------------------------:
-#llama a_click para el sonido(click) 
-#y envia(emite) una señal a main.gd para poner un anuncio interticial
+# llama a_click para el sonido(click) 
+# y envia(emite) una señal a (main.gd) para poner un anuncio interticial
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
