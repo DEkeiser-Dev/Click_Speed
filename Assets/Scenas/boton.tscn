@@ -20,8 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector/selector.svg" id="12_pjjqg"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
-[ext_resource type="Texture2D" uid="uid://co6j5umprsfjs" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="14_pjjqg"]
-[ext_resource type="Texture2D" uid="uid://du2yunto3p26w" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="15_57s6u"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
 [ext_resource type="Texture2D" uid="uid://c2yuhtiqx803j" path="res://Assets/Arte2d/opciones/idiomas/Italy.svg" id="18_ygdgh"]
@@ -32,11 +30,48 @@
 [ext_resource type="Texture2D" uid="uid://c5wgx8bunstqb" path="res://Assets/Arte2d/opciones/idiomas/Spain.svg" id="23_364dt"]
 [ext_resource type="Texture2D" uid="uid://fb8nn1107rtw" path="res://Assets/Arte2d/opciones/idiomas/the_United_States.svg" id="24_lnhiw"]
 [ext_resource type="Script" uid="uid://ls0lnqhy6smh" path="res://Assets/Scripts/h_slider.gd" id="25_ygdgh"]
-[ext_resource type="Texture2D" uid="uid://i0s7m20oci4c" path="res://Assets/Arte2d/opciones/opciones_cuadrado/reinicio.svg" id="27_4sls0"]
 [ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/opciones/opciones_cuadrado/configuracion.svg" id="28_364dt"]
 [ext_resource type="Theme" uid="uid://4efwrsde3nam" path="res://Assets/themes/theme.tres" id="28_h0h6r"]
 [ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg" id="29_364dt"]
 [ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/opciones/opciones_cuadrado/tienda.svg" id="31_h0h6r"]
+
+[sub_resource type="Animation" id="Animation_pjjqg"]
+resource_name = "GO!"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-160, 73.33333), Vector2(-140, 73.333)]
+}
+
+[sub_resource type="Animation" id="Animation_57s6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-160, 73.33333)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmjfm"]
+_data = {
+&"GO!": SubResource("Animation_pjjqg"),
+&"RESET": SubResource("Animation_57s6u")
+}
 
 [sub_resource type="Animation" id="Animation_h3ung"]
 length = 0.001
@@ -148,19 +183,22 @@ scale = Vector2(4.6874995, 10.416666)
 texture = ExtResource("6_0euow")
 
 [node name="reset_counter" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1243961932]
-position = Vector2(466.66666, 75.83333)
+position = Vector2(466.66666, -184.16667)
 scale = Vector2(0.8333333, 0.8333333)
 texture_normal = ExtResource("7_2acba")
 
 [node name="opciones" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=755310281]
-position = Vector2(26.666666, 73.333664)
+position = Vector2(26.666666, -177.5)
 scale = Vector2(0.8333333, 0.8333333)
 texture_normal = ExtResource("5_4b525")
 
 [node name="opciones2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1109510672]
-position = Vector2(-133.33333, 73.33333)
-scale = Vector2(0.8333333, 0.8333333)
+position = Vector2(-160, 73.33333)
+scale = Vector2(1.0501355, 1.0501355)
 texture_normal = ExtResource("5_4b525")
+
+[node name="Go!" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/opciones2" unique_id=1807413654]
+libraries/ = SubResource("AnimationLibrary_kmjfm")
 
 [node name="desafio1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1749066580]
 position = Vector2(-588.33325, 96.66666)
@@ -410,15 +448,13 @@ position = Vector2(0, -91)
 
 [node name="Salir_desafios" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=661339132]
 position = Vector2(64, 1296.0001)
-scale = Vector2(0.248, 0.24)
-texture_normal = ExtResource("14_pjjqg")
-texture_pressed = ExtResource("15_57s6u")
+scale = Vector2(1.736, 1.68)
+texture_normal = ExtResource("5_h3ung")
 
 [node name="repetidor_desafios_indefinidos" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=1329555792]
 position = Vector2(432, 1296.0001)
-scale = Vector2(0.248, 0.24)
-texture_normal = ExtResource("14_pjjqg")
-texture_pressed = ExtResource("15_57s6u")
+scale = Vector2(1.736, 1.68)
+texture_normal = ExtResource("7_2acba")
 
 [node name="barra de quien va ganando" type="Node2D" parent="Node2D/Botones_aparecer desafio" unique_id=964667121]
 position = Vector2(0, -88)
@@ -965,7 +1001,7 @@ position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
 position = Vector2(200, 136)
-texture_normal = ExtResource("27_4sls0")
+texture_normal = ExtResource("5_h3ung")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="palabras_de_desarrolador_deker" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1554042705]
@@ -975,6 +1011,75 @@ position = Vector2(-272, 1168)
 position = Vector2(200, 136)
 texture_normal = ExtResource("6_0euow")
 texture_pressed = ExtResource("6_0euow")
+
+[node name="Dekeiser_Declaracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1335583333]
+position = Vector2(336, 64)
+texture_normal = ExtResource("7_2acba")
+
+[node name="Dekeiser_declaracion" type="Node2D" parent="Apartado de opciones abajo" unique_id=153723521]
+position = Vector2(3240, 0)
+
+[node name="opciones" type="Sprite2D" parent="Apartado de opciones abajo/Dekeiser_declaracion" unique_id=138250744]
+modulate = Color(0.91486686, 0.7701895, 0, 1)
+self_modulate = Color(0.14509805, 0.1764706, 0.16862746, 0.53333336)
+position = Vector2(0, 800)
+scale = Vector2(5.6249995, 12.5)
+texture = ExtResource("6_0euow")
+
+[node name="CLICKSPEED" parent="Apartado de opciones abajo/Dekeiser_declaracion" unique_id=1914070821 instance=ExtResource("10_0euow")]
+position = Vector2(-376, 168)
+
+[node name="Control" type="Control" parent="Apartado de opciones abajo/Dekeiser_declaracion" unique_id=710645383]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -16.0
+offset_right = 40.0
+offset_bottom = 24.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control" unique_id=1460572812]
+layout_mode = 0
+offset_left = -312.0
+offset_top = 488.0
+offset_right = 376.0
+offset_bottom = 1432.0
+script = ExtResource("12_2acba")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer" unique_id=955587844]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=1884546868]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="info" type="Label" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/PanelContainer" unique_id=1374591712]
+layout_mode = 2
+text = "Click Speed V 1.0 "
+horizontal_alignment = 1
+
+[node name="DEV_DECLARATION" type="PanelContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=254399618]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DEV_DECLARATION" type="Label" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/DEV_DECLARATION" unique_id=1328691035]
+layout_mode = 2
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 40
+text = "DEV_DECLARATION"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="click_speed_dekeiser" type="RichTextLabel" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=737369319]
+custom_minimum_size = Vector2(629.835, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = -6
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("13_57s6u")
+theme_override_font_sizes/normal_font_size = 69
+bbcode_enabled = true
+text = "click_speed_dekeiser"
+fit_content = true
+scroll_active = false
 
 [node name="barraabajo" type="Control" parent="." unique_id=190655670]
 layout_mode = 3
@@ -1063,6 +1168,7 @@ texture_pressed = ExtResource("6_0euow")
 [connection signal="value_changed" from="Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/musica/HSlider" to="." method="_on_music_volume"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/datos/reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker/TouchScreenButton" to="." method="_on_interticial_prueba_pressed"]
+[connection signal="pressed" from="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker/Dekeiser_Declaracion" to="." method="_on_dekeiser_declaracion_pressed"]
 [connection signal="pressed" from="barraabajo/1home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="barraabajo/2estadist" to="." method="_on_estadist_pressed"]
 [connection signal="pressed" from="barraabajo/3skins" to="." method="_on_skins_pressed"]

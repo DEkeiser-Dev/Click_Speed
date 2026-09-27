@@ -13,18 +13,24 @@ var siete = preload("res://Assets/Banda_Sonora/music/normalizados/-Tensión-.mp3
 var ocho = preload("res://Assets/Banda_Sonora/music/normalizados/-El-momento-de-llorar-.mp3")
 var nueve = preload("res://Assets/Banda_Sonora/music/normalizados/-La-búsqueda-.mp3")
 
+var dekeiser_sentimental = preload("res://Assets/Banda_Sonora/effects/Loading.mp3")
+var cambio = 0
+var no_cambies = 0
+
 var _ad_view: AdView
 var _interstitial_ad: InterstitialAd
 var _interstitial_loader: InterstitialAdLoader
 
 func _ready() -> void:
 	a_music = $AudioStreamPlayer
-	a_music.finished.connect(_poner_otra_cancion)
+	a_music.finished.connect(_repetir_song)
 	MobileAds.initialize()
 	await get_tree().create_timer(1.0).timeout
 	_crear_banner()
 	_cargar_intersticial()
 	$Boton.Interticial_apoyo_dekeiser.connect(mostrar_intersticial)
+	$Boton.Dekeiser_NO_sentimental.connect(_cancion)
+	$Boton.Dekeiser_sentimental.connect(_cancion)
 
 
 func _crear_banner():
@@ -106,4 +112,24 @@ func _poner_otra_cancion() -> void:
 		8:
 			a_music.stream = nueve
 
+	a_music.play()
+
+func _repetir_song():
+	no_cambies = 0
+	_cancion(cambio)
+
+func _cancion(_cancio = 0,_u = 0):
+	if _u == 0:
+		cambio = _cancio
+	if cambio == 1:
+		a_music.stop()
+		await get_tree().create_timer(0.2).timeout
+		_cancion_dekeiser()
+		no_cambies = 0
+	elif cambio == 0 and no_cambies == 0:
+		no_cambies = 1
+		_poner_otra_cancion()
+
+func _cancion_dekeiser() -> void:
+	a_music.stream = dekeiser_sentimental
 	a_music.play()

@@ -127,6 +127,7 @@ rotation = 0.68606323
 scale = Vector2(15.721025, 38.748344)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1698232360]
+position = Vector2(0, -152)
 texture_normal = ExtResource("2_fe2u8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635737964]

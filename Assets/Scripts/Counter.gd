@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 signal Interticial_apoyo_dekeiser
+signal Dekeiser_sentimental
+signal Dekeiser_NO_sentimental
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
 #contador normal:
@@ -139,6 +141,7 @@ var n_apartado_opciones_total
 var n_estadisticas_opciones_down
 var n_skins_opciones_down
 var n_opciones_opciones_down
+var n_dekeiser_declaracion
 var n_barra_abajo_total
 var n_barra_competitiva
 var n_nodo_barra
@@ -147,7 +150,8 @@ var t_tiempo
 #ruta de guardato:
 const RUTA_GUARDADO = "user://ClickSpeed.deker" #ruta de guardado
 #opciones
-var opciones = 1
+var opciones = 0
+var iniciar_lugar_opciones = 1
 var camino = 0
 var plus1 = 1
 var confeti = 1
@@ -323,6 +327,7 @@ var CB_vibracion
 #AL INICIAR EL JUEGO LLAMA A LAS SIGUIENTES FUNC PARA ASI PODER CORRER,
 #UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,
 func _ready() -> void:
+	$"Node2D/Botones_ocultar desafio/opciones2/Go!".play("GO!")
 	call_deferred("_carga_inicial")
 	await get_tree().process_frame
 	_paneles_para_centrar()
@@ -357,23 +362,33 @@ func _process(_delta: float) -> void:
 	_textos()
 	_logica_de_desafios_modos_de_equipos_tipo_contador_barra()
 	if opciones == 0 and v_home == 0:
-		if n_todo.position.x < 720:
+		if n_todo.position.x < 720 and iniciar_lugar_opciones == 0:
 			n_todo.position.x += +25
 			b_opciones.visible = false
 			b_opciones2.visible = false
 		else:
 			n_todo.position.x = 720
-			b_opciones.visible = true
-			b_opciones2.visible = true
+			if desafio:
+				b_opciones.visible = true
+				b_opciones2.visible = true
+			else:
+				b_opciones.visible = false
+				b_opciones2.visible = false
+			iniciar_lugar_opciones = 0
 	elif opciones == 1 and v_home == 0:
-		if n_todo.position.x <= 720 and n_todo.position.x > 1:
+		if n_todo.position.x <= 720 and n_todo.position.x > 1 and iniciar_lugar_opciones == 0:
 			n_todo.position.x +=-25
 			b_opciones.visible = false
 			b_opciones2.visible = false
 		else:
 			n_todo.position.x = 0
-			b_opciones.visible = true
-			b_opciones2.visible = true
+			if desafio:
+				b_opciones.visible = true
+				b_opciones2.visible = true
+			else:
+				b_opciones.visible = false
+				b_opciones2.visible = false
+			iniciar_lugar_opciones = 0
 	if lados_si_or_not == 1 and tipo_de_modo_jugadores == 1 or tipo_de_modo_jugadores == 2 and desafio == true:
 		t_lado_a.visible = true
 		t_lado_b.visible = true
@@ -458,6 +473,7 @@ func _procesardor_de_objetos():
 	n_estadisticas_opciones_down = $"Apartado de opciones abajo/estadistica"
 	n_skins_opciones_down = $"Apartado de opciones abajo/skin"
 	n_opciones_opciones_down = $"Apartado de opciones abajo/opcion"
+	n_dekeiser_declaracion = $"Apartado de opciones abajo/Dekeiser_declaracion"
 	n_barra_abajo_total = $barraabajo
 	n_barra_competitiva = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/barra_verde2"
 	n_nodo_barra = $"Node2D/Botones_aparecer desafio/barra de quien va ganando"
@@ -591,6 +607,7 @@ func _finalizar_desafio():
 	t_tiempo.wait_time = 0.006
 	fondo_1c1_2c2_aparecer(false)
 	iniciar_desafio = 0
+	opciones = 0
 
 #CONFIGURACION PARA UN DESAFIO INFINITO O NO
 func _bucle_desafio():
@@ -1169,7 +1186,8 @@ func _on_opciones_2_pressed() -> void:
 	if vibration == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
-	opciones = 1
+	if desafio == true:
+		opciones = 1
 
 
 #DESAFIOS:
@@ -1530,30 +1548,46 @@ func _botones_abajo(_a):
 	if desafio == false or opciones == 0:
 		match _a:
 			0:
+				Dekeiser_NO_sentimental.emit(0)
 				n_estadisticas_opciones_down.position.x = 1080.0
 				n_skins_opciones_down.position.x = 1080.0
 				n_opciones_opciones_down.position.x = 1080.0
+				n_dekeiser_declaracion.position.x = 1080.0
 				if opciones == 0:
 					n_todo.position.x = 720
 				elif opciones == 1:
 					n_todo.position.x = 0
 				v_home = 0
 			1:
+				Dekeiser_NO_sentimental.emit(0)
 				n_estadisticas_opciones_down.position.x = 360
 				n_skins_opciones_down.position.x = 1080.0
 				n_opciones_opciones_down.position.x = 1080.0
+				n_dekeiser_declaracion.position.x = 1080.0
 				n_todo.position.x = -1000
 				v_home = 1
 			2:
+				Dekeiser_NO_sentimental.emit(0)
 				n_estadisticas_opciones_down.position.x = 1080.0
 				n_skins_opciones_down.position.x = 360
 				n_opciones_opciones_down.position.x = 1080.0
+				n_dekeiser_declaracion.position.x = 1080.0
 				n_todo.position.x = -1000
 				v_home = 1
 			3:
+				Dekeiser_NO_sentimental.emit(0)
 				n_estadisticas_opciones_down.position.x = 1080.0
 				n_skins_opciones_down.position.x = 1080.0
 				n_opciones_opciones_down.position.x = 360
+				n_dekeiser_declaracion.position.x = 1080.0
+				n_todo.position.x = -1000
+				v_home = 1
+			4:
+				Dekeiser_sentimental.emit(1)
+				n_estadisticas_opciones_down.position.x = 1080.0
+				n_skins_opciones_down.position.x = 1080.0
+				n_opciones_opciones_down.position.x = 1080.0
+				n_dekeiser_declaracion.position.x = 360
 				n_todo.position.x = -1000
 				v_home = 1
 #SIRVE PARA VER LAS DEMAS OPCIONES O DEMAS COSAS.
@@ -2007,3 +2041,10 @@ func _columnas():
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
+
+
+
+
+func _on_dekeiser_declaracion_pressed() -> void:
+	a_click.play()
+	_botones_abajo(4)
