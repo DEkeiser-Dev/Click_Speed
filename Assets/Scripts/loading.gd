@@ -1,7 +1,11 @@
 extends Node2D
 
+signal banner_load
+
 func _ready() -> void:
 	$AudioStreamPlayer.play()
+	await get_tree().create_timer(1.0).timeout
+	banner_load.emit()
 	await get_tree().create_timer(5.5).timeout
 	$Banner2/AnimationPlayer.play("animacion")
 	await get_tree().create_timer(1.0).timeout

@@ -37,7 +37,7 @@
 
 [sub_resource type="Animation" id="Animation_pjjqg"]
 resource_name = "GO!"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -455,6 +455,7 @@ texture_normal = ExtResource("5_h3ung")
 position = Vector2(432, 1296.0001)
 scale = Vector2(1.736, 1.68)
 texture_normal = ExtResource("7_2acba")
+texture_pressed = ExtResource("6_0euow")
 
 [node name="barra de quien va ganando" type="Node2D" parent="Node2D/Botones_aparecer desafio" unique_id=964667121]
 position = Vector2(0, -88)

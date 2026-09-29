@@ -241,8 +241,8 @@ var be_tct4
 var barra
 #repetidor de desafios(boton y texturas la vdd)
 var rd_repetidor_desafios
-var rd_texture1 = preload("res://Assets/Arte2d/botones/Boton_Click/boton1.svg")
-var rd_texture2 = preload("res://Assets/Arte2d/botones/Boton_Click/boton.svg")
+var rd_texture1 = preload("res://Assets/Arte2d/Colores_posicion_botones/t3.jpg")
+var rd_texture2 = preload("res://Assets/Arte2d/Colores_posicion_botones/t4.jpg")
 #barra competitiva
 var escala_actual = 0
 var escala

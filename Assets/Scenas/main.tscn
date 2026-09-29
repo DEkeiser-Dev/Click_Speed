@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dwouubihn2rsn" path="res://Assets/Scripts/main.gd" id="1_3mi76"]
 [ext_resource type="PackedScene" uid="uid://6i8bc05nm2cc" path="res://Assets/Scenas/boton.tscn" id="2_msta6"]
+[ext_resource type="PackedScene" uid="uid://byyd610gt2fn5" path="res://Assets/Scenas/admob_script.tscn" id="4_agjb8"]
 [ext_resource type="AudioStream" uid="uid://ky0su8mtjeh7" path="res://Assets/Banda_Sonora/effects/BipPC.mp3" id="4_dq40c"]
 
 [node name="Main" type="Node2D" unique_id=149142383]
 script = ExtResource("1_3mi76")
+
+[node name="Admob Script" parent="." unique_id=1799847807 instance=ExtResource("4_agjb8")]
+position = Vector2(19, 1635)
 
 [node name="Boton" parent="." unique_id=2051950697 instance=ExtResource("2_msta6")]
 
