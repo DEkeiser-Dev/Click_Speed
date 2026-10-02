@@ -5,9 +5,77 @@ signal Dekeiser_sentimental
 signal Dekeiser_NO_sentimental
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
+
+#diccionarios
+#XDIC["Mejor_cliks_1"]
+#XDIC[""]
+#XDIC["Mejor_cliks_J2"]
+var XDIC = {
+	"Mejor_cliks": 0,
+	"Mejor_cps_1": Mejor_cps_1,
+	"Mejor_cliks_1": 0,
+	"Mejor_cps_10": r(Mejor_cps_10),
+	"Mejor_cliks_10": Mejor_cliks_10,
+	"Mejor_cps_20": r(Mejor_cps_20),
+	"Mejor_cliks_20": Mejor_cliks_20,
+	"Mejor_cps_30": r(Mejor_cps_30),
+	"Mejor_cliks_30": Mejor_cliks_30,
+	"Mejor_cps_60": r(Mejor_cps_60),
+	"Mejor_cliks_60": Mejor_cliks_60,
+	"Mejor_cps_Personalizado": r(Mejor_cps_x),
+	"Mejor_cliks_Personalizado": Mejor_cliks_x,
+	"Mejor_cliks_J2": 0,
+	"Mejor_cps_1_J2": r(Mejor_cps_1_J2),
+	"Mejor_cliks_1_J2": Mejor_cliks_1_J2,
+	"Mejor_cps_10_J2": r(Mejor_cps_10_J2),
+	"Mejor_cliks_10_J2": Mejor_cliks_10_J2,
+	"Mejor_cps_20_J2": r(Mejor_cps_20_J2),
+	"Mejor_cliks_20_J2": Mejor_cliks_20_J2,
+	"Mejor_cps_30_J2": r(Mejor_cps_30_J2),
+	"Mejor_cliks_30_J2": Mejor_cliks_30_J2,
+	"Mejor_cps_60_J2": r(Mejor_cps_60_J2),
+	"Mejor_cliks_60_J2": Mejor_cliks_60_J2,
+	"Mejor_cps_Personalizado_J2": r(Mejor_cps_x_J2),
+	"Mejor_cliks_Personalizado_J2": Mejor_cliks_x_J2,
+	"Mejor_cliks_J3": Mejor_cliks_J3,
+	"Mejor_cps_1_J3": r(Mejor_cps_1_J3),
+	"Mejor_cliks_1_J3": Mejor_cliks_1_J3,
+	"Mejor_cps_10_J3": r(Mejor_cps_10_J3),
+	"Mejor_cliks_10_J3": Mejor_cliks_10_J3,
+	"Mejor_cps_20_J3": r(Mejor_cps_20_J3),
+	"Mejor_cliks_20_J3": Mejor_cliks_20_J3,
+	"Mejor_cps_30_J3": r(Mejor_cps_30_J3),
+	"Mejor_cliks_30_J3": Mejor_cliks_30_J3,
+	"Mejor_cps_60_J3": r(Mejor_cps_60_J3),
+	"Mejor_cliks_60_J3": Mejor_cliks_60_J3,
+	"Mejor_cps_Personalizado_J3": r(Mejor_cps_x_J3),
+	"Mejor_cliks_Personalizado_J3": Mejor_cliks_x_J3,
+	"Mejor_cliks_J4": Mejor_cliks_J4,
+	"Mejor_cps_1_J4": r(Mejor_cps_1_J4),
+	"Mejor_cliks_1_J4": Mejor_cliks_1_J4,
+	"Mejor_cps_10_J4": r(Mejor_cps_10_J4),
+	"Mejor_cliks_10_J4": Mejor_cliks_10_J4,
+	"Mejor_cps_20_J4": r(Mejor_cps_20_J4),
+	"Mejor_cliks_20_J4": Mejor_cliks_20_J4,
+	"Mejor_cps_30_J4": r(Mejor_cps_30_J4),
+	"Mejor_cliks_30_J4": Mejor_cliks_30_J4,
+	"Mejor_cps_60_J4": r(Mejor_cps_60_J4),
+	"Mejor_cliks_60_J4": Mejor_cliks_60_J4,
+	"Mejor_cps_Personalizado_J4": r(Mejor_cps_x_J4),
+	"Mejor_cliks_Personalizado_J4": Mejor_cliks_x_J4,
+	"Total_Clicks": total_counter,
+	"Idioma": columna,
+	"confeti": confeti,
+	"vibracion": vibration,
+	"+1": plus1,
+	"volumen_effect": volumen_effect,
+	"volumen_music": volumen_music
+	}
 #contador normal:
 var counter = 0 #contador normal
-var Mejor_cliks = 0 #record del contador normal 
+
+########var Mejor_cli89ks = 0 #record del contador normal 
+
 #desafios con sus respectivos jugadores Y DATOS EXTRA:
 var tipo_de_modo_jugadores = 0 # 0 un jugador, 1 1c1, 2 2c2, 3 todos contra todos(3), 4 todos contra todos (4)
 
@@ -15,11 +83,11 @@ var counter_J2 = 0 # contador normal
 var counter_J3 = 0
 var counter_J4 = 0
 
-var Mejor_cliks_J2 = 0 # record del contador normal
+############var Mejor_cliks_J2 = 0 # record del contador normal
 var Mejor_cliks_J3 = 0
 var Mejor_cliks_J4 = 0
 
-var Mejor_cliks_1 = 0 # record del contador de 1 segundos
+#######var Mejor_clks_1 = 0 # record del contador de 1 segundos
 var Mejor_cliks_1_J2 = 0
 var Mejor_cliks_1_J3 = 0
 var Mejor_cliks_1_J4 = 0
@@ -321,11 +389,11 @@ var CB_confeti
 var CB_vibracion
 
 
-#--------------------------LOGICA DEL JUEGO-------------------------------------:
-#LOGICA DE JUEGO INICIO Y AUN
+##--------------------------LOGICA DEL JUEGO-------------------------------------:
+## LOGICA DE JUEGO INICIO Y AUN
 #al iniciar se cargan los datos y se actualizan los datos del label
 #AL INICIAR EL JUEGO LLAMA A LAS SIGUIENTES FUNC PARA ASI PODER CORRER,
-#UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,
+# UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,
 func _ready() -> void:
 	$"Node2D/Botones_ocultar desafio/opciones2/Go!".play("GO!")
 	call_deferred("_carga_inicial")
@@ -342,9 +410,9 @@ func _carga_inicial() -> void:
 		ver_guardado_texto()
 	_opciones_no_desafiadas_aparecen_o_no()
 
-#muestra objetos y textos importantes de desarrollo
-#SE DEDICA A MOSTRAR TODAS LAS ESTADISTICAS IMPORTANTES ADEMAS DE COSAS INVISIBLES 
-#AHORA SON VISIBLES PARA PODERLAS ANALIZAR
+# muestra objetos y textos importantes de desarrollo
+# SE DEDICA A MOSTRAR TODAS LAS ESTADISTICAS IMPORTANTES ADEMAS DE COSAS INVISIBLES 
+# AHORA SON VISIBLES PARA PODERLAS ANALIZAR
 func _depurar():
 	if depurar == true:
 		p_node.visible = true
@@ -354,10 +422,10 @@ func _depurar():
 		A_texto.visible = false
 
 
-#logica de pasar las opciones
-#A CADA RATO, SE ACTUALIZARA LOS LABELS DE LA ESCENA PARA MOSTRAS LOS DATOS
-#ACTUALES, ADEMAS ESTE SERA EL ENCARGADO DE MOVER EL PANEL DE OPCIONES DE
-#DERECHA A IZQUIERDA Y OCULTAR LOS BOTONES QUE PUEDAN INTERFERIR EN LA ANIMACION
+# logica de pasar las opciones
+# A CADA RATO, SE ACTUALIZARA LOS LABELS DE LA ESCENA PARA MOSTRAS LOS DATOS
+# ACTUALES, ADEMAS ESTE SERA EL ENCARGADO DE MOVER EL PANEL DE OPCIONES DE
+# DERECHA A IZQUIERDA Y OCULTAR LOS BOTONES QUE PUEDAN INTERFERIR EN LA ANIMACION
 func _process(_delta: float) -> void:
 	_textos()
 	_logica_de_desafios_modos_de_equipos_tipo_contador_barra()
@@ -661,7 +729,7 @@ func logica_desafio():
 	if max_segundos == 1:
 		if cps_actual > Mejor_cps_1:
 			Mejor_cps_1 = cps_actual
-			_cuando_el_mejor_cps_es_mayor(Mejor_cliks_1)
+			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_1"])
 		if cps_actual_J2 > Mejor_cps_1_J2:
 			Mejor_cps_1_J2 = cps_actual_J2
 			_cuando_el_mejor_cps_es_mayor(Mejor_cliks_1_J2)
@@ -800,7 +868,7 @@ func _que_estadistica_mostrar():
 				)
 		8:
 			_que_muestran_las_estadisticas(
-				Mejor_cliks_1,
+				XDIC["Mejor_cliks_1"],
 				Mejor_cps_1,
 				1,
 				Mejor_cliks_1_J2,
@@ -913,10 +981,10 @@ func _estadisticas_mostrar_texto_parasiempre():
 	SD_esta = (
 	"[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[18])) + ": [/color][/bgcolor]" +
 
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(Mejor_cliks) + "[/color]" +
+	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks"]) + "[/color]" +
 
 	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(Mejor_cliks_1) + "[/color]" +
+	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_1"]) + "[/color]" +
 	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(Mejor_cps_1) + "[/color]" +
 
 	"\n[color=#777777]──────────────[/color]" +
@@ -943,7 +1011,7 @@ func _estadisticas_mostrar_texto_parasiempre():
 
 	"\n\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[19])) + ": [/color][/bgcolor]" +
 
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(Mejor_cliks_J2) + "[/color]" +
+	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_J2"]) + "[/color]" +
 
 	"\n[color=#777777]──────────────[/color]" +
 	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(Mejor_cliks_1_J2) + "[/color]" +
@@ -1036,8 +1104,8 @@ func _estadisticas_mostrar_texto_parasiempre():
 
 
 
-#--------------------------LOGICA BOTONES---------------------------------------:
-#BOTONES JUGADORES:
+##--------------------------LOGICA BOTONES---------------------------------------:
+## BOTONES JUGADORES:
 #LOS SIGUIENTES BOTONES SON JUGADORES, ASI QUE CADA UNO HACE LO MISMO QUE EL 
 #ORIGINAL TECNICAMENTE.
 #logica de precionar el boton 1
@@ -1045,8 +1113,8 @@ func _on_boton_pressed() -> void:
 	_texto_presionar_plus_one(b_contador)
 	_logica_botones_jugadores(1,
 	counter,
-	Mejor_cliks,
-	Mejor_cliks_1,
+	XDIC["Mejor_cliks"],
+	XDIC["Mejor_cliks_1"],
 	Mejor_cliks_10,
 	Mejor_cliks_20,
 	Mejor_cliks_30,
@@ -1058,7 +1126,7 @@ func _on_boton_2_pressed() -> void:
 	_texto_presionar_plus_one(b_contador2)
 	_logica_botones_jugadores(2,
 	counter_J2,
-	Mejor_cliks_J2,
+	XDIC["Mejor_cliks_J2"],
 	Mejor_cliks_1_J2,
 	Mejor_cliks_10_J2,
 	Mejor_cliks_20_J2,
@@ -1094,7 +1162,7 @@ func _on_boton_4_pressed() -> void:
 	)
 
 
-#BOTONES REINICIO:
+## BOTONES REINICIO:
 #reiniciar solo el contador
 func _on_reset_counter_pressed() -> void:
 	if vibration == 1:
@@ -1112,10 +1180,10 @@ func _on_reset_pressed() -> void:
 	if vibration == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
-	Mejor_cliks = 0
+	XDIC["Mejor_cliks"] = 0
 	counter = 0
 	Mejor_cps_1 = 0
-	Mejor_cliks_1 = 0
+	XDIC["Mejor_cliks_1"] = 0
 	Mejor_cps_10 = 0
 	Mejor_cliks_10 = 0
 	Mejor_cps_20 = 0
@@ -1127,7 +1195,7 @@ func _on_reset_pressed() -> void:
 	Mejor_cps_x = 0
 	Mejor_cliks_x = 0
 	# J2
-	Mejor_cliks_J2 = 0
+	XDIC["Mejor_cliks_J2"] = 0
 	counter_J2 = 0
 	Mejor_cps_1_J2 = 0
 	Mejor_cliks_1_J2 = 0
@@ -1174,7 +1242,7 @@ func _on_reset_pressed() -> void:
 	guardar()
 
 
-#PANEL DE OPCIONES:
+## PANEL DE OPCIONES:
 #ir a las opciones
 func _on_opciones_pressed() -> void:
 	if vibration == 1:
@@ -1190,7 +1258,7 @@ func _on_opciones_2_pressed() -> void:
 		opciones = 1
 
 
-#DESAFIOS:
+## DESAFIOS:
 #logica de activar desafio 1 s
 func _on_desafio_1_pressed() -> void:
 	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,
@@ -1295,7 +1363,7 @@ func _datos_iniciar_desafios(_nu):
 		desafio = false
 		max_segundos = 0
 
-#BOTONES QUE SALEN AL INICIAR UN DESAFIO
+## BOTONES QUE SALEN AL INICIAR UN DESAFIO
 func _on_salir_desafios_pressed() -> void:
 	_finalizar_desafio()
 
@@ -1309,7 +1377,7 @@ func _on_repetidor_desafios_indefinidos_pressed() -> void:
 		rd_repetidor_desafios.texture_normal = rd_texture2
 
 
-#MODOS DE JUEGO (UNO O MAS JUGADORES):
+## MODOS DE JUEGO (UNO O MAS JUGADORES):
 #logica de reposicionamiento(botones jugadores) de los modos de juego
 #ESTE SE ESPECIALIZA EN DECIRLE A LOS BOTONES EN QUE UBICACION COLOCARSE
 #SI DEBEN DE ESCALAR O DONDE POSICIONARSE O SIMPLEMENTE OCULTARSE
@@ -1413,7 +1481,7 @@ func fondo_1c1_2c2_aparecer(_A):
 	F_rojo_2c2.visible = _A
 	F_verde_2c2.visible = _A
 
-#BOTONES QUE SON DE ESTADISTICAS Y SU LOGICA
+## BOTONES QUE SON DE ESTADISTICAS Y SU LOGICA
 func _on_estadisticas_pressed() -> void: #1c1
 	_para_estadisticas_opciones(1,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1")
 func _on_estadisticas_2_pressed() -> void: #2c2
@@ -1469,9 +1537,9 @@ func _logica_botones_jugadores(_numero_player,_counter,_Mejor_cliks,_Mejor_cliks
 	#logica si el contador pasa el record anterior, sea normal o desafio ((_counter + 1) ese +1 porq antes de esto se suma un valor asi q _counter estaria desactualizado)
 	if (_counter + 1) > _Mejor_cliks and desafio == false: #superar el record normal
 		if _numero_player == 1:
-			Mejor_cliks = counter
+			XDIC["Mejor_cliks"] = counter
 		elif _numero_player == 2:
-			Mejor_cliks_J2 = counter_J2
+			XDIC["Mejor_cliks_J2"] = counter_J2
 		elif _numero_player == 3:
 			Mejor_cliks_J3 = counter_J3
 		elif _numero_player == 4:
@@ -1487,7 +1555,7 @@ func _logica_botones_jugadores(_numero_player,_counter,_Mejor_cliks,_Mejor_cliks
 			Mejor_cliks_20_J4 = counter_J4
 	elif (_counter + 1) > _Mejor_cliks1 and desafio == true and max_segundos == 1: #superar el record del desafio 1
 		if _numero_player == 1:
-			Mejor_cliks_1 = counter
+			XDIC["Mejor_cliks_1"] = counter
 		elif _numero_player == 2:
 			Mejor_cliks_1_J2 = counter_J2
 		elif _numero_player == 3:
@@ -1542,80 +1610,109 @@ func _asignadores(_a,_b):#tipo de dato, nodo/boton/etc
 		A_tiempos.global_position = _b.global_position
 
 
-#botones de abajo:
-#LOGICA DE BOTONES ABAJO:
+## BOTONES ABAJO:
+## LOGICA DE BOTONES ABAJO:
+# la func primero da una condicional
+# si desafio es falso o opciones es 0 (si esta el jugador en el menu de seleccion)
+# si se cumple alguna de las 2 se hace un match con (_a) 
+# siendo (_a) la variable que representa el tipo de lugar que se quiere ir
+# y dependiendo de la variable (_a) se llamara _logica_botones_abajo(...)
 func _botones_abajo(_a):
 	if desafio == false or opciones == 0:
 		match _a:
-			0:
-				Dekeiser_NO_sentimental.emit(0)
-				n_estadisticas_opciones_down.position.x = 1080.0
-				n_skins_opciones_down.position.x = 1080.0
-				n_opciones_opciones_down.position.x = 1080.0
-				n_dekeiser_declaracion.position.x = 1080.0
-				if opciones == 0:
-					n_todo.position.x = 720
-				elif opciones == 1:
-					n_todo.position.x = 0
-				v_home = 0
-			1:
-				Dekeiser_NO_sentimental.emit(0)
-				n_estadisticas_opciones_down.position.x = 360
-				n_skins_opciones_down.position.x = 1080.0
-				n_opciones_opciones_down.position.x = 1080.0
-				n_dekeiser_declaracion.position.x = 1080.0
-				n_todo.position.x = -1000
-				v_home = 1
-			2:
-				Dekeiser_NO_sentimental.emit(0)
-				n_estadisticas_opciones_down.position.x = 1080.0
-				n_skins_opciones_down.position.x = 360
-				n_opciones_opciones_down.position.x = 1080.0
-				n_dekeiser_declaracion.position.x = 1080.0
-				n_todo.position.x = -1000
-				v_home = 1
-			3:
-				Dekeiser_NO_sentimental.emit(0)
-				n_estadisticas_opciones_down.position.x = 1080.0
-				n_skins_opciones_down.position.x = 1080.0
-				n_opciones_opciones_down.position.x = 360
-				n_dekeiser_declaracion.position.x = 1080.0
-				n_todo.position.x = -1000
-				v_home = 1
-			4:
-				Dekeiser_sentimental.emit(1)
-				n_estadisticas_opciones_down.position.x = 1080.0
-				n_skins_opciones_down.position.x = 1080.0
-				n_opciones_opciones_down.position.x = 1080.0
-				n_dekeiser_declaracion.position.x = 360
-				n_todo.position.x = -1000
-				v_home = 1
-#SIRVE PARA VER LAS DEMAS OPCIONES O DEMAS COSAS.
-func _on_home_pressed() -> void: # MODO CASA/HOGAR(NORMAL)
+			0: ## HOGAR
+				if opciones == 0: ## principal
+					_logica_botones_abajo(false,false,false,false,0)
+				elif opciones == 1: ## hogar del click
+					_logica_botones_abajo(false,false,false,false,1)
+			1: ## ESTADISTICAS
+				_logica_botones_abajo(false,true,false,false)
+			2: ## SKINS
+				_logica_botones_abajo(false,false,true,false)
+			3: ## OPCIONES
+				_logica_botones_abajo(false,false,false,true)
+			4: ## DECLARACION DEL DEV
+				_logica_botones_abajo(true,false,false,false)
+# aqui en esta func dependiendo de las convinaciones se podra guiar al jugador al
+# "menu" que el quiere por medio de condicionales que estan controladas en su mayoria 
+# por booleanos; cuando se cumple un condicional x_nodo se colocara en la posicion X en el eje x
+func _logica_botones_abajo(
+_deker, ## DECLARACION DEL DEV ( bool )
+_a, ## ESTADISTICAS ( bool )
+_b, ## SKINS ( bool )
+_c, ## OPCIONES ( bool )
+_d = 3 ## DONDE ESTA HOGAR ( int )
+):
+# declaracion
+	if _deker:
+		Dekeiser_sentimental.emit(1)
+		n_dekeiser_declaracion.position.x = 360
+	else:
+		Dekeiser_NO_sentimental.emit(0)
+		n_dekeiser_declaracion.position.x = 1080
+# estadisticas
+	if _a:
+		n_estadisticas_opciones_down.position.x = 360
+	else:
+		n_estadisticas_opciones_down.position.x = 1080.0
+# skins
+	if _b:
+		n_skins_opciones_down.position.x = 360
+	else:
+		n_skins_opciones_down.position.x = 1080.0
+# opciones
+	if _c:
+		n_opciones_opciones_down.position.x = 360
+	else:
+		n_opciones_opciones_down.position.x = 1080.0
+# hogar
+	if _d == 0:
+		n_todo.position.x = 720
+		v_home = 0
+	elif _d == 1:
+		n_todo.position.x = 0
+		v_home = 0
+	else:
+		n_todo.position.x = -1000
+		v_home = 1
+## SIRVE PARA GUIAR AL USUARIO A DISTINTOS MENUS.
+func _on_home_pressed() -> void: ## MODO CASA/HOGAR ( NORMAL )
 	a_click.play()
 	_botones_abajo(0)
-	hme1.texture_normal = th_texture1
-func _on_estadist_pressed() -> void: # MODO DE ESTADISTICAS
+	hme1.texture_normal = th_texture1 # define una textura si se cumple la func
+func _on_estadist_pressed() -> void: ## MODO DE ESTADISTICAS
 	_estadisticas_mostrar_texto_parasiempre()
 	SD_estadisticas = SD_esta
 	_para_estadisticas_opciones(0,1)
-func _on_skins_pressed() -> void: #M ODO DE SKINS
+func _on_skins_pressed() -> void: ## MODO DE SKINS
 	a_click.play()
 	_botones_abajo(2)
-func _on_opcion_pressed() -> void: # MODO DE OPCIONES
+func _on_opcion_pressed() -> void: ## MODO DE OPCIONES
 	a_click.play()
 	_botones_abajo(3)
 
 
-#-------------------------LOGICA MENU DE OPCIONES-------------------------------:
-func CheckButtons(_a,_b,_c,_d):
-	var _e
+##-------------------------LOGICA MENU DE OPCIONES-------------------------------:
+## COMO DEBE DE INICIAR EL/LOS CHECKBUTTON/S
+# esta funcion simplemente es para indicarle al CheckButton si debe estar
+# activo o desactivado dependiendo de los datos del (_a)(diccionario) y (_b)(key)
+func CheckButtons(
+_a, ## DICCIONARIO 
+_b, ## NOMBRE KEY ( string )
+_c ## VARIABLE ( int )
+):
+	var _e # bool 
 	if _a.has(_b):
 		if _c == 1:
 			_e = true
 		else:
 			_e = false
 	return _e
+## LOGICA GENERAL DE LOS CHECKBUTTONS
+# estas tres func son Checkbuttons, mas exactamente son señales que se llaman
+# cuando se activa o desactiva y ordenan a la variable a ser igual al resultado 
+# de la func _opciones_pantalla_efectos() (que simplemente es una func que intercambia de 0 a 1 y biceversa)
+# y lo guarda
 func _on_PLUS1_toggled(_toggled_on: bool) -> void:
 	plus1 = _opciones_pantalla_efectos(plus1,_toggled_on)
 	guardar()
@@ -1626,6 +1723,9 @@ func _on_vibracion_toggled(_toggled_on: bool) -> void:
 	vibration = _opciones_pantalla_efectos(vibration,_toggled_on)
 	guardar()
 
+## LOGICA DE INTERCAMBIO DEL ( _a ) SEGUN EL BOOL ( _b )
+# si (_b) es true (_a) es 1, de lo contrario (_a) es 0
+# y retorna (_a)
 func _opciones_pantalla_efectos(_a,_b: bool):
 	a_click.play()
 	if _b:
@@ -1634,179 +1734,87 @@ func _opciones_pantalla_efectos(_a,_b: bool):
 		_a = 0
 	return _a
 
-func _centrar_panel(_panel,_a = 0):
+## LOGICA PARA CENTRAR PANELES
+# (creado porque al cambiar de idioma una sola posicion x 
+# beneficiaria a una configuracion en vez de todas)
+# (_panel) es la variable que tenga el nodo del panel.
+# el ciclo de esta func es que primero se recetea la escala del panel
+# despues se define los 2 vertices del panel solamente en el eje x
+# despues se busca el centro de el panel gracias a los 2 vertices y la formula
+# (_izq - _der) / 2.0 
+# y se retorna centro 
+## SIRVE PARA DEFINIR LA NUEVA POSICION X DEL PANEL
+func _centrar_panel(
+_panel, ## ( ruta )
+_a = 0 ## NO TOCAR
+):
 	if _a == 0:
 		_panel.reset_size()
 	var _izq = _panel.position.x
 	var _der = _panel.position.x + _panel.size.x
 	var _centro_x = (_izq - _der) / 2.0
 	return _centro_x
+#orden para centrar los paneles cada vez que se llame la func
 func _paneles_para_centrar():
 	P_efectos.position.x = _centrar_panel(P_efectos)
 	P_idioma.position.x = _centrar_panel(P_idioma)
 
+## LOGICA DE BARRAS DE VOLUMENvariable
+# en resumen estas 2 func actualizan los datos del valumen y lo guardan
+# modifica el canal de audio "effect"
 func _on_effect_volume(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("effect"),linear_to_db(value))
-	volumen_effect = barra_vol_effect.value
+	volumen_effect = barra_vol_effect.value # almacena el valor de la barra
 	guardar()
+# modifica el canal de audio "music"
 func _on_music_volume(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"),linear_to_db(value))
-	volumen_music = barra_vol_music.value
+	volumen_music = barra_vol_music.value # almacena el valor de la barra
 	guardar()
 
+## MUESTRA LA INFORMACION QUE DA EL DESARROLLADOR
+func _on_dekeiser_declaracion_pressed() -> void:
+	a_click.play()
+	_botones_abajo(4)
 
-#--------------------------LOGICA GUARDAR_CARGAR--------------------------------:
-# sistema de guardado de archivos
+
+##--------------------------LOGICA GUARDAR_CARGAR--------------------------------:
+## SISTEMA DE GUARDADO DE ARCHIVOS
 func guardar():
 	var archivo = FileAccess.open(RUTA_GUARDADO,FileAccess.WRITE)
-	var datos = {
-		"Mejor_cliks": Mejor_cliks,
-		"Mejor_cps_1": Mejor_cps_1,
-		"Mejor_cliks_1": Mejor_cliks_1,
-		"Mejor_cps_10": r(Mejor_cps_10),
-		"Mejor_cliks_10": Mejor_cliks_10,
-		"Mejor_cps_20": r(Mejor_cps_20),
-		"Mejor_cliks_20": Mejor_cliks_20,
-		"Mejor_cps_30": r(Mejor_cps_30),
-		"Mejor_cliks_30": Mejor_cliks_30,
-		"Mejor_cps_60": r(Mejor_cps_60),
-		"Mejor_cliks_60": Mejor_cliks_60,
-		"Mejor_cps_Personalizado": r(Mejor_cps_x),
-		"Mejor_cliks_Personalizado": Mejor_cliks_x,
-		"Mejor_cliks_J2": Mejor_cliks_J2,
-		"Mejor_cps_1_J2": r(Mejor_cps_1_J2),
-		"Mejor_cliks_1_J2": Mejor_cliks_1_J2,
-		"Mejor_cps_10_J2": r(Mejor_cps_10_J2),
-		"Mejor_cliks_10_J2": Mejor_cliks_10_J2,
-		"Mejor_cps_20_J2": r(Mejor_cps_20_J2),
-		"Mejor_cliks_20_J2": Mejor_cliks_20_J2,
-		"Mejor_cps_30_J2": r(Mejor_cps_30_J2),
-		"Mejor_cliks_30_J2": Mejor_cliks_30_J2,
-		"Mejor_cps_60_J2": r(Mejor_cps_60_J2),
-		"Mejor_cliks_60_J2": Mejor_cliks_60_J2,
-		"Mejor_cps_Personalizado_J2": r(Mejor_cps_x_J2),
-		"Mejor_cliks_Personalizado_J2": Mejor_cliks_x_J2,
-		"Mejor_cliks_J3": Mejor_cliks_J3,
-		"Mejor_cps_1_J3": r(Mejor_cps_1_J3),
-		"Mejor_cliks_1_J3": Mejor_cliks_1_J3,
-		"Mejor_cps_10_J3": r(Mejor_cps_10_J3),
-		"Mejor_cliks_10_J3": Mejor_cliks_10_J3,
-		"Mejor_cps_20_J3": r(Mejor_cps_20_J3),
-		"Mejor_cliks_20_J3": Mejor_cliks_20_J3,
-		"Mejor_cps_30_J3": r(Mejor_cps_30_J3),
-		"Mejor_cliks_30_J3": Mejor_cliks_30_J3,
-		"Mejor_cps_60_J3": r(Mejor_cps_60_J3),
-		"Mejor_cliks_60_J3": Mejor_cliks_60_J3,
-		"Mejor_cps_Personalizado_J3": r(Mejor_cps_x_J3),
-		"Mejor_cliks_Personalizado_J3": Mejor_cliks_x_J3,
-		"Mejor_cliks_J4": Mejor_cliks_J4,
-		"Mejor_cps_1_J4": r(Mejor_cps_1_J4),
-		"Mejor_cliks_1_J4": Mejor_cliks_1_J4,
-		"Mejor_cps_10_J4": r(Mejor_cps_10_J4),
-		"Mejor_cliks_10_J4": Mejor_cliks_10_J4,
-		"Mejor_cps_20_J4": r(Mejor_cps_20_J4),
-		"Mejor_cliks_20_J4": Mejor_cliks_20_J4,
-		"Mejor_cps_30_J4": r(Mejor_cps_30_J4),
-		"Mejor_cliks_30_J4": Mejor_cliks_30_J4,
-		"Mejor_cps_60_J4": r(Mejor_cps_60_J4),
-		"Mejor_cliks_60_J4": Mejor_cliks_60_J4,
-		"Mejor_cps_Personalizado_J4": r(Mejor_cps_x_J4),
-		"Mejor_cliks_Personalizado_J4": Mejor_cliks_x_J4,
-		"Total_Clicks": total_counter,
-		"Idioma": columna,
-		"confeti": confeti,
-		"vibracion": vibration,
-		"+1": plus1,
-		"volumen_effect": volumen_effect,
-		"volumen_music": volumen_music
-	}
-	archivo.store_var(datos)
+	archivo.store_var(XDIC)
 	archivo.close()
 
-# sistema de simplificado decial
+## SISTEMA DE SIMPLIFICADO DECIMAL
 # (redondeo) 
 # para mayor comodidad 
 # util para guardar cifras muy grandes a pequeñas
-#(de 1.99999999... guarda 1.99)
-func r(_a,_c = 0):
+##(de 1.99999999... guarda 1.99)
+func r(
+_a, ## ( float )
+_c = 0 ## NO TOCAR 
+):
 	_c = round(_a * 100.0 /100.0)
 	return _c
 
-# sistema de cargado de archivos
+## SISTEMA DE CARGA DE DATOS
 func cargar():
 	if FileAccess.file_exists(RUTA_GUARDADO):
 		var archivo = FileAccess.open(RUTA_GUARDADO, FileAccess.READ)
-		var datos = archivo.get_var()
-		if datos is Dictionary:
-			Mejor_cliks = datos.get("Mejor_cliks", 0)
-			Mejor_cps_1 = datos.get("Mejor_cps_1", 0.0)
-			Mejor_cliks_1 = datos.get("Mejor_cliks_1", 0)
-			Mejor_cps_10 = datos.get("Mejor_cps_10", 0.0)
-			Mejor_cliks_10 = datos.get("Mejor_cliks_10", 0)
-			Mejor_cps_20 = datos.get("Mejor_cps_20", 0.0)
-			Mejor_cliks_20 = datos.get("Mejor_cliks_20", 0)
-			Mejor_cps_30 = datos.get("Mejor_cps_30", 0.0)
-			Mejor_cliks_30 = datos.get("Mejor_cliks_30", 0)
-			Mejor_cps_60 = datos.get("Mejor_cps_60", 0.0)
-			Mejor_cliks_60 = datos.get("Mejor_cliks_60", 0)
-			Mejor_cps_x = datos.get("Mejor_cps_Personalizado", 0.0)
-			Mejor_cliks_x = datos.get("Mejor_cliks_Personalizado", 0)
-			Mejor_cliks_J2 = datos.get("Mejor_cliks_J2", 0)
-			Mejor_cps_1_J2 = datos.get("Mejor_cps_1_J2", 0.0)
-			Mejor_cliks_1_J2 = datos.get("Mejor_cliks_1_J2", 0)
-			Mejor_cps_10_J2 = datos.get("Mejor_cps_10_J2", 0.0)
-			Mejor_cliks_10_J2 = datos.get("Mejor_cliks_10_J2", 0)
-			Mejor_cps_20_J2 = datos.get("Mejor_cps_20_J2", 0.0)
-			Mejor_cliks_20_J2 = datos.get("Mejor_cliks_20_J2", 0)
-			Mejor_cps_30_J2 = datos.get("Mejor_cps_30_J2", 0.0)
-			Mejor_cliks_30_J2 = datos.get("Mejor_cliks_30_J2", 0)
-			Mejor_cps_60_J2 = datos.get("Mejor_cps_60_J2", 0.0)
-			Mejor_cliks_60_J2 = datos.get("Mejor_cliks_60_J2", 0)
-			Mejor_cps_x_J2 = datos.get("Mejor_cps_Personalizado_J2", 0.0)
-			Mejor_cliks_x_J2 = datos.get("Mejor_cliks_Personalizado_J2", 0)
-			Mejor_cliks_J3 = datos.get("Mejor_cliks_J3", 0)
-			Mejor_cps_1_J3 = datos.get("Mejor_cps_1_J3", 0.0)
-			Mejor_cliks_1_J3 = datos.get("Mejor_cliks_1_J3", 0)
-			Mejor_cps_10_J3 = datos.get("Mejor_cps_10_J3", 0.0)
-			Mejor_cliks_10_J3 = datos.get("Mejor_cliks_10_J3", 0)
-			Mejor_cps_20_J3 = datos.get("Mejor_cps_20_J3", 0.0)
-			Mejor_cliks_20_J3 = datos.get("Mejor_cliks_20_J3", 0)
-			Mejor_cps_30_J3 = datos.get("Mejor_cps_30_J3", 0.0)
-			Mejor_cliks_30_J3 = datos.get("Mejor_cliks_30_J3", 0)
-			Mejor_cps_60_J3 = datos.get("Mejor_cps_60_J3", 0.0)
-			Mejor_cliks_60_J3 = datos.get("Mejor_cliks_60_J3", 0)
-			Mejor_cps_x_J3 = datos.get("Mejor_cps_Personalizado_J3", 0.0)
-			Mejor_cliks_x_J3 = datos.get("Mejor_cliks_Personalizado_J3", 0)
-			Mejor_cliks_J4 = datos.get("Mejor_cliks_J4", 0)
-			Mejor_cps_1_J4 = datos.get("Mejor_cps_1_J4", 0.0)
-			Mejor_cliks_1_J4 = datos.get("Mejor_cliks_1_J4", 0)
-			Mejor_cps_10_J4 = datos.get("Mejor_cps_10_J4", 0.0)
-			Mejor_cliks_10_J4 = datos.get("Mejor_cliks_10_J4", 0)
-			Mejor_cps_20_J4 = datos.get("Mejor_cps_20_J4", 0.0)
-			Mejor_cliks_20_J4 = datos.get("Mejor_cliks_20_J4", 0)
-			Mejor_cps_30_J4 = datos.get("Mejor_cps_30_J4", 0.0)
-			Mejor_cliks_30_J4 = datos.get("Mejor_cliks_30_J4", 0)
-			Mejor_cps_60_J4 = datos.get("Mejor_cps_60_J4", 0.0)
-			Mejor_cliks_60_J4 = datos.get("Mejor_cliks_60_J4", 0)
-			Mejor_cps_x_J4 = datos.get("Mejor_cps_Personalizado_J4", 0.0)
-			Mejor_cliks_x_J4 = datos.get("Mejor_cliks_Personalizado_J4", 0)
-			total_counter = datos.get("Total_Clicks",0)
-			columna = datos.get("Idioma",0)
-			confeti = datos.get("confeti",0)
-			vibration = datos.get("vibracion",0)
-			plus1 = datos.get("+1",0)
-			volumen_effect = datos.get("volumen_effect",1)
-			volumen_music = datos.get("volumen_music",1)
-		if datos.has("volumen_effect"):
-			barra_vol_effect.value = datos["volumen_effect"]
-		if datos.has("volumen_music"):
-			barra_vol_music.value = datos["volumen_music"]
-		CB_plus1.button_pressed = CheckButtons(datos,"+1",plus1,CB_plus1)
-		CB_confeti.button_pressed = CheckButtons(datos,"confeti",confeti,CB_confeti)
-		CB_vibracion.button_pressed = CheckButtons(datos,"vibracion",vibration,CB_vibracion)
+		var XDIC_G = archivo.get_var()
+		for clave in XDIC_G:
+			if XDIC.has(clave):
+				XDIC[clave] = XDIC_G[clave]
+		if XDIC.has("volumen_effect"):
+			barra_vol_effect.value = XDIC["volumen_effect"]
+		if XDIC.has("volumen_music"):
+			barra_vol_music.value = XDIC["volumen_music"]
+		CB_plus1.button_pressed = CheckButtons(XDIC,"+1",plus1)
+		CB_confeti.button_pressed = CheckButtons(XDIC,"confeti",confeti)
+		CB_vibracion.button_pressed = CheckButtons(XDIC,"vibracion",vibration)
 		archivo.close()
 
-# sistema de ver el guardado encriptado
+## SISTEMA DE VER EL GUARDADO ENCRIPTADO
 func ver_guardado_texto():
 	if FileAccess.file_exists(RUTA_GUARDADO):
 		var archivo = FileAccess.open(RUTA_GUARDADO, FileAccess.READ)
@@ -1820,9 +1828,9 @@ func ver_guardado_texto():
 		archivo_texto.close()
 
 
-#--------------------------LOGICA TEXTO-----------------------------------------:
-# ES EL ENCARGADO DE ACTUALIZAR LOS TEXTOS QUE SI O SI SE VEAN EN EL JUEGO
-# COMO CONTADORES Y EL TIEMPO 
+##--------------------------LOGICA TEXTO-----------------------------------------:
+## ES EL ENCARGADO DE ACTUALIZAR LOS TEXTOS QUE SI O SI SE VEAN EN EL JUEGO
+## COMO CONTADORES Y EL TIEMPO 
 # ( mediante nodo.text = texto.text )
 func _textos():
 	t_lado_a_negro.text = t_lado_a.text
@@ -1835,7 +1843,7 @@ func _textos():
 	t_time_text.text = (str(segundos) + "S - " + str(max_segundos) + "S")
 	t_time_contorno_text.text = t_time_text.text
 
-# ES EL QUE DA LOS DATOS EXACTOS A CADA TEXTO IMPORTANTE
+## ES EL QUE DA LOS DATOS EXACTOS A CADA TEXTO IMPORTANTE
 # primero se define (_inde = 0) (es la variable que dice cuanto se va a reducir)
 # despues se define como es el texto original 
 # (los unicos que cambian son los richs asi que se definen solo ellos)
@@ -1859,15 +1867,15 @@ func _texto_tamaño_fuente():
 	_datos_texto(1,SD_negro,35)
 	_datos_texto(1,A_label,35)
 
-# se dedica a cambiar el tamaño del texto o la tipografia 
+## LOGICA DE CAMBIO DE TAMAÑO DEL TEXTO O CAMBIO DE TIPOGRAFIA
 # (tecnicamente es como una class)
 func _datos_texto(
-_0,# _0 que tipo de texto es (label(1) o richs(0))
-_a, # _a nodo del text
-_b = 0, # _b tamaño del text(original)
-_c = 0, # _c reduccion de tamaño texto
-_d = fuente_1, # tipografia
-_e = 0 # variable que define si se vuelve al tamaño original (1 = si)
+_0, ## _0 TIPO DE TEXTO ( LABEL( 1 ) O RICHS( 0 ) ) ( int )
+_a, ## _a NODO DEL TEXTO ( ruta )
+_b = 0, ## _b TAMAÑO DE TEXTO ( ORIGINAL ) ( int o float )
+_c = 0, ## _c REDUCCION DE TAMAÑO DE TEXTO ( int o float )
+_d = fuente_1, ## TIPOGRAFIA ( ruta )
+_e = 0 ## ¿SE UTILIZARA EL TAMAÑO ORIGINAL? ( 1 = SI ) ( int)
 ): 
 	if _e == 0:
 		if _0 == 1:
@@ -1886,8 +1894,8 @@ _e = 0 # variable que define si se vuelve al tamaño original (1 = si)
 		else:
 			_a.add_theme_font_size_override("normal_font_size",_b)
 
-# ES EL ENCARGADO LOGICO DE DECIR EN QUE POSICION Y QUE DEBE DE DECIR EL TEXTO 
-# QUE APARECERA.
+## ES EL ENCARGADO LOGICO DE DECIR EN QUE POSICION Y QUE DEBE DE DECIR EL TEXTO 
+## QUE APARECERA.
 # Define donde el texto aparecera dependiendo de (_a) (_b) y lo coloca visible
 # en los condicinales se elige que tipo de mensaje se va a mostrar:
 # (solo el mensaje o el mensaje + SD_ACTIVADO)
@@ -1895,10 +1903,10 @@ _e = 0 # variable que define si se vuelve al tamaño original (1 = si)
 # y por ultimo detiene la animacion (si esque se estaba reproduciendo)
 # y inicia la animacion
 func _textos_explicativos(
-_a, # _a coordenada X
-_b, # _b coordenada Y
-_c, # _c texto
-_d = 0 # _d tipo de impresion
+_a, ## _a COORDENADA X ( float )
+_b, ## _b COORDENADA Y ( float )
+_c, ## _c TEXTO ( string )
+_d = 0 ## _d TIPO DE IMPRESION ( int )
 ):
 	A_texto_desaparecedor.position = Vector2(_a,_b)
 	A_texto.visible = true
@@ -1909,7 +1917,7 @@ _d = 0 # _d tipo de impresion
 	A_animation_valor_valido.stop()
 	A_animation_valor_valido.play("UNICA")
 
-# AL PRESIONAR SALE UNA COPIA DE +1
+## AL PRESIONAR SALE UNA COPIA DE +1
 # primero se define la variable texto con la direccion del +1 (click_text)
 # se invoca el texto, despues se crea (__a) y saca un numero ramdom (entre 0-16)
 # se define (_tex), (_size) se crea y se saca un numero de (1.8-2.3)
@@ -1975,32 +1983,33 @@ func _texto_presionar_plus_one(_a): # _a es la ruta del boton(donde suele salir 
 		texto.animar()
 
 
-#--------------------------TRADUCCIONES----------------------------------------:
+##--------------------------TRADUCCIONES----------------------------------------:
+## HACE POSIBLE LOS SALTOS DE LINEA ( \n )
 # hace una modificacion para poder hacer un salto de linea
 # ya que en los strings puede q los interprete \\n envez de \n
 func t(id: String) -> String:
 	return tr(id).replace("\\n", "\n")
 
-# envian el tipo de valor que representa un idioma
+## ENVIAN EL VALOR QUE REPRESENTA EL IDIOMA
 # como se pueda ver a continuacion
-func _on_esp_pressed() -> void: # español
+func _on_esp_pressed() -> void: ## ESP
 	_traductor(0)
-func _on_ing_pressed() -> void: # ingles
+func _on_ing_pressed() -> void: ## ING
 	_traductor(1)
-func _on_por_pressed() -> void: # portugal
+func _on_por_pressed() -> void: ## POR
 	_traductor(2)
-func _on_fra_pressed() -> void: # frances
+func _on_fra_pressed() -> void: ## FRA
 	_traductor(3)
-func _on_ita_pressed() -> void: # italiano
+func _on_ita_pressed() -> void: ## ITA
 	_traductor(4)
-func _on_rus_pressed() -> void: # ruso
+func _on_rus_pressed() -> void: ## RUS
 	_traductor(5)
-func _on_jpn_pressed() -> void: # japones
+func _on_jpn_pressed() -> void: ## JPN
 	_traductor(6)
-func _on_kor_pressed() -> void: # coreano
+func _on_kor_pressed() -> void: ## KOR
 	_traductor(7)
 
-# esta funcion sirve para definir el idioma(por medio de una variable local de la funcion)
+## ESTA FUNC SIRVE PARA DEFINIR EL IDIOMA ( POR MEDIO DE UNA VARIABLE LOCAL DE FUNC )
 # poner el sonido (click) guarda el idioma(columna) y
 # actualiza la traducion global y llama a centrar paneles
 func _traductor(_a):
@@ -2010,7 +2019,7 @@ func _traductor(_a):
 	TranslationServer.set_locale(_columnas())
 	_paneles_para_centrar()
 
-# define con exactitud que idioma es el colocado segun la varible (columna)
+## DEFINE CON EXACTITUD QUE IDIOMA ES EL COLOCADO SEGUN LA VARIABLE ( columna )
 # y con la variable (_As) guarda el STR del idioma(gracias a match columna) para retornarlo
 func _columnas():
 	var _As
@@ -2035,16 +2044,9 @@ func _columnas():
 	return _As
 
 
-#----------------------------ANUNCIOS------------------------------------------:
+##----------------------------ANUNCIOS------------------------------------------:
 # llama a_click para el sonido(click) 
 # y envia(emite) una señal a (main.gd) para poner un anuncio interticial
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
-
-
-
-
-func _on_dekeiser_declaracion_pressed() -> void:
-	a_click.play()
-	_botones_abajo(4)
