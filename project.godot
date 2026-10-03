@@ -23,6 +23,10 @@ boot_splash/bg_color=Color(0.10982164, 0.014018827, 0.2609844, 1)
 boot_splash/image="uid://c4m1oodvo5fwg"
 config/icon="uid://cnh3cthhc1jow"
 
+[autoload]
+
+GodotPlayGameServices="*uid://cmhljmg2gtnfb"
+
 [debug]
 
 shapes/navigation/3d/geometry_edge_disabled_color=Color(0.44313726, 0.1882353, 1, 1)
@@ -38,7 +42,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/admob/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/admob/plugin.cfg")
 
 [gui]
 

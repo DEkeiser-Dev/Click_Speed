@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="4_uw7yb"]
 [ext_resource type="AudioStream" uid="uid://dp6teimmiojtn" path="res://Assets/Banda_Sonora/effects/Loading.mp3" id="6_kais2"]
 [ext_resource type="PackedScene" uid="uid://byyd610gt2fn5" path="res://Assets/Scenas/admob_script.tscn" id="7_xixia"]
+[ext_resource type="PackedScene" uid="uid://i88vfl538r0v" path="res://Assets/Scenas/PlayGameServices.tscn" id="8_7v3fl"]
 
 [sub_resource type="Animation" id="Animation_h6lew"]
 length = 0.001
@@ -102,3 +103,6 @@ libraries/ = SubResource("AnimationLibrary_kais2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2057362209]
 stream = ExtResource("6_kais2")
 volume_db = -11.624
+
+[node name="PlayGameServices" parent="." unique_id=455862334 instance=ExtResource("8_7v3fl")]
+position = Vector2(-1129, 826)

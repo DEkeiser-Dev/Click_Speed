@@ -137,6 +137,7 @@ _data = {
 
 [node name="Boton" type="CanvasLayer" unique_id=2051950697]
 script = ExtResource("1_rkc3o")
+depurar = true
 posicion_noto_botones_x = Vector2(0, -91)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=482278800]
