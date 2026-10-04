@@ -13,7 +13,7 @@ script = ExtResource("1_3mi76")
 position = Vector2(-713, -89)
 
 [node name="Admob Script" parent="." unique_id=1799847807 instance=ExtResource("4_agjb8")]
-position = Vector2(19, 1635)
+position = Vector2(19, 1682)
 
 [node name="Boton" parent="." unique_id=2051950697 instance=ExtResource("2_msta6")]
 depurar = false

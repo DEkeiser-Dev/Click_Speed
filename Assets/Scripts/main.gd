@@ -22,6 +22,7 @@ signal interticial
 signal inter_iniciar
 
 func _ready() -> void:
+	
 	inter_iniciar.emit()
 	a_music = $AudioStreamPlayer
 	a_music.finished.connect(_repetir_song)
