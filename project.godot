@@ -26,6 +26,7 @@ config/icon="uid://cnh3cthhc1jow"
 [autoload]
 
 GodotPlayGameServices="*uid://cmhljmg2gtnfb"
+PlayGameServices="*uid://i88vfl538r0v"
 
 [debug]
 

@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bmu0lhqm0aump" path="res://addons/GodotPlayGameServices/scripts/achievements/achievements_client.gd" id="4_jnwax"]
 [ext_resource type="Script" uid="uid://b6yxjjw65ha01" path="res://addons/GodotPlayGameServices/scripts/leaderboards/leaderboards_client.gd" id="5_1ueg7"]
 [ext_resource type="Script" uid="uid://dpxijogui7e4n" path="res://addons/GodotPlayGameServices/scripts/events/events_client.gd" id="6_64sx8"]
+[ext_resource type="Script" uid="uid://dyadq77ogwy73" path="res://addons/GodotPlayGameServices/scripts/players/players_client.gd" id="7_1ueg7"]
+[ext_resource type="Script" uid="uid://clpi217j0powt" path="res://addons/GodotPlayGameServices/scripts/snapshots/snapshots_client.gd" id="8_64sx8"]
 
 [node name="PlayGameServices" type="Node2D" unique_id=455862334]
 script = ExtResource("1_ykmmy")
@@ -29,5 +31,10 @@ metadata/_custom_type_script = "uid://b6yxjjw65ha01"
 script = ExtResource("6_64sx8")
 metadata/_custom_type_script = "uid://dpxijogui7e4n"
 
-[connection signal="google_play_ready" from="." to="Logica" method="_on_play_game_services_google_play_ready"]
-[connection signal="user_authenticated" from="PlayGamesSignInClient" to="Logica" method="_on_play_games_sign_in_client_user_authenticated"]
+[node name="PlayGamesPlayersClient" type="Node" parent="." unique_id=834227465]
+script = ExtResource("7_1ueg7")
+metadata/_custom_type_script = "uid://dyadq77ogwy73"
+
+[node name="PlayGamesSnapshotsClient" type="Node" parent="." unique_id=1807007141]
+script = ExtResource("8_64sx8")
+metadata/_custom_type_script = "uid://clpi217j0powt"

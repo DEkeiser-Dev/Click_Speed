@@ -3,6 +3,7 @@ extends Node2D
 signal banner_load
 
 func _ready() -> void:
+	#PlayGameServices.iniciar_sesion()
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(1.0).timeout
 	banner_load.emit()

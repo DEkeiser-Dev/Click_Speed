@@ -67,7 +67,8 @@ var XDIC = {
 	"vibracion": 1,
 	"+1": 1,
 	"volumen_effect": 1,
-	"volumen_music": 1
+	"volumen_music": 1,
+	"AYuda_Deker":0
 }
 #traducion
 var ram_dic = {
@@ -1460,7 +1461,7 @@ func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks, _Mejor_cl
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
-
+	logros(_counter)
 	if desafio == false: # si no hay desafio
 		if _numero_player == 1:
 			counter += 1
@@ -2007,3 +2008,29 @@ func _columnas():
 func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
+	XDIC["AYuda_Deker"] += 1
+	print(XDIC["AYuda_Deker"])
+	guardar()
+	if XDIC["AYuda_Deker"] >= 3:
+		logros(0,1)
+
+##-----------------------------LOGROS-------------------------------------------:
+# llama a la variable global PlayGameServices para mostras x logro
+# por medio de la func L(..)
+# (_a) es el numero de el n¿logro conseguido que se ve en PlayGameServices.gd
+func L(_a):
+	PlayGameServices.logros(_a)
+
+func logros(
+_counter, # para logros 0,1,2
+_a = 0 # si el logro es de de clicks(0) si es otro...(segure escribiendo
+):
+	if _a == 0: # PRIMER CLICK
+		L(0)
+		if _counter >99: # 100 CLICKS
+			L(1)
+		if _counter >199 and max_segundos == 20: # 200 CLICKS EN 20 S
+			L(2)
+	if _a == 1:
+		if _counter == 0: # AYUDA DEKER
+			L(4)
