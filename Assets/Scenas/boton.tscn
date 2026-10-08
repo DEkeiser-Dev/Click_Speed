@@ -452,7 +452,7 @@ libraries/ = SubResource("AnimationLibrary_2acba")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=2035721536]
 self_modulate = Color(1, 1, 1, 0.35686275)
 position = Vector2(-300, 482.49997)
-scale = Vector2(4.135, 4.135)
+scale = Vector2(4.72, 4.72)
 texture = ExtResource("5_h3ung")
 
 [node name="EJE X" type="Node2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=1949169216]

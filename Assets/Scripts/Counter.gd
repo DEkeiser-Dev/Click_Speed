@@ -865,7 +865,7 @@ func _ready() -> void:
 	call_deferred("_carga_inicial")
 	await get_tree().process_frame
 	_paneles_para_centrar()
-	_dibujar_grafica(_grafica_logica_matematica(XDIC["SOLO"]["datos_60"]))
+	_dibujar_grafica(_grafica_logica_matematica(XDIC["SOLO"]["datos_20"]))
 	#barra.custom_minimum_size.x = 18
 
 func _carga_inicial() -> void:
@@ -2123,70 +2123,29 @@ func _on_reset_pressed() -> void:
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
-	
 	counter_J2 = 0
 	counter = 0
 	counter_J3 = 0
 	counter_J4 = 0
-	XDIC["Mejor_cliks"] = 0
-	XDIC["Mejor_cps_1"] = 0
-	XDIC["Mejor_cliks_1"] = 0
-	XDIC["Mejor_cps_10"] = 0
-	XDIC["Mejor_cliks_10"] = 0
-	XDIC["Mejor_cps_20"] = 0
-	XDIC["Mejor_cliks_20"] = 0
-	XDIC["Mejor_cps_30"] = 0
-	XDIC["Mejor_cliks_30"] = 0
-	XDIC["Mejor_cps_60"] = 0
-	XDIC["Mejor_cliks_60"] = 0
-	XDIC["Mejor_cps_Personalizado"] = 0
-	XDIC["Mejor_cliks_Personalizado"] = 0
-
-	# J2
-	XDIC["Mejor_cliks_J2"] = 0
-	XDIC["Mejor_cps_1_J2"] = 0
-	XDIC["Mejor_cliks_1_J2"] = 0
-	XDIC["Mejor_cps_10_J2"] = 0
-	XDIC["Mejor_cliks_10_J2"] = 0
-	XDIC["Mejor_cps_20_J2"] = 0
-	XDIC["Mejor_cliks_20_J2"] = 0
-	XDIC["Mejor_cps_30_J2"] = 0
-	XDIC["Mejor_cliks_30_J2"] = 0
-	XDIC["Mejor_cps_60_J2"] = 0
-	XDIC["Mejor_cliks_60_J2"] = 0
-	XDIC["Mejor_cps_Personalizado_J2"] = 0
-	XDIC["Mejor_cliks_Personalizado_J2"] = 0
-
-	# J3
-	XDIC["Mejor_cliks_J3"] = 0
-	XDIC["Mejor_cps_1_J3"] = 0
-	XDIC["Mejor_cliks_1_J3"] = 0
-	XDIC["Mejor_cps_10_J3"] = 0
-	XDIC["Mejor_cliks_10_J3"] = 0
-	XDIC["Mejor_cps_20_J3"] = 0
-	XDIC["Mejor_cliks_20_J3"] = 0
-	XDIC["Mejor_cps_30_J3"] = 0
-	XDIC["Mejor_cliks_30_J3"] = 0
-	XDIC["Mejor_cps_60_J3"] = 0
-	XDIC["Mejor_cliks_60_J3"] = 0
-	XDIC["Mejor_cps_Personalizado_J3"] = 0
-	XDIC["Mejor_cliks_Personalizado_J3"] = 0
-
-	# J4
-	XDIC["Mejor_cliks_J4"] = 0
-	XDIC["Mejor_cps_1_J4"] = 0
-	XDIC["Mejor_cliks_1_J4"] = 0
-	XDIC["Mejor_cps_10_J4"] = 0
-	XDIC["Mejor_cliks_10_J4"] = 0
-	XDIC["Mejor_cps_20_J4"] = 0
-	XDIC["Mejor_cliks_20_J4"] = 0
-	XDIC["Mejor_cps_30_J4"] = 0
-	XDIC["Mejor_cliks_30_J4"] = 0
-	XDIC["Mejor_cps_60_J4"] = 0
-	XDIC["Mejor_cliks_60_J4"] = 0
-	XDIC["Mejor_cps_Personalizado_J4"] = 0
-	XDIC["Mejor_cliks_Personalizado_J4"] = 0
-
+	for e in 2:
+		for i in 4:
+			if tipo_de_modo_jugadores != 0 and i == 0:
+				tipo_de_modo_jugadores = 0
+			else:
+				tipo_de_modo_jugadores += 1
+			for a in 5:
+				if max_segundos != 1 and a == 0:
+					max_segundos = 1
+				elif a >=1 and a <= 3:
+					if a == 1:
+						max_segundos = 10
+					else:
+						max_segundos += 10
+				elif a == 4:
+					max_segundos = 60
+				else:
+					max_segundos = 67
+				_forzar_cero_datos()
 	guardar()
 
 
@@ -2313,8 +2272,78 @@ func _datos_iniciar_desafios(_nu):
 
 ## BOTONES QUE SALEN AL INICIAR UN DESAFIO
 func _on_salir_desafios_pressed() -> void:
+	_forzar_cero_datos()
 	segundos = 0
 	_finalizar_desafio()
+
+func _forzar_cero_datos():
+	var _num = ""
+	var _nom = ""
+	var _cps = "Mejor_cps"
+	var _click = "Mejor_cliks"
+	var _numerito = ""
+	var _ramdom = 0
+	var _2 = "_J2"
+	var _3 = "_J3"
+	var _4 = "_J4"
+	match max_segundos:
+		1:
+			_num = "datos_1"
+			_numerito = "_1"
+			_ramdom = 0
+		10:
+			_num = "datos_10"
+			_numerito = "_10"
+			_ramdom = 0
+		20:
+			_num = "datos_20"
+			_numerito = "_20"
+			_ramdom = 0
+		30:
+			_num = "datos_30"
+			_numerito = "_30"
+			_ramdom = 0
+		60:
+			_num = "datos_60"
+			_numerito = "_60"
+			_ramdom = 0
+		_:
+			_num = "datos_x"
+			_numerito = "_Personalizado"
+			_ramdom = 1
+	match tipo_de_modo_jugadores:
+		0:
+			_nom = "SOLO"
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+		1:
+			_nom = "1C1"
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+		2:
+			_nom = "2C2"
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+		3:
+			_nom = "3P"
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_3)
+		4:
+			_nom = "4P"
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_3)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_4)
+
+func _automatizacion_forzar_cero(_a,_b,_c,_d,_e,_f,_g = ""):
+			XDIC[_a][_b + _c] = 0
+			XDIC[_a][_d + _c] = 0
+			XDIC[_a][_e] = {
+				"CPS": [],
+				"M_Clicks": 0,
+				"M_Seg": 0}
+			if _f == 1:
+				XDIC[_a]["SEG" + _g] = 0
 
 func _on_repetidor_desafios_indefinidos_pressed() -> void:
 	a_click.play()
