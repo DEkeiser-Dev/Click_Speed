@@ -1127,7 +1127,6 @@ func _on_timer_timeout() -> void:
 				_finalizar_desafio()
 			else:
 				_bucle_desafio()
-		print(segundos)
 		segundos += 1
 		guardar_datos_para_grafica(0)
 
@@ -1347,6 +1346,7 @@ func guardar_datos_para_grafica(_a):
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
+	segundos = 0
 	guardar_datos_para_grafica(1)
 	guardar()
 	guardar_datos_para_grafica(2)
@@ -1505,7 +1505,6 @@ func _automatizacion_logica_desafio(_tipo, _a, _b, _d):
 
 func _cuando_el_mejor_cps_es_mayor(_a):
 	if _a != 0 and XDIC["confeti"] == 1:
-		print("CONFETI")
 		confeti_señal.confeti.emit()
 
 
@@ -2314,6 +2313,7 @@ func _datos_iniciar_desafios(_nu):
 
 ## BOTONES QUE SALEN AL INICIAR UN DESAFIO
 func _on_salir_desafios_pressed() -> void:
+	segundos = 0
 	_finalizar_desafio()
 
 func _on_repetidor_desafios_indefinidos_pressed() -> void:
@@ -2462,7 +2462,6 @@ func _on_estadisticas_11_pressed() -> void: # X s
 func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks1, _Mejor_cliks10, _Mejor_cliks20, _Mejor_cliks30, _Mejor_cliks60, _Mejor_cliksx,_tipo,_a,_b,_c,_d,_e,_f):
 	total_counter += 1
 	XDIC["Total_Clicks"] = total_counter
-	print("llegas?")
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
