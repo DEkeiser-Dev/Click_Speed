@@ -17,23 +17,29 @@ var dekeiser_sentimental = preload("res://Assets/Banda_Sonora/effects/Loading.mp
 var cambio = 0
 var no_cambies = 0
 
-signal banner
-signal interticial
-signal inter_iniciar
-
 func _ready() -> void:
-	
-	inter_iniciar.emit()
+	AdMob_Script._cargar_intersticial(_RAMDOM())
 	a_music = $AudioStreamPlayer
 	a_music.finished.connect(_repetir_song)
 	await get_tree().create_timer(1.0).timeout
-	banner.emit()
-	$Boton.Interticial_apoyo_dekeiser.connect(_interticial)
+	AdMob_Script._crear_banner(AD_CONFIG._ADS(1))
+	$Boton.Interticial_apoyo_dekeiser.connect(_interstitial)
 	$Boton.Dekeiser_NO_sentimental.connect(_cancion)
 	$Boton.Dekeiser_sentimental.connect(_cancion)
 
-func _interticial():
-	interticial.emit()
+
+func _interstitial():
+	AdMob_Script.mostrar_intersticial(_RAMDOM())
+
+func _RAMDOM():
+	var numero = randi_range(1, 10)
+	if numero <= 7:
+		# 70%
+		return AD_CONFIG._ADS(2)
+	else:
+		# 30%
+		return AD_CONFIG._ADS(3)
+
 
 func _poner_otra_cancion() -> void:
 	var nueva = randi_range(0, 8)

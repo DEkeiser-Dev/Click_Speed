@@ -161,16 +161,16 @@ texture = ExtResource("2_8yer3")
 autostart = true
 
 [node name="Boton" parent="Node2D" unique_id=585335164 instance=ExtResource("2_l5g0r")]
-position = Vector2(768, 1509)
+position = Vector2(1.1368684e-13, 1504)
 
 [node name="Boton2" parent="Node2D" unique_id=2048963771 instance=ExtResource("2_l5g0r")]
-position = Vector2(768, 1925)
+position = Vector2(1.1368684e-13, 1920)
 
 [node name="Boton3" parent="Node2D" unique_id=593215789 instance=ExtResource("2_l5g0r")]
-position = Vector2(1088.0001, 1509)
+position = Vector2(320.00012, 1504)
 
 [node name="Boton4" parent="Node2D" unique_id=1851618136 instance=ExtResource("2_l5g0r")]
-position = Vector2(1088, 1925)
+position = Vector2(320, 1920)
 
 [node name="Botones_ocultar desafio" type="Node2D" parent="Node2D" unique_id=1353211713]
 position = Vector2(0, -91)
@@ -320,72 +320,67 @@ NUM = "1"
 TIPO = "MODE"
 
 [node name="Estadisticas_activa_1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=6231200]
-self_modulate = Color(0.05882353, 0.05882353, 0.05882353, 0)
-position = Vector2(-433.3333, 695.83325)
+position = Vector2(-866.6666, 382.49997)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1537581526]
-self_modulate = Color(0.05882353, 0.05882353, 0.05882353, 0)
-position = Vector2(-426.6667, 835.8331)
+position = Vector2(-866.6667, 515.83325)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=415701514]
-self_modulate = Color(0.05882353, 0.05882353, 0.05882353, 0)
-position = Vector2(-426.66663, 962.49994)
+position = Vector2(-859.99994, 649.1666)
 scale = Vector2(1.9512191, 1.04)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_tct3" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1177730683]
-self_modulate = Color(0.05882353, 0.05882353, 0.05882353, 0)
-position = Vector2(-300, 695.8333)
+position = Vector2(-733.3333, 382.49997)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_tct4" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1294460862]
-self_modulate = Color(0.05882353, 0.05882353, 0.05882353, 0)
-position = Vector2(-293.33334, 835.8331)
+position = Vector2(-733.3334, 515.83325)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_10s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1131449366]
-position = Vector2(-443.5, 248.33328)
+position = Vector2(-866.6666, 918.33325)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_30s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=951400409]
-position = Vector2(-443.50003, 381.66663)
+position = Vector2(-866.6666, 1051.6666)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1430490188]
-position = Vector2(-443.4999, 112.500015)
+position = Vector2(-866.6665, 782.4999)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=650669554]
-position = Vector2(-150.16661, 248.33328)
+position = Vector2(-733.33325, 784.99994)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=720157285]
-position = Vector2(-150.16664, 381.66666)
+position = Vector2(-733.33325, 918.33325)
 scale = Vector2(1.04, 1.04)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_x" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1278077996]
-position = Vector2(-236.00002, 525.8333)
+position = Vector2(-733.3333, 1049.1665)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
@@ -396,18 +391,17 @@ texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="MODO_ESTADISTICAS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=315467894]
-self_modulate = Color(0, 0, 0, 0)
-position = Vector2(-246.66666, 962.4999)
+position = Vector2(-733.3333, 1182.4999)
 texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="TIEMPOS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1014676879]
-position = Vector2(-756, 296.66666)
+position = Vector2(-733.3333, 249.16666)
 texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="texto desaparecedor" type="Node2D" parent="Node2D/Botones_ocultar desafio" unique_id=1113205047]
-position = Vector2(-1053.3333, 548.3333)
+position = Vector2(373.33337, 1769.1665)
 
 [node name="TEXTO" type="Node2D" parent="Node2D/Botones_ocultar desafio/texto desaparecedor" unique_id=2022531388]
 position = Vector2(31.666655, 0.8333511)
@@ -417,6 +411,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control" unique_id=1124186658]
 layout_mode = 0
@@ -453,6 +448,31 @@ autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label" unique_id=1422387204]
 libraries/ = SubResource("AnimationLibrary_2acba")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=2035721536]
+self_modulate = Color(1, 1, 1, 0.35686275)
+position = Vector2(-300, 482.49997)
+scale = Vector2(4.135, 4.135)
+texture = ExtResource("5_h3ung")
+
+[node name="EJE X" type="Node2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=1949169216]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="1" type="Sprite2D" parent="Node2D/Botones_ocultar desafio/Sprite2D/EJE X" unique_id=546179329]
+position = Vector2(-0.6528244, 62.23358)
+scale = Vector2(0.9959209, 0.0047954535)
+texture = ExtResource("5_h3ung")
+
+[node name="EJE Y" type="Node2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=1420935666]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="1" type="Sprite2D" parent="Node2D/Botones_ocultar desafio/Sprite2D/EJE Y" unique_id=317690437]
+position = Vector2(-63.086113, -3.8146973e-06)
+rotation = 1.5707964
+scale = Vector2(0.9959209, -0.0037296945)
+texture = ExtResource("5_h3ung")
+
+[node name="Line2D" type="Line2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=2073193472]
 
 [node name="Botones_aparecer desafio" type="Node2D" parent="Node2D" unique_id=163182019]
 position = Vector2(0, -91)
@@ -605,7 +625,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_2acba")
 
 [node name="posicion_botonX" type="Sprite2D" parent="Node2D/posicion_botones" unique_id=1022128400]
-position = Vector2(844, 1605)
+position = Vector2(75.99994, 1600)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_o60jk")
 
@@ -667,7 +687,7 @@ layout_mode = 0
 offset_left = -312.0
 offset_top = 376.0
 offset_right = 432.0
-offset_bottom = 1432.0
+offset_bottom = 1445.44
 script = ExtResource("12_2acba")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer" unique_id=239312140]
@@ -675,7 +695,7 @@ layout_mode = 2
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
 custom_minimum_size = Vector2(630, 1156)
-custom_maximum_size = Vector2(679.13, 10000.63)
+custom_maximum_size = Vector2(679.13, 17001.295)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/line_separation = -6

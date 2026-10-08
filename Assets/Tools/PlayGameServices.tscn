@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://i88vfl538r0v"]
+
+[ext_resource type="Script" uid="uid://cbuiqeecwtrwp" path="res://Assets/Tools/PlayGameServices.gd" id="1_i3ent"]
+[ext_resource type="Script" uid="uid://01hrhjetlhpg" path="res://addons/GodotPlayGameServices/scripts/sign_in/sign_in_client.gd" id="2_a12cg"]
+[ext_resource type="Script" uid="uid://bmu0lhqm0aump" path="res://addons/GodotPlayGameServices/scripts/achievements/achievements_client.gd" id="3_obyv2"]
+[ext_resource type="Script" uid="uid://b6yxjjw65ha01" path="res://addons/GodotPlayGameServices/scripts/leaderboards/leaderboards_client.gd" id="4_ljfqd"]
+[ext_resource type="Script" uid="uid://dpxijogui7e4n" path="res://addons/GodotPlayGameServices/scripts/events/events_client.gd" id="5_p6man"]
+[ext_resource type="Script" uid="uid://dyadq77ogwy73" path="res://addons/GodotPlayGameServices/scripts/players/players_client.gd" id="6_h2hew"]
+[ext_resource type="Script" uid="uid://clpi217j0powt" path="res://addons/GodotPlayGameServices/scripts/snapshots/snapshots_client.gd" id="7_ousir"]
+[ext_resource type="Texture2D" uid="uid://d2elpyrlo0cvx" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="8_4j5ow"]
+[ext_resource type="Texture2D" uid="uid://ch3gsyohnhwlh" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="9_y3e5v"]
+[ext_resource type="Texture2D" uid="uid://f8nd0p7fo3r" path="res://Assets/Arte2d/botones/CheckButton/toggle-off.svg" id="10_cx5ra"]
+
+[node name="PlayGameServices" type="Node2D" unique_id=455862334]
+script = ExtResource("1_i3ent")
+
+[node name="PlayGamesSignInClient" type="Node" parent="." unique_id=1160214896]
+script = ExtResource("2_a12cg")
+metadata/_custom_type_script = "uid://01hrhjetlhpg"
+
+[node name="PlayGamesAchievementsClient" type="Node" parent="." unique_id=1876405070]
+script = ExtResource("3_obyv2")
+metadata/_custom_type_script = "uid://bmu0lhqm0aump"
+
+[node name="PlayGamesLeaderboardsClient" type="Node" parent="." unique_id=1109252714]
+script = ExtResource("4_ljfqd")
+metadata/_custom_type_script = "uid://b6yxjjw65ha01"
+
+[node name="PlayGamesEventsClient" type="Node" parent="." unique_id=123142096]
+script = ExtResource("5_p6man")
+metadata/_custom_type_script = "uid://dpxijogui7e4n"
+
+[node name="PlayGamesPlayersClient" type="Node" parent="." unique_id=834227465]
+script = ExtResource("6_h2hew")
+metadata/_custom_type_script = "uid://dyadq77ogwy73"
+
+[node name="PlayGamesSnapshotsClient" type="Node" parent="." unique_id=1807007141]
+script = ExtResource("7_ousir")
+metadata/_custom_type_script = "uid://clpi217j0powt"
+
+[node name="FACE_PLAY" type="Node2D" parent="." unique_id=1135820693]
+visible = false
+position = Vector2(23, 34.999996)
+scale = Vector2(0.128, 0.12)
+
+[node name="EYE" type="Sprite2D" parent="FACE_PLAY" unique_id=1638868894]
+position = Vector2(369, 203)
+texture = ExtResource("8_4j5ow")
+
+[node name="EYE2" type="Sprite2D" parent="FACE_PLAY" unique_id=2106307658]
+position = Vector2(1267, 180)
+texture = ExtResource("9_y3e5v")
+
+[node name="MOUTH" type="Sprite2D" parent="FACE_PLAY" unique_id=1917979718]
+position = Vector2(821, 873)
+scale = Vector2(12.196202, 9.925)
+texture = ExtResource("10_cx5ra")

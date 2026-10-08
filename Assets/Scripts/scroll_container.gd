@@ -21,6 +21,16 @@ func _ready():
 	barra.custom_minimum_size.x = 18
 
 
+func _get_max_scroll() -> float:
+
+	var barra = get_v_scroll_bar()
+
+	return max(
+		0.0,
+		barra.max_value - barra.page
+	)
+
+
 func _gui_input(event):
 
 	# =========================
@@ -52,6 +62,13 @@ func _gui_input(event):
 
 		scroll_vertical -= desplazamiento_entero
 
+		# Límite REAL del scroll.
+		scroll_vertical = clamp(
+			scroll_vertical,
+			0.0,
+			_get_max_scroll()
+		)
+
 		acumulado -= desplazamiento_entero
 
 		posicion_anterior = event.position
@@ -71,6 +88,13 @@ func _process(delta):
 
 		# Continúa desplazándose después de soltar.
 		scroll_vertical -= velocidad_scroll * delta
+
+		# Límite REAL del scroll.
+		scroll_vertical = clamp(
+			scroll_vertical,
+			0.0,
+			_get_max_scroll()
+		)
 
 		# Frenado progresivo.
 		velocidad_scroll = move_toward(

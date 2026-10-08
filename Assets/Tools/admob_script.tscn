@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://byyd610gt2fn5"]
+
+[ext_resource type="Script" uid="uid://3eou822ol2fb" path="res://Assets/Tools/admob_script.gd" id="1_4fcah"]
+[ext_resource type="Texture2D" uid="uid://d2elpyrlo0cvx" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="2_ua40j"]
+[ext_resource type="Texture2D" uid="uid://ch3gsyohnhwlh" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="3_u35ac"]
+[ext_resource type="Texture2D" uid="uid://f8nd0p7fo3r" path="res://Assets/Arte2d/botones/CheckButton/toggle-off.svg" id="4_w8j0g"]
+
+[node name="Admob Script" type="Node2D" unique_id=1799847807]
+script = ExtResource("1_4fcah")
+
+[node name="FACE_AD" type="Node2D" parent="." unique_id=1135820693]
+visible = false
+position = Vector2(23, 34.999996)
+scale = Vector2(0.128, 0.12)
+
+[node name="EYE" type="Sprite2D" parent="FACE_AD" unique_id=1638868894]
+position = Vector2(369, 203)
+texture = ExtResource("2_ua40j")
+
+[node name="EYE2" type="Sprite2D" parent="FACE_AD" unique_id=2106307658]
+position = Vector2(1267, 180)
+texture = ExtResource("3_u35ac")
+
+[node name="MOUTH" type="Sprite2D" parent="FACE_AD" unique_id=1917979718]
+position = Vector2(821, 873)
+scale = Vector2(12.196202, 9.925)
+texture = ExtResource("4_w8j0g")

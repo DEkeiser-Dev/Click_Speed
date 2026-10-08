@@ -59,4 +59,5 @@ MODE,Modo,Mode,Modo,Mode,Modalità,Режим,モード,모드
 UNO_CONTRA_UNO,1C1,1v1,1v1,1v1,1v1,1v1,1v1,1v1
 DOS_CONTRA_DOS,2C2,2v2,2v2,2v2,2v2,2v2,2v2,2v2
 PLAYERS,Jugadores,Players,Jogadores,Joueurs,Giocatori,Игроки,プレイヤー,플레이어
-SOLO,Solo,Solo,Solo,Seul,Solo,Соло,ソロ,솔로
+SOLITARIO,Solitario,Solo,Solo,Solitaire,Solitario,Соло,ソロ,솔로
+TEAM,Equipo,Team,Equipe,Équipe,Squadra,Команда,チーム,팀

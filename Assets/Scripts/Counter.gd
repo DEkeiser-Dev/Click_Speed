@@ -9,58 +9,554 @@ signal Dekeiser_NO_sentimental
 @export var desafio : bool #si se juega el desafio
 
 var XDIC = {
-	"Mejor_cliks": 0,
-	"Mejor_cps_1": 0,
-	"Mejor_cliks_1": 0,
-	"Mejor_cps_10": 0,
-	"Mejor_cliks_10": 0,
-	"Mejor_cps_20": 0,
-	"Mejor_cliks_20": 0,
-	"Mejor_cps_30": 0,
-	"Mejor_cliks_30": 0,
-	"Mejor_cps_60": 0,
-	"Mejor_cliks_60": 0,
-	"Mejor_cps_Personalizado": 0,
-	"Mejor_cliks_Personalizado": 0,
-	"Mejor_cliks_J2": 0,
-	"Mejor_cps_1_J2": 0,
-	"Mejor_cliks_1_J2": 0,
-	"Mejor_cps_10_J2": 0,
-	"Mejor_cliks_10_J2": 0,
-	"Mejor_cps_20_J2": 0,
-	"Mejor_cliks_20_J2": 0,
-	"Mejor_cps_30_J2": 0,
-	"Mejor_cliks_30_J2": 0,
-	"Mejor_cps_60_J2": 0,
-	"Mejor_cliks_60_J2": 0,
-	"Mejor_cps_Personalizado_J2": 0,
-	"Mejor_cliks_Personalizado_J2": 0,
-	"Mejor_cliks_J3": 0,
-	"Mejor_cps_1_J3": 0,
-	"Mejor_cliks_1_J3": 0,
-	"Mejor_cps_10_J3": 0,
-	"Mejor_cliks_10_J3": 0,
-	"Mejor_cps_20_J3": 0,
-	"Mejor_cliks_20_J3": 0,
-	"Mejor_cps_30_J3": 0,
-	"Mejor_cliks_30_J3": 0,
-	"Mejor_cps_60_J3": 0,
-	"Mejor_cliks_60_J3": 0,
-	"Mejor_cps_Personalizado_J3": 0,
-	"Mejor_cliks_Personalizado_J3": 0,
-	"Mejor_cliks_J4": 0,
-	"Mejor_cps_1_J4": 0,
-	"Mejor_cliks_1_J4": 0,
-	"Mejor_cps_10_J4": 0,
-	"Mejor_cliks_10_J4": 0,
-	"Mejor_cps_20_J4": 0,
-	"Mejor_cliks_20_J4": 0,
-	"Mejor_cps_30_J4": 0,
-	"Mejor_cliks_30_J4": 0,
-	"Mejor_cps_60_J4": 0,
-	"Mejor_cliks_60_J4": 0,
-	"Mejor_cps_Personalizado_J4": 0,
-	"Mejor_cliks_Personalizado_J4": 0,
+	"SOLO": {
+		"Mejor_cps_1": 0,
+		"Mejor_cliks_1": 0,
+		"datos_1" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10": 0,
+		"Mejor_cliks_10": 0,
+		"datos_10" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20": 0,
+		"Mejor_cliks_20": 0,
+		"datos_20" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30": 0,
+		"Mejor_cliks_30": 0,
+		"datos_30" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60": 0,
+		"Mejor_cliks_60": 0,
+		"datos_60" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado": 0,
+		"Mejor_cliks_Personalizado": 0,
+		"SEG": 0,
+		"datos_x" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+	},
+
+
+
+	"1C1": {
+		"Mejor_cps_1": 0,
+		"Mejor_cliks_1": 0,
+		"datos_1" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10": 0,
+		"Mejor_cliks_10": 0,
+		"datos_10" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20": 0,
+		"Mejor_cliks_20": 0,
+		"datos_20" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30": 0,
+		"Mejor_cliks_30": 0,
+		"datos_30" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60": 0,
+		"Mejor_cliks_60": 0,
+		"datos_60" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado": 0,
+		"Mejor_cliks_Personalizado": 0,
+		"SEG": 0,
+		"datos_x" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J2": 0,
+		"Mejor_cliks_1_J2": 0,
+		"datos_1_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J2": 0,
+		"Mejor_cliks_10_J2": 0,
+		"datos_10_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J2": 0,
+		"Mejor_cliks_20_J2": 0,
+		"datos_20_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J2": 0,
+		"Mejor_cliks_30_J2": 0,
+		"datos_30_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J2": 0,
+		"Mejor_cliks_60_J2": 0,
+		"datos_60_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J2": 0,
+		"Mejor_cliks_Personalizado_J2": 0,
+		"SEG2": 0,
+		"datos_x_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+	},
+
+
+
+	"2C2": {
+		"Mejor_cps_1": 0,
+		"Mejor_cliks_1": 0,
+		"datos_1" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10": 0,
+		"Mejor_cliks_10": 0,
+		"datos_10" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20": 0,
+		"Mejor_cliks_20": 0,
+		"datos_20" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30": 0,
+		"Mejor_cliks_30": 0,
+		"datos_30" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60": 0,
+		"Mejor_cliks_60": 0,
+		"datos_60" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado": 0,
+		"Mejor_cliks_Personalizado": 0,
+		"SEG": 0,
+		"datos_x" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J2": 0,
+		"Mejor_cliks_1_J2": 0,
+		"datos_1_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J2": 0,
+		"Mejor_cliks_10_J2": 0,
+		"datos_10_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J2": 0,
+		"Mejor_cliks_20_J2": 0,
+		"datos_20_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J2": 0,
+		"Mejor_cliks_30_J2": 0,
+		"datos_30_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J2": 0,
+		"Mejor_cliks_60_J2": 0,
+		"datos_60_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J2": 0,
+		"Mejor_cliks_Personalizado_J2": 0,
+		"SEG2": 0,
+		"datos_x_j2" : {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+	},
+
+
+
+	"3P": {
+		"Mejor_cps_1": 0,
+		"Mejor_cliks_1": 0,
+		"datos_1": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10": 0,
+		"Mejor_cliks_10": 0,
+		"datos_10": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20": 0,
+		"Mejor_cliks_20": 0,
+		"datos_20": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30": 0,
+		"Mejor_cliks_30": 0,
+		"datos_30": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60": 0,
+		"Mejor_cliks_60": 0,
+		"datos_60": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado": 0,
+		"Mejor_cliks_Personalizado": 0,
+		"SEG": 0,
+		"datos_x": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J2": 0,
+		"Mejor_cliks_1_J2": 0,
+		"datos_1_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J2": 0,
+		"Mejor_cliks_10_J2": 0,
+		"datos_10_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J2": 0,
+		"Mejor_cliks_20_J2": 0,
+		"datos_20_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J2": 0,
+		"Mejor_cliks_30_J2": 0,
+		"datos_30_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J2": 0,
+		"Mejor_cliks_60_J2": 0,
+		"datos_60_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J2": 0,
+		"Mejor_cliks_Personalizado_J2": 0,
+		"SEG2": 0,
+		"datos_x_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J3": 0,
+		"Mejor_cliks_1_J3": 0,
+		"datos_1_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J3": 0,
+		"Mejor_cliks_10_J3": 0,
+		"datos_10_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J3": 0,
+		"Mejor_cliks_20_J3": 0,
+		"datos_20_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J3": 0,
+		"Mejor_cliks_30_J3": 0,
+		"datos_30_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J3": 0,
+		"Mejor_cliks_60_J3": 0,
+		"datos_60_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J3": 0,
+		"Mejor_cliks_Personalizado_J3": 0,
+		"SEG3": 0,
+		"datos_x_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		}
+	},
+
+
+
+	"4P": {
+		"Mejor_cps_1": 0,
+		"Mejor_cliks_1": 0,
+		"datos_1": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10": 0,
+		"Mejor_cliks_10": 0,
+		"datos_10": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20": 0,
+		"Mejor_cliks_20": 0,
+		"datos_20": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30": 0,
+		"Mejor_cliks_30": 0,
+		"datos_30": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60": 0,
+		"Mejor_cliks_60": 0,
+		"datos_60": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado": 0,
+		"Mejor_cliks_Personalizado": 0,
+		"SEG": 0,
+		"datos_x": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J2": 0,
+		"Mejor_cliks_1_J2": 0,
+		"datos_1_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J2": 0,
+		"Mejor_cliks_10_J2": 0,
+		"datos_10_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J2": 0,
+		"Mejor_cliks_20_J2": 0,
+		"datos_20_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J2": 0,
+		"Mejor_cliks_30_J2": 0,
+		"datos_30_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J2": 0,
+		"Mejor_cliks_60_J2": 0,
+		"datos_60_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J2": 0,
+		"Mejor_cliks_Personalizado_J2": 0,
+		"SEG2": 0,
+		"datos_x_j2": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J3": 0,
+		"Mejor_cliks_1_J3": 0,
+		"datos_1_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J3": 0,
+		"Mejor_cliks_10_J3": 0,
+		"datos_10_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J3": 0,
+		"Mejor_cliks_20_J3": 0,
+		"datos_20_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J3": 0,
+		"Mejor_cliks_30_J3": 0,
+		"datos_30_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J3": 0,
+		"Mejor_cliks_60_J3": 0,
+		"datos_60_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J3": 0,
+		"Mejor_cliks_Personalizado_J3": 0,
+		"SEG3": 0,
+		"datos_x_j3": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+
+		"Mejor_cps_1_J4": 0,
+		"Mejor_cliks_1_J4": 0,
+		"datos_1_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_10_J4": 0,
+		"Mejor_cliks_10_J4": 0,
+		"datos_10_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_20_J4": 0,
+		"Mejor_cliks_20_J4": 0,
+		"datos_20_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_30_J4": 0,
+		"Mejor_cliks_30_J4": 0,
+		"datos_30_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_60_J4": 0,
+		"Mejor_cliks_60_J4": 0,
+		"datos_60_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		},
+		"Mejor_cps_Personalizado_J4": 0,
+		"Mejor_cliks_Personalizado_J4": 0,
+		"SEG4": 0,
+		"datos_x_j4": {
+			"CPS": [],
+			"M_Clicks": 0,
+			"M_Seg": 0
+		}
+	},
+
+
+
 	"Total_Clicks": 0,
 	"Idioma": 0,
 	"confeti": 1,
@@ -68,8 +564,9 @@ var XDIC = {
 	"+1": 1,
 	"volumen_effect": 1,
 	"volumen_music": 1,
-	"AYuda_Deker":0
+	"AYuda_Deker": 0
 }
+
 #traducion
 var ram_dic = {
 	0: "mode_1sec",
@@ -114,7 +611,13 @@ var ram_dic = {
 	39: "coming_soon",
 	40: "DATOS",
 	41: "IDIOMA",
-	42: "NUMBER"
+	42: "NUMBER",
+	43: "MODE",
+	44: "UNO_CONTRA_UNO",
+	45: "DOS_CONTRA_DOS",
+	46: "PLAYERS",
+	47: "SOLITARIO",
+	48: "TEAM"
 }
 #contador normal:
 var counter = 0 #contador normal
@@ -312,7 +815,45 @@ var P_idioma
 var CB_plus1
 var CB_confeti
 var CB_vibracion
+#graficas
+var datos_1 = {
+	"M_Clicks": 0,
+	"M_Seg": 0,
+	"CPS": []
+}
+var datos_2 = {
+	"M_Clicks": 0,
+	"M_Seg": 0,
+	"CPS": []
+}
+var datos_3 = {
+	"M_Clicks": 0,
+	"M_Seg": 0,
+	"CPS": []
+}
+var datos_4 = {
+	"M_Clicks": 0,
+	"M_Seg": 0,
+	"CPS": []
+}
 
+var _M_Clicks_plantilla = 0
+var range1 = 0
+var _verificador = 0
+
+var _M_Clicks_plantilla2 = 0
+var range2 = 0
+var _verificador2 = 0
+
+var _M_Clicks_plantilla3 = 0
+var range3 = 0
+var _verificador3 = 0
+
+var _M_Clicks_plantilla4 = 0
+var range4 = 0
+var _verificador4 = 0
+
+var _primer_segundo = true
 
 ##--------------------------LOGICA DEL JUEGO-------------------------------------:
 ## LOGICA DE JUEGO INICIO Y AUN
@@ -324,7 +865,9 @@ func _ready() -> void:
 	call_deferred("_carga_inicial")
 	await get_tree().process_frame
 	_paneles_para_centrar()
+	_dibujar_grafica(_grafica_logica_matematica(XDIC["SOLO"]["datos_60"]))
 	#barra.custom_minimum_size.x = 18
+
 func _carga_inicial() -> void:
 	_procesardor_de_objetos()
 	cargar()
@@ -334,6 +877,7 @@ func _carga_inicial() -> void:
 	if depurar == true:
 		ver_guardado_texto()
 	_opciones_no_desafiadas_aparecen_o_no()
+
 
 # muestra objetos y textos importantes de desarrollo
 # SE DEDICA A MOSTRAR TODAS LAS ESTADISTICAS IMPORTANTES ADEMAS DE COSAS INVISIBLES 
@@ -583,12 +1127,229 @@ func _on_timer_timeout() -> void:
 				_finalizar_desafio()
 			else:
 				_bucle_desafio()
-		#print(segundos)
+		print(segundos)
 		segundos += 1
+		guardar_datos_para_grafica(0)
+
+
+func guardar_datos_para_grafica(_a):
+	var _num = ""
+	var _nom = ""
+	match max_segundos:
+		1:
+			_num = "datos_1"
+		10:
+			_num = "datos_10"
+		20:
+			_num = "datos_20"
+		30:
+			_num = "datos_30"
+		60:
+			_num = "datos_60"
+		_:
+			_num = "datos_x"
+	match tipo_de_modo_jugadores:
+		0:
+			_nom = "SOLO"
+		1:
+			_nom = "1C1"
+		2:
+			_nom = "2C2"
+		3:
+			_nom = "3P"
+		4:
+			_nom = "4P"
+	if _a == 0:
+		if tipo_de_modo_jugadores == 0:
+			if _primer_segundo:
+				range1 = counter
+				datos_1["CPS"].append(counter)
+				_M_Clicks_plantilla = _verificador
+				_primer_segundo = false
+			else:
+				_verificador = counter - range1
+				range1 = counter
+				datos_1["CPS"].append(_verificador)
+				if _verificador > _M_Clicks_plantilla:
+					_M_Clicks_plantilla = _verificador
+		elif tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores <= 2:
+			if _primer_segundo:
+				range1 = counter
+				datos_1["CPS"].append(counter)
+				_M_Clicks_plantilla = _verificador
+
+				range2 = counter_J2
+				datos_2["CPS"].append(counter_J2)
+				_M_Clicks_plantilla2 = _verificador2
+				_primer_segundo = false
+			else:
+				_verificador = counter - range1
+				range1 = counter
+				datos_1["CPS"].append(_verificador)
+				if _verificador > _M_Clicks_plantilla:
+					_M_Clicks_plantilla = _verificador
+
+				_verificador2 = counter_J2 - range2
+				range2 = counter_J2
+				datos_2["CPS"].append(_verificador2)
+				if _verificador2 > _M_Clicks_plantilla2:
+					_M_Clicks_plantilla2 = _verificador2
+		elif tipo_de_modo_jugadores == 3:
+			if _primer_segundo:
+				range1 = counter
+				datos_1["CPS"].append(counter)
+				_M_Clicks_plantilla = _verificador
+
+				range2 = counter_J2
+				datos_2["CPS"].append(counter_J2)
+				_M_Clicks_plantilla2 = _verificador2
+
+				range3 = counter_J3
+				datos_3["CPS"].append(counter_J3)
+				_M_Clicks_plantilla3 = _verificador3
+				_primer_segundo = false
+			else:
+				_verificador = counter - range1
+				range1 = counter
+				datos_1["CPS"].append(_verificador)
+				if _verificador > _M_Clicks_plantilla:
+					_M_Clicks_plantilla = _verificador
+
+				_verificador2 = counter_J2 - range2
+				range2 = counter_J2
+				datos_2["CPS"].append(_verificador2)
+				if _verificador2 > _M_Clicks_plantilla2:
+					_M_Clicks_plantilla2 = _verificador2
+
+				_verificador3 = counter_J3 - range3
+				range3 = counter_J3
+				datos_3["CPS"].append(_verificador3)
+				if _verificador3 > _M_Clicks_plantilla3:
+					_M_Clicks_plantilla3 = _verificador3
+		else:
+			if _primer_segundo:
+				range1 = counter
+				datos_1["CPS"].append(counter)
+				_M_Clicks_plantilla = _verificador
+
+				range2 = counter_J2
+				datos_2["CPS"].append(counter_J2)
+				_M_Clicks_plantilla2 = _verificador2
+
+				range3 = counter_J3
+				datos_3["CPS"].append(counter_J3)
+				_M_Clicks_plantilla3 = _verificador3
+
+				range4 = counter_J4
+				datos_4["CPS"].append(counter_J4)
+				_M_Clicks_plantilla4 = _verificador4
+				_primer_segundo = false
+			else:
+				_verificador = counter - range1
+				range1 = counter
+				datos_1["CPS"].append(_verificador)
+				if _verificador > _M_Clicks_plantilla:
+					_M_Clicks_plantilla = _verificador
+
+				_verificador2 = counter_J2 - range2
+				range2 = counter_J2
+				datos_2["CPS"].append(_verificador2)
+				if _verificador2 > _M_Clicks_plantilla2:
+					_M_Clicks_plantilla2 = _verificador2
+
+				_verificador3 = counter_J3 - range3
+				range3 = counter_J3
+				datos_3["CPS"].append(_verificador3)
+				if _verificador3 > _M_Clicks_plantilla3:
+					_M_Clicks_plantilla3 = _verificador3
+
+				_verificador4 = counter_J4 - range4
+				range4 = counter_J4
+				datos_4["CPS"].append(_verificador4)
+				if _verificador4 > _M_Clicks_plantilla4:
+					_M_Clicks_plantilla4 = _verificador4
+	elif _a == 1:
+		if tipo_de_modo_jugadores == 0:
+			datos_1["M_Clicks"] = _M_Clicks_plantilla
+			datos_1["M_Seg"] = datos_1["CPS"].size()
+			XDIC[_nom][_num] = datos_1
+		elif tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores <= 2:
+			datos_1["M_Clicks"] = _M_Clicks_plantilla
+			datos_1["M_Seg"] = datos_1["CPS"].size()
+			XDIC[_nom][_num] = datos_1
+
+			datos_2["M_Clicks"] = _M_Clicks_plantilla2
+			datos_2["M_Seg"] = datos_2["CPS"].size()
+			XDIC[_nom][_num + "J2"] = datos_2
+		elif tipo_de_modo_jugadores == 3:
+			datos_1["M_Clicks"] = _M_Clicks_plantilla
+			datos_1["M_Seg"] = datos_1["CPS"].size()
+			XDIC[_nom][_num] = datos_1
+
+			datos_2["M_Clicks"] = _M_Clicks_plantilla2
+			datos_2["M_Seg"] = datos_2["CPS"].size()
+			XDIC[_nom][_num + "J2"] = datos_2
+
+			datos_3["M_Clicks"] = _M_Clicks_plantilla3
+			datos_3["M_Seg"] = datos_3["CPS"].size()
+			XDIC[_nom][_num + "J3"] = datos_3
+		else:
+			datos_1["M_Clicks"] = _M_Clicks_plantilla
+			datos_1["M_Seg"] = datos_1["CPS"].size()
+			XDIC[_nom][_num] = datos_1
+
+			datos_2["M_Clicks"] = _M_Clicks_plantilla2
+			datos_2["M_Seg"] = datos_2["CPS"].size()
+			XDIC[_nom][_num + "J2"] = datos_2
+
+			datos_3["M_Clicks"] = _M_Clicks_plantilla3
+			datos_3["M_Seg"] = datos_3["CPS"].size()
+			XDIC[_nom][_num + "J3"] = datos_3
+
+			datos_4["M_Clicks"] = _M_Clicks_plantilla4
+			datos_4["M_Seg"] = datos_4["CPS"].size()
+			XDIC[_nom][_num + "J4"] = datos_4
+	else:
+		_primer_segundo = true
+		datos_1 = {
+			"M_Clicks": 0,
+			"M_Seg": 0,
+			"CPS": []
+		}
+		_M_Clicks_plantilla = 0
+		range1 = 0
+		_verificador = 0
+		datos_2 = {
+			"M_Clicks": 0,
+			"M_Seg": 0,
+			"CPS": []
+		}
+		_M_Clicks_plantilla2 = 0
+		range2 = 0
+		_verificador2 = 0
+		datos_3 = {
+			"M_Clicks": 0,
+			"M_Seg": 0,
+			"CPS": []
+		}
+		_M_Clicks_plantilla3 = 0
+		range3 = 0
+		_verificador3 = 0
+		datos_4 = {
+			"M_Clicks": 0,
+			"M_Seg": 0,
+			"CPS": []
+		}
+		_M_Clicks_plantilla4 = 0
+		range4 = 0
+		_verificador4 = 0
+
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
+	guardar_datos_para_grafica(1)
 	guardar()
+	guardar_datos_para_grafica(2)
 	counter = 0
 	counter_J2 = 0
 	counter_J3 = 0
@@ -647,91 +1408,104 @@ func _opciones_no_desafiadas_aparecen_o_no():
 #AQUI SE ESPECIFICA QUE PASARIA SI EN UN DESAFIO SE ROMPE EL MEJOR CPS 
 #(CLICKS POR SEGUNDO (DE ESE DESAFIO Y DE ESE JUGADOR)) CON RESPECTO AL CPS ACTUAL
 func logica_desafio():
-	cps_actual = (float(counter) / max_segundos)
-	cps_actual_J2 = (float(counter_J2) / max_segundos)
-	cps_actual_J3 = (float(counter_J3) / max_segundos)
-	cps_actual_J4 = (float(counter_J4) / max_segundos)
+	cps_actual = float(counter) / max_segundos
+	cps_actual_J2 = float(counter_J2) / max_segundos
+	cps_actual_J3 = float(counter_J3) / max_segundos
+	cps_actual_J4 = float(counter_J4) / max_segundos
+
 	if max_segundos == 1:
-		if cps_actual > XDIC["Mejor_cps_1"]:
-			XDIC["Mejor_cps_1"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_1"])
-		if cps_actual_J2 > XDIC["Mejor_cps_1_J2"]:
-			XDIC["Mejor_cps_1_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_1_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_1_J3"]:
-			XDIC["Mejor_cps_1_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_1_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_1_J4"]:
-			XDIC["Mejor_cps_1_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_1_J4"])
+		_auto("_1")
 	elif max_segundos == 10:
-		if cps_actual > XDIC["Mejor_cps_10"]:
-			XDIC["Mejor_cps_10"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_10"])
-		if cps_actual_J2 > XDIC["Mejor_cps_10_J2"]:
-			XDIC["Mejor_cps_10_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_10_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_10_J3"]:
-			XDIC["Mejor_cps_10_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_10_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_10_J4"]:
-			XDIC["Mejor_cps_10_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_10_J4"])
+		_auto("_10")
 	elif max_segundos == 20:
-		if cps_actual > XDIC["Mejor_cps_20"]:
-			XDIC["Mejor_cps_20"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_20"])
-		if cps_actual_J2 > XDIC["Mejor_cps_20_J2"]:
-			XDIC["Mejor_cps_20_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_20_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_20_J3"]:
-			XDIC["Mejor_cps_20_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_20_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_20_J4"]:
-			XDIC["Mejor_cps_20_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_20_J4"])
+		_auto("_20")
 	elif max_segundos == 30:
-		if cps_actual > XDIC["Mejor_cps_30"]:
-			XDIC["Mejor_cps_30"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_30"])
-		if cps_actual_J2 > XDIC["Mejor_cps_30_J2"]:
-			XDIC["Mejor_cps_30_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_30_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_30_J3"]:
-			XDIC["Mejor_cps_30_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_30_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_30_J4"]:
-			XDIC["Mejor_cps_30_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_30_J4"])
+		_auto("_30")
 	elif max_segundos == 60:
-		if cps_actual > XDIC["Mejor_cps_60"]:
-			XDIC["Mejor_cps_60"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_60"])
-		if cps_actual_J2 > XDIC["Mejor_cps_60_J2"]:
-			XDIC["Mejor_cps_60_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_60_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_60_J3"]:
-			XDIC["Mejor_cps_60_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_60_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_60_J4"]:
-			XDIC["Mejor_cps_60_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_60_J4"])
+		_auto("_60")
 	elif max_segundos == Segundos_personalizados and Segundos_personalizados > 0:
-		if cps_actual > XDIC["Mejor_cps_Personalizado"]:
-			XDIC["Mejor_cps_Personalizado"] = cps_actual
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_Personalizado"])
-		if cps_actual_J2 > XDIC["Mejor_cps_Personalizado_J2"]:
-			XDIC["Mejor_cps_Personalizado_J2"] = cps_actual_J2
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_Personalizado_J2"])
-		if cps_actual_J3 > XDIC["Mejor_cps_Personalizado_J3"]:
-			XDIC["Mejor_cps_Personalizado_J3"] = cps_actual_J3
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_Personalizado_J3"])
-		if cps_actual_J4 > XDIC["Mejor_cps_Personalizado_J4"]:
-			XDIC["Mejor_cps_Personalizado_J4"] = cps_actual_J4
-			_cuando_el_mejor_cps_es_mayor(XDIC["Mejor_cliks_Personalizado_J4"])
+		_auto("_Personalizado")
+
+
+func _auto(_c):
+	var _a = "Mejor"
+	var _b = ""
+	var _d = "_cliks"
+	var _e = "_cps"
+
+	var _tipo = tipo_de_modo_jugadores
+	var _max_jugadores = 0
+
+	match _tipo:
+		0: # SOLO
+			_max_jugadores = 0
+		1: # 1C1
+			_max_jugadores = 1
+		2: # 2C2
+			_max_jugadores = 1
+		3: # 3P
+			_max_jugadores = 2
+		4: # 4P
+			_max_jugadores = 3
+
+	for _y in _max_jugadores + 1:
+		match _y:
+			0:
+				_b = ""
+			1:
+				_b = "_J2"
+			2:
+				_b = "_J3"
+			3:
+				_b = "_J4"
+
+		_ald(
+			_tipo,
+			_y,
+			_a + _e + _c + _b,
+			_a + _d + _c + _b
+		)
+
+
+func _ald(_tipo, _a, _b, _d):
+	_automatizacion_logica_desafio(_tipo, _a, _b, _d)
+
+
+func _automatizacion_logica_desafio(_tipo, _a, _b, _d):
+	var _g = ""
+	var _c = 0
+
+	match _tipo:
+		0:
+			_g = "SOLO"
+		1:
+			_g = "1C1"
+		2:
+			_g = "2C2"
+		3:
+			_g = "3P"
+		4:
+			_g = "4P"
+
+	match _a:
+		0:
+			_c = cps_actual
+		1:
+			_c = cps_actual_J2
+		2:
+			_c = cps_actual_J3
+		3:
+			_c = cps_actual_J4
+
+	if _c > XDIC[_g][_b]:
+		XDIC[_g][_b] = _c
+
+		_cuando_el_mejor_cps_es_mayor(_c)
+
 
 func _cuando_el_mejor_cps_es_mayor(_a):
 	if _a != 0 and XDIC["confeti"] == 1:
+		print("CONFETI")
 		confeti_señal.confeti.emit()
 
 
@@ -916,128 +1690,300 @@ func _que_muestran_las_estadisticas(_a,_b,_c,_a2,_b2,_a3,_b3,_a4,_b4):
 # visor estadisticas globales
 func _estadisticas_mostrar_texto_parasiempre():
 	SD_esta = (
-	"[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[18])) + ": [/color][/bgcolor]" +
+	_string_estadistica(0,47) + # SOLITARIO
+	_string_estadistica(0,18) +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","SOLO","Mejor_cliks_1") +
+	_string_estadistica(2,0,1,"1","SOLO","Mejor_cps_1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","SOLO","Mejor_cliks_10") +
+	_string_estadistica(2,0,1,"10","SOLO","Mejor_cps_10") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","SOLO","Mejor_cliks_20") +
+	_string_estadistica(2,0,1,"20","SOLO","Mejor_cps_20") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","SOLO","Mejor_cliks_30") +
+	_string_estadistica(2,0,1,"30","SOLO","Mejor_cps_30") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","SOLO","Mejor_cliks_60") +
+	_string_estadistica(2,0,1,"60","SOLO","Mejor_cps_60") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"SOLO","Mejor_cliks_Personalizado","","SEG") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"SOLO","Mejor_cps_Personalizado","","SEG") +
 
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks"]) + "[/color]" +
+	_string_estadistica(3) +
+	_string_estadistica(0,44) + # 1C1
+	_string_estadistica(0,48,0,0,0,0,"1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","1C1","Mejor_cliks_1") +
+	_string_estadistica(2,0,1,"1","1C1","Mejor_cps_1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","1C1","Mejor_cliks_10") +
+	_string_estadistica(2,0,1,"10","1C1","Mejor_cps_10") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","1C1","Mejor_cliks_20") +
+	_string_estadistica(2,0,1,"20","1C1","Mejor_cps_20") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","1C1","Mejor_cliks_30") +
+	_string_estadistica(2,0,1,"30","1C1","Mejor_cps_30") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","1C1","Mejor_cliks_60") +
+	_string_estadistica(2,0,1,"60","1C1","Mejor_cps_60") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"1C1","Mejor_cliks_Personalizado","","SEG") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"1C1","Mejor_cps_Personalizado","","SEG") +
+	_string_estadistica(0,48,0,0,0,0,"2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","1C1","Mejor_cliks_1_J2") +
+	_string_estadistica(2,0,1,"1","1C1","Mejor_cps_1_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","1C1","Mejor_cliks_10_J2") +
+	_string_estadistica(2,0,1,"10","1C1","Mejor_cps_10_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","1C1","Mejor_cliks_20_J2") +
+	_string_estadistica(2,0,1,"20","1C1","Mejor_cps_20_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","1C1","Mejor_cliks_30_J2") +
+	_string_estadistica(2,0,1,"30","1C1","Mejor_cps_30_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","1C1","Mejor_cliks_60_J2") +
+	_string_estadistica(2,0,1,"60","1C1","Mejor_cps_60_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"1C1","Mejor_cliks_Personalizado_J2","","SEG2") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"1C1","Mejor_cps_Personalizado_J2","","SEG2") +
 
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_1"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_1"]) + "[/color]" +
+	_string_estadistica(3) +
+	_string_estadistica(0,45) + # 2C2
+	_string_estadistica(0,48,0,0,0,0,"1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","2C2","Mejor_cliks_1") +
+	_string_estadistica(2,0,1,"1","2C2","Mejor_cps_1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","2C2","Mejor_cliks_10") +
+	_string_estadistica(2,0,1,"10","2C2","Mejor_cps_10") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","2C2","Mejor_cliks_20") +
+	_string_estadistica(2,0,1,"20","2C2","Mejor_cps_20") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","2C2","Mejor_cliks_30") +
+	_string_estadistica(2,0,1,"30","2C2","Mejor_cps_30") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","2C2","Mejor_cliks_60") +
+	_string_estadistica(2,0,1,"60","2C2","Mejor_cps_60") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"2C2","Mejor_cliks_Personalizado","","SEG") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"2C2","Mejor_cps_Personalizado","","SEG") +
+	_string_estadistica(0,48,0,0,0,0,"2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","2C2","Mejor_cliks_1_J2") +
+	_string_estadistica(2,0,1,"1","2C2","Mejor_cps_1_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","2C2","Mejor_cliks_10_J2") +
+	_string_estadistica(2,0,1,"10","2C2","Mejor_cps_10_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","2C2","Mejor_cliks_20_J2") +
+	_string_estadistica(2,0,1,"20","2C2","Mejor_cps_20_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","2C2","Mejor_cliks_30_J2") +
+	_string_estadistica(2,0,1,"30","2C2","Mejor_cps_30_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","2C2","Mejor_cliks_60_J2") +
+	_string_estadistica(2,0,1,"60","2C2","Mejor_cps_60_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"2C2","Mejor_cliks_Personalizado_J2","","SEG2") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"2C2","Mejor_cps_Personalizado_J2","","SEG2") +
 
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_10"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_10"]) + "[/color]" +
 
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_20"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_20"]) + "[/color]" +
+	_string_estadistica(3) +
+	_string_estadistica(0,46,0,0,0,0,"(3)") + # PLAYERS (3) 
+	_string_estadistica(0,18) + 
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1") +
+	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10") +
+	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20") +
+	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30") +
+	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60") +
+	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado","","SEG") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado","","SEG") +
+	_string_estadistica(0,19) + 
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1_J2") +
+	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10_J2") +
+	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20_J2") +
+	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30_J2") +
+	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60_J2") +
+	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado_J2","","SEG2") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado_J2","","SEG2") +
+	_string_estadistica(0,20) +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1_J3") +
+	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10_J3") +
+	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20_J3") +
+	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30_J3") +
+	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60_J3") +
+	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado_J3","","SEG3") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado_J3","","SEG3") +
 
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_30"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_30"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_60"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_60"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_Personalizado"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_Personalizado"]) + "[/color]" +
-
-	"\n[color=#4B3F72]══════════════[/color]" +
-
-	"\n\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[19])) + ": [/color][/bgcolor]" +
-
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_1_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_1_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_10_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_10_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_20_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_20_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_30_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_30_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_60_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_60_J2"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_Personalizado_J2"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_Personalizado_J2"]) + "[/color]" +
-
-	"\n[color=#4B3F72]══════════════[/color]" +
-
-	"\n\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[20])) + ": [/color][/bgcolor]" +
-
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_1_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_1_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_10_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_10_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_20_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_20_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_30_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_30_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_60_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_60_J3"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_Personalizado_J3"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_Personalizado_J3"]) + "[/color]" +
-
-	"\n[color=#4B3F72]══════════════[/color]" +
-
-	"\n\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[21])) + ": [/color][/bgcolor]" +
-
-	"\n\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[22])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_1_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](1 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_1_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_10_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](10 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_10_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_20_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](20 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_20_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_30_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](30 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_30_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_60_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](60 " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_60_J4"]) + "[/color]" +
-
-	"\n[color=#777777]──────────────[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cliks_Personalizado_J4"]) + "[/color]" +
-	"\n" + t(str(ram_dic[25])) + " [color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + t(str(ram_dic[23])) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(XDIC["Mejor_cps_Personalizado_J4"]) + "[/color]" +
-
-	"\n[color=#4B3F72]══════════════[/color]" +
-
-	"\n\n\n\n\n\n\n\n"
+	_string_estadistica(3) +
+	_string_estadistica(0,46,0,0,0,0,"(4)") + # PLAYERS (4) 
+	_string_estadistica(0,18) + 
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1") +
+	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10") +
+	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20") +
+	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30") +
+	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60") +
+	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado","","SEG") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado","","SEG") +
+	_string_estadistica(0,19) + 
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J2") +
+	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J2") +
+	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J2") +
+	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J2") +
+	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J2") +
+	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J2") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J2","","SEG2") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J2","","SEG2") +
+	_string_estadistica(0,20) +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J3") +
+	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J3") +
+	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J3") +
+	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J3") +
+	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J3") +
+	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J3") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J3","","SEG3") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J3","","SEG3") +
+	_string_estadistica(0,21) +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J4") +
+	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J4") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J4") +
+	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J4") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J4") +
+	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J4") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J4") +
+	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J4") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J4") +
+	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J4") +
+	_string_estadistica(1) +
+	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J4","","SEG4") +
+	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J4","","SEG4") +
+	_string_estadistica(3) +
+	_string_estadistica(4)
 	)
+
+func _string_estadistica(
+_tipo, # tipo de texto string
+_jugador = 0, # numero de ram_dic[] de jugador
+_dato1 = 0, # Click o CPS (0 1)
+_SEG = "", # Numero de segundos
+_dato2 = "", # donde se saca el resultado (XDIC) (nombre del dic)
+_dato3 = "", # donde se saca el resultado (XDIC) (nombre del key dentro del dic)
+_NUM = "",
+_seg_personalizados = ""
+):
+	var _text = ""
+	match _tipo:
+		0:
+			_text = "\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[_jugador])) + "" + _NUM + ":" + "[/color][/bgcolor]"
+		1:
+			_text = "\n[color=#777777]──────────────[/color]"
+		2:
+			match _dato1:
+				0:
+					if _seg_personalizados == "":
+						_text = ("\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + 
+						t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + _SEG + " "+ t(str(ram_dic[31])) +
+						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+						)
+					else:
+						_text = ("\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + 
+						t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + _SEG + " [ " + str(XDIC[_dato2][_seg_personalizados]) + " ] " + t(str(ram_dic[31])) +
+						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+						)
+				1:
+					if _seg_personalizados == "":
+						_text = ("\n" + t(str(ram_dic[25])) + " [color=#cf003a]" +
+						 t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + _SEG + " " + t(str(ram_dic[31])) +
+						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+						)
+					else:
+						_text = ("\n" + t(str(ram_dic[25])) + " [color=#cf003a]" +
+						 t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + _SEG + " [ " + str(XDIC[_dato2][_seg_personalizados]) + " ] " + t(str(ram_dic[31])) +
+						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+						)
+		3:
+			_text = "\n[color=#4B3F72]══════════════[/color]\n\n"
+		4:
+			_text = "\n\n\n\n\n\n\n\n"
+		5:
+			_text = "\n\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[_jugador])) + "" + _NUM + ":" + "[/color][/bgcolor]"
+	return _text
+
 
 ##--------------------------LOGICA BOTONES---------------------------------------:
 ## BOTONES JUGADORES:
@@ -1046,60 +1992,117 @@ func _estadisticas_mostrar_texto_parasiempre():
 #logica de precionar el boton 1
 func _on_boton_pressed() -> void:
 	_texto_presionar_plus_one(b_contador)
-	_logica_botones_jugadores(1,
+	_automaticazion_logica_botones_jugadores(
+		1,
 		counter,
-		XDIC["Mejor_cliks"],
-		XDIC["Mejor_cliks_1"],
-		XDIC["Mejor_cliks_10"],
-		XDIC["Mejor_cliks_20"],
-		XDIC["Mejor_cliks_30"],
-		XDIC["Mejor_cliks_60"],
-		XDIC["Mejor_cliks_Personalizado"]
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1",
+		"Mejor_cliks_10",
+		"Mejor_cliks_20",
+		"Mejor_cliks_30",
+		"Mejor_cliks_60",
+		"Mejor_cliks_Personalizado"
 	)
 
+func _automaticazion_logica_botones_jugadores(_nu,_counter,_tipo,_a,_b,_c,_d,_e,_f):
+	var _g = ""
+	match _tipo:
+		0:
+			_g = "SOLO"
+		1:
+			_g = "1C1"
+		2:
+			_g = "2C2"
+		3:
+			_g = "3P"
+		4:
+			_g = "4P"
+		_:
+			_g = "SOLO"
+	_logica_botones_jugadores(
+	_nu,
+	_counter,
+	XDIC[_g][_a],
+	XDIC[_g][_b],
+	XDIC[_g][_c],
+	XDIC[_g][_d],
+	XDIC[_g][_e],
+	XDIC[_g][_f],
+	_tipo,
+	_a,_b,_c,_d,_e,_f
+	)
 
 # logica de presionar el boton 2
 func _on_boton_2_pressed() -> void:
 	_texto_presionar_plus_one(b_contador2)
-	_logica_botones_jugadores(2,
+	_automaticazion_logica_botones_jugadores(
+		2,
 		counter_J2,
-		XDIC["Mejor_cliks_J2"],
-		XDIC["Mejor_cliks_1_J2"],
-		XDIC["Mejor_cliks_10_J2"],
-		XDIC["Mejor_cliks_20_J2"],
-		XDIC["Mejor_cliks_30_J2"],
-		XDIC["Mejor_cliks_60_J2"],
-		XDIC["Mejor_cliks_Personalizado_J2"]
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1_J2",
+		"Mejor_cliks_10_J2",
+		"Mejor_cliks_20_J2",
+		"Mejor_cliks_30_J2",
+		"Mejor_cliks_60_J2",
+		"Mejor_cliks_Personalizado_J2"
 	)
 
 
 # logica de presionar el boton 3
 func _on_boton_3_pressed() -> void:
 	_texto_presionar_plus_one(b_contador3)
-	_logica_botones_jugadores(3,
+	if tipo_de_modo_jugadores == 2:
+		_automaticazion_logica_botones_jugadores(
+		1,
+		counter,
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1",
+		"Mejor_cliks_10",
+		"Mejor_cliks_20",
+		"Mejor_cliks_30",
+		"Mejor_cliks_60",
+		"Mejor_cliks_Personalizado"
+	)
+	else:
+		_automaticazion_logica_botones_jugadores(
+		3,
 		counter_J3,
-		XDIC["Mejor_cliks_J3"],
-		XDIC["Mejor_cliks_1_J3"],
-		XDIC["Mejor_cliks_10_J3"],
-		XDIC["Mejor_cliks_20_J3"],
-		XDIC["Mejor_cliks_30_J3"],
-		XDIC["Mejor_cliks_60_J3"],
-		XDIC["Mejor_cliks_Personalizado_J3"]
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1_J3",
+		"Mejor_cliks_10_J3",
+		"Mejor_cliks_20_J3",
+		"Mejor_cliks_30_J3",
+		"Mejor_cliks_60_J3",
+		"Mejor_cliks_Personalizado_J3"
 	)
 
 
 # logica de presionar el boton 4
 func _on_boton_4_pressed() -> void:
 	_texto_presionar_plus_one(b_contador4)
-	_logica_botones_jugadores(4,
+	if tipo_de_modo_jugadores == 2:
+		_automaticazion_logica_botones_jugadores(
+		2,
+		counter_J2,
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1_J2",
+		"Mejor_cliks_10_J2",
+		"Mejor_cliks_20_J2",
+		"Mejor_cliks_30_J2",
+		"Mejor_cliks_60_J2",
+		"Mejor_cliks_Personalizado_J2"
+	)
+	else:
+		_automaticazion_logica_botones_jugadores(
+		4,
 		counter_J4,
-		XDIC["Mejor_cliks_J4"],
-		XDIC["Mejor_cliks_1_J4"],
-		XDIC["Mejor_cliks_10_J4"],
-		XDIC["Mejor_cliks_20_J4"],
-		XDIC["Mejor_cliks_30_J4"],
-		XDIC["Mejor_cliks_60_J4"],
-		XDIC["Mejor_cliks_Personalizado_J4"]
+		tipo_de_modo_jugadores,
+		"Mejor_cliks_1_J4",
+		"Mejor_cliks_10_J4",
+		"Mejor_cliks_20_J4",
+		"Mejor_cliks_30_J4",
+		"Mejor_cliks_60_J4",
+		"Mejor_cliks_Personalizado_J4"
 	)
 
 
@@ -1121,9 +2124,12 @@ func _on_reset_pressed() -> void:
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
-
-	XDIC["Mejor_cliks"] = 0
+	
+	counter_J2 = 0
 	counter = 0
+	counter_J3 = 0
+	counter_J4 = 0
+	XDIC["Mejor_cliks"] = 0
 	XDIC["Mejor_cps_1"] = 0
 	XDIC["Mejor_cliks_1"] = 0
 	XDIC["Mejor_cps_10"] = 0
@@ -1139,7 +2145,6 @@ func _on_reset_pressed() -> void:
 
 	# J2
 	XDIC["Mejor_cliks_J2"] = 0
-	counter_J2 = 0
 	XDIC["Mejor_cps_1_J2"] = 0
 	XDIC["Mejor_cliks_1_J2"] = 0
 	XDIC["Mejor_cps_10_J2"] = 0
@@ -1155,7 +2160,6 @@ func _on_reset_pressed() -> void:
 
 	# J3
 	XDIC["Mejor_cliks_J3"] = 0
-	counter_J3 = 0
 	XDIC["Mejor_cps_1_J3"] = 0
 	XDIC["Mejor_cliks_1_J3"] = 0
 	XDIC["Mejor_cps_10_J3"] = 0
@@ -1171,7 +2175,6 @@ func _on_reset_pressed() -> void:
 
 	# J4
 	XDIC["Mejor_cliks_J4"] = 0
-	counter_J4 = 0
 	XDIC["Mejor_cps_1_J4"] = 0
 	XDIC["Mejor_cliks_1_J4"] = 0
 	XDIC["Mejor_cps_10_J4"] = 0
@@ -1456,13 +2459,16 @@ func _on_estadisticas_11_pressed() -> void: # X s
 #ESTE SE ESPECIALIZA EN SUMAR UNA UNIDAD A EL VALOR TOTAL CLISKS, Y ESTE ES EL RESPONSABLE
 #DE QUE LOS BOTONES AUMENTEN SU CONTADOR, ADEMAS SE ESPECIALIZA EN ACTUALIZAR SI HAY UN 
 #NUEVO RECORD DE CLICKS, YA SEA NORMAL, DESAFIO O SEA OTRO JUGADOR(BOTON)
-func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks, _Mejor_cliks1, _Mejor_cliks10, _Mejor_cliks20, _Mejor_cliks30, _Mejor_cliks60, _Mejor_cliksx):
+func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks1, _Mejor_cliks10, _Mejor_cliks20, _Mejor_cliks30, _Mejor_cliks60, _Mejor_cliksx,_tipo,_a,_b,_c,_d,_e,_f):
 	total_counter += 1
+	XDIC["Total_Clicks"] = total_counter
+	print("llegas?")
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	a_click.play()
 	logros(_counter)
-	if desafio == false: # si no hay desafio
+
+	if desafio == true: # si hay desafio
 		if _numero_player == 1:
 			counter += 1
 		elif _numero_player == 2:
@@ -1472,91 +2478,53 @@ func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks, _Mejor_cl
 		elif _numero_player == 4:
 			counter_J4 += 1
 
-	elif desafio == true: # si hay desafio
-		if _numero_player == 1:
-			counter += 1
-		elif _numero_player == 2:
-			counter_J2 += 1
-		elif _numero_player == 3:
-			counter_J3 += 1
-		elif _numero_player == 4:
-			counter_J4 += 1
-
-		iniciar_desafio = 1
-
+	iniciar_desafio = 1
 	# logica si el contador pasa el record anterior,
-	# sea normal o desafio
-	if (_counter + 1) > _Mejor_cliks and desafio == false: # superar el record normal
-		if _numero_player == 1:
-			XDIC["Mejor_cliks"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_J4"] = counter_J4
-
-	elif (_counter + 1) > _Mejor_cliks20 and desafio == true and max_segundos == 20: # superar el record del desafio 20
-		if _numero_player == 1:
-			XDIC["Mejor_cliks_20"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_20_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_20_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_20_J4"] = counter_J4
+	if (_counter + 1) > _Mejor_cliks20 and desafio == true and max_segundos == 20: # superar el record del desafio 20
+		XDIC[_simplificador(_tipo)][_c] = _counter+1
 
 	elif (_counter + 1) > _Mejor_cliks1 and desafio == true and max_segundos == 1: # superar el record del desafio 1
-		if _numero_player == 1:
-			XDIC["Mejor_cliks_1"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_1_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_1_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_1_J4"] = counter_J4
+		XDIC[_simplificador(_tipo)][_a] = _counter+1
 
 	elif (_counter + 1) > _Mejor_cliks10 and desafio == true and max_segundos == 10: # superar el record del desafio 10
-		if _numero_player == 1:
-			XDIC["Mejor_cliks_10"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_10_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_10_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_10_J4"] = counter_J4
+		XDIC[_simplificador(_tipo)][_b] = _counter+1
 
 	elif (_counter + 1) > _Mejor_cliks30 and desafio == true and max_segundos == 30: # superar el record del desafio 30
-		if _numero_player == 1:
-			XDIC["Mejor_cliks_30"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_30_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_30_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_30_J4"] = counter_J4
+		XDIC[_simplificador(_tipo)][_d] = _counter+1
 
 	elif (_counter + 1) > _Mejor_cliks60 and desafio == true and max_segundos == 60: # superar el record del desafio 60
-		if _numero_player == 1:
-			XDIC["Mejor_cliks_60"] = counter
-		elif _numero_player == 2:
-			XDIC["Mejor_cliks_60_J2"] = counter_J2
-		elif _numero_player == 3:
-			XDIC["Mejor_cliks_60_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_60_J4"] = counter_J4
+		XDIC[_simplificador(_tipo)][_e] = _counter+1
 
 	elif (_counter + 1) > _Mejor_cliksx and desafio == true and max_segundos == Segundos_personalizados: # superar el record del desafio personalizado
+		XDIC[_simplificador(_tipo)][_f] = _counter+1
+	if max_segundos == Segundos_personalizados:
 		if _numero_player == 1:
-			XDIC["Mejor_cliks_Personalizado"] = counter
+			XDIC[_simplificador(_tipo)]["SEG"] = Segundos_personalizados
 		elif _numero_player == 2:
-			XDIC["Mejor_cliks_Personalizado_J2"] = counter_J2
+			XDIC[_simplificador(_tipo)]["SEG2"] = Segundos_personalizados
 		elif _numero_player == 3:
-			XDIC["Mejor_cliks_Personalizado_J3"] = counter_J3
-		elif _numero_player == 4:
-			XDIC["Mejor_cliks_Personalizado_J4"] = counter_J4
-
+			XDIC[_simplificador(_tipo)]["SEG3"] = Segundos_personalizados
+		else:
+			XDIC[_simplificador(_tipo)]["SEG4"] = Segundos_personalizados
 	guardar()
+
+func _simplificador(_a):
+	var _g = ""
+	match _a:
+		0:
+			_g = "SOLO"
+		1:
+			_g = "1C1"
+		2:
+			_g = "2C2"
+		3:
+			_g = "3P"
+		4:
+			_g = "4P"
+		_:
+			_g = "SOLO"
+	return _g
+
 
 #sirve para las opciones,saber cual exactamente esta activada.
 func _asignadores(_a,_b):#tipo de dato, nodo/boton/etc
@@ -1762,7 +2730,11 @@ func cargar():
 		var XDIC_G = archivo.get_var()
 		for clave in XDIC_G:
 			if XDIC.has(clave):
-				XDIC[clave] = XDIC_G[clave]
+				if XDIC[clave] is Dictionary and XDIC_G[clave] is Dictionary:
+					for sub_clave in XDIC_G[clave]:
+						XDIC[clave][sub_clave] = XDIC_G[clave][sub_clave]
+				else:
+					XDIC[clave] = XDIC_G[clave]
 		if XDIC.has("volumen_effect"):
 			barra_vol_effect.value = XDIC["volumen_effect"]
 		if XDIC.has("volumen_music"):
@@ -2034,3 +3006,236 @@ _a = 0 # si el logro es de de clicks(0) si es otro...(segure escribiendo
 	if _a == 1:
 		if _counter == 0: # AYUDA DEKER
 			L(4)
+
+func _grafica_logica_matematica(_x):
+	var _tamaño_panel = 1
+	var _n = _x["M_Clicks"]
+	var _seg = _x["M_Seg"]
+
+	var _Y = {}
+	var _X = {}
+
+	var _vector2 = {
+		"coordenadas": {},
+		"segmentoX": {},
+		"segmentoY": {}
+	}
+
+	var _trayectoria = 0
+
+	for i in 2:
+		var _N
+		if _trayectoria == 0:
+			_N = _n
+		else:
+			_N = _seg
+		# Cantidad de segmentos usando log2
+		var _S = log(_N) / log(2.0)
+		var _S_int = 0
+		if (_S - int(_S)) < 0.6:
+			_S_int = max(int(_S), 1)
+		else:
+			_S_int = max(int(_S) + 1, 1)
+
+		for a in range(_S_int + 1):
+			var _M = int((a * _N) / _S_int)
+			if _trayectoria == 0:
+				_Y[a] = _M
+			else:
+				_X[a] = _M
+
+		if _trayectoria == 0:
+			var _ultimo = _Y.values()[-1]
+			for e in _Y.keys():
+				_Y[e] = float(_Y[e] * _tamaño_panel) / _ultimo
+		else:
+			var _ultimo = _X.values()[-1]
+			for e in _X.keys():
+				_X[e] = float(_X[e] * _tamaño_panel) / _ultimo
+		_trayectoria = 1
+
+	for u in range(_x["CPS"].size() + 1):
+		var X = 0.0
+		var Y = 0.0
+		if u > 0:
+			X = float(
+				u * _tamaño_panel
+			) / _x["M_Seg"]
+			Y = float(
+				_x["CPS"][u - 1] * _tamaño_panel
+			) / _x["M_Clicks"]
+		_vector2["coordenadas"][u] = Vector2(X, Y)
+
+	for u in range(_X.size()):
+		_vector2["segmentoX"][u] = _X[u]
+	for u in range(_Y.size()):
+		_vector2["segmentoY"][u] = _Y[u]
+		
+	return _vector2
+
+
+func _crear_segmentos_dinamicos(
+	_panel,
+	_cantidad_x,
+	_cantidad_y
+):
+
+	var _eje_x = _panel.get_node("EJE X")
+	var _eje_y = _panel.get_node("EJE Y")
+	var _plantilla_x = _eje_x.get_node("1")
+
+	for i in range(1, _cantidad_x + 1):
+		if not _eje_x.has_node(str(i)):
+			var _nuevo = _plantilla_x.duplicate()
+			_nuevo.name = str(i)
+			_eje_x.add_child(_nuevo)
+
+
+	var _plantilla_y = _eje_y.get_node("1")
+	for i in range(1, _cantidad_y + 1):
+		if not _eje_y.has_node(str(i)):
+			var _nuevo = _plantilla_y.duplicate()
+			_nuevo.name = str(i)
+			_eje_y.add_child(_nuevo)
+
+
+func _actualizar_visibilidad_segmentos(
+	_panel,
+	_cantidad_x,
+	_cantidad_y
+):
+	var _eje_x = _panel.get_node("EJE X")
+	var _eje_y = _panel.get_node("EJE Y")
+	for _hijo in _eje_x.get_children():
+		if _hijo.name.is_valid_int():
+			_hijo.visible = (
+				int(_hijo.name) <= _cantidad_x
+			)
+
+	for _hijo in _eje_y.get_children():
+		if _hijo.name.is_valid_int():
+			_hijo.visible = (
+				int(_hijo.name) <= _cantidad_y
+			)
+
+
+func _dibujar_grafica(_vector2) -> void:
+	var _panel = $"Node2D/Botones_ocultar desafio/Sprite2D"
+	var _linea = $"Node2D/Botones_ocultar desafio/Sprite2D/Line2D"
+	var _coordenadas = _vector2["coordenadas"]
+	var _segmento_x = _vector2["segmentoX"]
+	var _segmento_y = _vector2["segmentoY"]
+
+	var _tamaño_panel = _panel.texture.get_size().x
+	var _mitad = _tamaño_panel / 2.0
+
+
+
+	_crear_segmentos_dinamicos(
+		_panel,
+		_segmento_x.size(),
+		_segmento_y.size()
+	)
+
+	_actualizar_visibilidad_segmentos(
+		_panel,
+		_segmento_x.size(),
+		_segmento_y.size()
+	)
+
+	_linea.position = Vector2.ZERO
+	_linea.scale = Vector2.ONE
+	_linea.clear_points()
+	_linea.width = 1.4
+	_linea.antialiased = true
+	_linea.joint_mode = Line2D.LINE_JOINT_ROUND
+	_linea.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	_linea.end_cap_mode = Line2D.LINE_CAP_ROUND
+
+
+	for u in _coordenadas:
+		var _coordenada = _coordenadas[u]
+		var _posicion = Vector2(
+			(_coordenada.x * _tamaño_panel)
+			- _mitad,
+			_mitad
+			- (_coordenada.y * _tamaño_panel)
+		)
+		_linea.add_point(_posicion)
+
+
+		var _punto = Polygon2D.new()
+		var _radio = 5.0
+		var _vertices = PackedVector2Array()
+
+		for i in 16:
+			var _angulo = (
+				TAU * i
+			) / 16.0
+			_vertices.append(
+				Vector2(
+					cos(_angulo),
+					sin(_angulo)
+				) * _radio
+			)
+
+		_punto.polygon = _vertices
+		_punto.color = Color.RED
+		_punto.position = _posicion
+
+
+		_punto.scale = Vector2(
+			1.0 / _panel.scale.x,
+			1.0 / _panel.scale.y
+		)
+		_panel.add_child(_punto)
+
+	var _escala_x = abs(
+		_panel.scale.x
+	)
+	var _escala_y = abs(
+		_panel.scale.y
+	)
+	var _ancho_real = (
+		_tamaño_panel * _escala_x
+	)
+	var _alto_real = (
+		_tamaño_panel * _escala_y
+	)
+	var _mitad_x = (
+		_ancho_real / 2.0
+	)
+	var _mitad_y = (
+		_alto_real / 2.0
+	)
+
+
+	for u in range(_segmento_y.size()):
+		var _seg_y = _panel.get_node(
+			"EJE Y/" + str(u + 1)
+		)
+		var _valor = float(
+			_segmento_y[u]
+		)
+		var _x = (
+			(_valor * _ancho_real)
+			- _mitad_x
+		)
+		_seg_y.position.x = (
+			_x / _escala_x
+		)
+
+	for u in range(_segmento_x.size()):
+		var _seg_x = _panel.get_node(
+			"EJE X/" + str(u + 1)
+		)
+		var _valor = float(
+			_segmento_x[u]
+		)
+		var _y = (
+			_mitad_y
+			- (_valor * _alto_real)
+		)
+		_seg_x.position.y = (
+			_y / _escala_y
+		)
