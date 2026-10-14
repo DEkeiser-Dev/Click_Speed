@@ -19,7 +19,7 @@ config/name="ClickSpeed CPS test"
 config/version="1.0.0"
 run/main_scene="uid://gs5te8wl28dd"
 config/features=PackedStringArray("4.7", "Mobile")
-boot_splash/bg_color=Color(0.10982164, 0.014018827, 0.2609844, 1)
+boot_splash/bg_color=Color(0.4392157, 0.18431373, 1, 1)
 boot_splash/image="uid://c4m1oodvo5fwg"
 config/icon="uid://cnh3cthhc1jow"
 

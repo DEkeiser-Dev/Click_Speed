@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://ccdv5p4wa7qcq"]
+
+[ext_resource type="Texture2D" uid="uid://cc4op264njk31" path="res://Assets/Arte2d/fondo/Fondo_Grafica.png" id="1_ubcjm"]
+[ext_resource type="Script" uid="uid://cp2twtigfknso" path="res://Assets/Scripts/Grafica.gd" id="2_oj3wf"]
+[ext_resource type="Texture2D" uid="uid://gfgp5gl7c4pp" path="res://Assets/Arte2d/Icon.frames/frame00012-00000.png" id="2_ubcjm"]
+
+[node name="Panel" type="Sprite2D" unique_id=22370181]
+scale = Vector2(4.72, 4.72)
+texture = ExtResource("1_ubcjm")
+script = ExtResource("2_oj3wf")
+
+[node name="EJE X" type="Node2D" parent="." unique_id=2135446646]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="1" type="Sprite2D" parent="EJE X" unique_id=1806677827]
+self_modulate = Color(1, 1, 1, 0.49411765)
+position = Vector2(-8.5345755e-06, 63.55933)
+scale = Vector2(0.12579453, -0.0016551827)
+texture = ExtResource("2_ubcjm")
+
+[node name="o_1" type="RichTextLabel" parent="EJE X" unique_id=211807163]
+offset_left = -138.98308
+offset_top = 47.457634
+offset_right = 4840.844
+offset_bottom = 669.5143
+scale = Vector2(0.014635316, 0.01634818)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "0"
+horizontal_alignment = 2
+
+[node name="EJE Y" type="Node2D" parent="." unique_id=1777787005]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="1" type="Sprite2D" parent="EJE Y" unique_id=89155786]
+self_modulate = Color(1, 1, 1, 0.49411765)
+position = Vector2(-63.359108, 0.08913064)
+rotation = 1.5707964
+scale = Vector2(0.12538719, -0.0015098385)
+texture = ExtResource("2_ubcjm")
+
+[node name="o_1" type="RichTextLabel" parent="EJE Y" unique_id=1379657249]
+offset_left = -64.406784
+offset_top = 64.40679
+offset_right = 746.26263
+offset_bottom = 2552.6333
+scale = Vector2(0.014635316, 0.01634818)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "0"
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1458743681]
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=492133551]
+
+[node name="Line2D3" type="Line2D" parent="." unique_id=647984836]
+
+[node name="Line2D4" type="Line2D" parent="." unique_id=834079103]
+
+[node name="cps" type="RichTextLabel" parent="." unique_id=290416891]
+offset_left = -66.1017
+offset_top = -86.44068
+offset_right = 677.48157
+offset_bottom = 522.4247
+scale = Vector2(0.036470223, 0.03897219)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "cps"
+vertical_alignment = 1
+
+[node name="sec" type="RichTextLabel" parent="." unique_id=2051931596]
+offset_left = 66.1017
+offset_top = 28.81356
+offset_right = 1428.25
+offset_bottom = 623.4571
+scale = Vector2(0.03894304, 0.03868017)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "sec2"
+
+[node name="num_seg" type="RichTextLabel" parent="." unique_id=589852958]
+offset_left = 66.1017
+offset_top = 45.76271
+offset_right = 2314.8342
+offset_bottom = 871.65674
+scale = Vector2(0.036932297, 0.03959758)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "14"
+
+[node name="num_cps" type="RichTextLabel" parent="." unique_id=1397076473]
+offset_left = -122.033905
+offset_top = -84.745766
+offset_right = 1365.1328
+offset_bottom = 1046.0043
+scale = Vector2(0.036470223, 0.03897219)
+mouse_filter = 2
+theme_override_constants/outline_size = 90
+theme_override_font_sizes/normal_font_size = 400
+text = "14"
+horizontal_alignment = 2
+
+[node name="J1" type="Label" parent="." unique_id=1866289807]
+modulate = Color(2.2140146e-06, 0.87704843, 0.6191667, 1)
+offset_left = 66.10171
+offset_top = 22.033915
+offset_right = 1529.1017
+offset_bottom = 320.0339
+scale = Vector2(0.02707864, 0.03028126)
+theme_override_constants/outline_size = 61
+theme_override_font_sizes/font_size = 280
+text = "TEAM1"
+
+[node name="J2" type="Label" parent="." unique_id=1147462878]
+modulate = Color(0.93333334, 0, 0.42352942, 1)
+offset_left = 66.1017
+offset_top = 13.559325
+offset_right = 1594.1017
+offset_bottom = 311.55933
+scale = Vector2(0.02707864, 0.03028126)
+theme_override_constants/outline_size = 61
+theme_override_font_sizes/font_size = 280
+text = "TEAM2"
+
+[node name="J3" type="Label" parent="." unique_id=1386950805]
+modulate = Color(1, 0.95686275, 0, 1)
+offset_left = 66.1017
+offset_top = 5.0847464
+offset_right = 1598.1017
+offset_bottom = 303.08475
+scale = Vector2(0.02707864, 0.030281262)
+theme_override_constants/outline_size = 61
+theme_override_font_sizes/font_size = 280
+text = "player_3"
+
+[node name="J4" type="Label" parent="." unique_id=566804114]
+modulate = Color(0, 0.19590843, 1, 1)
+offset_left = 66.1017
+offset_top = -3.3898306
+offset_right = 1611.1017
+offset_bottom = 294.61017
+scale = Vector2(0.02707864, 0.030281289)
+theme_override_constants/outline_size = 61
+theme_override_font_sizes/font_size = 280
+text = "player_4"

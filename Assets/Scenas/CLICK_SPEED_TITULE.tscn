@@ -1,21 +1,35 @@
 [gd_scene format=3 uid="uid://3w2jt7jy0bgx"]
 
 [ext_resource type="Texture2D" uid="uid://cnh3cthhc1jow" path="res://Assets/Arte2d/icon/icon.svg" id="1_v07rk"]
+[ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="2_scoyp"]
 [ext_resource type="Texture2D" uid="uid://cjh721rldodee" path="res://Assets/Arte2d/icon/iconTEXT.svg" id="2_v07rk"]
 
 [node name="CLICKSPEED" type="Node2D" unique_id=40769402]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=903326052]
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(547, 170.00002)
+self_modulate = Color(0, 0, 0, 0)
+position = Vector2(608.945, 170)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("1_v07rk")
 
 [node name="Icon2" type="Sprite2D" parent="Icon" unique_id=1354164077]
-position = Vector2(22.222221, -18.518576)
+position = Vector2(-1369.3795, -36.148148)
+scale = Vector2(1.1178281, 1.1263227)
 texture = ExtResource("1_v07rk")
 
+[node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=498968750]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-373.8704, 329.62964)
+scale = Vector2(5.5555544, 1.3888887)
+texture = ExtResource("2_scoyp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Icon/Sprite2D" unique_id=1775056718]
+self_modulate = Color(0.7604001, 0.8629873, 0.8684304, 1)
+position = Vector2(2.0000002, -7.9999604)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_scoyp")
+
 [node name="IconText" type="Sprite2D" parent="Icon" unique_id=561821210]
-position = Vector2(-1114.8148, 155.55551)
-scale = Vector2(1.54, 1.54)
+position = Vector2(-366.66663, 81.4814)
+scale = Vector2(1.1337566, 1.1998941)
 texture = ExtResource("2_v07rk")

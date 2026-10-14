@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_rojo.svg" id="2_8yer3"]
 [ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_verde.svg" id="2_71wrj"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
-[ext_resource type="Texture2D" uid="uid://datok43rn8u54" path="res://Assets/Arte2d/icon/iconn.svg" id="3_h3ung"]
+[ext_resource type="Texture2D" uid="uid://cnh3cthhc1jow" path="res://Assets/Arte2d/icon/icon.svg" id="3_h3ung"]
 [ext_resource type="Texture2D" uid="uid://tni0ejey6k4o" path="res://Assets/Arte2d/Colores_posicion_botones/normal.jpg" id="4_44gm8"]
 [ext_resource type="Texture2D" uid="uid://y08ns4be5xra" path="res://Assets/Arte2d/opciones/opciones_cuadrado/opciones.svg" id="5_4b525"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_h3ung"]
@@ -20,11 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bbr3cq8wh2w2d" path="res://Assets/Arte2d/botones/selector/selector.svg" id="12_pjjqg"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
+[ext_resource type="PackedScene" uid="uid://ccdv5p4wa7qcq" path="res://Assets/Scenas/Grafica.tscn" id="14_8yer3"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
 [ext_resource type="Texture2D" uid="uid://c2yuhtiqx803j" path="res://Assets/Arte2d/opciones/idiomas/Italy.svg" id="18_ygdgh"]
 [ext_resource type="Texture2D" uid="uid://dltbuvtg4cn12" path="res://Assets/Arte2d/opciones/idiomas/Japan.svg" id="19_oawn5"]
 [ext_resource type="Texture2D" uid="uid://ci8xywt0lt0a7" path="res://Assets/Arte2d/opciones/idiomas/Portugal.svg" id="20_x2jev"]
+[ext_resource type="Texture2D" uid="uid://bp81i5c8ulivb" path="res://Assets/Arte2d/icon/old/iconn.svg" id="21_71wrj"]
 [ext_resource type="Texture2D" uid="uid://bvtvg27khggkm" path="res://Assets/Arte2d/opciones/idiomas/Russia.svg" id="21_eivc3"]
 [ext_resource type="Texture2D" uid="uid://dw0mxasvvrrx" path="res://Assets/Arte2d/opciones/idiomas/South_Korea.svg" id="22_4sls0"]
 [ext_resource type="Texture2D" uid="uid://c5wgx8bunstqb" path="res://Assets/Arte2d/opciones/idiomas/Spain.svg" id="23_364dt"]
@@ -137,7 +139,6 @@ _data = {
 
 [node name="Boton" type="CanvasLayer" unique_id=2051950697]
 script = ExtResource("1_rkc3o")
-depurar = true
 posicion_noto_botones_x = Vector2(0, -91)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=482278800]
@@ -202,47 +203,52 @@ texture_normal = ExtResource("5_4b525")
 libraries/ = SubResource("AnimationLibrary_kmjfm")
 
 [node name="desafio1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1749066580]
-position = Vector2(-590.1666, 112.49999)
+position = Vector2(-563.49994, 81.66666)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio1" unique_id=1199175717 instance=ExtResource("9_pjjqg")]
 NUM = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="desafio10" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=669472700]
-position = Vector2(-590.1666, 248.3333)
+position = Vector2(-563.49994, 217.49997)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio10" unique_id=1476423800 instance=ExtResource("9_pjjqg")]
 NUM = "10"
+metadata/_edit_use_anchors_ = true
 
 [node name="desafio20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1826377171]
-position = Vector2(-296.8333, 248.8333)
+position = Vector2(-270.16663, 217.99997)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio20" unique_id=224585722 instance=ExtResource("9_pjjqg")]
 NUM = "20"
+metadata/_edit_use_anchors_ = true
 
 [node name="desafio30" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=538206312]
-position = Vector2(-590.1666, 382.16663)
+position = Vector2(-563.49994, 351.33328)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio30" unique_id=320764944 instance=ExtResource("9_pjjqg")]
 NUM = "30"
+metadata/_edit_use_anchors_ = true
 
 [node name="desafio60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=962976418]
-position = Vector2(-296.8333, 381.66663)
+position = Vector2(-270.16663, 350.83328)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio/desafio60" unique_id=777495598 instance=ExtResource("9_pjjqg")]
 NUM = "60"
+metadata/_edit_use_anchors_ = true
 
 [node name="desafioPerson" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1153556199]
-position = Vector2(-382.66663, 525.8333)
+position = Vector2(-355.99994, 495)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
@@ -256,16 +262,16 @@ scale = Vector2(1.6015626, 0.88541675)
 texture_normal = ExtResource("3_h3ung")
 
 [node name="EntradaPersonalizada" type="LineEdit" parent="Node2D/Botones_ocultar desafio" unique_id=1855945156]
-offset_left = -589.3334
-offset_top = 535.83344
-offset_right = -387.00006
-offset_bottom = 654.83344
+offset_left = -562.6667
+offset_top = 505.00012
+offset_right = -360.33337
+offset_bottom = 624.0001
 theme_override_font_sizes/font_size = 40
 placeholder_text = "NUMBER"
 virtual_keyboard_type = 2
 
 [node name="1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1589552217]
-position = Vector2(-433.3333, 695.8333)
+position = Vector2(-406.66663, 665)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
@@ -275,7 +281,7 @@ TIPO = "MODE"
 metadata/_edit_use_anchors_ = true
 
 [node name="2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=930876900]
-position = Vector2(-433.3333, 829.1667)
+position = Vector2(-406.66663, 798.3334)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
@@ -285,7 +291,7 @@ TIPO = "MODE"
 metadata/_edit_use_anchors_ = true
 
 [node name="1 contra todos(3)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1747207377]
-position = Vector2(-300, 695.8333)
+position = Vector2(-273.3333, 665)
 scale = Vector2(1.0000001, 1.0000001)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
@@ -296,7 +302,7 @@ TIPO = "PLAYERS"
 metadata/_edit_use_anchors_ = true
 
 [node name="1 contra todos(4)" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1941161697]
-position = Vector2(-299.99994, 828.05554)
+position = Vector2(-273.33325, 797.2222)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
@@ -306,97 +312,97 @@ TIPO = "PLAYERS"
 metadata/_edit_use_anchors_ = true
 
 [node name="Solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=529785854]
-position = Vector2(-433.3333, 962.4999)
+position = Vector2(-406.66663, 931.66656)
 scale = Vector2(1.9945914, 1.0000001)
 texture_normal = ExtResource("8_pjjqg")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="datos" parent="Node2D/Botones_ocultar desafio" unique_id=1190148670 instance=ExtResource("9_pjjqg")]
-offset_left = -366.66666
-offset_top = 973.33325
-offset_right = -251.66666
-offset_bottom = 1133.3333
+offset_left = -339.99994
+offset_top = 942.49994
+offset_right = -224.99994
+offset_bottom = 1102.5
 NUM = "1"
 TIPO = "MODE"
 
 [node name="Estadisticas_activa_1c1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=6231200]
-position = Vector2(-866.6666, 382.49997)
+position = Vector2(-839.99994, 351.66663)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_2c2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1537581526]
-position = Vector2(-866.6667, 515.83325)
+position = Vector2(-839.99994, 484.9999)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_solitario" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=415701514]
-position = Vector2(-859.99994, 649.1666)
+position = Vector2(-833.33325, 618.3333)
 scale = Vector2(1.9512191, 1.04)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_tct3" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1177730683]
-position = Vector2(-733.3333, 382.49997)
+position = Vector2(-706.6667, 351.66663)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_activa_tct4" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1294460862]
-position = Vector2(-733.3334, 515.83325)
+position = Vector2(-706.6667, 484.9999)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_10s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1131449366]
-position = Vector2(-866.6666, 918.33325)
+position = Vector2(-839.99994, 887.49994)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_30s" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=951400409]
-position = Vector2(-866.6666, 1051.6666)
+position = Vector2(-839.99994, 1020.83325)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_1" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1430490188]
-position = Vector2(-866.6665, 782.4999)
+position = Vector2(-839.9998, 751.66656)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_20" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=650669554]
-position = Vector2(-733.33325, 784.99994)
+position = Vector2(-706.66656, 754.1666)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_60" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=720157285]
-position = Vector2(-733.33325, 918.33325)
+position = Vector2(-706.66656, 887.49994)
 scale = Vector2(1.04, 1.04)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Estadisticas_x" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1278077996]
-position = Vector2(-733.3333, 1049.1665)
+position = Vector2(-706.6667, 1018.3331)
 scale = Vector2(1.041062, 1.0397822)
 texture_normal = ExtResource("8_eivc3")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="MODO" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1913307801]
-position = Vector2(-433.3333, 962.5)
+position = Vector2(-406.66663, 931.6667)
 texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="MODO_ESTADISTICAS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=315467894]
-position = Vector2(-733.3333, 1182.4999)
+position = Vector2(-1313.3333, 1171.6665)
 texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
 [node name="TIEMPOS" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=1014676879]
-position = Vector2(-733.3333, 249.16666)
+position = Vector2(-706.6667, 218.33333)
 texture = ExtResource("12_pjjqg")
 offset = Vector2(64.16669, 64.16667)
 
@@ -448,31 +454,6 @@ autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label" unique_id=1422387204]
 libraries/ = SubResource("AnimationLibrary_2acba")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Botones_ocultar desafio" unique_id=2035721536]
-self_modulate = Color(1, 1, 1, 0.35686275)
-position = Vector2(-300, 482.49997)
-scale = Vector2(4.72, 4.72)
-texture = ExtResource("5_h3ung")
-
-[node name="EJE X" type="Node2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=1949169216]
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="1" type="Sprite2D" parent="Node2D/Botones_ocultar desafio/Sprite2D/EJE X" unique_id=546179329]
-position = Vector2(-0.6528244, 62.23358)
-scale = Vector2(0.9959209, 0.0047954535)
-texture = ExtResource("5_h3ung")
-
-[node name="EJE Y" type="Node2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=1420935666]
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="1" type="Sprite2D" parent="Node2D/Botones_ocultar desafio/Sprite2D/EJE Y" unique_id=317690437]
-position = Vector2(-63.086113, -3.8146973e-06)
-rotation = 1.5707964
-scale = Vector2(0.9959209, -0.0037296945)
-texture = ExtResource("5_h3ung")
-
-[node name="Line2D" type="Line2D" parent="Node2D/Botones_ocultar desafio/Sprite2D" unique_id=2073193472]
 
 [node name="Botones_aparecer desafio" type="Node2D" parent="Node2D" unique_id=163182019]
 position = Vector2(0, -91)
@@ -656,6 +637,7 @@ pitch_scale = 2.34
 bus = &"effect"
 
 [node name="letreros_effects" type="Node2D" parent="Node2D" unique_id=1814750671]
+visible = false
 
 [node name="confeti_full" parent="Node2D/letreros_effects" unique_id=351680083 instance=ExtResource("13_e57pv")]
 position = Vector2(0, -168)
@@ -682,16 +664,64 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=1487961544]
+layout_mode = 0
+offset_left = -304.0
+offset_top = 368.0
+offset_right = 390.0
+offset_bottom = 472.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer" unique_id=485780801]
+layout_mode = 2
+
+[node name="seg2" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer" unique_id=687588709]
+layout_mode = 2
+text = "MODE"
+
+[node name="__two2" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer" unique_id=2032501665]
+layout_mode = 2
+text = ":"
+
+[node name="Control" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer" unique_id=587393756]
+self_modulate = Color(0.57254905, 0.57254905, 0.57254905, 0)
+layout_mode = 2
+text = "GGGGGGGGG"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer" unique_id=84522183]
+layout_mode = 2
+
+[node name="seg" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer2" unique_id=100690089]
+layout_mode = 2
+text = "sec2"
+
+[node name="__two" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer2" unique_id=1255616046]
+layout_mode = 2
+text = ":"
+
+[node name="Control2" type="Label" parent="Apartado de opciones abajo/estadistica/Control/VBoxContainer/HBoxContainer2" unique_id=1248874365]
+self_modulate = Color(0.57254905, 0.57254905, 0.57254905, 0)
+layout_mode = 2
+text = "GGGGGGGGG"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=553377540]
 layout_mode = 0
 offset_left = -312.0
-offset_top = 376.0
+offset_top = 480.0
 offset_right = 432.0
 offset_bottom = 1445.44
 script = ExtResource("12_2acba")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer" unique_id=239312140]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=14672269]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("21_71wrj")
+
+[node name="Panel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect" unique_id=22370181 instance=ExtResource("14_8yer3")]
+position = Vector2(288, 295.99997)
+scale = Vector2(3.3600004, 3.36)
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
 custom_minimum_size = Vector2(630, 1156)
