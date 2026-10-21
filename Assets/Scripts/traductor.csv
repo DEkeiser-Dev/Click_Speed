@@ -59,7 +59,15 @@ MODE,Modo,Mode,Modo,Mode,Modalità,Режим,モード,모드
 UNO_CONTRA_UNO,1C1,1v1,1v1,1v1,1v1,1v1,1v1,1v1
 DOS_CONTRA_DOS,2C2,2v2,2v2,2v2,2v2,2v2,2v2,2v2
 PLAYERS,Jugadores,Players,Jogadores,Joueurs,Giocatori,Игроки,プレイヤー,플레이어
+PLAYERS3,Jugadores 3,Players 3,Jogadores 3,Joueurs 3,Giocatori 3,Игроки 3 ,プレイヤー 3,플레이어 3
+PLAYERS4,Jugadores 4,Players 4,Jogadores 4,Joueurs 4,Giocatori 4,Игроки 4 ,プレイヤー 4,플레이어 4
 SOLITARIO,Solitario,Solo,Solo,Solitaire,Solitario,Соло,ソロ,솔로
 TEAM,Equipo,Team,Equipe,Équipe,Squadra,Команда,チーム,팀
 TEAM1,Equipo 1,Team 1,Equipe 1,Équipe 1,Squadra 1,Команда 1,チーム 1,팀 1
 TEAM2,Equipo 2,Team 2,Equipe 2,Équipe 2,Squadra 2,Команда 2,チーム 2,팀 2
+SEC1,1 seg,1 sec,1 seg,1 sec,1 sec,1 сек,1 秒,1 초
+SEC10,10 seg,10 sec,10 seg,10 sec,10 sec,10 сек,10 秒,10 초
+SEC20,20 seg,20 sec,20 seg,20 sec,20 sec,20 сек,20 秒,20 초
+SEC30,30 seg,30 sec,30 seg,30 sec,30 sec,30 сек,30 秒,30 초
+SEC60,60 seg,60 sec,60 seg,60 sec,60 sec,60 сек,60 秒,60 초
+SECX,X seg,X sec,X seg,X sec,X sec,X сек,X 秒,X 초

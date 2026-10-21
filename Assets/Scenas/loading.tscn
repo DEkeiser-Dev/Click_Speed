@@ -56,7 +56,6 @@ hframes = 4
 
 [node name="CLICKSPEED" parent="." unique_id=40769402 instance=ExtResource("2_gmskc")]
 position = Vector2(-32, 456)
-scale = Vector2(1.0421083, 1.1870617)
 
 [node name="LOADING NEGRO" type="RichTextLabel" parent="." unique_id=498953473]
 modulate = Color(0, 0, 0, 1)

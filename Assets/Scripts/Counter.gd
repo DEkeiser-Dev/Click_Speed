@@ -650,21 +650,10 @@ var b_contador3
 var b_contador4
 var b_desafio_20
 var b_reset
-var b_desafio_1
-var b_desafio_10
-var b_desafio_30
-var b_desafio_60
-var b_desafio_personalizado
 var b_desafio_p_oculto
 var b_reset_counter
 var b_opciones
 var b_opciones2
-#botones de mas jugadores
-var b_ucu
-var b_dcd
-var b_uct3
-var b_uct4
-var b_solitario
 #textos:
 var t_entrado_personalizada
 var t_counter
@@ -758,7 +747,6 @@ var SD_Modo_t3
 var SD_Modo_t4
 var SD_ACTIVADO
 var SD_DESACTIVADO
-var SD_negro 
 var SD_esta = ("")
 var SD_estadisticas: String
 #el +1 al presionar los botones
@@ -792,9 +780,6 @@ var escala
 var suma_total
 #textura del boton home cuando eleiges una estadistica lcoal
 var th_texture1 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg")
-var th_texture2 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_salir.svg")
-var th_textura_selector_solo = preload("res://Assets/Arte2d/botones/selector/selector_solo.svg")
-var th_texture_selector = preload("res://Assets/Arte2d/botones/selector/selector.svg")
 var hme1
 #14 / 12
 #fuentes y tamañp
@@ -855,21 +840,41 @@ var _verificador4 = 0
 
 var _primer_segundo = true
 
+var estadistica_modo_tipo = 0
+var estadistica_seg_tipo = 1
+var panel_xd
+
 ##--------------------------LOGICA DEL JUEGO-------------------------------------:
 ## LOGICA DE JUEGO INICIO Y AUN
 #al iniciar se cargan los datos y se actualizan los datos del label
 #AL INICIAR EL JUEGO LLAMA A LAS SIGUIENTES FUNC PARA ASI PODER CORRER,
-# UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,
+# UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,$Sprite2D/AnimationPlayer
 func _ready() -> void:
 	$"Node2D/Botones_ocultar desafio/opciones2/Go!".play("GO!")
 	call_deferred("_carga_inicial")
 	await get_tree().process_frame
 	_paneles_para_centrar()
-	var panel_xd = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect/Panel"
-	#panel_xd._Grafica_Comparativa(4,XDIC["4P"]["datos_20"],XDIC["4P"]["datos_20_j2"],XDIC["4P"]["datos_20_j3"],XDIC["4P"]["datos_20_j4"],1)
-	panel_xd._Graficar(XDIC["SOLO"]["datos_20"])
+	panel_xd = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect/Panel"
 	guardar()
+	$"Apartado de opciones abajo/estadistica/Control/paneles".modo.connect(_modo)
+	$"Apartado de opciones abajo/estadistica/Control/paneles".sec.connect(_seg)
+	$"Node2D/Botones_ocultar desafio/paneles".sec.connect(_seg)
+	$"Node2D/Botones_ocultar desafio/paneles".modo.connect(_modo)
 	#barra.custom_minimum_size.x = 18
+
+func _modo(valor: Vector2):
+	estadistica_modo_tipo = int(valor.x)
+	if int(valor.y) == 0:
+		_segundos_modos(10,int(valor.x))
+	else:
+		_on_estadist_pressed()
+
+func _seg(valor: Vector2):
+	estadistica_seg_tipo = int(valor.x)
+	if int(valor.y) == 0:
+		_segundos_modos(int(valor.x),-1)
+	else:
+		_on_estadist_pressed()
 
 func _carga_inicial() -> void:
 	_procesardor_de_objetos()
@@ -888,10 +893,8 @@ func _carga_inicial() -> void:
 func _depurar():
 	if depurar == true:
 		p_node.visible = true
-		A_texto.visible = true
 	elif depurar == false:
 		p_node.visible = false
-		A_texto.visible = false
 
 
 # logica de pasar las opciones
@@ -903,25 +906,22 @@ func _process(_delta: float) -> void:
 	_logica_de_desafios_modos_de_equipos_tipo_contador_barra()
 	if opciones == 0 and v_home == 0:
 		if n_todo.position.x < 720 and iniciar_lugar_opciones == 0:
-			n_todo.position.x += +25
 			b_opciones.visible = false
 			b_opciones2.visible = false
 		else:
-			n_todo.position.x = 720
 			if desafio:
 				b_opciones.visible = true
 				b_opciones2.visible = true
 			else:
+				
 				b_opciones.visible = false
 				b_opciones2.visible = false
 			iniciar_lugar_opciones = 0
 	elif opciones == 1 and v_home == 0:
 		if n_todo.position.x <= 720 and n_todo.position.x > 1 and iniciar_lugar_opciones == 0:
-			n_todo.position.x +=-25
 			b_opciones.visible = false
 			b_opciones2.visible = false
 		else:
-			n_todo.position.x = 0
 			if desafio:
 				b_opciones.visible = true
 				b_opciones2.visible = true
@@ -975,20 +975,10 @@ func _procesardor_de_objetos():
 	b_contador4 = $Node2D/Boton4
 	b_desafio_20 = $"Node2D/Botones_ocultar desafio/desafio20"
 	b_reset = $"Apartado de opciones abajo/opcion/datos/reset"
-	b_desafio_1 = $"Node2D/Botones_ocultar desafio/desafio1"
-	b_desafio_10 = $"Node2D/Botones_ocultar desafio/desafio10"
-	b_desafio_30 = $"Node2D/Botones_ocultar desafio/desafio30"
-	b_desafio_60 = $"Node2D/Botones_ocultar desafio/desafio60"
-	b_desafio_personalizado = $"Node2D/Botones_ocultar desafio/desafioPerson"
 	b_desafio_p_oculto = $"Node2D/Botones_ocultar desafio/TouchScreenButton"
 	b_reset_counter = $"Node2D/Botones_ocultar desafio/reset_counter"
 	b_opciones = $"Node2D/Botones_ocultar desafio/opciones"
 	b_opciones2 = $"Node2D/Botones_ocultar desafio/opciones2"
-	b_ucu = $"Node2D/Botones_ocultar desafio/1c1"
-	b_dcd = $"Node2D/Botones_ocultar desafio/2c2"
-	b_uct3 = $"Node2D/Botones_ocultar desafio/1 contra todos(3)"
-	b_uct4 = $"Node2D/Botones_ocultar desafio/1 contra todos(4)"
-	b_solitario = $"Node2D/Botones_ocultar desafio/Solitario"
 	#textos:
 	t_entrado_personalizada = $"Node2D/Botones_ocultar desafio/EntradaPersonalizada"
 	t_counter = $Node2D/Boton/prueba/counter
@@ -1020,17 +1010,17 @@ func _procesardor_de_objetos():
 	#tiempo
 	t_tiempo = $Node2D/Timer
 	#posicion de botones
-	p_boton = $Node2D/posicion_botones/solitario/posicion_boton_solitario.position
-	p_boton_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton_1c1".position
-	p_boton2_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton2_1c1".position
-	p_boton_t3 = $Node2D/posicion_botones/t3/posicion_boton_t3.position
-	p_boton2_t3 = $Node2D/posicion_botones/t3/posicion_boton2_t3.position
-	p_boton3_t3 = $Node2D/posicion_botones/t3/posicion_boton3_t3.position
-	p_boton_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton_t4".position
-	p_boton2_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton2_t4".position
-	p_boton3_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton3_t4".position
-	p_boton4_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton4_t4".position
-	p_botonX = $Node2D/posicion_botones/posicion_botonX.position
+	p_boton = $Node2D/posicion_botones/solitario/posicion_boton_solitario.global_position
+	p_boton_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton_1c1".global_position
+	p_boton2_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton2_1c1".global_position
+	p_boton_t3 = $Node2D/posicion_botones/t3/posicion_boton_t3.global_position
+	p_boton2_t3 = $Node2D/posicion_botones/t3/posicion_boton2_t3.global_position
+	p_boton3_t3 = $Node2D/posicion_botones/t3/posicion_boton3_t3.global_position
+	p_boton_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton_t4".global_position
+	p_boton2_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton2_t4".global_position
+	p_boton3_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton3_t4".global_position
+	p_boton4_t4 = $"Node2D/posicion_botones/t4 2c2/posicion_boton4_t4".global_position
+	p_botonX = $Node2D/posicion_botones/posicion_botonX.global_position
 	botonX = $Node2D/posicion_botones/posicion_botonX
 	p_node = $Node2D/posicion_botones
 	#scalas de botones
@@ -1040,23 +1030,8 @@ func _procesardor_de_objetos():
 	s_2c2_t4 = Vector2(0.395,0.41)
 	#audio
 	a_click = $Node2D/click
-	#AVISOS O TEXTOS QUE APARECEN
-	A_texto = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO"
-	A_label = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label"
-	A_animation_valor_valido = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label/AnimationPlayer"
-	A_texto_desaparecedor = $"Node2D/Botones_ocultar desafio/texto desaparecedor"
 	#Posiciones posibles de avisos
 	AD_1 = _posicionamiento_del_texto(b_desafio_p_oculto,0) #Xs
-	AD_2 = _posicionamiento_del_texto(b_desafio_1,52) #1s
-	AD_3 = _posicionamiento_del_texto(b_desafio_10,47.2) #10s
-	AD_4 = _posicionamiento_del_texto(b_desafio_20,48.6) #20s
-	AD_5 = _posicionamiento_del_texto(b_desafio_30,45.8) #30s
-	AD_6 = _posicionamiento_del_texto(b_desafio_60,50.6) #60s
-	AD_7 = _posicionamiento_del_texto(b_solitario,-30) #solo
-	AD_8 = _posicionamiento_del_texto(b_ucu,45) #1c1
-	AD_9 = _posicionamiento_del_texto(b_dcd,45) #2c2
-	AD_10 = _posicionamiento_del_texto(b_uct3,48) #t3
-	AD_11 = _posicionamiento_del_texto(b_uct4,45) #t4
 	#strings y datos importantes (String Dato)
 	SD_Modo_1s = str(ram_dic[0])
 	SD_Modo_10s = str(ram_dic[1])
@@ -1075,17 +1050,6 @@ func _procesardor_de_objetos():
 	SD_Modo_t3 = str(ram_dic[13])
 	SD_Modo_t4 = str(ram_dic[14])
 	SD_DESACTIVADO = str(ram_dic[15])
-	SD_negro = $"Node2D/Botones_ocultar desafio/texto desaparecedor/TEXTO/Control/MarginContainer/Label/Label2"
-	#ASIGNADORES
-	A_modo = $"Node2D/Botones_ocultar desafio/MODO"
-	A_tiempos = $"Node2D/Botones_ocultar desafio/TIEMPOS"
-	A_modo_estadistica = $"Node2D/Botones_ocultar desafio/MODO_ESTADISTICAS"
-	#botones estadisticas:
-	be_1c1 = $"Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1"
-	be_2c2 = $"Node2D/Botones_ocultar desafio/Estadisticas_activa_2c2"
-	be_solo = $"Node2D/Botones_ocultar desafio/Estadisticas_activa_solitario"
-	be_tct3 = $"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct3"
-	be_tct4 = $"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct4"
 	#barra de estadisticas
 	barra = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer".get_v_scroll_bar()
 	#repetidor de desafios(boton y texturas la vdd)
@@ -1130,8 +1094,10 @@ func _on_timer_timeout() -> void:
 				_finalizar_desafio()
 			else:
 				_bucle_desafio()
-		segundos += 1
+		if max_segundos == 1:
+			_primer_segundo = false
 		guardar_datos_para_grafica(0)
+		segundos += 1
 
 
 func guardar_datos_para_grafica(_a):
@@ -1162,6 +1128,43 @@ func guardar_datos_para_grafica(_a):
 		4:
 			_nom = "4P"
 	if _a == 0:
+		if segundos == 0:
+			datos_1 = {
+				"M_Clicks": 0,
+				"M_Seg": 0,
+				"CPS": []
+			}
+			datos_2 = {
+				"M_Clicks": 0,
+				"M_Seg": 0,
+				"CPS": []
+			}
+			datos_3 = {
+				"M_Clicks": 0,
+				"M_Seg": 0,
+				"CPS": []
+			}
+			datos_4 = {
+				"M_Clicks": 0,
+				"M_Seg": 0,
+				"CPS": []
+			}
+
+			_M_Clicks_plantilla = 0
+			range1 = 0
+			_verificador = 0
+
+			_M_Clicks_plantilla2 = 0
+			range2 = 0
+			_verificador2 = 0
+
+			_M_Clicks_plantilla3 = 0
+			range3 = 0
+			_verificador3 = 0
+
+			_M_Clicks_plantilla4 = 0
+			range4 = 0
+			_verificador4 = 0
 		if tipo_de_modo_jugadores == 0:
 			if _primer_segundo:
 				range1 = counter
@@ -1282,7 +1285,7 @@ func guardar_datos_para_grafica(_a):
 
 			datos_2["M_Clicks"] = _M_Clicks_plantilla2
 			datos_2["M_Seg"] = datos_2["CPS"].size()
-			XDIC[_nom][_num + "J2"] = datos_2
+			XDIC[_nom][_num + "_j2"] = datos_2
 		elif tipo_de_modo_jugadores == 3:
 			datos_1["M_Clicks"] = _M_Clicks_plantilla
 			datos_1["M_Seg"] = datos_1["CPS"].size()
@@ -1290,11 +1293,11 @@ func guardar_datos_para_grafica(_a):
 
 			datos_2["M_Clicks"] = _M_Clicks_plantilla2
 			datos_2["M_Seg"] = datos_2["CPS"].size()
-			XDIC[_nom][_num + "J2"] = datos_2
+			XDIC[_nom][_num + "_j2"] = datos_2
 
 			datos_3["M_Clicks"] = _M_Clicks_plantilla3
 			datos_3["M_Seg"] = datos_3["CPS"].size()
-			XDIC[_nom][_num + "J3"] = datos_3
+			XDIC[_nom][_num + "_j3"] = datos_3
 		else:
 			datos_1["M_Clicks"] = _M_Clicks_plantilla
 			datos_1["M_Seg"] = datos_1["CPS"].size()
@@ -1302,15 +1305,15 @@ func guardar_datos_para_grafica(_a):
 
 			datos_2["M_Clicks"] = _M_Clicks_plantilla2
 			datos_2["M_Seg"] = datos_2["CPS"].size()
-			XDIC[_nom][_num + "J2"] = datos_2
+			XDIC[_nom][_num + "_j2"] = datos_2
 
 			datos_3["M_Clicks"] = _M_Clicks_plantilla3
 			datos_3["M_Seg"] = datos_3["CPS"].size()
-			XDIC[_nom][_num + "J3"] = datos_3
+			XDIC[_nom][_num + "_j3"] = datos_3
 
 			datos_4["M_Clicks"] = _M_Clicks_plantilla4
 			datos_4["M_Seg"] = datos_4["CPS"].size()
-			XDIC[_nom][_num + "J4"] = datos_4
+			XDIC[_nom][_num + "_j4"] = datos_4
 	else:
 		_primer_segundo = true
 		datos_1 = {
@@ -1351,14 +1354,14 @@ func guardar_datos_para_grafica(_a):
 func _finalizar_desafio():
 	segundos = 0
 	guardar_datos_para_grafica(1)
-	guardar()
 	guardar_datos_para_grafica(2)
+	guardar()
 	counter = 0
 	counter_J2 = 0
 	counter_J3 = 0
 	counter_J4 = 0
 	desafio = false
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(-1,0,0,0,0)
+	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(-1,0)
 	segundos = 0
 	_opciones_no_desafiadas_aparecen_o_no()
 	t_tiempo.wait_time = 0.006
@@ -1397,7 +1400,7 @@ func _opciones_no_desafiadas_aparecen_o_no():
 		n_esconder_botones_no_necesarios_desafio.position.x = -1000
 		n_esconder_botones_no_necesarios_desafio.position.y = -1000
 		n_aparecer_botones_si_necesarios_desafio.visible = true
-		n_aparecer_botones_si_necesarios_desafio.position.x = posicion_noto_botones_x.x
+		n_aparecer_botones_si_necesarios_desafio.position.x = -720
 		n_aparecer_botones_si_necesarios_desafio.position.y = posicion_noto_botones_x.y
 		n_barra_abajo_total.position = Vector2(-1000,-100)
 		if tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores < 3:
@@ -1513,430 +1516,174 @@ func _cuando_el_mejor_cps_es_mayor(_a):
 
 #TODO LA LOGICA PRINCIPAL DE ESTADISTICAS
 #logita para saber q hacen los botones de estadisticas de las opciones.
-func _para_estadisticas_opciones(_a,_b,_c = 0):
+func _para_estadisticas_opciones():
 	a_click.play()
-	if _b == 1:
-		_botones_abajo(1)
-	else:
-		_textos_explicativos(_c.position.x-120,_c.position.y-20,SD_ACTIVADO)
-	v_dessfios_o_total = _a
+	_botones_abajo(1)
+	v_dessfios_o_total = 0
 	_que_estadistica_mostrar()
 
 #logica de que hara segun los datos de estadisticas
 func _que_estadistica_mostrar():
 	match v_dessfios_o_total:
 		0:
-			t_estadistica_local.visible = false
 			t_estadistica_global.visible = true
 			t_estadistica_global.text = SD_estadisticas
 
-		1:
-			v_que_modo_de_juego_ver_opciones = 2
-			_asignadores(1, be_1c1)
-
-		2:
-			v_que_modo_de_juego_ver_opciones = 4
-			_asignadores(1, be_2c2)
-
-		3:
-			v_que_modo_de_juego_ver_opciones = 1
-			_asignadores(1, be_solo)
-
-		4:
-			v_que_modo_de_juego_ver_opciones = 3
-			_asignadores(1, be_tct3)
-
-		5:
-			v_que_modo_de_juego_ver_opciones = 4
-			_asignadores(1, be_tct4)
-
-		6:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_10"],
-				XDIC["Mejor_cps_10"],
-				10,
-				XDIC["Mejor_cliks_10_J2"],
-				XDIC["Mejor_cps_10_J2"],
-				XDIC["Mejor_cliks_10_J3"],
-				XDIC["Mejor_cps_10_J3"],
-				XDIC["Mejor_cliks_10_J4"],
-				XDIC["Mejor_cps_10_J4"]
-			)
-
-		7:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_30"],
-				XDIC["Mejor_cps_30"],
-				30,
-				XDIC["Mejor_cliks_30_J2"],
-				XDIC["Mejor_cps_30_J2"],
-				XDIC["Mejor_cliks_30_J3"],
-				XDIC["Mejor_cps_30_J3"],
-				XDIC["Mejor_cliks_30_J4"],
-				XDIC["Mejor_cps_30_J4"]
-			)
-
-		8:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_1"],
-				XDIC["Mejor_cps_1"],
-				1,
-				XDIC["Mejor_cliks_1_J2"],
-				XDIC["Mejor_cps_1_J2"],
-				XDIC["Mejor_cliks_1_J3"],
-				XDIC["Mejor_cps_1_J3"],
-				XDIC["Mejor_cliks_1_J4"],
-				XDIC["Mejor_cps_1_J4"]
-			)
-
-		9:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_20"],
-				XDIC["Mejor_cps_20"],
-				20,
-				XDIC["Mejor_cliks_20_J2"],
-				XDIC["Mejor_cps_20_J2"],
-				XDIC["Mejor_cliks_20_J3"],
-				XDIC["Mejor_cps_20_J3"],
-				XDIC["Mejor_cliks_20_J4"],
-				XDIC["Mejor_cps_20_J4"]
-			)
-
-		10:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_60"],
-				XDIC["Mejor_cps_60"],
-				60,
-				XDIC["Mejor_cliks_60_J2"],
-				XDIC["Mejor_cps_60_J2"],
-				XDIC["Mejor_cliks_60_J3"],
-				XDIC["Mejor_cps_60_J3"],
-				XDIC["Mejor_cliks_60_J4"],
-				XDIC["Mejor_cps_60_J4"]
-			)
-
-		11:
-			_que_muestran_las_estadisticas(
-				XDIC["Mejor_cliks_Personalizado"],
-				XDIC["Mejor_cps_Personalizado"],
-				"X",
-				XDIC["Mejor_cliks_Personalizado_J2"],
-				XDIC["Mejor_cps_Personalizado_J2"],
-				XDIC["Mejor_cliks_Personalizado_J3"],
-				XDIC["Mejor_cps_Personalizado_J3"],
-				XDIC["Mejor_cliks_Personalizado_J4"],
-				XDIC["Mejor_cps_Personalizado_J4"]
-			)
-
-#visor estadisticas locales
-func _que_muestran_las_estadisticas(_a,_b,_c,_a2,_b2,_a3,_b3,_a4,_b4):
-	_estadisticas_mostrar_texto_parasiempre()
-	hme1.texture_normal = th_texture2
-	SD_estadisticas = SD_esta
-	t_estadistica_local.visible = true
-	t_estadistica_global.visible = false
-
-	if v_que_modo_de_juego_ver_opciones == 1:
-		t_estadistica_local.text = (
-		t(str(ram_dic[18])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b) + "/s[/color]\n\n\n\n\n\n"
-	)
-
-	elif v_que_modo_de_juego_ver_opciones == 2:
-		t_estadistica_local.text = (
-		t(str(ram_dic[18])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[19])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a2) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b2) + "/s[/color]\n\n\n\n\n\n"
-		)
-
-	elif v_que_modo_de_juego_ver_opciones == 3:
-		t_estadistica_local.text = (
-		t(str(ram_dic[18])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[19])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a2) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b2) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[20])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a3) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b3) + "/s[/color]\n\n\n\n\n\n"
-		)
-
-	elif v_que_modo_de_juego_ver_opciones == 4:
-		t_estadistica_local.text = (
-		t(str(ram_dic[18])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[19])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a2) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b2) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[20])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a3) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b3) + "/s[/color]" +
-		"\n" +
-		"\n" + t(str(ram_dic[21])) + ":\n" +
-		t(str(ram_dic[26])) + "\n[color=#FFA500]" + t(str(ram_dic[29])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_a4) + "[/color]" +
-		"\n[color=#cf003a]" + t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + str(_c) + " " + t(str(ram_dic[31])) + "):[/color] [color=#FFD700]" + str(_b4) + "/s[/color]\n\n\n\n\n\n"
-		)
-
-
 # visor estadisticas globales
 func _estadisticas_mostrar_texto_parasiempre():
+	var _nombre = ""
+	var _se = ""
+	var _play = 0
+	match estadistica_modo_tipo:
+		0:
+			_nombre = "SOLO"
+			_play = 1
+		1:
+			_nombre = "1C1"
+			_play = 2
+		2:
+			_nombre = "2C2"
+			_play = 2
+		3:
+			_nombre = "3P"
+			_play = 3
+		4:
+			_nombre = "4P"
+			_play = 4
+
+	match estadistica_seg_tipo:
+		0:
+			_se = "Personalizado"
+		1:
+			_se = "1"
+		2:
+			_se = "10"
+		3:
+			_se = "20"
+		4:
+			_se = "30"
+		5:
+			_se = "60"
+
 	SD_esta = (
-	_string_estadistica(0,47) + # SOLITARIO
-	_string_estadistica(0,18) +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","SOLO","Mejor_cliks_1") +
-	_string_estadistica(2,0,1,"1","SOLO","Mejor_cps_1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","SOLO","Mejor_cliks_10") +
-	_string_estadistica(2,0,1,"10","SOLO","Mejor_cps_10") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","SOLO","Mejor_cliks_20") +
-	_string_estadistica(2,0,1,"20","SOLO","Mejor_cps_20") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","SOLO","Mejor_cliks_30") +
-	_string_estadistica(2,0,1,"30","SOLO","Mejor_cps_30") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","SOLO","Mejor_cliks_60") +
-	_string_estadistica(2,0,1,"60","SOLO","Mejor_cps_60") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"SOLO","Mejor_cliks_Personalizado","","SEG") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"SOLO","Mejor_cps_Personalizado","","SEG") +
-
-	_string_estadistica(3) +
-	_string_estadistica(0,44) + # 1C1
-	_string_estadistica(0,48,0,0,0,0,"1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","1C1","Mejor_cliks_1") +
-	_string_estadistica(2,0,1,"1","1C1","Mejor_cps_1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","1C1","Mejor_cliks_10") +
-	_string_estadistica(2,0,1,"10","1C1","Mejor_cps_10") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","1C1","Mejor_cliks_20") +
-	_string_estadistica(2,0,1,"20","1C1","Mejor_cps_20") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","1C1","Mejor_cliks_30") +
-	_string_estadistica(2,0,1,"30","1C1","Mejor_cps_30") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","1C1","Mejor_cliks_60") +
-	_string_estadistica(2,0,1,"60","1C1","Mejor_cps_60") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"1C1","Mejor_cliks_Personalizado","","SEG") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"1C1","Mejor_cps_Personalizado","","SEG") +
-	_string_estadistica(0,48,0,0,0,0,"2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","1C1","Mejor_cliks_1_J2") +
-	_string_estadistica(2,0,1,"1","1C1","Mejor_cps_1_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","1C1","Mejor_cliks_10_J2") +
-	_string_estadistica(2,0,1,"10","1C1","Mejor_cps_10_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","1C1","Mejor_cliks_20_J2") +
-	_string_estadistica(2,0,1,"20","1C1","Mejor_cps_20_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","1C1","Mejor_cliks_30_J2") +
-	_string_estadistica(2,0,1,"30","1C1","Mejor_cps_30_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","1C1","Mejor_cliks_60_J2") +
-	_string_estadistica(2,0,1,"60","1C1","Mejor_cps_60_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"1C1","Mejor_cliks_Personalizado_J2","","SEG2") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"1C1","Mejor_cps_Personalizado_J2","","SEG2") +
-
-	_string_estadistica(3) +
-	_string_estadistica(0,45) + # 2C2
-	_string_estadistica(0,48,0,0,0,0,"1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","2C2","Mejor_cliks_1") +
-	_string_estadistica(2,0,1,"1","2C2","Mejor_cps_1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","2C2","Mejor_cliks_10") +
-	_string_estadistica(2,0,1,"10","2C2","Mejor_cps_10") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","2C2","Mejor_cliks_20") +
-	_string_estadistica(2,0,1,"20","2C2","Mejor_cps_20") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","2C2","Mejor_cliks_30") +
-	_string_estadistica(2,0,1,"30","2C2","Mejor_cps_30") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","2C2","Mejor_cliks_60") +
-	_string_estadistica(2,0,1,"60","2C2","Mejor_cps_60") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"2C2","Mejor_cliks_Personalizado","","SEG") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"2C2","Mejor_cps_Personalizado","","SEG") +
-	_string_estadistica(0,48,0,0,0,0,"2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","2C2","Mejor_cliks_1_J2") +
-	_string_estadistica(2,0,1,"1","2C2","Mejor_cps_1_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","2C2","Mejor_cliks_10_J2") +
-	_string_estadistica(2,0,1,"10","2C2","Mejor_cps_10_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","2C2","Mejor_cliks_20_J2") +
-	_string_estadistica(2,0,1,"20","2C2","Mejor_cps_20_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","2C2","Mejor_cliks_30_J2") +
-	_string_estadistica(2,0,1,"30","2C2","Mejor_cps_30_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","2C2","Mejor_cliks_60_J2") +
-	_string_estadistica(2,0,1,"60","2C2","Mejor_cps_60_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"2C2","Mejor_cliks_Personalizado_J2","","SEG2") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"2C2","Mejor_cps_Personalizado_J2","","SEG2") +
-
-
-	_string_estadistica(3) +
-	_string_estadistica(0,46,0,0,0,0,"(3)") + # PLAYERS (3) 
-	_string_estadistica(0,18) + 
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1") +
-	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10") +
-	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20") +
-	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30") +
-	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60") +
-	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado","","SEG") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado","","SEG") +
-	_string_estadistica(0,19) + 
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1_J2") +
-	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10_J2") +
-	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20_J2") +
-	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30_J2") +
-	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60_J2") +
-	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado_J2","","SEG2") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado_J2","","SEG2") +
-	_string_estadistica(0,20) +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","3P","Mejor_cliks_1_J3") +
-	_string_estadistica(2,0,1,"1","3P","Mejor_cps_1_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","3P","Mejor_cliks_10_J3") +
-	_string_estadistica(2,0,1,"10","3P","Mejor_cps_10_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","3P","Mejor_cliks_20_J3") +
-	_string_estadistica(2,0,1,"20","3P","Mejor_cps_20_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","3P","Mejor_cliks_30_J3") +
-	_string_estadistica(2,0,1,"30","3P","Mejor_cps_30_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","3P","Mejor_cliks_60_J3") +
-	_string_estadistica(2,0,1,"60","3P","Mejor_cps_60_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"3P","Mejor_cliks_Personalizado_J3","","SEG3") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"3P","Mejor_cps_Personalizado_J3","","SEG3") +
-
-	_string_estadistica(3) +
-	_string_estadistica(0,46,0,0,0,0,"(4)") + # PLAYERS (4) 
-	_string_estadistica(0,18) + 
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1") +
-	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10") +
-	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20") +
-	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30") +
-	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60") +
-	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado","","SEG") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado","","SEG") +
-	_string_estadistica(0,19) + 
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J2") +
-	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J2") +
-	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J2") +
-	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J2") +
-	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J2") +
-	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J2") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J2","","SEG2") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J2","","SEG2") +
-	_string_estadistica(0,20) +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J3") +
-	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J3") +
-	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J3") +
-	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J3") +
-	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J3") +
-	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J3") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J3","","SEG3") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J3","","SEG3") +
-	_string_estadistica(0,21) +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"1","4P","Mejor_cliks_1_J4") +
-	_string_estadistica(2,0,1,"1","4P","Mejor_cps_1_J4") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"10","4P","Mejor_cliks_10_J4") +
-	_string_estadistica(2,0,1,"10","4P","Mejor_cps_10_J4") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"20","4P","Mejor_cliks_20_J4") +
-	_string_estadistica(2,0,1,"20","4P","Mejor_cps_20_J4") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"30","4P","Mejor_cliks_30_J4") +
-	_string_estadistica(2,0,1,"30","4P","Mejor_cps_30_J4") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,"60","4P","Mejor_cliks_60_J4") +
-	_string_estadistica(2,0,1,"60","4P","Mejor_cps_60_J4") +
-	_string_estadistica(1) +
-	_string_estadistica(2,0,0,t(str(ram_dic[23])),"4P","Mejor_cliks_Personalizado_J4","","SEG4") +
-	_string_estadistica(2,0,1,t(str(ram_dic[23])),"4P","Mejor_cps_Personalizado_J4","","SEG4") +
-	_string_estadistica(3) +
+	_cadena_estadistica(_play,_se,_nombre) +
 	_string_estadistica(4)
 	)
+
+func _cadena_estadistica(_play,_se,_nom):
+	var _mejor = ("Mejor_cliks_" + _se)
+	var _cps = "Mejor_cps_" + str(_se)
+	var _emcabezado = ""
+	var _1 = ""
+	var _2 = ""
+	var _3 = ""
+	var _4 = ""
+	var _text = ""
+
+	var _a = ""
+	var _b = ""
+	var _c = ""
+	var _d = ""
+	match _play:
+		1:
+			_emcabezado = _string_estadistica(0,47)
+			_1 = _string_estadistica(0,18)
+		2:
+			if _nom == "1C1":
+				_emcabezado = _string_estadistica(0,44)
+			else:
+				_emcabezado = _string_estadistica(0,45)
+			_1 = _string_estadistica(0,48,0,0,0,0,"1")
+			_2 = _string_estadistica(0,48,0,0,0,0,"2")
+		3:
+			_emcabezado = _string_estadistica(0,46,0,0,0,0,"(3)")
+			_1 = _string_estadistica(0,18)
+			_2 = _string_estadistica(0,19)
+			_3 = _string_estadistica(0,20)
+		4:
+			_emcabezado = _string_estadistica(0,46,0,0,0,0,"(4)")
+			_1 = _string_estadistica(0,18)
+			_2 = _string_estadistica(0,19)
+			_3 = _string_estadistica(0,20)
+			_4 = _string_estadistica(0,21)
+
+	for i in range(_play):
+		var _nombre_team = ""
+		var _j = ""
+		match i:
+			0:
+				_nombre_team = _1
+				_j = ""
+			1:
+				_nombre_team = _2
+				_j = "_J2"
+			2:
+				_nombre_team = _3
+				_j = "_J3"
+			3:
+				_nombre_team = _4
+				_j = "_J4"
+		_text = (
+		_nombre_team +
+		_string_estadistica(1) +
+		_estadistica_personalizada(_se,_nom,_mejor,_cps,_j) +
+		_string_estadistica(1)
+		)
+		if i == 0:
+			_a = _text
+		elif i == 1:
+			_b = _text
+		elif i == 2:
+			_c = _text
+		else:
+			_d = _text
+	if _se == "Personalizado":
+		_se = "x"
+	if _play == 1:
+		panel_xd._Grafica_Comparativa(
+			0,
+			XDIC[_nom]["datos_" + _se]
+			)
+	elif _play == 2:
+		panel_xd._Grafica_Comparativa(
+			2,
+			XDIC[_nom]["datos_" + _se],
+			XDIC[_nom]["datos_" + _se + "_j2"]
+			)
+	elif _play == 3:
+		panel_xd._Grafica_Comparativa(
+			3,
+			XDIC[_nom]["datos_" + _se],
+			XDIC[_nom]["datos_" + _se + "_j2"],
+			XDIC[_nom]["datos_" + _se + "_j3"],
+			"",1
+			)
+	elif _play == 4:
+		panel_xd._Grafica_Comparativa(
+			4,
+			XDIC[_nom]["datos_" + _se],
+			XDIC[_nom]["datos_" + _se + "_j2"],
+			XDIC[_nom]["datos_" + _se + "_j3"],
+			XDIC[_nom]["datos_" + _se + "_j4"],
+			1
+			)
+	return (_emcabezado + _a + _b + _c + _d)
+
+func _estadistica_personalizada(_se,_nom,_mejor,_cps,_j):
+	var _xd = ""
+	var _segundos = ("("+ str(XDIC[_nom]["SEG"]) + ") X")
+	if _se == "Personalizado":
+		_xd = (
+		_string_estadistica(2,0,0,_segundos,_nom,(_mejor+_j)) +
+		_string_estadistica(2,0,1,_segundos,_nom,(_cps+_j))
+		)
+	else:
+		_xd = (
+		_string_estadistica(2,0,0,_se,_nom,(_mejor+_j)) +
+		_string_estadistica(2,0,1,_se,_nom,(_cps+_j))
+		)
+	return _xd
+
 
 func _string_estadistica(
 _tipo, # tipo de texto string
@@ -1953,7 +1700,7 @@ _seg_personalizados = ""
 		0:
 			_text = "\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[_jugador])) + "" + _NUM + ":" + "[/color][/bgcolor]"
 		1:
-			_text = "\n[color=#777777]──────────────[/color]"
+			_text = "\n[color=#777777]──────────────[/color]\t"
 		2:
 			match _dato1:
 				0:
@@ -1993,18 +1740,19 @@ _seg_personalizados = ""
 #ORIGINAL TECNICAMENTE.
 #logica de precionar el boton 1
 func _on_boton_pressed() -> void:
-	_texto_presionar_plus_one(b_contador)
-	_automaticazion_logica_botones_jugadores(
-		1,
-		counter,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1",
-		"Mejor_cliks_10",
-		"Mejor_cliks_20",
-		"Mejor_cliks_30",
-		"Mejor_cliks_60",
-		"Mejor_cliks_Personalizado"
-	)
+	if desafio == true and opciones == 1:
+		_texto_presionar_plus_one(b_contador)
+		_automaticazion_logica_botones_jugadores(
+			1,
+			counter,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1",
+			"Mejor_cliks_10",
+			"Mejor_cliks_20",
+			"Mejor_cliks_30",
+			"Mejor_cliks_60",
+			"Mejor_cliks_Personalizado"
+		)
 
 func _automaticazion_logica_botones_jugadores(_nu,_counter,_tipo,_a,_b,_c,_d,_e,_f):
 	var _g = ""
@@ -2036,76 +1784,79 @@ func _automaticazion_logica_botones_jugadores(_nu,_counter,_tipo,_a,_b,_c,_d,_e,
 
 # logica de presionar el boton 2
 func _on_boton_2_pressed() -> void:
-	_texto_presionar_plus_one(b_contador2)
-	_automaticazion_logica_botones_jugadores(
-		2,
-		counter_J2,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1_J2",
-		"Mejor_cliks_10_J2",
-		"Mejor_cliks_20_J2",
-		"Mejor_cliks_30_J2",
-		"Mejor_cliks_60_J2",
-		"Mejor_cliks_Personalizado_J2"
-	)
+	if desafio == true and opciones == 1:
+		_texto_presionar_plus_one(b_contador2)
+		_automaticazion_logica_botones_jugadores(
+			2,
+			counter_J2,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1_J2",
+			"Mejor_cliks_10_J2",
+			"Mejor_cliks_20_J2",
+			"Mejor_cliks_30_J2",
+			"Mejor_cliks_60_J2",
+			"Mejor_cliks_Personalizado_J2"
+		)
 
 
 # logica de presionar el boton 3
 func _on_boton_3_pressed() -> void:
-	_texto_presionar_plus_one(b_contador3)
-	if tipo_de_modo_jugadores == 2:
-		_automaticazion_logica_botones_jugadores(
-		1,
-		counter,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1",
-		"Mejor_cliks_10",
-		"Mejor_cliks_20",
-		"Mejor_cliks_30",
-		"Mejor_cliks_60",
-		"Mejor_cliks_Personalizado"
-	)
-	else:
-		_automaticazion_logica_botones_jugadores(
-		3,
-		counter_J3,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1_J3",
-		"Mejor_cliks_10_J3",
-		"Mejor_cliks_20_J3",
-		"Mejor_cliks_30_J3",
-		"Mejor_cliks_60_J3",
-		"Mejor_cliks_Personalizado_J3"
-	)
+	if desafio == true and opciones == 1:
+		_texto_presionar_plus_one(b_contador3)
+		if tipo_de_modo_jugadores == 2:
+			_automaticazion_logica_botones_jugadores(
+			1,
+			counter,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1",
+			"Mejor_cliks_10",
+			"Mejor_cliks_20",
+			"Mejor_cliks_30",
+			"Mejor_cliks_60",
+			"Mejor_cliks_Personalizado"
+		)
+		else:
+			_automaticazion_logica_botones_jugadores(
+			3,
+			counter_J3,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1_J3",
+			"Mejor_cliks_10_J3",
+			"Mejor_cliks_20_J3",
+			"Mejor_cliks_30_J3",
+			"Mejor_cliks_60_J3",
+			"Mejor_cliks_Personalizado_J3"
+		)
 
 
 # logica de presionar el boton 4
 func _on_boton_4_pressed() -> void:
-	_texto_presionar_plus_one(b_contador4)
-	if tipo_de_modo_jugadores == 2:
-		_automaticazion_logica_botones_jugadores(
-		2,
-		counter_J2,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1_J2",
-		"Mejor_cliks_10_J2",
-		"Mejor_cliks_20_J2",
-		"Mejor_cliks_30_J2",
-		"Mejor_cliks_60_J2",
-		"Mejor_cliks_Personalizado_J2"
-	)
-	else:
-		_automaticazion_logica_botones_jugadores(
-		4,
-		counter_J4,
-		tipo_de_modo_jugadores,
-		"Mejor_cliks_1_J4",
-		"Mejor_cliks_10_J4",
-		"Mejor_cliks_20_J4",
-		"Mejor_cliks_30_J4",
-		"Mejor_cliks_60_J4",
-		"Mejor_cliks_Personalizado_J4"
-	)
+	if desafio == true and opciones == 1:
+		_texto_presionar_plus_one(b_contador4)
+		if tipo_de_modo_jugadores == 2:
+			_automaticazion_logica_botones_jugadores(
+			2,
+			counter_J2,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1_J2",
+			"Mejor_cliks_10_J2",
+			"Mejor_cliks_20_J2",
+			"Mejor_cliks_30_J2",
+			"Mejor_cliks_60_J2",
+			"Mejor_cliks_Personalizado_J2"
+		)
+		else:
+			_automaticazion_logica_botones_jugadores(
+			4,
+			counter_J4,
+			tipo_de_modo_jugadores,
+			"Mejor_cliks_1_J4",
+			"Mejor_cliks_10_J4",
+			"Mejor_cliks_20_J4",
+			"Mejor_cliks_30_J4",
+			"Mejor_cliks_60_J4",
+			"Mejor_cliks_Personalizado_J4"
+		)
 
 
 ## BOTONES REINICIO:
@@ -2168,60 +1919,45 @@ func _on_opciones_2_pressed() -> void:
 		opciones = 1
 
 
-## DESAFIOS:
-#logica de activar desafio 1 s
-func _on_desafio_1_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,
-	AD_2,
-	b_desafio_1,
-	SD_Modo_1s)
-#logica de activar desafio 10 s
-func _on_desafio_10_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(2,10,
-	AD_3,
-	b_desafio_10,
-	SD_Modo_10s)
-#logica de activar desafio 20 s
-func _on_desafio_20_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(3,20,
-	AD_4,
-	b_desafio_20,
-	SD_Modo_20s)
-#logica de activar desafio 30 s
-func _on_desafio_30_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(4,30,
-	AD_5,
-	b_desafio_30,
-	SD_Modo_30s)
-#logica de activar desafio 60 s
-func _on_desafio_60_pressed() -> void:
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(5,60,
-	AD_6,
-	b_desafio_60,
-	SD_Modo_60s)
-#logica de activar desafio x (y limitandolo)
-func _on_desafio_person_pressed() -> void:
-	a_click.play()
-	if int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int:
-		if XDIC["vibracion"] == 1:
-			Input.vibrate_handheld(40)
-		var numero_line_edit = int(t_entrado_personalizada.text)
-		if numero_line_edit > 99999999:
-			t_entrado_personalizada.text = SD_limite_valor_Modo_Xs
-			t_entrado_personalizada.caret_column = t_entrado_personalizada.text.length()
-		Segundos_personalizados = int(t_entrado_personalizada.text)
-		var SD_Modo_Xs2
-		SD_Modo_Xs2 = (t(SD_Modo_Xs) + str(Segundos_personalizados) + t(SD_SEG))
-		_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
-		Segundos_personalizados,
-		AD_1,
-		b_desafio_personalizado,
-		SD_Modo_Xs2
-		)
-	else:
-		if XDIC["vibracion"] == 1:
-			Input.vibrate_handheld(110)
-		_textos_explicativos(AD_1.x,AD_1.y,SD_valor_valido)
+func _segundos_modos(_se,_modos) -> void:
+	match _se:
+		0:
+			a_click.play()
+			if int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int:
+				if XDIC["vibracion"] == 1:
+					Input.vibrate_handheld(40)
+				var numero_line_edit = int(t_entrado_personalizada.text)
+				if numero_line_edit > 99999999:
+					t_entrado_personalizada.text = SD_limite_valor_Modo_Xs
+					t_entrado_personalizada.caret_column = t_entrado_personalizada.text.length()
+				Segundos_personalizados = int(t_entrado_personalizada.text)
+				_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
+				Segundos_personalizados,
+				)
+			else:
+				if XDIC["vibracion"] == 1:
+					Input.vibrate_handheld(110)
+					_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
+					Segundos_personalizados,
+					)
+		1:
+			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,)
+		2:
+			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(2,10,)
+		3:
+			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(3,20,)
+		4:
+			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(4,30,)
+		5:
+			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(5,60,)
+		10:
+			pass
+	match _modos:
+		-1:
+			pass
+		_:
+			tipo_de_modo_jugadores = _modos
+			_modo_jugadores()
 
 #poner dato x en android (FORZADOR SI HAY ERROR)
 func _on_touch_screen_button_pressed() -> void:
@@ -2232,21 +1968,16 @@ func _on_touch_screen_button_pressed() -> void:
 	await get_tree().process_frame
 	t_entrado_personalizada.grab_focus()
 
-func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre(_nu,_sec,_x,_nodo,_text):
+func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre(_nu,_sec):
 	if _nu >=0:
 		if v_doble_click_deseleccionador_desafio != _nu:
-			_textos_explicativos(_x.x,_x.y,(t(_text)+t(SD_ACTIVADO)))
 			_datos_iniciar_desafios(_sec)
-			_asignadores(2,_nodo)
 			v_doble_click_deseleccionador_desafio = _nu
 		else:
-			_textos_explicativos(_x.x,_x.y,(t(_text)+t(SD_DESACTIVADO)))
 			_datos_iniciar_desafios(0)
-			_asignadores(2,botonX)
 			v_doble_click_deseleccionador_desafio = 0
 	else:
 			_datos_iniciar_desafios(0)
-			_asignadores(2,botonX)
 			v_doble_click_deseleccionador_desafio = 0
 
 func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(_a):
@@ -2372,120 +2103,80 @@ func _modo_jugadores():
 	counter_J3 = 0
 	counter_J4 = 0
 	if tipo_de_modo_jugadores == 0:
-		_textos_explicativos(AD_7.x,AD_7.y,SD_Modo_solo,1)
-		b_contador.position = p_boton
+		b_contador.global_position = p_boton
 		b_contador.scale = s_normal
-		b_contador2.position = p_botonX
-		b_contador3.position = p_botonX
-		b_contador4.position = p_botonX
-		A_modo.position.x = b_solitario.position.x+63
-		A_modo.texture = th_textura_selector_solo
+		b_contador2.global_position = p_botonX
+		b_contador3.global_position = p_botonX
+		b_contador4.global_position = p_botonX
 		fondo_1c1_2c2_aparecer(false)
 		return
 	elif tipo_de_modo_jugadores == 1:
-		_textos_explicativos(AD_8.x,AD_8.y,SD_Modo_1c1,1)
-		b_contador.position = p_boton_1c1
+		b_contador.global_position = p_boton_1c1
 		b_contador.scale = s_1c1
-		b_contador2.position = p_boton2_1c1
+		b_contador2.global_position = p_boton2_1c1
 		b_contador2.scale = s_1c1
-		b_contador3.position = p_botonX
-		b_contador4.position = p_botonX
-		A_modo.texture = th_texture_selector
+		b_contador3.global_position = p_botonX
+		b_contador4.global_position = p_botonX
 		fondo_1c1_2c2_aparecer(true)
 		return
 	elif tipo_de_modo_jugadores == 2:
-		_textos_explicativos(AD_9.x,AD_9.y,SD_Modo_2c2,1)
-		b_contador.position = p_boton_t4
+		b_contador.global_position = p_boton_t4
 		b_contador.scale = s_2c2_t4
-		b_contador2.position = p_boton2_t4
+		b_contador2.global_position = p_boton2_t4
 		b_contador2.scale = s_2c2_t4
-		b_contador3.position = p_boton3_t4
+		b_contador3.global_position = p_boton3_t4
 		b_contador3.scale = s_2c2_t4
-		b_contador4.position = p_boton4_t4
+		b_contador4.global_position = p_boton4_t4
 		b_contador4.scale = s_2c2_t4
-		A_modo.texture = th_texture_selector
 		fondo_1c1_2c2_aparecer(true)
 		return
 	elif tipo_de_modo_jugadores == 3:
-		_textos_explicativos(AD_10.x,AD_10.y,SD_Modo_t3,1)
-		b_contador.position = p_boton_t3
+
+		b_contador.global_position = p_boton_t3
 		b_contador.scale = s_t3
-		b_contador2.position = p_boton2_t3
+		b_contador2.global_position = p_boton2_t3
 		b_contador2.scale = s_t3
-		b_contador3.position = p_boton3_t3
+		b_contador3.global_position = p_boton3_t3
 		b_contador3.scale = s_t3
-		b_contador4.position = p_botonX
-		A_modo.texture = th_texture_selector
+		b_contador4.global_position = p_botonX
 		fondo_1c1_2c2_aparecer(false)
 		return
 	elif tipo_de_modo_jugadores == 4:
-		_textos_explicativos(AD_11.x,AD_11.y,SD_Modo_t4,1)
-		b_contador.position = p_boton_t4
+		b_contador.global_position = p_boton_t4
 		b_contador.scale = s_2c2_t4
-		b_contador2.position = p_boton2_t4
+		b_contador2.global_position = p_boton2_t4
 		b_contador2.scale = s_2c2_t4
-		b_contador3.position = p_boton3_t4
+		b_contador3.global_position = p_boton3_t4
 		b_contador3.scale = s_2c2_t4
-		b_contador4.position = p_boton4_t4
+		b_contador4.global_position = p_boton4_t4
 		b_contador4.scale = s_2c2_t4
-		A_modo.texture = th_texture_selector
 		fondo_1c1_2c2_aparecer(false)
 		return
 #AQUI SON LOS BOTONES QUE DIRAN EN QUE MODO DE JUEGO ESTAS 
 #activar modo solitario
 func _on_solitario_pressed() -> void:
 	tipo_de_modo_jugadores = 0
-	_asignadores(0,b_solitario)
 	_modo_jugadores()
 #activar modo uno contra uno
 func _on_c_1_pressed() -> void:
 	tipo_de_modo_jugadores = 1
-	_asignadores(0,b_ucu)
 	_modo_jugadores()
 #activar modo dos contra dos
 func _on_c_2_pressed() -> void:
 	tipo_de_modo_jugadores = 2
-	_asignadores(0,b_dcd)
 	_modo_jugadores()
 #activar modo todos contra todos (3 personas)
 func _on__contra_todos_3_pressed() -> void:
-	_asignadores(0,b_uct3)
 	tipo_de_modo_jugadores = 3
 	_modo_jugadores()
 #activar modo todos contra todos (4 personas)
 func _on__contra_todos_4_pressed() -> void:
-	_asignadores(0,b_uct4)
 	tipo_de_modo_jugadores = 4
 	_modo_jugadores()
 
 func fondo_1c1_2c2_aparecer(_A):
 	F_rojo_2c2.visible = _A
 	F_verde_2c2.visible = _A
-
-## BOTONES QUE SON DE ESTADISTICAS Y SU LOGICA
-func _on_estadisticas_pressed() -> void: #1c1
-	_para_estadisticas_opciones(1,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_1c1")
-func _on_estadisticas_2_pressed() -> void: #2c2
-	_para_estadisticas_opciones(2,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_2c2")
-func _on_estadisticas_3_pressed() -> void: #solo
-	_para_estadisticas_opciones(3,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_solitario")
-func _on_estadisticas_4_pressed() -> void: #3 jugadores
-	_para_estadisticas_opciones(4,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct3")
-func _on_estadisticas_5_pressed() -> void: #4 jugadores
-	_para_estadisticas_opciones(5,0,$"Node2D/Botones_ocultar desafio/Estadisticas_activa_tct4")
-func _on_estadisticas_8_pressed() -> void: # 1 s
-	_para_estadisticas_opciones(8,1)
-func _on_estadisticas_6_pressed() -> void: # 10 s
-	_para_estadisticas_opciones(6,1)
-func _on_estadisticas_9_pressed() -> void: # 20 s
-	_para_estadisticas_opciones(9,1)
-func _on_estadisticas_7_pressed() -> void: # 30 s
-	_para_estadisticas_opciones(7,1)
-func _on_estadisticas_10_pressed() -> void: # 60 s
-	_para_estadisticas_opciones(10,1)
-func _on_estadisticas_11_pressed() -> void: # X s
-	_para_estadisticas_opciones(11,1)
-
 
 #Logica de que pasa si das un click a un boton jugable.
 #ESTE SE ESPECIALIZA EN SUMAR UNA UNIDAD A EL VALOR TOTAL CLISKS, Y ESTE ES EL RESPONSABLE
@@ -2555,16 +2246,6 @@ func _simplificador(_a):
 		_:
 			_g = "SOLO"
 	return _g
-
-
-#sirve para las opciones,saber cual exactamente esta activada.
-func _asignadores(_a,_b):#tipo de dato, nodo/boton/etc
-	if _a == 0:
-		A_modo.global_position = _b.global_position
-	elif _a == 1:
-		A_modo_estadistica.global_position = _b.global_position
-	elif _a == 2:
-		A_tiempos.global_position = _b.global_position
 
 
 ## BOTONES ABAJO:
@@ -2640,7 +2321,7 @@ func _on_home_pressed() -> void: ## MODO CASA/HOGAR ( NORMAL )
 func _on_estadist_pressed() -> void: ## MODO DE ESTADISTICAS
 	_estadisticas_mostrar_texto_parasiempre()
 	SD_estadisticas = SD_esta
-	_para_estadisticas_opciones(0,1)
+	_para_estadisticas_opciones()
 func _on_skins_pressed() -> void: ## MODO DE SKINS
 	a_click.play()
 	_botones_abajo(2)
@@ -2755,6 +2436,7 @@ _c = 0 ## NO TOCAR
 	return _c
 
 ## SISTEMA DE CARGA DE DATOS
+
 func cargar():
 	if FileAccess.file_exists(RUTA_GUARDADO):
 		var archivo = FileAccess.open(RUTA_GUARDADO, FileAccess.READ)
@@ -2796,7 +2478,6 @@ func ver_guardado_texto():
 func _textos():
 	t_lado_a_negro.text = t_lado_a.text
 	t_lado_b_negro.text = t_lado_b.text
-	SD_negro.text = A_label.text
 	t_counter.text = str(counter)
 	t_counter2.text = str(counter_J2)
 	t_counter3.text = str(counter_J3)
@@ -2825,8 +2506,6 @@ func _texto_tamaño_fuente():
 	#label
 	_datos_texto(1,t_proximamente,104)
 	_datos_texto(1,t_proximamente_negro,104)
-	_datos_texto(1,SD_negro,35)
-	_datos_texto(1,A_label,35)
 
 ## LOGICA DE CAMBIO DE TAMAÑO DEL TEXTO O CAMBIO DE TIPOGRAFIA
 # (tecnicamente es como una class)
@@ -2863,20 +2542,6 @@ _e = 0 ## ¿SE UTILIZARA EL TAMAÑO ORIGINAL? ( 1 = SI ) ( int)
 # (t(...) es para saltos de lineas correctos)
 # y por ultimo detiene la animacion (si esque se estaba reproduciendo)
 # y inicia la animacion
-func _textos_explicativos(
-_a, ## _a COORDENADA X ( float )
-_b, ## _b COORDENADA Y ( float )
-_c, ## _c TEXTO ( string )
-_d = 0 ## _d TIPO DE IMPRESION ( int )
-):
-	A_texto_desaparecedor.position = Vector2(_a,_b)
-	A_texto.visible = true
-	if _d != 1:
-		A_label.text = t(_c)
-	else:
-		A_label.text = t(_c)+t(SD_ACTIVADO)
-	A_animation_valor_valido.stop()
-	A_animation_valor_valido.play("UNICA")
 
 ## AL PRESIONAR SALE UNA COPIA DE +1
 # primero se define la variable texto con la direccion del +1 (click_text)

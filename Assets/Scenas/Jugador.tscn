@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://s63xc8ryt5ia"]
 
-[ext_resource type="Texture2D" uid="uid://bkhwinsftpker" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="1_rlhsd"]
-[ext_resource type="Texture2D" uid="uid://c5xxmwixsy2ww" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="2_yjnci"]
+[ext_resource type="Texture2D" uid="uid://d2elpyrlo0cvx" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="1_rlhsd"]
+[ext_resource type="Texture2D" uid="uid://ch3gsyohnhwlh" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="2_yjnci"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="3_rlhsd"]
 [ext_resource type="Script" uid="uid://dolq2d206wgrw" path="res://Assets/Scripts/counter_black.gd" id="4_ol33o"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_rlhsd"]
@@ -26,6 +26,7 @@ theme_override_fonts/font = ExtResource("3_rlhsd")
 theme_override_font_sizes/font_size = 110
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="counter2" type="Label" parent="prueba" unique_id=1333891274]
 offset_left = 5.5248613
@@ -39,6 +40,7 @@ theme_override_font_sizes/font_size = 110
 text = "0"
 horizontal_alignment = 1
 script = ExtResource("4_ol33o")
+metadata/_edit_use_anchors_ = true
 
 [node name="xxx" type="Node2D" parent="prueba" unique_id=1422759750]
 visible = false

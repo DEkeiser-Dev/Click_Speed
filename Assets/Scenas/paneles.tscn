@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://b2x3l2j2kepbe"]
+
+[ext_resource type="Script" uid="uid://d0eh38o2koh6l" path="res://Assets/Scripts/Opciones_Modo_Seg.gd" id="1_qmilu"]
+
+[node name="paneles" type="HBoxContainer" unique_id=122116617]
+offset_left = -336.0
+offset_top = 360.0
+offset_right = 395.0
+offset_bottom = 464.0
+scale = Vector2(0.96721095, 1.0408002)
+script = ExtResource("1_qmilu")
+
+[node name="panel_modo" type="HBoxContainer" parent="." unique_id=698347463]
+layout_mode = 2
+
+[node name="modo" type="Label" parent="panel_modo" unique_id=1006134360]
+layout_mode = 2
+text = "MODE"
+
+[node name="__two_de_modo" type="Label" parent="panel_modo" unique_id=930678464]
+layout_mode = 2
+text = ":"
+
+[node name="ESC_de_hbox_container" type="Label" parent="panel_modo" unique_id=501973179]
+self_modulate = Color(0.57254905, 0.57254905, 0.57254905, 0)
+layout_mode = 2
+text = "GGGGGGGGG"
+
+[node name="Panel" type="PanelContainer" parent="panel_modo/ESC_de_hbox_container" unique_id=1299424567]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 86.0
+
+[node name="panel_total_modo" type="VBoxContainer" parent="panel_modo/ESC_de_hbox_container/Panel" unique_id=2131770133]
+layout_mode = 2
+
+[node name="modo" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo" unique_id=27809696]
+layout_mode = 2
+text = "SOLITARIO"
+
+[node name="panel_modo" type="VBoxContainer" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo" unique_id=725105642]
+visible = false
+layout_mode = 2
+
+[node name="solo" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo" unique_id=1290110704]
+layout_mode = 2
+text = "SOLITARIO"
+
+[node name="1c1" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo" unique_id=1361727314]
+layout_mode = 2
+text = "UNO_CONTRA_UNO"
+
+[node name="2c2" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo" unique_id=1547224161]
+layout_mode = 2
+text = "DOS_CONTRA_DOS"
+
+[node name="3p" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo" unique_id=1197219999]
+layout_mode = 2
+text = "PLAYERS3"
+
+[node name="4p" type="Button" parent="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo" unique_id=2015914257]
+layout_mode = 2
+text = "PLAYERS4"
+
+[node name="panel_seg" type="HBoxContainer" parent="." unique_id=623393231]
+layout_mode = 2
+
+[node name="ESP" type="Label" parent="panel_seg" unique_id=1686906552]
+layout_mode = 2
+text = "   "
+
+[node name="seg" type="Label" parent="panel_seg" unique_id=1643849578]
+layout_mode = 2
+text = "sec2"
+
+[node name="__two_de_seg" type="Label" parent="panel_seg" unique_id=239489853]
+layout_mode = 2
+text = ":"
+
+[node name="ESC_de_hbox_container" type="Label" parent="panel_seg" unique_id=1134600937]
+self_modulate = Color(0.57254905, 0.57254905, 0.57254905, 0)
+layout_mode = 2
+text = "GGGGGGGGG"
+
+[node name="Panel" type="PanelContainer" parent="panel_seg/ESC_de_hbox_container" unique_id=894786160]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 86.0
+
+[node name="panel_total_seg" type="VBoxContainer" parent="panel_seg/ESC_de_hbox_container/Panel" unique_id=1480733846]
+layout_mode = 2
+
+[node name="seg" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg" unique_id=703317365]
+layout_mode = 2
+text = "1 SEC"
+
+[node name="panel_seg" type="VBoxContainer" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg" unique_id=2013944906]
+visible = false
+layout_mode = 2
+
+[node name="1sec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=1179039221]
+layout_mode = 2
+text = "SEC1"
+
+[node name="10sec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=2077966737]
+layout_mode = 2
+text = "SEC10"
+
+[node name="20sec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=1350578779]
+layout_mode = 2
+text = "SEC20"
+
+[node name="30sec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=889774602]
+layout_mode = 2
+text = "SEC30"
+
+[node name="60sec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=708198310]
+layout_mode = 2
+text = "SEC60"
+
+[node name="xsec" type="Button" parent="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg" unique_id=128550138]
+layout_mode = 2
+text = "SECX"
+
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/modo" to="." method="_botton_modo_desplegable"]
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/solo" to="." method="_solo"]
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/1c1" to="." method="_1c1"]
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/2c2" to="." method="_2c2"]
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/3p" to="." method="_3p"]
+[connection signal="pressed" from="panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/4p" to="." method="_4p"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/seg" to="." method="_botton_seg_desplegable"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/1sec" to="." method="_seg_1"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/10sec" to="." method="_seg_10"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/20sec" to="." method="_seg_20"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/30sec" to="." method="_seg_30"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/60sec" to="." method="_seg_60"]
+[connection signal="pressed" from="panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/xsec" to="." method="_seg_X"]
