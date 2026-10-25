@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://u0cd4ww1hx0g" path="res://Assets/Arte2d/opciones/opciones_cuadrado/configuracion.svg" id="28_364dt"]
 [ext_resource type="Theme" uid="uid://4efwrsde3nam" path="res://Assets/themes/theme.tres" id="28_h0h6r"]
 [ext_resource type="Texture2D" uid="uid://k771x7yi6nah" path="res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg" id="29_364dt"]
+[ext_resource type="Texture2D" uid="uid://f1yr1i7scc7s" path="res://Assets/Arte2d/Dev/devicon.png" id="31_8yer3"]
 [ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/opciones/opciones_cuadrado/tienda.svg" id="31_h0h6r"]
 
 [sub_resource type="Animation" id="Animation_pjjqg"]
@@ -112,9 +113,9 @@ position = Vector2(-399.99994, 1920)
 [node name="Time" type="Label" parent="Node2D" unique_id=956847629]
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -720.0
-offset_top = 104.0
+offset_top = 72.0
 offset_right = -414.0
-offset_bottom = 255.0
+offset_bottom = 223.0
 theme_override_fonts/font = ExtResource("13_57s6u")
 theme_override_font_sizes/font_size = 76
 text = "Time"
@@ -322,6 +323,7 @@ scale = Vector2(0.21577375, 0.13392854)
 texture_normal = ExtResource("3_h3ung")
 
 [node name="EntradaPersonalizada" type="LineEdit" parent="Node2D/Botones_ocultar desafio" unique_id=1855945156]
+visible = false
 offset_left = -259.99997
 offset_top = 209.16666
 offset_right = -57.666656
@@ -420,7 +422,7 @@ layout_mode = 2
 
 [node name="seg" type="Button" parent="Node2D/Botones_ocultar desafio/paneles/panel_seg/ESC_de_hbox_container/Panel/panel_total_seg" unique_id=703317365]
 layout_mode = 2
-text = "1 SEC"
+text = "---"
 
 [node name="panel_seg" type="VBoxContainer" parent="Node2D/Botones_ocultar desafio/paneles/panel_seg/ESC_de_hbox_container/Panel/panel_total_seg" unique_id=2013944906]
 visible = false
@@ -966,7 +968,7 @@ position = Vector2(-272, 920)
 position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
-position = Vector2(200, 136)
+position = Vector2(72, 184)
 texture_normal = ExtResource("5_h3ung")
 texture_pressed = ExtResource("6_0euow")
 
@@ -974,12 +976,12 @@ texture_pressed = ExtResource("6_0euow")
 position = Vector2(-272, 1168)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
-position = Vector2(200, 136)
+position = Vector2(208, 48)
 texture_normal = ExtResource("6_0euow")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Dekeiser_Declaracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1335583333]
-position = Vector2(336, 64)
+position = Vector2(344, 48)
 texture_normal = ExtResource("7_2acba")
 
 [node name="Dekeiser_declaracion" type="Node2D" parent="Apartado de opciones abajo" unique_id=153723521]
@@ -1034,7 +1036,10 @@ text = "DEV_DECLARATION"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="click_speed_dekeiser" type="RichTextLabel" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=737369319]
+[node name="HBoxContainer" type="HBoxContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=411598481]
+layout_mode = 2
+
+[node name="click_speed_dekeiser" type="RichTextLabel" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=737369319]
 custom_minimum_size = Vector2(629.835, 20)
 layout_mode = 2
 mouse_filter = 2
@@ -1043,7 +1048,44 @@ theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("13_57s6u")
 theme_override_font_sizes/normal_font_size = 69
 bbcode_enabled = true
-text = "click_speed_dekeiser"
+text = "
+click_speed
+   
+
+"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=908387291]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/HBoxContainer/TextureRect" unique_id=1737947025]
+layout_mode = 0
+offset_left = -274.0
+offset_top = 7.000002
+offset_right = 238.0
+offset_bottom = 519.0
+scale = Vector2(0.49959123, 0.49610788)
+texture = ExtResource("31_8yer3")
+
+[node name="click_speed_dekeiser" type="RichTextLabel" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/HBoxContainer/TextureRect" unique_id=369064624]
+custom_minimum_size = Vector2(629.835, 20)
+layout_mode = 0
+offset_left = -650.0
+offset_top = 143.0
+offset_right = -20.164978
+offset_bottom = 337.0
+mouse_filter = 2
+theme_override_constants/line_separation = -28
+theme_override_constants/paragraph_separation = 25
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("15_pigga")
+theme_override_font_sizes/normal_font_size = 82
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "   Dekeiser
+
+"
 fit_content = true
 scroll_active = false
 

@@ -8,7 +8,7 @@ var acumulado: float = 0.0
 var velocidad_scroll: float = 0.0
 
 # Qué tan rápido se detiene la inercia.
-@export var friccion: float = 3400.0
+@export var friccion: float = 4400.0
 
 
 func _ready():

@@ -39,6 +39,9 @@ func _crear_banner(_banner_ID):
 ## simplemente la logica de intersticial:
 # estas lineas simplemente cargar el intersticial
 func _cargar_intersticial(_interstitial_ID) -> void:
+	if not _ads_initialized:
+		print("AdMob todavía no está inicializado")
+		return
 	_interstitial_loader = InterstitialAdLoader.new()
 	var ad_request = AdRequest.new()
 	var callback = InterstitialAdLoadCallback.new()
@@ -47,11 +50,7 @@ func _cargar_intersticial(_interstitial_ID) -> void:
 		_interstitial_ad = ad
 	callback.on_ad_failed_to_load = func(error):
 		print("Error cargando intersticial: ", error)
-	_interstitial_loader.load(
-		_interstitial_ID,
-		ad_request,
-		callback
-	)
+	_interstitial_loader.load(_interstitial_ID, ad_request, callback)
 
 ## se dedica a mostrar el intersticial y cargarlo
 # si esta cargado el anuncio simplemente imprime que no esta aun listo

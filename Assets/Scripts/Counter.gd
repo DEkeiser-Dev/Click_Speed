@@ -3,6 +3,7 @@ extends CanvasLayer
 signal Interticial_apoyo_dekeiser
 signal Dekeiser_sentimental
 signal Dekeiser_NO_sentimental
+signal seg_0
 
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
@@ -756,8 +757,6 @@ var v_home = 0
 #variable que dice si es desafio o total(para opciones)
 var v_dessfios_o_total = 0
 var v_que_modo_de_juego_ver_opciones = 1
-#avariable que dice si deseleccionar un desafio.
-var v_doble_click_deseleccionador_desafio = 0
 #ASIGNADORES
 var A_modo 
 var A_tiempos
@@ -863,17 +862,17 @@ func _ready() -> void:
 	#barra.custom_minimum_size.x = 18
 
 func _modo(valor: Vector2):
-	estadistica_modo_tipo = int(valor.x)
 	if int(valor.y) == 0:
 		_segundos_modos(10,int(valor.x))
 	else:
+		estadistica_modo_tipo = int(valor.x)
 		_on_estadist_pressed()
 
 func _seg(valor: Vector2):
-	estadistica_seg_tipo = int(valor.x)
 	if int(valor.y) == 0:
 		_segundos_modos(int(valor.x),-1)
 	else:
+		estadistica_seg_tipo = int(valor.x)
 		_on_estadist_pressed()
 
 func _carga_inicial() -> void:
@@ -913,7 +912,6 @@ func _process(_delta: float) -> void:
 				b_opciones.visible = true
 				b_opciones2.visible = true
 			else:
-				
 				b_opciones.visible = false
 				b_opciones2.visible = false
 			iniciar_lugar_opciones = 0
@@ -947,7 +945,8 @@ func _process(_delta: float) -> void:
 		t_counter2.visible = true
 		t_counter3.visible = true
 		t_counter4.visible = true
-
+	if t_entrado_personalizada.text == "" and t_entrado_personalizada.visible == true:
+		_datos_iniciar_desafios(0)
 
 func _logica_de_desafios_modos_de_equipos_tipo_contador_barra():
 	suma_total = int(t_lado_a.text) + int(t_lado_b.text)
@@ -973,7 +972,6 @@ func _procesardor_de_objetos():
 	b_contador2 = $Node2D/Boton2
 	b_contador3 = $Node2D/Boton3
 	b_contador4 = $Node2D/Boton4
-	b_desafio_20 = $"Node2D/Botones_ocultar desafio/desafio20"
 	b_reset = $"Apartado de opciones abajo/opcion/datos/reset"
 	b_desafio_p_oculto = $"Node2D/Botones_ocultar desafio/TouchScreenButton"
 	b_reset_counter = $"Node2D/Botones_ocultar desafio/reset_counter"
@@ -1349,19 +1347,22 @@ func guardar_datos_para_grafica(_a):
 		range4 = 0
 		_verificador4 = 0
 
-
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
-	segundos = 0
 	guardar_datos_para_grafica(1)
 	guardar_datos_para_grafica(2)
+	Segundos_personalizados = 0
+	t_entrado_personalizada.text = ""
+	max_segundos = 0
+	seg_0.emit()
+	segundos = 0
 	guardar()
 	counter = 0
 	counter_J2 = 0
 	counter_J3 = 0
 	counter_J4 = 0
 	desafio = false
-	_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(-1,0)
+	_datos_iniciar_desafios(0)
 	segundos = 0
 	_opciones_no_desafiadas_aparecen_o_no()
 	t_tiempo.wait_time = 0.006
@@ -1922,8 +1923,9 @@ func _on_opciones_2_pressed() -> void:
 func _segundos_modos(_se,_modos) -> void:
 	match _se:
 		0:
+			print(t_entrado_personalizada.text)
 			a_click.play()
-			if int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int:
+			if (int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int) and t_entrado_personalizada.text != "":
 				if XDIC["vibracion"] == 1:
 					Input.vibrate_handheld(40)
 				var numero_line_edit = int(t_entrado_personalizada.text)
@@ -1931,25 +1933,19 @@ func _segundos_modos(_se,_modos) -> void:
 					t_entrado_personalizada.text = SD_limite_valor_Modo_Xs
 					t_entrado_personalizada.caret_column = t_entrado_personalizada.text.length()
 				Segundos_personalizados = int(t_entrado_personalizada.text)
-				_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
+				_datos_iniciar_desafios(
 				Segundos_personalizados,
 				)
-			else:
-				if XDIC["vibracion"] == 1:
-					Input.vibrate_handheld(110)
-					_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(6,
-					Segundos_personalizados,
-					)
 		1:
-			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(1,1,)
+			_datos_iniciar_desafios(1)
 		2:
-			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(2,10,)
+			_datos_iniciar_desafios(10)
 		3:
-			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(3,20,)
+			_datos_iniciar_desafios(20)
 		4:
-			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(4,30,)
+			_datos_iniciar_desafios(30)
 		5:
-			_no_quiero_escrbir_esta_linea_de_desactivacion_siempre(5,60,)
+			_datos_iniciar_desafios(60)
 		10:
 			pass
 	match _modos:
@@ -1958,27 +1954,24 @@ func _segundos_modos(_se,_modos) -> void:
 		_:
 			tipo_de_modo_jugadores = _modos
 			_modo_jugadores()
-
+	if _se == 0:
+		t_entrado_personalizada.visible = true
+	else:
+		t_entrado_personalizada.visible = false
 #poner dato x en android (FORZADOR SI HAY ERROR)
 func _on_touch_screen_button_pressed() -> void:
-	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
-	a_click.play()
-	t_entrado_personalizada.release_focus()
-	await get_tree().process_frame
-	t_entrado_personalizada.grab_focus()
+	if t_entrado_personalizada.visible == true:
+		if XDIC["vibracion"] == 1:
+			Input.vibrate_handheld(40)
+		a_click.play()
+		t_entrado_personalizada.release_focus()
+		await get_tree().process_frame
+		t_entrado_personalizada.grab_focus()
 
-func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre(_nu,_sec):
-	if _nu >=0:
-		if v_doble_click_deseleccionador_desafio != _nu:
-			_datos_iniciar_desafios(_sec)
-			v_doble_click_deseleccionador_desafio = _nu
-		else:
-			_datos_iniciar_desafios(0)
-			v_doble_click_deseleccionador_desafio = 0
-	else:
-			_datos_iniciar_desafios(0)
-			v_doble_click_deseleccionador_desafio = 0
+func _input(event):
+	if event.is_action_pressed("enter"):
+		if t_entrado_personalizada.text != "" and t_entrado_personalizada.visible == true:
+			_segundos_modos(0,-1)
 
 func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(_a):
 	var _B
@@ -1990,7 +1983,8 @@ func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(_a):
 func _datos_iniciar_desafios(_nu):
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
-	a_click.play()
+	if _nu > 0:
+		a_click.play()
 	segundos = 0
 	counter = 0
 	counter_J2 = 0
@@ -2154,25 +2148,6 @@ func _modo_jugadores():
 		return
 #AQUI SON LOS BOTONES QUE DIRAN EN QUE MODO DE JUEGO ESTAS 
 #activar modo solitario
-func _on_solitario_pressed() -> void:
-	tipo_de_modo_jugadores = 0
-	_modo_jugadores()
-#activar modo uno contra uno
-func _on_c_1_pressed() -> void:
-	tipo_de_modo_jugadores = 1
-	_modo_jugadores()
-#activar modo dos contra dos
-func _on_c_2_pressed() -> void:
-	tipo_de_modo_jugadores = 2
-	_modo_jugadores()
-#activar modo todos contra todos (3 personas)
-func _on__contra_todos_3_pressed() -> void:
-	tipo_de_modo_jugadores = 3
-	_modo_jugadores()
-#activar modo todos contra todos (4 personas)
-func _on__contra_todos_4_pressed() -> void:
-	tipo_de_modo_jugadores = 4
-	_modo_jugadores()
 
 func fondo_1c1_2c2_aparecer(_A):
 	F_rojo_2c2.visible = _A

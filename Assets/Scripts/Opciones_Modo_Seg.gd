@@ -25,7 +25,12 @@ var contador_panel_modo = 0
 var contador_panel_seg = 0
 
 func _ready() -> void:
+	if tipo == 0:
+		$"../../..".seg_0.connect(_vacio_seg)
 	_procesar_objetos()
+
+func _vacio_seg():
+	_seg("XD",1)
 
 func _procesar_objetos():
 	contenedor_modo = $panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo
@@ -101,10 +106,13 @@ func _seg_X() -> void:
 	_seg(seg_x)
 	sec.emit(Vector2(0,tipo))
 
-func _seg(_se):
+func _seg(_se,_a = 0):
 	contador_panel_seg = 0
 	contenedor_seg.visible = false
-	botton_seg.text = _se.text
+	if _a == 1:
+		botton_seg.text = "---"
+	else:
+		botton_seg.text = _se.text
 
 
 
