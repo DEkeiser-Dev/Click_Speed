@@ -47,10 +47,46 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.0026746667, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-160, 73.33333), Vector2(-140, 73.333)]
+"values": [Vector2(-366.6667, 535.8333), Vector2(-380, 522.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.0501355, 1.0501355), Vector2(1.2466125, 1.2466122)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.01, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_57s6u"]
@@ -65,7 +101,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-160, 73.33333)]
+"values": [Vector2(-359.99997, 549.1667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.0501355, 1.0501355)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kmjfm"]
@@ -103,12 +175,15 @@ position = Vector2(-719.99994, 1504)
 
 [node name="Boton2" parent="Node2D" unique_id=2048963771 instance=ExtResource("2_l5g0r")]
 position = Vector2(-719.99994, 1920)
+valiable = 2
 
 [node name="Boton3" parent="Node2D" unique_id=593215789 instance=ExtResource("2_l5g0r")]
 position = Vector2(-399.99982, 1504)
+valiable = 3
 
 [node name="Boton4" parent="Node2D" unique_id=1851618136 instance=ExtResource("2_l5g0r")]
 position = Vector2(-399.99994, 1920)
+valiable = 4
 
 [node name="Time" type="Label" parent="Node2D" unique_id=956847629]
 self_modulate = Color(0, 0, 0, 1)
@@ -309,7 +384,7 @@ scale = Vector2(0.8333333, 0.8333333)
 texture_normal = ExtResource("5_4b525")
 
 [node name="opciones2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=1109510672]
-position = Vector2(-160, 73.33333)
+position = Vector2(-359.99997, 549.1667)
 scale = Vector2(1.0501355, 1.0501355)
 texture_normal = ExtResource("5_4b525")
 
@@ -317,26 +392,27 @@ texture_normal = ExtResource("5_4b525")
 libraries/ = SubResource("AnimationLibrary_kmjfm")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio" unique_id=681282382]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(-259.99997, 209.16666)
+position = Vector2(-253.33333, 89.16666)
 scale = Vector2(0.21577375, 0.13392854)
 texture_normal = ExtResource("3_h3ung")
 
 [node name="EntradaPersonalizada" type="LineEdit" parent="Node2D/Botones_ocultar desafio" unique_id=1855945156]
 visible = false
-offset_left = -259.99997
-offset_top = 209.16666
-offset_right = -57.666656
-offset_bottom = 328.1667
+offset_left = -253.33333
+offset_top = 89.16666
+offset_right = -51.000015
+offset_bottom = 208.16669
 theme_override_font_sizes/font_size = 40
 placeholder_text = "NUMBER"
 virtual_keyboard_type = 2
 
 [node name="paneles" type="HBoxContainer" parent="Node2D/Botones_ocultar desafio" unique_id=122116617]
 offset_left = -573.3333
-offset_top = 309.16663
+offset_top = 189.16664
 offset_right = 157.66669
-offset_bottom = 413.16663
+offset_bottom = 293.16663
 scale = Vector2(0.80300725, 0.8854648)
 script = ExtResource("23_pjjqg")
 
@@ -488,10 +564,10 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Apartado de opciones abajo/estadistica/Control" unique_id=553377540]
 layout_mode = 0
-offset_left = -312.0
+offset_left = -320.0
 offset_top = 480.0
-offset_right = 432.0
-offset_bottom = 1445.44
+offset_right = 352.0
+offset_bottom = 1400.0
 script = ExtResource("12_2acba")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer" unique_id=239312140]
@@ -503,8 +579,8 @@ layout_mode = 2
 texture = ExtResource("21_71wrj")
 
 [node name="Panel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect" unique_id=22370181 instance=ExtResource("14_8yer3")]
-position = Vector2(288, 295.99997)
-scale = Vector2(3.3600004, 3.36)
+position = Vector2(288, 311.99997)
+scale = Vector2(3.2, 3.2)
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]
 custom_minimum_size = Vector2(630, 1156)
@@ -1008,7 +1084,7 @@ offset_bottom = 24.0
 layout_mode = 0
 offset_left = -312.0
 offset_top = 488.0
-offset_right = 376.0
+offset_right = 352.0
 offset_bottom = 1432.0
 script = ExtResource("12_2acba")
 

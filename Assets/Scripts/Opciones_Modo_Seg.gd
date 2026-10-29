@@ -3,6 +3,8 @@ extends HBoxContainer
 @export var tipo : int = 0
 signal modo
 signal sec
+signal X
+signal numerito_boton_jugador
 
 var contenedor_modo
 var botton_modo
@@ -90,21 +92,27 @@ _b # que tipo de contador es ( 0 modo, 1 seg)
 func _seg_1() -> void:
 	_seg(seg_1)
 	sec.emit(Vector2(1,tipo))
+	X.emit(0)
 func _seg_10() -> void:
 	_seg(seg_10)
 	sec.emit(Vector2(2,tipo))
+	X.emit(0)
 func _seg_20() -> void:
 	_seg(seg_20)
 	sec.emit(Vector2(3,tipo))
+	X.emit(0)
 func _seg_30() -> void:
 	_seg(seg_30)
 	sec.emit(Vector2(4,tipo))
+	X.emit(0)
 func _seg_60() -> void:
 	_seg(seg_60)
 	sec.emit(Vector2(5,tipo))
+	X.emit(0)
 func _seg_X() -> void:
 	_seg(seg_x)
 	sec.emit(Vector2(0,tipo))
+	X.emit(1)
 
 func _seg(_se,_a = 0):
 	contador_panel_seg = 0
@@ -119,18 +127,23 @@ func _seg(_se,_a = 0):
 func _solo() -> void:
 	_modo(modo_solo)
 	modo.emit(Vector2(0,tipo))
+	numerito_boton_jugador.emit(0)
 func _1c1() -> void:
 	_modo(modo_1c1)
 	modo.emit(Vector2(1,tipo))
+	numerito_boton_jugador.emit(1)
 func _2c2() -> void:
 	_modo(modo_2c2)
 	modo.emit(Vector2(2,tipo))
+	numerito_boton_jugador.emit(1)
 func _3p() -> void:
 	_modo(modo_3p)
 	modo.emit(Vector2(3,tipo))
+	numerito_boton_jugador.emit(0)
 func _4p() -> void:
 	_modo(modo_4p)
 	modo.emit(Vector2(4,tipo))
+	numerito_boton_jugador.emit(0)
 
 func _modo(_mo):
 	contador_panel_modo = 0

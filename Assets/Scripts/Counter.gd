@@ -4,6 +4,7 @@ signal Interticial_apoyo_dekeiser
 signal Dekeiser_sentimental
 signal Dekeiser_NO_sentimental
 signal seg_0
+signal aparecer_botones
 
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
@@ -821,19 +822,15 @@ var datos_4 = {
 	"CPS": []
 }
 
-var _M_Clicks_plantilla = 0
 var range1 = 0
 var _verificador = 0
 
-var _M_Clicks_plantilla2 = 0
 var range2 = 0
 var _verificador2 = 0
 
-var _M_Clicks_plantilla3 = 0
 var range3 = 0
 var _verificador3 = 0
 
-var _M_Clicks_plantilla4 = 0
 var range4 = 0
 var _verificador4 = 0
 
@@ -859,6 +856,7 @@ func _ready() -> void:
 	$"Apartado de opciones abajo/estadistica/Control/paneles".sec.connect(_seg)
 	$"Node2D/Botones_ocultar desafio/paneles".sec.connect(_seg)
 	$"Node2D/Botones_ocultar desafio/paneles".modo.connect(_modo)
+	$"Node2D/Botones_ocultar desafio/paneles".X.connect(_X)
 	#barra.custom_minimum_size.x = 18
 
 func _modo(valor: Vector2):
@@ -874,6 +872,14 @@ func _seg(valor: Vector2):
 	else:
 		estadistica_seg_tipo = int(valor.x)
 		_on_estadist_pressed()
+
+var X = 0
+func _X(_a):
+	X = _a 
+	if X == 1:
+		t_entrado_personalizada.visible = true
+	else:
+		t_entrado_personalizada.visible = false
 
 func _carga_inicial() -> void:
 	_procesardor_de_objetos()
@@ -947,6 +953,7 @@ func _process(_delta: float) -> void:
 		t_counter4.visible = true
 	if t_entrado_personalizada.text == "" and t_entrado_personalizada.visible == true:
 		_datos_iniciar_desafios(0)
+		aparecer_botones.emit(0)
 
 func _logica_de_desafios_modos_de_equipos_tipo_contador_barra():
 	suma_total = int(t_lado_a.text) + int(t_lado_b.text)
@@ -1148,169 +1155,144 @@ func guardar_datos_para_grafica(_a):
 				"CPS": []
 			}
 
-			_M_Clicks_plantilla = 0
 			range1 = 0
 			_verificador = 0
 
-			_M_Clicks_plantilla2 = 0
 			range2 = 0
 			_verificador2 = 0
 
-			_M_Clicks_plantilla3 = 0
 			range3 = 0
 			_verificador3 = 0
 
-			_M_Clicks_plantilla4 = 0
 			range4 = 0
 			_verificador4 = 0
 		if tipo_de_modo_jugadores == 0:
 			if _primer_segundo:
 				range1 = counter
 				datos_1["CPS"].append(counter)
-				_M_Clicks_plantilla = _verificador
 				_primer_segundo = false
 			else:
 				_verificador = counter - range1
 				range1 = counter
 				datos_1["CPS"].append(_verificador)
-				if _verificador > _M_Clicks_plantilla:
-					_M_Clicks_plantilla = _verificador
+
 		elif tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores <= 2:
 			if _primer_segundo:
 				range1 = counter
 				datos_1["CPS"].append(counter)
-				_M_Clicks_plantilla = _verificador
 
 				range2 = counter_J2
 				datos_2["CPS"].append(counter_J2)
-				_M_Clicks_plantilla2 = _verificador2
 				_primer_segundo = false
 			else:
 				_verificador = counter - range1
 				range1 = counter
 				datos_1["CPS"].append(_verificador)
-				if _verificador > _M_Clicks_plantilla:
-					_M_Clicks_plantilla = _verificador
 
 				_verificador2 = counter_J2 - range2
 				range2 = counter_J2
 				datos_2["CPS"].append(_verificador2)
-				if _verificador2 > _M_Clicks_plantilla2:
-					_M_Clicks_plantilla2 = _verificador2
+
 		elif tipo_de_modo_jugadores == 3:
 			if _primer_segundo:
 				range1 = counter
 				datos_1["CPS"].append(counter)
-				_M_Clicks_plantilla = _verificador
 
 				range2 = counter_J2
 				datos_2["CPS"].append(counter_J2)
-				_M_Clicks_plantilla2 = _verificador2
 
 				range3 = counter_J3
 				datos_3["CPS"].append(counter_J3)
-				_M_Clicks_plantilla3 = _verificador3
 				_primer_segundo = false
 			else:
 				_verificador = counter - range1
 				range1 = counter
 				datos_1["CPS"].append(_verificador)
-				if _verificador > _M_Clicks_plantilla:
-					_M_Clicks_plantilla = _verificador
 
 				_verificador2 = counter_J2 - range2
 				range2 = counter_J2
 				datos_2["CPS"].append(_verificador2)
-				if _verificador2 > _M_Clicks_plantilla2:
-					_M_Clicks_plantilla2 = _verificador2
 
 				_verificador3 = counter_J3 - range3
 				range3 = counter_J3
 				datos_3["CPS"].append(_verificador3)
-				if _verificador3 > _M_Clicks_plantilla3:
-					_M_Clicks_plantilla3 = _verificador3
+
 		else:
 			if _primer_segundo:
 				range1 = counter
 				datos_1["CPS"].append(counter)
-				_M_Clicks_plantilla = _verificador
 
 				range2 = counter_J2
 				datos_2["CPS"].append(counter_J2)
-				_M_Clicks_plantilla2 = _verificador2
 
 				range3 = counter_J3
 				datos_3["CPS"].append(counter_J3)
-				_M_Clicks_plantilla3 = _verificador3
 
 				range4 = counter_J4
 				datos_4["CPS"].append(counter_J4)
-				_M_Clicks_plantilla4 = _verificador4
 				_primer_segundo = false
 			else:
 				_verificador = counter - range1
 				range1 = counter
 				datos_1["CPS"].append(_verificador)
-				if _verificador > _M_Clicks_plantilla:
-					_M_Clicks_plantilla = _verificador
 
 				_verificador2 = counter_J2 - range2
 				range2 = counter_J2
 				datos_2["CPS"].append(_verificador2)
-				if _verificador2 > _M_Clicks_plantilla2:
-					_M_Clicks_plantilla2 = _verificador2
 
 				_verificador3 = counter_J3 - range3
 				range3 = counter_J3
 				datos_3["CPS"].append(_verificador3)
-				if _verificador3 > _M_Clicks_plantilla3:
-					_M_Clicks_plantilla3 = _verificador3
 
 				_verificador4 = counter_J4 - range4
 				range4 = counter_J4
 				datos_4["CPS"].append(_verificador4)
-				if _verificador4 > _M_Clicks_plantilla4:
-					_M_Clicks_plantilla4 = _verificador4
 	elif _a == 1:
 		if tipo_de_modo_jugadores == 0:
-			datos_1["M_Clicks"] = _M_Clicks_plantilla
-			datos_1["M_Seg"] = datos_1["CPS"].size()
+			_corrector_grafica(datos_1)
+			datos_1["M_Seg"] = max_segundos
 			XDIC[_nom][_num] = datos_1
+
+
 		elif tipo_de_modo_jugadores >= 1 and tipo_de_modo_jugadores <= 2:
-			datos_1["M_Clicks"] = _M_Clicks_plantilla
-			datos_1["M_Seg"] = datos_1["CPS"].size()
+			_corrector_grafica(datos_1)
+			datos_1["M_Seg"] = max_segundos
 			XDIC[_nom][_num] = datos_1
 
-			datos_2["M_Clicks"] = _M_Clicks_plantilla2
-			datos_2["M_Seg"] = datos_2["CPS"].size()
+			_corrector_grafica(datos_2)
+			datos_2["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j2"] = datos_2
+
+
 		elif tipo_de_modo_jugadores == 3:
-			datos_1["M_Clicks"] = _M_Clicks_plantilla
-			datos_1["M_Seg"] = datos_1["CPS"].size()
+			_corrector_grafica(datos_1)
+			datos_1["M_Seg"] = max_segundos
 			XDIC[_nom][_num] = datos_1
 
-			datos_2["M_Clicks"] = _M_Clicks_plantilla2
-			datos_2["M_Seg"] = datos_2["CPS"].size()
+			_corrector_grafica(datos_2)
+			datos_2["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j2"] = datos_2
 
-			datos_3["M_Clicks"] = _M_Clicks_plantilla3
-			datos_3["M_Seg"] = datos_3["CPS"].size()
+			_corrector_grafica(datos_3)
+			datos_3["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j3"] = datos_3
+
+
 		else:
-			datos_1["M_Clicks"] = _M_Clicks_plantilla
-			datos_1["M_Seg"] = datos_1["CPS"].size()
+			_corrector_grafica(datos_1)
+			datos_1["M_Seg"] = max_segundos
 			XDIC[_nom][_num] = datos_1
 
-			datos_2["M_Clicks"] = _M_Clicks_plantilla2
-			datos_2["M_Seg"] = datos_2["CPS"].size()
+			_corrector_grafica(datos_2)
+			datos_2["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j2"] = datos_2
 
-			datos_3["M_Clicks"] = _M_Clicks_plantilla3
-			datos_3["M_Seg"] = datos_3["CPS"].size()
+			_corrector_grafica(datos_3)
+			datos_3["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j3"] = datos_3
 
-			datos_4["M_Clicks"] = _M_Clicks_plantilla4
-			datos_4["M_Seg"] = datos_4["CPS"].size()
+			_corrector_grafica(datos_4)
+			datos_4["M_Seg"] = max_segundos
 			XDIC[_nom][_num + "_j4"] = datos_4
 	else:
 		_primer_segundo = true
@@ -1319,7 +1301,6 @@ func guardar_datos_para_grafica(_a):
 			"M_Seg": 0,
 			"CPS": []
 		}
-		_M_Clicks_plantilla = 0
 		range1 = 0
 		_verificador = 0
 		datos_2 = {
@@ -1327,7 +1308,6 @@ func guardar_datos_para_grafica(_a):
 			"M_Seg": 0,
 			"CPS": []
 		}
-		_M_Clicks_plantilla2 = 0
 		range2 = 0
 		_verificador2 = 0
 		datos_3 = {
@@ -1335,7 +1315,6 @@ func guardar_datos_para_grafica(_a):
 			"M_Seg": 0,
 			"CPS": []
 		}
-		_M_Clicks_plantilla3 = 0
 		range3 = 0
 		_verificador3 = 0
 		datos_4 = {
@@ -1343,9 +1322,24 @@ func guardar_datos_para_grafica(_a):
 			"M_Seg": 0,
 			"CPS": []
 		}
-		_M_Clicks_plantilla4 = 0
 		range4 = 0
 		_verificador4 = 0
+
+func _corrector_grafica(
+_a: Dictionary, # diccionario
+) -> void:
+	var _diferencia_0 = 0
+	var _max = 0
+
+	if _a["CPS"].size() != max_segundos:
+		_diferencia_0 = max_segundos - _a["CPS"].size()
+		for i in _diferencia_0:
+			_a["CPS"].append(0)
+
+	for i in max_segundos:
+		_max = _a["CPS"][i]
+		if _max > _a["M_Clicks"]:
+			_a["M_Clicks"] = _max
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
@@ -1357,6 +1351,7 @@ func _finalizar_desafio():
 	seg_0.emit()
 	segundos = 0
 	guardar()
+	
 	counter = 0
 	counter_J2 = 0
 	counter_J3 = 0
@@ -1368,6 +1363,7 @@ func _finalizar_desafio():
 	t_tiempo.wait_time = 0.006
 	fondo_1c1_2c2_aparecer(false)
 	iniciar_desafio = 0
+	aparecer_botones.emit(0)
 	opciones = 0
 
 #CONFIGURACION PARA UN DESAFIO INFINITO O NO
@@ -1755,7 +1751,16 @@ func _on_boton_pressed() -> void:
 			"Mejor_cliks_Personalizado"
 		)
 
-func _automaticazion_logica_botones_jugadores(_nu,_counter,_tipo,_a,_b,_c,_d,_e,_f):
+func _automaticazion_logica_botones_jugadores(
+_nu,
+_counter,
+_tipo,
+_a,
+_b,
+_c,
+_d,
+_e,
+_f):
 	var _g = ""
 	match _tipo:
 		0:
@@ -1917,10 +1922,16 @@ func _on_opciones_2_pressed() -> void:
 		Input.vibrate_handheld(40)
 	a_click.play()
 	if desafio == true:
+		await get_tree().create_timer(0.25).timeout
+		aparecer_botones.emit(1)
 		opciones = 1
 
 
-func _segundos_modos(_se,_modos) -> void:
+func _segundos_modos(
+_se,
+_modos,
+_xd = 0
+) -> void:
 	match _se:
 		0:
 			print(t_entrado_personalizada.text)
@@ -1954,10 +1965,6 @@ func _segundos_modos(_se,_modos) -> void:
 		_:
 			tipo_de_modo_jugadores = _modos
 			_modo_jugadores()
-	if _se == 0:
-		t_entrado_personalizada.visible = true
-	else:
-		t_entrado_personalizada.visible = false
 #poner dato x en android (FORZADOR SI HAY ERROR)
 func _on_touch_screen_button_pressed() -> void:
 	if t_entrado_personalizada.visible == true:
@@ -1968,19 +1975,25 @@ func _on_touch_screen_button_pressed() -> void:
 		await get_tree().process_frame
 		t_entrado_personalizada.grab_focus()
 
-func _input(event):
+func _input(
+event
+):
 	if event.is_action_pressed("enter"):
 		if t_entrado_personalizada.text != "" and t_entrado_personalizada.visible == true:
-			_segundos_modos(0,-1)
+			_segundos_modos(0,-1,1)
 
-func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(_a):
+func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(
+_a
+):
 	var _B
 	_B = t(_a)+t(SD_ACTIVADO)
 	return _B
 
 #parametros para iniciar desafio
 #SE CARACTERIZA POR SOLO SABER EL EL MAX_SEGUNDOS QUE DEFINIRA QUE DESAFIO ES.
-func _datos_iniciar_desafios(_nu):
+func _datos_iniciar_desafios(
+_nu
+):
 	if XDIC["vibracion"] == 1:
 		Input.vibrate_handheld(40)
 	if _nu > 0:
@@ -2063,7 +2076,15 @@ func _forzar_cero_datos():
 			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_3)
 			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_4)
 
-func _automatizacion_forzar_cero(_a,_b,_c,_d,_e,_f,_g = ""):
+func _automatizacion_forzar_cero(
+_a,
+_b,
+_c,
+_d,
+_e,
+_f,
+_g = ""
+):
 			XDIC[_a][_b + _c] = 0
 			XDIC[_a][_d + _c] = 0
 			XDIC[_a][_e] = {
@@ -2149,7 +2170,9 @@ func _modo_jugadores():
 #AQUI SON LOS BOTONES QUE DIRAN EN QUE MODO DE JUEGO ESTAS 
 #activar modo solitario
 
-func fondo_1c1_2c2_aparecer(_A):
+func fondo_1c1_2c2_aparecer(
+_A
+):
 	F_rojo_2c2.visible = _A
 	F_verde_2c2.visible = _A
 
@@ -2157,7 +2180,23 @@ func fondo_1c1_2c2_aparecer(_A):
 #ESTE SE ESPECIALIZA EN SUMAR UNA UNIDAD A EL VALOR TOTAL CLISKS, Y ESTE ES EL RESPONSABLE
 #DE QUE LOS BOTONES AUMENTEN SU CONTADOR, ADEMAS SE ESPECIALIZA EN ACTUALIZAR SI HAY UN 
 #NUEVO RECORD DE CLICKS, YA SEA NORMAL, DESAFIO O SEA OTRO JUGADOR(BOTON)
-func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks1, _Mejor_cliks10, _Mejor_cliks20, _Mejor_cliks30, _Mejor_cliks60, _Mejor_cliksx,_tipo,_a,_b,_c,_d,_e,_f):
+func _logica_botones_jugadores(
+_numero_player,
+_counter,
+_Mejor_cliks1,
+_Mejor_cliks10,
+_Mejor_cliks20,
+_Mejor_cliks30,
+_Mejor_cliks60,
+_Mejor_cliksx,
+_tipo,
+_a,
+_b,
+_c,
+_d,
+_e,
+_f
+):
 	total_counter += 1
 	XDIC["Total_Clicks"] = total_counter
 	if XDIC["vibracion"] == 1:
@@ -2205,7 +2244,9 @@ func _logica_botones_jugadores(_numero_player, _counter, _Mejor_cliks1, _Mejor_c
 			XDIC[_simplificador(_tipo)]["SEG4"] = Segundos_personalizados
 	guardar()
 
-func _simplificador(_a):
+func _simplificador(
+_a
+):
 	var _g = ""
 	match _a:
 		0:
@@ -2230,7 +2271,9 @@ func _simplificador(_a):
 # si se cumple alguna de las 2 se hace un match con (_a) 
 # siendo (_a) la variable que representa el tipo de lugar que se quiere ir
 # y dependiendo de la variable (_a) se llamara _logica_botones_abajo(...)
-func _botones_abajo(_a):
+func _botones_abajo(
+_a
+):
 	if desafio == false or opciones == 0:
 		match _a:
 			0: ## HOGAR
@@ -2326,13 +2369,29 @@ _c ## VARIABLE ( int )
 # cuando se activa o desactiva y ordenan a la variable a ser igual al resultado 
 # de la func _opciones_pantalla_efectos() (que simplemente es una func que intercambia de 0 a 1 y biceversa)
 # y lo guarda
+#( y variables no importantes)
+var aaa = 0
+var bbb = 0
+var ccc = 0
 func _on_PLUS1_toggled(_toggled_on: bool) -> void:
+	if aaa != 0:
+		a_click.play()
+	else:
+		aaa = 1
 	XDIC["+1"] = _opciones_pantalla_efectos(XDIC["+1"],_toggled_on)
 	guardar()
 func _on_confeti_toggled(_toggled_on: bool) -> void:
+	if bbb != 0:
+		a_click.play()
+	else:
+		bbb = 1
 	XDIC["confeti"] = _opciones_pantalla_efectos(XDIC["confeti"],_toggled_on)
 	guardar()
 func _on_vibracion_toggled(_toggled_on: bool) -> void:
+	if ccc != 0:
+		a_click.play()
+	else:
+		ccc = 1
 	XDIC["vibracion"] = _opciones_pantalla_efectos(XDIC["vibracion"],_toggled_on)
 	guardar()
 
@@ -2340,7 +2399,6 @@ func _on_vibracion_toggled(_toggled_on: bool) -> void:
 # si (_b) es true (_a) es 1, de lo contrario (_a) es 0
 # y retorna (_a)
 func _opciones_pantalla_efectos(_a,_b: bool):
-	a_click.play()
 	if _b:
 		_a = 1
 	else:
@@ -2678,3 +2736,5 @@ _a = 0 # si el logro es de de clicks(0) si es otro...(segure escribiendo
 	if _a == 1:
 		if _counter == 0: # AYUDA DEKER
 			L(4)
+
+#algun dia mejoro todoo lo prometo ;)

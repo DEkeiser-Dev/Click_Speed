@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dk641opvpnquv" path="res://Assets/Scripts/loading_negro.gd" id="4_h6lew"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="4_uw7yb"]
 [ext_resource type="AudioStream" uid="uid://dp6teimmiojtn" path="res://Assets/Banda_Sonora/effects/Loading.mp3" id="6_kais2"]
+[ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Click.mp3" id="7_xixia"]
+[ext_resource type="AudioStream" uid="uid://ky0su8mtjeh7" path="res://Assets/Banda_Sonora/effects/BipPC.mp3" id="8_7v3fl"]
 
 [sub_resource type="Animation" id="Animation_h6lew"]
 length = 0.001
@@ -97,3 +99,16 @@ libraries/ = SubResource("AnimationLibrary_kais2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2057362209]
 stream = ExtResource("6_kais2")
 volume_db = -11.624
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=370636983]
+stream = ExtResource("7_xixia")
+volume_db = 4.497
+pitch_scale = 2.34
+bus = &"effect"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1330167669]
+stream = ExtResource("8_7v3fl")
+volume_db = -20.577
+autoplay = true
+mix_target = 2
+bus = &"music"

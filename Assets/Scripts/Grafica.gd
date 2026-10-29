@@ -12,6 +12,12 @@ var linea
 var linea_2
 var linea_3
 var linea_4
+var players = {
+	"1" : [],
+	"2" : [],
+	"3" : [],
+	"4" : []
+}
 
 var Colors = {
 	"rojo": Color.RED,
@@ -58,6 +64,7 @@ func _Graficar(_x):
 func _Grafica_Comparativa(_players, _x, _y = "", _z = "", _w = "", _p = 0):
 	_mostrar_grafica()
 	_limpiar_poligonos()
+	_convercion_datos_player(_players, _x, _y, _z, _w)
 	_players = clampi(_players, 1, 4)
 
 	for _line in [linea, linea_2, linea_3, linea_4]:
@@ -74,22 +81,22 @@ func _Grafica_Comparativa(_players, _x, _y = "", _z = "", _w = "", _p = 0):
 
 		match i:
 			0:
-				_v = _x
+				_v = players["1"]
 				_u = linea
 				$J1.text = "player_1"
 			1:
-				_v = _y
+				_v = players["2"]
 				_u = linea_2
 				$J1.text = "TEAM1"
 				$J2.text = "TEAM2"
 			2:
-				_v = _z
+				_v = players["3"]
 				_u = linea_3
 				$J1.text = "player_1"
 				$J2.text = "player_2"
 				$J3.text = "player_3"
 			3:
-				_v = _w
+				_v = players["4"]
 				_u = linea_4
 				$J1.text = "player_1"
 				$J2.text = "player_2"
@@ -101,6 +108,19 @@ func _Grafica_Comparativa(_players, _x, _y = "", _z = "", _w = "", _p = 0):
 
 		_Elegir_Color(i)
 		_dibujar_grafica(_grafica_logica_matematica(_v), _u, _p)
+
+func _convercion_datos_player(_players, _x, _y, _z, _w):
+	var _peak = 0
+	_players = clampi(_players, 1, 4)
+	players["1"] = _x
+	players["2"] = _y
+	players["3"] = _z
+	players["4"] = _w
+	for i in _players:
+		if players[str(i+1)]["M_Clicks"] > _peak:
+			_peak = players[str(i+1)]["M_Clicks"]
+	for i in _players:
+		players[str(i+1)]["M_Clicks"] = _peak
 
 func _Elegir_Color(_x):
 	match _x:

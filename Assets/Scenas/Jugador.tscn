@@ -3,14 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://d2elpyrlo0cvx" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="1_rlhsd"]
 [ext_resource type="Texture2D" uid="uid://ch3gsyohnhwlh" path="res://Assets/Arte2d/botones/Boton_Click/boton1.svg" id="2_yjnci"]
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="3_rlhsd"]
+[ext_resource type="Script" uid="uid://dpdo4pmpf7xs2" path="res://Assets/Scripts/jugador.gd" id="3_wi8y4"]
 [ext_resource type="Script" uid="uid://dolq2d206wgrw" path="res://Assets/Scripts/counter_black.gd" id="4_ol33o"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_rlhsd"]
+[ext_resource type="Texture2D" uid="uid://78batv6bp87a" path="res://Assets/Arte2d/botones/Boton_Click/boton2.svg" id="6_yjnci"]
 
 [node name="Boton" type="TouchScreenButton" unique_id=585335164]
+self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.362, 0.391)
 texture_normal = ExtResource("1_rlhsd")
 texture_pressed = ExtResource("2_yjnci")
 action = "Añadir_Counter"
+script = ExtResource("3_wi8y4")
 
 [node name="prueba" type="Node2D" parent="." unique_id=428262479]
 scale = Vector2(7, 7)
@@ -125,3 +129,21 @@ texture = ExtResource("5_rlhsd")
 position = Vector2(-57.221786, 92.43698)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_rlhsd")
+
+[node name="oscuridad" type="Sprite2D" parent="." unique_id=955125346]
+self_modulate = Color(1, 1, 1, 0.48235294)
+position = Vector2(444.7514, 446.29156)
+scale = Vector2(1.0050809, 0.99618655)
+texture = ExtResource("6_yjnci")
+
+[node name="num" type="Label" parent="." unique_id=1856124770]
+self_modulate = Color(1, 1, 1, 0.25882354)
+offset_left = 5.5248623
+offset_top = 7.672638
+offset_right = 867.40326
+offset_bottom = 890.0255
+theme_override_constants/line_spacing = 48
+theme_override_font_sizes/font_size = 467
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
