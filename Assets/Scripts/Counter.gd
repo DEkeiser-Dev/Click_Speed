@@ -840,6 +840,8 @@ var estadistica_modo_tipo = 0
 var estadistica_seg_tipo = 1
 var panel_xd
 
+var iniciador = 0
+
 ##--------------------------LOGICA DEL JUEGO-------------------------------------:
 ## LOGICA DE JUEGO INICIO Y AUN
 #al iniciar se cargan los datos y se actualizan los datos del label
@@ -1336,22 +1338,25 @@ _a: Dictionary, # diccionario
 		for i in _diferencia_0:
 			_a["CPS"].append(0)
 
-	for i in max_segundos:
+	for i in (max_segundos + 1):
 		_max = _a["CPS"][i]
 		if _max > _a["M_Clicks"]:
 			_a["M_Clicks"] = _max
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
+	guardar_datos_para_grafica(0)
+	_X(0)
 	guardar_datos_para_grafica(1)
 	guardar_datos_para_grafica(2)
 	Segundos_personalizados = 0
 	t_entrado_personalizada.text = ""
+	iniciador = 0
 	max_segundos = 0
 	seg_0.emit()
 	segundos = 0
 	guardar()
-	
+	Segundos_personalizados = 0
 	counter = 0
 	counter_J2 = 0
 	counter_J3 = 0
@@ -1737,7 +1742,7 @@ _seg_personalizados = ""
 #ORIGINAL TECNICAMENTE.
 #logica de precionar el boton 1
 func _on_boton_pressed() -> void:
-	if desafio == true and opciones == 1:
+	if desafio == true and opciones == 1 and iniciador == 1:
 		_texto_presionar_plus_one(b_contador)
 		_automaticazion_logica_botones_jugadores(
 			1,
@@ -1790,7 +1795,7 @@ _f):
 
 # logica de presionar el boton 2
 func _on_boton_2_pressed() -> void:
-	if desafio == true and opciones == 1:
+	if desafio == true and opciones == 1 and iniciador == 1:
 		_texto_presionar_plus_one(b_contador2)
 		_automaticazion_logica_botones_jugadores(
 			2,
@@ -1807,7 +1812,7 @@ func _on_boton_2_pressed() -> void:
 
 # logica de presionar el boton 3
 func _on_boton_3_pressed() -> void:
-	if desafio == true and opciones == 1:
+	if desafio == true and opciones == 1 and iniciador == 1:
 		_texto_presionar_plus_one(b_contador3)
 		if tipo_de_modo_jugadores == 2:
 			_automaticazion_logica_botones_jugadores(
@@ -1837,7 +1842,7 @@ func _on_boton_3_pressed() -> void:
 
 # logica de presionar el boton 4
 func _on_boton_4_pressed() -> void:
-	if desafio == true and opciones == 1:
+	if desafio == true and opciones == 1 and iniciador == 1:
 		_texto_presionar_plus_one(b_contador4)
 		if tipo_de_modo_jugadores == 2:
 			_automaticazion_logica_botones_jugadores(
@@ -1869,7 +1874,7 @@ func _on_boton_4_pressed() -> void:
 #reiniciar solo el contador
 func _on_reset_counter_pressed() -> void:
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(3)
 	a_click.play()
 	if desafio == false:
 		counter = 0
@@ -1881,7 +1886,7 @@ func _on_reset_counter_pressed() -> void:
 #logica del boton de resetear(reinicia los valores)
 func _on_reset_pressed() -> void:
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(3)
 	a_click.play()
 	counter_J2 = 0
 	counter = 0
@@ -1913,18 +1918,19 @@ func _on_reset_pressed() -> void:
 #ir a las opciones
 func _on_opciones_pressed() -> void:
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(0)
 	a_click.play()
 	opciones = 0
 #irse de las opciones
 func _on_opciones_2_pressed() -> void:
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(0)
 	a_click.play()
 	if desafio == true:
-		await get_tree().create_timer(0.25).timeout
-		aparecer_botones.emit(1)
 		opciones = 1
+		await get_tree().create_timer(0.58).timeout
+		aparecer_botones.emit(1)
+		iniciador = 1
 
 
 func _segundos_modos(
@@ -1938,7 +1944,7 @@ _xd = 0
 			a_click.play()
 			if (int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int) and t_entrado_personalizada.text != "":
 				if XDIC["vibracion"] == 1:
-					Input.vibrate_handheld(40)
+					_vibracion(1)
 				var numero_line_edit = int(t_entrado_personalizada.text)
 				if numero_line_edit > 99999999:
 					t_entrado_personalizada.text = SD_limite_valor_Modo_Xs
@@ -1969,7 +1975,7 @@ _xd = 0
 func _on_touch_screen_button_pressed() -> void:
 	if t_entrado_personalizada.visible == true:
 		if XDIC["vibracion"] == 1:
-			Input.vibrate_handheld(40)
+			_vibracion(0)
 		a_click.play()
 		t_entrado_personalizada.release_focus()
 		await get_tree().process_frame
@@ -1995,7 +2001,7 @@ func _datos_iniciar_desafios(
 _nu
 ):
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(2)
 	if _nu > 0:
 		a_click.play()
 	segundos = 0
@@ -2110,7 +2116,7 @@ func _on_repetidor_desafios_indefinidos_pressed() -> void:
 #SI DEBEN DE ESCALAR O DONDE POSICIONARSE O SIMPLEMENTE OCULTARSE
 func _modo_jugadores():
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(1)
 	a_click.play()
 	lados_si_or_not = 1
 	counter = 0
@@ -2200,7 +2206,7 @@ _f
 	total_counter += 1
 	XDIC["Total_Clicks"] = total_counter
 	if XDIC["vibracion"] == 1:
-		Input.vibrate_handheld(40)
+		_vibracion(0)
 	a_click.play()
 	logros(_counter)
 
@@ -2738,3 +2744,15 @@ _a = 0 # si el logro es de de clicks(0) si es otro...(segure escribiendo
 			L(4)
 
 #algun dia mejoro todoo lo prometo ;)
+
+
+func _vibracion(_a):
+	match _a:
+		0:
+			Input.vibrate_handheld(50)
+		1:
+			Input.vibrate_handheld(60)
+		2:
+			Input.vibrate_handheld(70)
+		3:
+			Input.vibrate_handheld(80)

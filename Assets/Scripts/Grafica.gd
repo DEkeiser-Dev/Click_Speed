@@ -176,10 +176,16 @@ func _grafica_logica_matematica(_x):
 
 	var _trayectoria = 0
 
+
 	for i in 2:
 		var _N = _n if _trayectoria == 0 else _seg
 		var _S = log(maxf(float(_N), 1.0)) / log(2.0)
 		var _S_int = max(int(_S) if (_S - int(_S)) < 0.6 else int(_S) + 1, 1)
+
+		if _trayectoria == 1:
+			var _espacio_minimo = 50.0
+			var _max_segmentos = maxi(1, int(panel.texture.get_size().y / _espacio_minimo))
+			_S_int = mini(_S_int, _max_segmentos)
 
 		for a in range(_S_int + 1):
 			var _M = int((float(a) * _N) / _S_int)
@@ -202,14 +208,10 @@ func _grafica_logica_matematica(_x):
 
 		_trayectoria += 1
 
-	for u in range(_x["CPS"].size() + 1):
-		var X = 0.0
-		var Y = 0.0
 
-		if u > 0:
-			X = float(u) / maxf(float(_seg), 1.0)
-			Y = float(_x["CPS"][u - 1]) / maxf(float(_n), 1.0)
-
+	for u in range(_x["CPS"].size()):
+		var X = float(u) / maxf(float(_seg), 1.0)
+		var Y = float(_x["CPS"][u]) / maxf(float(_n), 1.0)
 		_vector2["coordenadas"][u] = Vector2(X, Y)
 
 	for u in range(_X.size()):
@@ -284,12 +286,12 @@ func _dibujar_grafica(_vector2, _linea, _p = 0) -> void:
 	var _mitad_y = _alto_real / 2.0
 
 	for u in range(_segmento_y.size()):
-		var _seg_y = panel.get_node("EJE Y/" + str(u + 1))
+		var _seg_y = panel.get_node("EJE Y/" + str(u))
 		var _valor = float(_segmento_y[u])
 		_seg_y.position.x = (((_valor * _ancho_real) - _mitad_x) / _escala_x)
 
 	for u in range(_segmento_x.size()):
-		var _seg_x = panel.get_node("EJE X/" + str(u + 1))
+		var _seg_x = panel.get_node("EJE X/" + str(u))
 		var _valor = float(_segmento_x[u])
 		_seg_x.position.y = ((_mitad_y - (_valor * _alto_real)) / _escala_y)
 
@@ -301,13 +303,13 @@ func _crear_segmentos_dinamicos(_panel, _cantidad_x, _cantidad_y):
 	var _plantilla_x = _eje_x.get_node("1")
 	var _plantilla_y = _eje_y.get_node("1")
 
-	for i in range(1, _cantidad_x + 1):
+	for i in range(_cantidad_x + 1):
 		if not _eje_x.has_node(str(i)):
 			var _nuevo = _plantilla_x.duplicate()
 			_nuevo.name = str(i)
 			_eje_x.add_child(_nuevo)
 
-	for i in range(1, _cantidad_y + 1):
+	for i in range(_cantidad_y + 1):
 		if not _eje_y.has_node(str(i)):
 			var _nuevo = _plantilla_y.duplicate()
 			_nuevo.name = str(i)
@@ -343,7 +345,7 @@ func _actualizar_richs_segmentos(_panel, _vector2):
 	var _plantilla_y = _eje_y.get_node("o_1")
 
 	for u in range(_segmento_y.size()):
-		var _numero = u + 1
+		var _numero = u
 		var _nombre = "o_" + str(_numero)
 
 		if not _eje_y.has_node(_nombre):
@@ -360,13 +362,13 @@ func _actualizar_richs_segmentos(_panel, _vector2):
 	for _hijo in _eje_y.get_children():
 		if _hijo.name.begins_with("o_"):
 			var _numero = int(_hijo.name.substr(2))
-			_hijo.visible = _numero <= _segmento_y.size()
+			_hijo.visible = _numero < _segmento_y.size()
 
 	var _eje_x = _panel.get_node("EJE X")
 	var _plantilla_x = _eje_x.get_node("o_1")
 
 	for u in range(_segmento_x.size()):
-		var _numero = u + 1
+		var _numero = u
 		var _nombre = "o_" + str(_numero)
 
 		if not _eje_x.has_node(_nombre):
@@ -383,7 +385,7 @@ func _actualizar_richs_segmentos(_panel, _vector2):
 	for _hijo in _eje_x.get_children():
 		if _hijo.name.begins_with("o_"):
 			var _numero = int(_hijo.name.substr(2))
-			_hijo.visible = _numero <= _segmento_x.size()
+			_hijo.visible = _numero < _segmento_x.size()
 
 func _limpiar_poligonos():
 	for _hijo in panel.get_children():
