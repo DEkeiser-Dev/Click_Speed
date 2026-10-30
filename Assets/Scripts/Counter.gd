@@ -5,6 +5,7 @@ signal Dekeiser_sentimental
 signal Dekeiser_NO_sentimental
 signal seg_0
 signal aparecer_botones
+signal datos_final
 
 @export var depurar : bool
 @export var posicion_noto_botones_x : Vector2
@@ -14,6 +15,8 @@ var XDIC = {
 	"SOLO": {
 		"Mejor_cps_1": 0,
 		"Mejor_cliks_1": 0,
+		"Actual_cps_1": 0,
+		"Actual_cliks_1": 0,
 		"datos_1" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -21,6 +24,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10": 0,
 		"Mejor_cliks_10": 0,
+		"Actual_cps_10": 0,
+		"Actual_cliks_10": 0,
 		"datos_10" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -28,6 +33,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20": 0,
 		"Mejor_cliks_20": 0,
+		"Actual_cps_20": 0,
+		"Actual_cliks_20": 0,
 		"datos_20" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -35,6 +42,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30": 0,
 		"Mejor_cliks_30": 0,
+		"Actual_cps_30": 0,
+		"Actual_cliks_30": 0,
 		"datos_30" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -42,6 +51,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60": 0,
 		"Mejor_cliks_60": 0,
+		"Actual_cps_60": 0,
+		"Actual_cliks_60": 0,
 		"datos_60" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -50,6 +61,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado": 0,
 		"Mejor_cliks_Personalizado": 0,
 		"SEG": 0,
+		"Actual_cps_Personalizado": 0,
+		"Actual_cliks_Personalizado": 0,
+		"Actual_SEG": 0,
 		"datos_x" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -62,6 +76,8 @@ var XDIC = {
 	"1C1": {
 		"Mejor_cps_1": 0,
 		"Mejor_cliks_1": 0,
+		"Actual_cps_1": 0,
+		"Actual_cliks_1": 0,
 		"datos_1" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -69,6 +85,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10": 0,
 		"Mejor_cliks_10": 0,
+		"Actual_cps_10": 0,
+		"Actual_cliks_10": 0,
 		"datos_10" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -76,6 +94,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20": 0,
 		"Mejor_cliks_20": 0,
+		"Actual_cps_20": 0,
+		"Actual_cliks_20": 0,
 		"datos_20" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -83,6 +103,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30": 0,
 		"Mejor_cliks_30": 0,
+		"Actual_cps_30": 0,
+		"Actual_cliks_30": 0,
 		"datos_30" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -90,6 +112,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60": 0,
 		"Mejor_cliks_60": 0,
+		"Actual_cps_60": 0,
+		"Actual_cliks_60": 0,
 		"datos_60" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -98,6 +122,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado": 0,
 		"Mejor_cliks_Personalizado": 0,
 		"SEG": 0,
+		"Actual_cps_Personalizado": 0,
+		"Actual_cliks_Personalizado": 0,
+		"Actual_SEG": 0,
 		"datos_x" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -106,6 +133,8 @@ var XDIC = {
 
 		"Mejor_cps_1_J2": 0,
 		"Mejor_cliks_1_J2": 0,
+		"Actual_cps_1_J2": 0,
+		"Actual_cliks_1_J2": 0,
 		"datos_1_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -113,6 +142,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10_J2": 0,
 		"Mejor_cliks_10_J2": 0,
+		"Actual_cps_10_J2": 0,
+		"Actual_cliks_10_J2": 0,
 		"datos_10_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -120,6 +151,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20_J2": 0,
 		"Mejor_cliks_20_J2": 0,
+		"Actual_cps_20_J2": 0,
+		"Actual_cliks_20_J2": 0,
 		"datos_20_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -127,6 +160,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30_J2": 0,
 		"Mejor_cliks_30_J2": 0,
+		"Actual_cps_30_J2": 0,
+		"Actual_cliks_30_J2": 0,
 		"datos_30_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -134,6 +169,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60_J2": 0,
 		"Mejor_cliks_60_J2": 0,
+		"Actual_cps_60_J2": 0,
+		"Actual_cliks_60_J2": 0,
 		"datos_60_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -142,6 +179,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J2": 0,
 		"Mejor_cliks_Personalizado_J2": 0,
 		"SEG2": 0,
+		"Actual_cps_Personalizado_J2": 0,
+		"Actual_cliks_Personalizado_J2": 0,
+		"Actual_SEG2": 0,
 		"datos_x_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -151,9 +191,11 @@ var XDIC = {
 
 
 
-	"2C2": {
+	"2C2":{
 		"Mejor_cps_1": 0,
 		"Mejor_cliks_1": 0,
+		"Actual_cps_1": 0,
+		"Actual_cliks_1": 0,
 		"datos_1" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -161,6 +203,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10": 0,
 		"Mejor_cliks_10": 0,
+		"Actual_cps_10": 0,
+		"Actual_cliks_10": 0,
 		"datos_10" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -168,6 +212,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20": 0,
 		"Mejor_cliks_20": 0,
+		"Actual_cps_20": 0,
+		"Actual_cliks_20": 0,
 		"datos_20" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -175,6 +221,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30": 0,
 		"Mejor_cliks_30": 0,
+		"Actual_cps_30": 0,
+		"Actual_cliks_30": 0,
 		"datos_30" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -182,6 +230,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60": 0,
 		"Mejor_cliks_60": 0,
+		"Actual_cps_60": 0,
+		"Actual_cliks_60": 0,
 		"datos_60" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -190,6 +240,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado": 0,
 		"Mejor_cliks_Personalizado": 0,
 		"SEG": 0,
+		"Actual_cps_Personalizado": 0,
+		"Actual_cliks_Personalizado": 0,
+		"Actual_SEG": 0,
 		"datos_x" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -198,6 +251,8 @@ var XDIC = {
 
 		"Mejor_cps_1_J2": 0,
 		"Mejor_cliks_1_J2": 0,
+		"Actual_cps_1_J2": 0,
+		"Actual_cliks_1_J2": 0,
 		"datos_1_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -205,6 +260,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10_J2": 0,
 		"Mejor_cliks_10_J2": 0,
+		"Actual_cps_10_J2": 0,
+		"Actual_cliks_10_J2": 0,
 		"datos_10_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -212,6 +269,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20_J2": 0,
 		"Mejor_cliks_20_J2": 0,
+		"Actual_cps_20_J2": 0,
+		"Actual_cliks_20_J2": 0,
 		"datos_20_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -219,6 +278,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30_J2": 0,
 		"Mejor_cliks_30_J2": 0,
+		"Actual_cps_30_J2": 0,
+		"Actual_cliks_30_J2": 0,
 		"datos_30_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -226,6 +287,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60_J2": 0,
 		"Mejor_cliks_60_J2": 0,
+		"Actual_cps_60_J2": 0,
+		"Actual_cliks_60_J2": 0,
 		"datos_60_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -234,6 +297,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J2": 0,
 		"Mejor_cliks_Personalizado_J2": 0,
 		"SEG2": 0,
+		"Actual_cps_Personalizado_J2": 0,
+		"Actual_cliks_Personalizado_J2": 0,
+		"Actual_SEG2": 0,
 		"datos_x_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -246,35 +312,45 @@ var XDIC = {
 	"3P": {
 		"Mejor_cps_1": 0,
 		"Mejor_cliks_1": 0,
-		"datos_1": {
+		"Actual_cps_1": 0,
+		"Actual_cliks_1": 0,
+		"datos_1" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_10": 0,
 		"Mejor_cliks_10": 0,
-		"datos_10": {
+		"Actual_cps_10": 0,
+		"Actual_cliks_10": 0,
+		"datos_10" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_20": 0,
 		"Mejor_cliks_20": 0,
-		"datos_20": {
+		"Actual_cps_20": 0,
+		"Actual_cliks_20": 0,
+		"datos_20" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_30": 0,
 		"Mejor_cliks_30": 0,
-		"datos_30": {
+		"Actual_cps_30": 0,
+		"Actual_cliks_30": 0,
+		"datos_30" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_60": 0,
 		"Mejor_cliks_60": 0,
-		"datos_60": {
+		"Actual_cps_60": 0,
+		"Actual_cliks_60": 0,
+		"datos_60" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -282,7 +358,10 @@ var XDIC = {
 		"Mejor_cps_Personalizado": 0,
 		"Mejor_cliks_Personalizado": 0,
 		"SEG": 0,
-		"datos_x": {
+		"Actual_cps_Personalizado": 0,
+		"Actual_cliks_Personalizado": 0,
+		"Actual_SEG": 0,
+		"datos_x" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -290,35 +369,45 @@ var XDIC = {
 
 		"Mejor_cps_1_J2": 0,
 		"Mejor_cliks_1_J2": 0,
-		"datos_1_j2": {
+		"Actual_cps_1_J2": 0,
+		"Actual_cliks_1_J2": 0,
+		"datos_1_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_10_J2": 0,
 		"Mejor_cliks_10_J2": 0,
-		"datos_10_j2": {
+		"Actual_cps_10_J2": 0,
+		"Actual_cliks_10_J2": 0,
+		"datos_10_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_20_J2": 0,
 		"Mejor_cliks_20_J2": 0,
-		"datos_20_j2": {
+		"Actual_cps_20_J2": 0,
+		"Actual_cliks_20_J2": 0,
+		"datos_20_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_30_J2": 0,
 		"Mejor_cliks_30_J2": 0,
-		"datos_30_j2": {
+		"Actual_cps_30_J2": 0,
+		"Actual_cliks_30_J2": 0,
+		"datos_30_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_60_J2": 0,
 		"Mejor_cliks_60_J2": 0,
-		"datos_60_j2": {
+		"Actual_cps_60_J2": 0,
+		"Actual_cliks_60_J2": 0,
+		"datos_60_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -326,7 +415,10 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J2": 0,
 		"Mejor_cliks_Personalizado_J2": 0,
 		"SEG2": 0,
-		"datos_x_j2": {
+		"Actual_cps_Personalizado_J2": 0,
+		"Actual_cliks_Personalizado_J2": 0,
+		"Actual_SEG2": 0,
+		"datos_x_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -334,6 +426,8 @@ var XDIC = {
 
 		"Mejor_cps_1_J3": 0,
 		"Mejor_cliks_1_J3": 0,
+		"Actual_cps_1_J3": 0,
+		"Actual_cliks_1_J3": 0,
 		"datos_1_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -341,6 +435,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10_J3": 0,
 		"Mejor_cliks_10_J3": 0,
+		"Actual_cps_10_J3": 0,
+		"Actual_cliks_10_J3": 0,
 		"datos_10_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -348,6 +444,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20_J3": 0,
 		"Mejor_cliks_20_J3": 0,
+		"Actual_cps_20_J3": 0,
+		"Actual_cliks_20_J3": 0,
 		"datos_20_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -355,6 +453,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30_J3": 0,
 		"Mejor_cliks_30_J3": 0,
+		"Actual_cps_30_J3": 0,
+		"Actual_cliks_30_J3": 0,
 		"datos_30_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -362,6 +462,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60_J3": 0,
 		"Mejor_cliks_60_J3": 0,
+		"Actual_cps_60_J3": 0,
+		"Actual_cliks_60_J3": 0,
 		"datos_60_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -370,6 +472,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J3": 0,
 		"Mejor_cliks_Personalizado_J3": 0,
 		"SEG3": 0,
+		"Actual_cps_Personalizado_J3": 0,
+		"Actual_cliks_Personalizado_J3": 0,
+		"Actual_SEG3": 0,
 		"datos_x_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -382,35 +487,45 @@ var XDIC = {
 	"4P": {
 		"Mejor_cps_1": 0,
 		"Mejor_cliks_1": 0,
-		"datos_1": {
+		"Actual_cps_1": 0,
+		"Actual_cliks_1": 0,
+		"datos_1" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_10": 0,
 		"Mejor_cliks_10": 0,
-		"datos_10": {
+		"Actual_cps_10": 0,
+		"Actual_cliks_10": 0,
+		"datos_10" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_20": 0,
 		"Mejor_cliks_20": 0,
-		"datos_20": {
+		"Actual_cps_20": 0,
+		"Actual_cliks_20": 0,
+		"datos_20" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_30": 0,
 		"Mejor_cliks_30": 0,
-		"datos_30": {
+		"Actual_cps_30": 0,
+		"Actual_cliks_30": 0,
+		"datos_30" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_60": 0,
 		"Mejor_cliks_60": 0,
-		"datos_60": {
+		"Actual_cps_60": 0,
+		"Actual_cliks_60": 0,
+		"datos_60" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -418,7 +533,10 @@ var XDIC = {
 		"Mejor_cps_Personalizado": 0,
 		"Mejor_cliks_Personalizado": 0,
 		"SEG": 0,
-		"datos_x": {
+		"Actual_cps_Personalizado": 0,
+		"Actual_cliks_Personalizado": 0,
+		"Actual_SEG": 0,
+		"datos_x" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -426,35 +544,45 @@ var XDIC = {
 
 		"Mejor_cps_1_J2": 0,
 		"Mejor_cliks_1_J2": 0,
-		"datos_1_j2": {
+		"Actual_cps_1_J2": 0,
+		"Actual_cliks_1_J2": 0,
+		"datos_1_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_10_J2": 0,
 		"Mejor_cliks_10_J2": 0,
-		"datos_10_j2": {
+		"Actual_cps_10_J2": 0,
+		"Actual_cliks_10_J2": 0,
+		"datos_10_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_20_J2": 0,
 		"Mejor_cliks_20_J2": 0,
-		"datos_20_j2": {
+		"Actual_cps_20_J2": 0,
+		"Actual_cliks_20_J2": 0,
+		"datos_20_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_30_J2": 0,
 		"Mejor_cliks_30_J2": 0,
-		"datos_30_j2": {
+		"Actual_cps_30_J2": 0,
+		"Actual_cliks_30_J2": 0,
+		"datos_30_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
 		},
 		"Mejor_cps_60_J2": 0,
 		"Mejor_cliks_60_J2": 0,
-		"datos_60_j2": {
+		"Actual_cps_60_J2": 0,
+		"Actual_cliks_60_J2": 0,
+		"datos_60_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -462,7 +590,10 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J2": 0,
 		"Mejor_cliks_Personalizado_J2": 0,
 		"SEG2": 0,
-		"datos_x_j2": {
+		"Actual_cps_Personalizado_J2": 0,
+		"Actual_cliks_Personalizado_J2": 0,
+		"Actual_SEG2": 0,
+		"datos_x_j2" : {
 			"CPS": [],
 			"M_Clicks": 0,
 			"M_Seg": 0
@@ -470,6 +601,8 @@ var XDIC = {
 
 		"Mejor_cps_1_J3": 0,
 		"Mejor_cliks_1_J3": 0,
+		"Actual_cps_1_J3": 0,
+		"Actual_cliks_1_J3": 0,
 		"datos_1_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -477,6 +610,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10_J3": 0,
 		"Mejor_cliks_10_J3": 0,
+		"Actual_cps_10_J3": 0,
+		"Actual_cliks_10_J3": 0,
 		"datos_10_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -484,6 +619,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20_J3": 0,
 		"Mejor_cliks_20_J3": 0,
+		"Actual_cps_20_J3": 0,
+		"Actual_cliks_20_J3": 0,
 		"datos_20_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -491,6 +628,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30_J3": 0,
 		"Mejor_cliks_30_J3": 0,
+		"Actual_cps_30_J3": 0,
+		"Actual_cliks_30_J3": 0,
 		"datos_30_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -498,6 +637,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60_J3": 0,
 		"Mejor_cliks_60_J3": 0,
+		"Actual_cps_60_J3": 0,
+		"Actual_cliks_60_J3": 0,
 		"datos_60_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -506,6 +647,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J3": 0,
 		"Mejor_cliks_Personalizado_J3": 0,
 		"SEG3": 0,
+		"Actual_cps_Personalizado_J3": 0,
+		"Actual_cliks_Personalizado_J3": 0,
+		"Actual_SEG3": 0,
 		"datos_x_j3": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -514,6 +658,8 @@ var XDIC = {
 
 		"Mejor_cps_1_J4": 0,
 		"Mejor_cliks_1_J4": 0,
+		"Actual_cps_1_J4": 0,
+		"Actual_cliks_1_J4": 0,
 		"datos_1_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -521,6 +667,8 @@ var XDIC = {
 		},
 		"Mejor_cps_10_J4": 0,
 		"Mejor_cliks_10_J4": 0,
+		"Actual_cps_10_J4": 0,
+		"Actual_cliks_10_J4": 0,
 		"datos_10_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -528,6 +676,8 @@ var XDIC = {
 		},
 		"Mejor_cps_20_J4": 0,
 		"Mejor_cliks_20_J4": 0,
+		"Actual_cps_20_J4": 0,
+		"Actual_cliks_20_J4": 0,
 		"datos_20_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -535,6 +685,8 @@ var XDIC = {
 		},
 		"Mejor_cps_30_J4": 0,
 		"Mejor_cliks_30_J4": 0,
+		"Actual_cps_30_J4": 0,
+		"Actual_cliks_30_J4": 0,
 		"datos_30_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -542,6 +694,8 @@ var XDIC = {
 		},
 		"Mejor_cps_60_J4": 0,
 		"Mejor_cliks_60_J4": 0,
+		"Actual_cps_60_J4": 0,
+		"Actual_cliks_60_J4": 0,
 		"datos_60_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -550,6 +704,9 @@ var XDIC = {
 		"Mejor_cps_Personalizado_J4": 0,
 		"Mejor_cliks_Personalizado_J4": 0,
 		"SEG4": 0,
+		"Actual_cps_Personalizado_J4": 0,
+		"Actual_cliks_Personalizado_J4": 0,
+		"Actual_SEG4": 0,
 		"datos_x_j4": {
 			"CPS": [],
 			"M_Clicks": 0,
@@ -619,32 +776,38 @@ var ram_dic = {
 	45: "DOS_CONTRA_DOS",
 	46: "PLAYERS",
 	47: "SOLITARIO",
-	48: "TEAM"
+	48: "TEAM",
+	49: "ACT",
+	50: ""
 }
-#contador normal:
-var counter = 0 #contador normal
-#desafios con sus respectivos jugadores Y DATOS EXTRA:
-var tipo_de_modo_jugadores = 0 # 0 un jugador, 1 1c1, 2 2c2, 3 todos contra todos(3), 4 todos contra todos (4)
 
-var counter_J2 = 0 # contador normal
+#contadores:
+var counter = 0
+var counter_J2 = 0
 var counter_J3 = 0
 var counter_J4 = 0
+var total_counter = 0
 
+#desafios:
+var tipo_de_modo_jugadores = 0
 var Segundos_personalizados: int = 0
-var cps_actual: float = 0.0 # hasta donde llegaste de clicks de (desafio) segundos   
-var cps_actual_J2: float = 0.0 
-var cps_actual_J3: float = 0.0 
-var cps_actual_J4: float = 0.0 
+var segundos = 0
+var max_segundos = 0
+var iniciar_desafio = 0
+var bucle_desafio = 0
+var _primer_segundo = true
 
-#cosas para los modos de juego cooperativos
+#cps actuales:
+var cps_actual: float = 0.0
+var cps_actual_J2: float = 0.0
+var cps_actual_J3: float = 0.0
+var cps_actual_J4: float = 0.0
+
+#modos cooperativos:
 var lado_a = 0
 var lado_b = 0
-var lados_si_or_not = 0 
-#logica que empieza desafios:
-var segundos = 0 #valor que sera de ayuda para los segundos
-var max_segundos = 0 #valor maximo de segundos
-var iniciar_desafio = 0 #valor que dira cuando inicia el desafio
-var bucle_desafio = 0
+var lados_si_or_not = 0
+
 #botones:
 var b_contador
 var b_contador2
@@ -656,6 +819,14 @@ var b_desafio_p_oculto
 var b_reset_counter
 var b_opciones
 var b_opciones2
+
+#botones estadisticas:
+var be_1c1
+var be_2c2
+var be_solo
+var be_tct3
+var be_tct4
+
 #textos:
 var t_entrado_personalizada
 var t_counter
@@ -668,11 +839,12 @@ var t_lado_a
 var t_lado_b
 var t_lado_a_negro
 var t_lado_b_negro
-var t_estadistica_local 
+var t_estadistica_local
 var t_estadistica_global
 var t_proximamente
 var t_proximamente_negro
-#nodos
+
+#nodos:
 var n_esconder_botones_no_necesarios_desafio
 var n_aparecer_botones_si_necesarios_desafio
 var n_todo
@@ -684,18 +856,12 @@ var n_dekeiser_declaracion
 var n_barra_abajo_total
 var n_barra_competitiva
 var n_nodo_barra
-#tiempo
+
+#tiempo:
 var t_tiempo
-#ruta de guardato:
-const RUTA_GUARDADO = "user://ClickSpeed.deker" #ruta de guardado
-#opciones
-var opciones = 0
-var iniciar_lugar_opciones = 1
-var camino = 0
-#otras estadsticas
-var total_counter = 0
-#posicion botones (posicion)
-var p_boton 
+
+#posicion botones:
+var p_boton
 var p_boton_1c1
 var p_boton2_1c1
 var p_boton_t3
@@ -708,19 +874,20 @@ var p_boton4_t4
 var p_botonX
 var botonX
 var p_node
-#scala botones (scala)
+
+#escala botones:
 var s_normal
 var s_1c1
 var s_t3
 var s_2c2_t4
-#audio
-var a_click
-#AVISOS O TEXTOS QUE APARECEN (Aviso)
+
+#avisos:
 var A_texto
 var A_label
 var A_animation_valor_valido
 var A_texto_desaparecedor
-#Posiciones posibles del aviso (Aviso Direccion)
+
+#posiciones avisos:
 var AD_1
 var AD_2
 var AD_3
@@ -732,7 +899,8 @@ var AD_8
 var AD_9
 var AD_10
 var AD_11
-#strings y datos importantes (String Dato)
+
+#strings y datos:
 var SD_Modo_1s
 var SD_Modo_10s
 var SD_Modo_20s
@@ -751,56 +919,21 @@ var SD_ACTIVADO
 var SD_DESACTIVADO
 var SD_esta = ("")
 var SD_estadisticas: String
-#el +1 al presionar los botones
-var click_text = preload("res://Assets/Scenas/click_text.tscn")
-#variable que dice si estas en casa o no(apartado normal)
+
+#opciones:
+var opciones = 0
+var iniciar_lugar_opciones = 1
+var camino = 0
 var v_home = 0
-#variable que dice si es desafio o total(para opciones)
 var v_dessfios_o_total = 0
 var v_que_modo_de_juego_ver_opciones = 1
-#ASIGNADORES
-var A_modo 
+
+#asignadores:
+var A_modo
 var A_tiempos
 var A_modo_estadistica
-#botones estadisticas:
-var be_1c1
-var be_2c2
-var be_solo
-var be_tct3
-var be_tct4
-#barra de estadisticas
-var barra
-#repetidor de desafios(boton y texturas la vdd)
-var rd_repetidor_desafios
-var rd_texture1 = preload("res://Assets/Arte2d/Colores_posicion_botones/t3.jpg")
-var rd_texture2 = preload("res://Assets/Arte2d/Colores_posicion_botones/t4.jpg")
-#barra competitiva
-var escala_actual = 0
-var escala
-var suma_total
-#textura del boton home cuando eleiges una estadistica lcoal
-var th_texture1 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg")
-var hme1
-#14 / 12
-#fuentes y tamañp
-var fuente_1 = preload("res://Assets/Fuente/Super Starfish.ttf")
-var menos_6 = 10
-#confeti
-var confeti_señal
-#volumen
-var barra_vol_effect
-var barra_vol_music
-#fondo
-var F_verde_2c2
-var F_rojo_2c2
-#paneles
-var P_efectos
-var P_idioma
-#checkbuttons
-var CB_plus1
-var CB_confeti
-var CB_vibracion
-#graficas
+
+#estadisticas:
 var datos_1 = {
 	"M_Clicks": 0,
 	"M_Seg": 0,
@@ -822,25 +955,75 @@ var datos_4 = {
 	"CPS": []
 }
 
+#rangos y verificadores:
 var range1 = 0
 var _verificador = 0
-
 var range2 = 0
 var _verificador2 = 0
-
 var range3 = 0
 var _verificador3 = 0
-
 var range4 = 0
 var _verificador4 = 0
 
-var _primer_segundo = true
-
+#estadisticas y graficas:
 var estadistica_modo_tipo = 0
 var estadistica_seg_tipo = 1
 var panel_xd
+var barra
 
+#barra competitiva:
+var escala_actual = 0
+var escala
+var suma_total
+
+#repetidor de desafios:
+var rd_repetidor_desafios
+var rd_texture1 = preload("res://Assets/Arte2d/Colores_posicion_botones/t3.jpg")
+var rd_texture2 = preload("res://Assets/Arte2d/Colores_posicion_botones/t4.jpg")
+
+#audio:
+var a_click
+var barra_vol_effect
+var barra_vol_music
+
+#efectos:
+var confeti_señal
+
+#fondos:
+var F_verde_2c2
+var F_rojo_2c2
+
+#paneles:
+var P_efectos
+var P_idioma
+var panel_final
+var panel_eleccion_principal
+var panel_eleccion_estadistica
+
+#checkbuttons:
+var CB_plus1
+var CB_confeti
+var CB_vibracion
+
+#texturas:
+var th_texture1 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/casa_normal.svg")
+
+#fuentes y tamaño:
+var fuente_1 = preload("res://Assets/Fuente/Super Starfish.ttf")
+var menos_6 = 10
+
+#escenas:
+var click_text = preload("res://Assets/Scenas/click_text.tscn")
+
+#otros:
+var hme1
 var iniciador = 0
+var B_inicio
+var animatic_Go
+
+#guardado:
+const RUTA_GUARDADO = "user://ClickSpeed.deker"
+
 
 ##--------------------------LOGICA DEL JUEGO-------------------------------------:
 ## LOGICA DE JUEGO INICIO Y AUN
@@ -848,17 +1031,16 @@ var iniciador = 0
 #AL INICIAR EL JUEGO LLAMA A LAS SIGUIENTES FUNC PARA ASI PODER CORRER,
 # UBICARSE MEJOR Y ACTUALIZAR Y/O CARGAR DATOS,$Sprite2D/AnimationPlayer
 func _ready() -> void:
-	$"Node2D/Botones_ocultar desafio/opciones2/Go!".play("GO!")
 	call_deferred("_carga_inicial")
 	await get_tree().process_frame
 	_paneles_para_centrar()
-	panel_xd = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect/Panel"
+	animatic_Go.play("GO!")
 	guardar()
-	$"Apartado de opciones abajo/estadistica/Control/paneles".modo.connect(_modo)
-	$"Apartado de opciones abajo/estadistica/Control/paneles".sec.connect(_seg)
-	$"Node2D/Botones_ocultar desafio/paneles".sec.connect(_seg)
-	$"Node2D/Botones_ocultar desafio/paneles".modo.connect(_modo)
-	$"Node2D/Botones_ocultar desafio/paneles".X.connect(_X)
+	panel_eleccion_estadistica.modo.connect(_modo)
+	panel_eleccion_estadistica.sec.connect(_seg)
+	panel_eleccion_principal.sec.connect(_seg)
+	panel_eleccion_principal.modo.connect(_modo)
+	panel_eleccion_principal.X.connect(_X)
 	#barra.custom_minimum_size.x = 18
 
 func _modo(valor: Vector2):
@@ -909,6 +1091,11 @@ func _depurar():
 # ACTUALES, ADEMAS ESTE SERA EL ENCARGADO DE MOVER EL PANEL DE OPCIONES DE
 # DERECHA A IZQUIERDA Y OCULTAR LOS BOTONES QUE PUEDAN INTERFERIR EN LA ANIMACION
 func _process(_delta: float) -> void:
+	if segundos > max_segundos:
+		if bucle_desafio == 0:
+			_finalizar_desafio()
+		else:
+			_bucle_desafio()
 	_textos()
 	_logica_de_desafios_modos_de_equipos_tipo_contador_barra()
 	if opciones == 0 and v_home == 0:
@@ -975,8 +1162,8 @@ func _logica_de_desafios_modos_de_equipos_tipo_contador_barra():
 #PARA MAYOR FLEXIBILIDAD, CADA VARIABLE TENDRA LA RUTA DE UN OBJETO O COSA
 #QUE ESTE EN LA ESCENA Y SEA IMPORTANTE, ASI SE EVITARA ESCRIBIR TODA UNA 
 #DIRECCION.
+
 func _procesardor_de_objetos():
-	#botones:
 	b_contador = $Node2D/Boton
 	b_contador2 = $Node2D/Boton2
 	b_contador3 = $Node2D/Boton3
@@ -986,7 +1173,6 @@ func _procesardor_de_objetos():
 	b_reset_counter = $"Node2D/Botones_ocultar desafio/reset_counter"
 	b_opciones = $"Node2D/Botones_ocultar desafio/opciones"
 	b_opciones2 = $"Node2D/Botones_ocultar desafio/opciones2"
-	#textos:
 	t_entrado_personalizada = $"Node2D/Botones_ocultar desafio/EntradaPersonalizada"
 	t_counter = $Node2D/Boton/prueba/counter
 	t_counter2 = $Node2D/Boton2/prueba/counter
@@ -1002,7 +1188,6 @@ func _procesardor_de_objetos():
 	t_estadistica_global = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/ESTA GLOB"
 	t_proximamente = $"Apartado de opciones abajo/skin/Label/Label"
 	t_proximamente_negro = $"Apartado de opciones abajo/skin/Label"
-	#nodos
 	n_esconder_botones_no_necesarios_desafio = $"Node2D/Botones_ocultar desafio"
 	n_aparecer_botones_si_necesarios_desafio = $"Node2D/Botones_aparecer desafio"
 	n_todo = $Node2D
@@ -1014,9 +1199,7 @@ func _procesardor_de_objetos():
 	n_barra_abajo_total = $barraabajo
 	n_barra_competitiva = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/barra_verde2"
 	n_nodo_barra = $"Node2D/Botones_aparecer desafio/barra de quien va ganando"
-	#tiempo
 	t_tiempo = $Node2D/Timer
-	#posicion de botones
 	p_boton = $Node2D/posicion_botones/solitario/posicion_boton_solitario.global_position
 	p_boton_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton_1c1".global_position
 	p_boton2_1c1 = $"Node2D/posicion_botones/1c1/posicion_boton2_1c1".global_position
@@ -1030,22 +1213,17 @@ func _procesardor_de_objetos():
 	p_botonX = $Node2D/posicion_botones/posicion_botonX.global_position
 	botonX = $Node2D/posicion_botones/posicion_botonX
 	p_node = $Node2D/posicion_botones
-	#scalas de botones
 	s_normal = Vector2(0.6,0.6)
 	s_1c1 = Vector2(0.525,0.550)
 	s_t3 = Vector2(0.364,0.389)
 	s_2c2_t4 = Vector2(0.395,0.41)
-	#audio
 	a_click = $Node2D/click
-	#Posiciones posibles de avisos
-	AD_1 = _posicionamiento_del_texto(b_desafio_p_oculto,0) #Xs
-	#strings y datos importantes (String Dato)
+	AD_1 = _posicionamiento_del_texto(b_desafio_p_oculto,0)
 	SD_Modo_1s = str(ram_dic[0])
 	SD_Modo_10s = str(ram_dic[1])
 	SD_Modo_20s = str(ram_dic[2])
 	SD_Modo_30s = str(ram_dic[3])
 	SD_Modo_60s = str(ram_dic[4])
-	#("SEGUNDO(s)\n PERSONALIZADO(s) = " + str(Segundos_personalizados) + "sec\n")
 	SD_Modo_Xs = str(ram_dic[5])
 	SD_SEG = str(ram_dic[6])
 	SD_limite_valor_Modo_Xs = str(ram_dic[7])
@@ -1057,27 +1235,24 @@ func _procesardor_de_objetos():
 	SD_Modo_t3 = str(ram_dic[13])
 	SD_Modo_t4 = str(ram_dic[14])
 	SD_DESACTIVADO = str(ram_dic[15])
-	#barra de estadisticas
 	barra = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer".get_v_scroll_bar()
-	#repetidor de desafios(boton y texturas la vdd)
 	rd_repetidor_desafios = $"Node2D/Botones_aparecer desafio/repetidor_desafios_indefinidos"
-	#confeti
 	confeti_señal = $Node2D/letreros_effects/confeti_full
-	#volumen
 	barra_vol_effect = $"Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/effectos/HSlider"
 	barra_vol_music = $"Apartado de opciones abajo/opcion/Control/OPCIONES/AUDIO/AUDIO_PANEL/AUDIO_CONTENDER/musica/HSlider"
-	#el boton de home de la barra abajo
 	hme1 = $"barraabajo/1home"
-	#fondo
 	F_rojo_2c2 = $Node2D/rojo
 	F_verde_2c2 = $Node2D/verde
-	#PANELES
 	P_efectos = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer"
 	P_idioma = $"Apartado de opciones abajo/opcion/Control/OPCIONES/IDIOMA_CONTROL/PANEL_IDIOMA"
-	#checkbutton
 	CB_confeti = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer2/MarginContainer/Confeti"
 	CB_vibracion = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer/MarginContainer/Vibracion"
 	CB_plus1 = $"Apartado de opciones abajo/opcion/Control/OPCIONES/EFECTOS/PanelContainer/MarginContainer/EFECTOS/PanelContainer3/MarginContainer/+1"
+	panel_final = $Node2D/PanelContainer/Panel_final
+	panel_eleccion_principal = $"Node2D/Botones_ocultar desafio/paneles"
+	panel_xd = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect/Panel"
+	panel_eleccion_estadistica = $"Apartado de opciones abajo/estadistica/Control/paneles"
+	animatic_Go = $"Node2D/Botones_ocultar desafio/opciones2/Go!"
 
 #sirve para decirle al texto en donde colocarse exactamente segun los datos
 func _posicionamiento_del_texto(_a,_b): #dato,,x
@@ -1096,11 +1271,6 @@ func _on_timer_timeout() -> void:
 	_opciones_no_desafiadas_aparecen_o_no()
 	if desafio == true and iniciar_desafio == 1:
 		logica_desafio()
-		if segundos >= max_segundos:
-			if bucle_desafio == 0:
-				_finalizar_desafio()
-			else:
-				_bucle_desafio()
 		if max_segundos == 1:
 			_primer_segundo = false
 		guardar_datos_para_grafica(0)
@@ -1328,27 +1498,29 @@ func guardar_datos_para_grafica(_a):
 		_verificador4 = 0
 
 func _corrector_grafica(
-_a: Dictionary, # diccionario
+	_a: Dictionary, # diccionario
 ) -> void:
-	var _diferencia_0 = 0
-	var _max = 0
+	var _diferencia_0 = (max_segundos + 1) - _a["CPS"].size()
 
-	if _a["CPS"].size() != max_segundos:
-		_diferencia_0 = max_segundos - _a["CPS"].size()
-		for i in _diferencia_0:
+	if _diferencia_0 > 0:
+		for i in range(_diferencia_0):
 			_a["CPS"].append(0)
+	elif _diferencia_0 < 0:
+		_a["CPS"].resize(max_segundos + 1)
 
-	for i in (max_segundos + 1):
-		_max = _a["CPS"][i]
+	for i in range(max_segundos + 1):
+		var _max = _a["CPS"][i]
 		if _max > _a["M_Clicks"]:
 			_a["M_Clicks"] = _max
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
-	guardar_datos_para_grafica(0)
-	_X(0)
+	panel_eleccion_principal.visible = false
 	guardar_datos_para_grafica(1)
 	guardar_datos_para_grafica(2)
+	_X(0)
+	_grafica_final()
+	guardar_datos_para_grafica(0)
 	Segundos_personalizados = 0
 	t_entrado_personalizada.text = ""
 	iniciador = 0
@@ -1437,6 +1609,7 @@ func logica_desafio():
 
 func _auto(_c):
 	var _a = "Mejor"
+	var _ab = "Actual"
 	var _b = ""
 	var _d = "_cliks"
 	var _e = "_cps"
@@ -1471,17 +1644,20 @@ func _auto(_c):
 			_tipo,
 			_y,
 			_a + _e + _c + _b,
-			_a + _d + _c + _b
+			_a + _d + _c + _b,
+			_ab + _e + _c + _b,
+			_ab + _d + _c + _b,
 		)
 
 
-func _ald(_tipo, _a, _b, _d):
-	_automatizacion_logica_desafio(_tipo, _a, _b, _d)
+func _ald(_tipo, _a, _b, _d, _e, _f):
+	_automatizacion_logica_desafio(_tipo, _a, _b, _d, _e, _f)
 
 
-func _automatizacion_logica_desafio(_tipo, _a, _b, _d):
+func _automatizacion_logica_desafio(_tipo, _a, _b, _d, _e, _f):
 	var _g = ""
 	var _c = 0
+	var _counter = 0
 
 	match _tipo:
 		0:
@@ -1498,17 +1674,22 @@ func _automatizacion_logica_desafio(_tipo, _a, _b, _d):
 	match _a:
 		0:
 			_c = cps_actual
+			_counter = counter
 		1:
 			_c = cps_actual_J2
+			_counter = counter_J2
 		2:
 			_c = cps_actual_J3
+			_counter = counter_J3
 		3:
 			_c = cps_actual_J4
+			_counter = counter_J4
 
 	if _c > XDIC[_g][_b]:
 		XDIC[_g][_b] = _c
-
 		_cuando_el_mejor_cps_es_mayor(_c)
+	XDIC[_g][_e] = _c
+	XDIC[_g][_f] = _counter
 
 
 func _cuando_el_mejor_cps_es_mayor(_a):
@@ -1575,6 +1756,8 @@ func _estadisticas_mostrar_texto_parasiempre():
 func _cadena_estadistica(_play,_se,_nom):
 	var _mejor = ("Mejor_cliks_" + _se)
 	var _cps = "Mejor_cps_" + str(_se)
+	var _act_click = ("Actual_cliks_" + _se)
+	var _act_cps = "Actual_cps_" + str(_se)
 	var _emcabezado = ""
 	var _1 = ""
 	var _2 = ""
@@ -1628,8 +1811,8 @@ func _cadena_estadistica(_play,_se,_nom):
 		_text = (
 		_nombre_team +
 		_string_estadistica(1) +
-		_estadistica_personalizada(_se,_nom,_mejor,_cps,_j) +
-		_string_estadistica(1)
+		_estadistica_personalizada(_se,_nom,_mejor,_cps,_j,_act_click,_act_cps) +
+		_string_estadistica(1) + "\n"
 		)
 		if i == 0:
 			_a = _text
@@ -1671,16 +1854,23 @@ func _cadena_estadistica(_play,_se,_nom):
 			)
 	return (_emcabezado + _a + _b + _c + _d)
 
-func _estadistica_personalizada(_se,_nom,_mejor,_cps,_j):
+func _estadistica_personalizada(_se,_nom,_mejor,_cps,_j,_act_click,_act_cps):
 	var _xd = ""
 	var _segundos = ("("+ str(XDIC[_nom]["SEG"]) + ") X")
+	var _segundos_actual = ("("+ str(XDIC[_nom]["Actual_SEG"]) + ") X")
 	if _se == "Personalizado":
 		_xd = (
+		_string_estadistica(2,0,0,_segundos_actual,_nom,(_act_click+_j),0,1) +
+		_string_estadistica(2,0,1,_segundos_actual,_nom,(_act_cps+_j),0,1) +
+		_string_estadistica(1) +
 		_string_estadistica(2,0,0,_segundos,_nom,(_mejor+_j)) +
 		_string_estadistica(2,0,1,_segundos,_nom,(_cps+_j))
 		)
 	else:
 		_xd = (
+		_string_estadistica(2,0,0,_se,_nom,(_act_click+_j),0,1) +
+		_string_estadistica(2,0,1,_se,_nom,(_act_cps+_j),0,1) +
+		_string_estadistica(1) +
 		_string_estadistica(2,0,0,_se,_nom,(_mejor+_j)) +
 		_string_estadistica(2,0,1,_se,_nom,(_cps+_j))
 		)
@@ -1694,9 +1884,15 @@ _dato1 = 0, # Click o CPS (0 1)
 _SEG = "", # Numero de segundos
 _dato2 = "", # donde se saca el resultado (XDIC) (nombre del dic)
 _dato3 = "", # donde se saca el resultado (XDIC) (nombre del key dentro del dic)
-_NUM = "",
-_seg_personalizados = ""
+_NUM = "", # numero de grupo 
+_TIPO = 0 # si es mejor o actual 
 ):
+	var _mejor = ""
+	match _TIPO:
+		0:
+			_mejor = ram_dic[25]
+		1:
+			_mejor = ram_dic[49]
 	var _text = ""
 	match _tipo:
 		0:
@@ -1706,27 +1902,15 @@ _seg_personalizados = ""
 		2:
 			match _dato1:
 				0:
-					if _seg_personalizados == "":
-						_text = ("\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + 
-						t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + _SEG + " "+ t(str(ram_dic[31])) +
-						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
-						)
-					else:
-						_text = ("\n" + t(str(ram_dic[25])) + " [color=#FFA500]" + 
-						t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + _SEG + " [ " + str(XDIC[_dato2][_seg_personalizados]) + " ] " + t(str(ram_dic[31])) +
-						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
-						)
+					_text = ("\n" + t(str(_mejor)) + " [color=#FFA500]" + 
+					t(str(ram_dic[26])) + "[/color] [color=#D8B4FE](" + _SEG + " "+ t(str(ram_dic[31])) +
+					 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+					)
 				1:
-					if _seg_personalizados == "":
-						_text = ("\n" + t(str(ram_dic[25])) + " [color=#cf003a]" +
-						 t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + _SEG + " " + t(str(ram_dic[31])) +
-						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
-						)
-					else:
-						_text = ("\n" + t(str(ram_dic[25])) + " [color=#cf003a]" +
-						 t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + _SEG + " [ " + str(XDIC[_dato2][_seg_personalizados]) + " ] " + t(str(ram_dic[31])) +
-						 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
-						)
+					_text = ("\n" + t(str(_mejor)) + " [color=#cf003a]" +
+					 t(str(ram_dic[27])) + "[/color] [color=#D8B4FE](" + _SEG + " " + t(str(ram_dic[31])) +
+					 "):[/color] [color=#FFD700]" + str(XDIC[_dato2][_dato3]) + "[/color]"
+					)
 		3:
 			_text = "\n[color=#4B3F72]══════════════[/color]\n\n"
 		4:
@@ -1887,7 +2071,6 @@ func _on_reset_counter_pressed() -> void:
 func _on_reset_pressed() -> void:
 	if XDIC["vibracion"] == 1:
 		_vibracion(3)
-	a_click.play()
 	counter_J2 = 0
 	counter = 0
 	counter_J3 = 0
@@ -1912,6 +2095,7 @@ func _on_reset_pressed() -> void:
 					max_segundos = 67
 				_forzar_cero_datos()
 	guardar()
+	get_tree().reload_current_scene()
 
 
 ## PANEL DE OPCIONES:
@@ -1940,14 +2124,13 @@ _xd = 0
 ) -> void:
 	match _se:
 		0:
-			print(t_entrado_personalizada.text)
 			a_click.play()
 			if (int(t_entrado_personalizada.text) > 0 and int(t_entrado_personalizada.text) is int) and t_entrado_personalizada.text != "":
 				if XDIC["vibracion"] == 1:
 					_vibracion(1)
 				var numero_line_edit = int(t_entrado_personalizada.text)
-				if numero_line_edit > 99999999:
-					t_entrado_personalizada.text = SD_limite_valor_Modo_Xs
+				if numero_line_edit > 999:
+					t_entrado_personalizada.text = str(999)
 					t_entrado_personalizada.caret_column = t_entrado_personalizada.text.length()
 				Segundos_personalizados = int(t_entrado_personalizada.text)
 				_datos_iniciar_desafios(
@@ -2000,7 +2183,7 @@ _a
 func _datos_iniciar_desafios(
 _nu
 ):
-	if XDIC["vibracion"] == 1:
+	if XDIC["vibracion"] == 1 and opciones == 1:
 		_vibracion(2)
 	if _nu > 0:
 		a_click.play()
@@ -2019,7 +2202,6 @@ _nu
 
 ## BOTONES QUE SALEN AL INICIAR UN DESAFIO
 func _on_salir_desafios_pressed() -> void:
-	_forzar_cero_datos()
 	segundos = 0
 	_finalizar_desafio()
 
@@ -2028,6 +2210,8 @@ func _forzar_cero_datos():
 	var _nom = ""
 	var _cps = "Mejor_cps"
 	var _click = "Mejor_cliks"
+	var _actu_cps = "Actual_cps"
+	var _actu_click = "Actual_cliks"
 	var _numerito = ""
 	var _ramdom = 0
 	var _2 = "_J2"
@@ -2061,26 +2245,26 @@ func _forzar_cero_datos():
 	match tipo_de_modo_jugadores:
 		0:
 			_nom = "SOLO"
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps)
 		1:
 			_nom = "1C1"
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_2)
 		2:
 			_nom = "2C2"
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_2)
 		3:
 			_nom = "3P"
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_3)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_3)
 		4:
 			_nom = "4P"
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_2)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_3)
-			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_4)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_2)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_3)
+			_automatizacion_forzar_cero(_nom,_click,_numerito,_cps,_num,_ramdom,_actu_click,_actu_cps,_4)
 
 func _automatizacion_forzar_cero(
 _a,
@@ -2089,16 +2273,30 @@ _c,
 _d,
 _e,
 _f,
+_h,
+_i,
 _g = ""
 ):
-			XDIC[_a][_b + _c] = 0
-			XDIC[_a][_d + _c] = 0
-			XDIC[_a][_e] = {
+			XDIC[_a][_b + _c + _g] = 0
+			XDIC[_a][_d + _c + _g] = 0
+			XDIC[_a][_h + _c + _g] = 0
+			XDIC[_a][_i + _c + _g] = 0
+			XDIC[_a][_e + _g] = {
 				"CPS": [],
 				"M_Clicks": 0,
 				"M_Seg": 0}
 			if _f == 1:
-				XDIC[_a]["SEG" + _g] = 0
+				var _gg = ""
+				if _g == "":
+					_gg = ""
+				elif _g == "J2":
+					_gg = "2"
+				elif _g == "J2":
+					_gg = "3"
+				else:
+					_gg = "4"
+				XDIC[_a]["SEG" + _gg] = 0
+				XDIC[_a]["Actual_SEG" + _gg] = 0
 
 func _on_repetidor_desafios_indefinidos_pressed() -> void:
 	a_click.play()
@@ -2242,12 +2440,16 @@ _f
 	if max_segundos == Segundos_personalizados:
 		if _numero_player == 1:
 			XDIC[_simplificador(_tipo)]["SEG"] = Segundos_personalizados
+			XDIC[_simplificador(_tipo)]["Actual_SEG"] = Segundos_personalizados
 		elif _numero_player == 2:
 			XDIC[_simplificador(_tipo)]["SEG2"] = Segundos_personalizados
+			XDIC[_simplificador(_tipo)]["Actual_SEG2"] = Segundos_personalizados
 		elif _numero_player == 3:
 			XDIC[_simplificador(_tipo)]["SEG3"] = Segundos_personalizados
+			XDIC[_simplificador(_tipo)]["Actual_SEG3"] = Segundos_personalizados
 		else:
 			XDIC[_simplificador(_tipo)]["SEG4"] = Segundos_personalizados
+			XDIC[_simplificador(_tipo)]["Actual_SEG4"] = Segundos_personalizados
 	guardar()
 
 func _simplificador(
@@ -2343,13 +2545,19 @@ func _on_home_pressed() -> void: ## MODO CASA/HOGAR ( NORMAL )
 	_botones_abajo(0)
 	hme1.texture_normal = th_texture1 # define una textura si se cumple la func
 func _on_estadist_pressed() -> void: ## MODO DE ESTADISTICAS
+	panel_final.visible = false
+	panel_eleccion_principal.visible = true
 	_estadisticas_mostrar_texto_parasiempre()
 	SD_estadisticas = SD_esta
 	_para_estadisticas_opciones()
 func _on_skins_pressed() -> void: ## MODO DE SKINS
+	panel_final.visible = false
+	panel_eleccion_principal.visible = true
 	a_click.play()
 	_botones_abajo(2)
 func _on_opcion_pressed() -> void: ## MODO DE OPCIONES
+	panel_final.visible = false
+	panel_eleccion_principal.visible = true
 	a_click.play()
 	_botones_abajo(3)
 
@@ -2491,6 +2699,9 @@ func cargar():
 			barra_vol_effect.value = XDIC["volumen_effect"]
 		if XDIC.has("volumen_music"):
 			barra_vol_music.value = XDIC["volumen_music"]
+		if XDIC.has("Total_Clicks"):
+			total_counter = XDIC["Total_Clicks"]
+			print(total_counter)
 		CB_plus1.button_pressed = CheckButtons(XDIC,"+1",XDIC["+1"])
 		CB_confeti.button_pressed = CheckButtons(XDIC,"confeti",XDIC["confeti"])
 		CB_vibracion.button_pressed = CheckButtons(XDIC,"vibracion",XDIC["vibracion"])
@@ -2716,7 +2927,6 @@ func _on_interticial_prueba_pressed() -> void:
 	a_click.play()
 	Interticial_apoyo_dekeiser.emit()
 	XDIC["AYuda_Deker"] += 1
-	print(XDIC["AYuda_Deker"])
 	guardar()
 	if XDIC["AYuda_Deker"] >= 3:
 		logros(0,1)
@@ -2756,3 +2966,179 @@ func _vibracion(_a):
 			Input.vibrate_handheld(70)
 		3:
 			Input.vibrate_handheld(80)
+
+
+func _grafica_final():
+	var _text = ""
+	var _nom = ""
+	var _si = ""
+	match max_segundos:
+		1:
+			_si = "1"
+		10:
+			_si = "10"
+		20:
+			_si = "20"
+		30:
+			_si = "30"
+		60:
+			_si = "60"
+		_:
+			_si = "x"
+	_text = _text_grafica_final(tipo_de_modo_jugadores,_si)
+	match tipo_de_modo_jugadores:
+		0:
+			_nom = "SOLO"
+			datos_final.emit(
+				0,
+				XDIC[_nom]["datos_" + _si],
+				{},
+				{},
+				{},
+				_text
+				)
+
+		1:
+			_nom = "1C1"
+			datos_final.emit(
+				2,
+				XDIC[_nom]["datos_" + _si],
+				XDIC[_nom]["datos_" + _si + "_j2"],
+				{},
+				{},
+				_text
+				)
+
+		2:
+			_nom = "2C2"
+			datos_final.emit(
+				2,
+				XDIC[_nom]["datos_" + _si],
+				XDIC[_nom]["datos_" + _si + "_j2"],
+				{},
+				{},
+				_text
+				)
+
+		3:
+			_nom = "3P"
+			datos_final.emit(
+				3,
+				XDIC[_nom]["datos_" + _si],
+				XDIC[_nom]["datos_" + _si + "_j2"],
+				XDIC[_nom]["datos_" + _si + "_j3"],
+				{},
+				_text
+				)
+		4:
+			_nom = "4P"
+			datos_final.emit(
+				4,
+				XDIC[_nom]["datos_" + _si],
+				XDIC[_nom]["datos_" + _si + "_j2"],
+				XDIC[_nom]["datos_" + _si + "_j3"],
+				XDIC[_nom]["datos_" + _si + "_j4"],
+				_text
+				)
+
+func _text_grafica_final(_modos,_sg):
+	if _sg == "x":
+		_sg = "Personalizado"
+	var act_cps = "Actual_cps_" + str(_sg)
+	var act_click = "Actual_cliks_" + str(_sg)
+	var _j = ""
+	var _players = 0
+	var _nom = ""
+	var _a = ""
+	var _b = ""
+	var _c = ""
+	var _d = ""
+	var _1
+	var _2
+	var _3
+	var _4
+	var _emcabezado
+
+	match _modos:
+		0:
+			_players = 1
+			_nom = "SOLO"
+		1:
+			_players = 2
+			_nom = "1C1"
+		2:
+			_players = 2
+			_nom = "2C2"
+		3:
+			_players = 3
+			_nom = "3P"
+		4:
+			_players = 4
+			_nom = "4P"
+	var _segundos_actual = ("("+ str(XDIC[_nom]["Actual_SEG"]) + ") X")
+	match _players:
+		1:
+			_emcabezado = _string_estadistica(0,47)
+			_1 = _string_estadistica(0,18)
+		2:
+			if _modos == 1:
+				_emcabezado = _string_estadistica(0,44)
+			else:
+				_emcabezado = _string_estadistica(0,45)
+			_1 = _string_estadistica(0,48,0,0,0,0,"1")
+			_2 = _string_estadistica(0,48,0,0,0,0,"2")
+		3:
+			_emcabezado = _string_estadistica(0,46,0,0,0,0,"(3)")
+			_1 = _string_estadistica(0,18)
+			_2 = _string_estadistica(0,19)
+			_3 = _string_estadistica(0,20)
+		4:
+			_emcabezado = _string_estadistica(0,46,0,0,0,0,"(4)")
+			_1 = _string_estadistica(0,18)
+			_2 = _string_estadistica(0,19)
+			_3 = _string_estadistica(0,20)
+			_4 = _string_estadistica(0,21)
+
+	for i in range(_players):
+		var _nombre_team = ""
+		match i:
+			0:
+				_nombre_team = _1
+				_j = ""
+			1:
+				_nombre_team = _2
+				_j = "_J2"
+			2:
+				_nombre_team = _3
+				_j = "_J3"
+			3:
+				_nombre_team = _4
+				_j = "_J4"
+		var _text
+		if _sg == "Personalizado":
+			_text = (
+				_nombre_team +
+				_string_estadistica(1) +
+				_string_estadistica(2,0,0,_segundos_actual,_nom,(act_click+_j),0,1) +
+				_string_estadistica(2,0,1,_segundos_actual,_nom,(act_cps+_j),0,1) +
+				_string_estadistica(1) + "\n"
+			)
+		else:
+			_text = (
+				_nombre_team +
+				_string_estadistica(1) +
+				_string_estadistica(2,0,0,_sg,_nom,(act_click+_j),0,1) +
+				_string_estadistica(2,0,1,_sg,_nom,(act_cps+_j),0,1) +
+				_string_estadistica(1) + "\n"
+			)
+
+		if i == 0:
+			_a = _text
+		elif i == 1:
+			_b = _text
+		elif i == 2:
+			_c = _text
+		else:
+			_d = _text
+
+	return (_emcabezado + _a + _b + _c + _d)

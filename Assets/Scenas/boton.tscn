@@ -18,6 +18,7 @@
 [ext_resource type="FontFile" uid="uid://c3ujqqlc7xo2" path="res://Assets/Fuente/Super Starfish.ttf" id="13_57s6u"]
 [ext_resource type="PackedScene" uid="uid://cycvexhf65jbf" path="res://Assets/Scenas/confeti_full.tscn" id="13_e57pv"]
 [ext_resource type="PackedScene" uid="uid://ccdv5p4wa7qcq" path="res://Assets/Scenas/Grafica.tscn" id="14_8yer3"]
+[ext_resource type="Script" uid="uid://b0oocbx26ekaj" path="res://Assets/Scripts/panel_final.gd" id="15_71wrj"]
 [ext_resource type="FontFile" uid="uid://cuw43vi6kolh8" path="res://Assets/Fuente/DekeiserFusion.ttf" id="15_pigga"]
 [ext_resource type="Texture2D" uid="uid://0arguhiwm6hq" path="res://Assets/Arte2d/opciones/idiomas/France.svg" id="17_v81rw"]
 [ext_resource type="Texture2D" uid="uid://c2yuhtiqx803j" path="res://Assets/Arte2d/opciones/idiomas/Italy.svg" id="18_ygdgh"]
@@ -146,9 +147,189 @@ _data = {
 &"RESET": SubResource("Animation_57s6u")
 }
 
+[sub_resource type="Animation" id="Animation_71wrj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-648, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.85203403, 0.8362167)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:pivot_offset_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(682, 808)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kmjfm"]
+resource_name = "aparecer"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-648, 16), Vector2(-392, 408), Vector2(-648, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.85203403, 0.8362167), Vector2(0.08401993, 0.08745373), Vector2(0.85203403, 0.8362167)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:pivot_offset_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.03333333, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(682, 808), Vector2(682, 808), Vector2(682, 808)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.09),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dck2f"]
+_data = {
+&"RESET": SubResource("Animation_71wrj"),
+&"aparecer": SubResource("Animation_kmjfm")
+}
+
 [node name="Boton" type="CanvasLayer" unique_id=2051950697]
 script = ExtResource("1_rkc3o")
-depurar = true
 posicion_noto_botones_x = Vector2(0, -91)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=482278800]
@@ -411,9 +592,9 @@ virtual_keyboard_type = 2
 
 [node name="paneles" type="HBoxContainer" parent="Node2D/Botones_ocultar desafio" unique_id=122116617]
 offset_left = -573.3333
-offset_top = 189.16664
+offset_top = 202.49997
 offset_right = 157.66669
-offset_bottom = 293.16663
+offset_bottom = 306.49994
 scale = Vector2(0.80300725, 0.8854648)
 script = ExtResource("23_pjjqg")
 
@@ -534,6 +715,81 @@ stream = ExtResource("10_h3ung")
 volume_db = 4.497
 pitch_scale = 2.34
 bus = &"effect"
+
+[node name="PanelContainer" type="PanelContainer" parent="Node2D" unique_id=756305510]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 248.0
+offset_right = 734.0
+offset_bottom = 1094.0
+
+[node name="Panel_final" type="PanelContainer" parent="Node2D/PanelContainer" unique_id=485464145]
+visible = false
+self_modulate = Color(0.63375676, 0.6337568, 0.63375676, 1)
+layout_mode = 2
+script = ExtResource("15_71wrj")
+
+[node name="Panel" parent="Node2D/PanelContainer/Panel_final" unique_id=111847670 instance=ExtResource("14_8yer3")]
+position = Vector2(298.92715, 331.8506)
+scale = Vector2(3.4958642, 3.005278)
+
+[node name="Panel2" type="VBoxContainer" parent="Node2D/PanelContainer/Panel_final" unique_id=111102807]
+layout_mode = 2
+
+[node name="X2" type="HBoxContainer" parent="Node2D/PanelContainer/Panel_final/Panel2" unique_id=266139109]
+layout_mode = 2
+layout_direction = 3
+
+[node name="X_button" type="Button" parent="Node2D/PanelContainer/Panel_final/Panel2/X2" unique_id=1211189295]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "X"
+
+[node name="X" type="Label" parent="Node2D/PanelContainer/Panel_final/Panel2" unique_id=2019945208]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="New_Record" type="Label" parent="Node2D/PanelContainer/Panel_final/Panel2" unique_id=1717445921]
+visible = false
+layout_mode = 2
+theme_override_constants/line_spacing = -60
+theme_override_font_sizes/font_size = 95
+text = "
+NEW RECORD:"
+horizontal_alignment = 1
+
+[node name="Estadisticas" type="HBoxContainer" parent="Node2D/PanelContainer/Panel_final/Panel2" unique_id=2046865798]
+layout_mode = 2
+
+[node name="esta" type="RichTextLabel" parent="Node2D/PanelContainer/Panel_final/Panel2/Estadisticas" unique_id=429877409]
+custom_minimum_size = Vector2(630, 262.095)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = -6
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("13_57s6u")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "1
+2
+3
+4
+5
+6
+7
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Node2D/PanelContainer/Panel_final" unique_id=412444977]
+libraries/ = SubResource("AnimationLibrary_dck2f")
 
 [node name="letreros_effects" type="Node2D" parent="Node2D" unique_id=1814750671]
 position = Vector2(-720, 0)
@@ -1045,7 +1301,7 @@ position = Vector2(-272, 920)
 position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
-position = Vector2(72, 184)
+position = Vector2(88, 584)
 texture_normal = ExtResource("5_h3ung")
 texture_pressed = ExtResource("6_0euow")
 
@@ -1053,12 +1309,12 @@ texture_pressed = ExtResource("6_0euow")
 position = Vector2(-272, 1168)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
-position = Vector2(208, 48)
+position = Vector2(144, 48)
 texture_normal = ExtResource("6_0euow")
 texture_pressed = ExtResource("6_0euow")
 
 [node name="Dekeiser_Declaracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1335583333]
-position = Vector2(344, 48)
+position = Vector2(280, 48)
 texture_normal = ExtResource("7_2acba")
 
 [node name="Dekeiser_declaracion" type="Node2D" parent="Apartado de opciones abajo" unique_id=153723521]
@@ -1229,6 +1485,7 @@ texture_pressed = ExtResource("6_0euow")
 [connection signal="pressed" from="Node2D/Botones_ocultar desafio/paneles/panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/30sec" to="Node2D/Botones_ocultar desafio/paneles" method="_seg_30"]
 [connection signal="pressed" from="Node2D/Botones_ocultar desafio/paneles/panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/60sec" to="Node2D/Botones_ocultar desafio/paneles" method="_seg_60"]
 [connection signal="pressed" from="Node2D/Botones_ocultar desafio/paneles/panel_seg/ESC_de_hbox_container/Panel/panel_total_seg/panel_seg/xsec" to="Node2D/Botones_ocultar desafio/paneles" method="_seg_X"]
+[connection signal="pressed" from="Node2D/PanelContainer/Panel_final/Panel2/X2/X_button" to="Node2D/PanelContainer/Panel_final" method="_on_x_button_pressed"]
 [connection signal="pressed" from="Apartado de opciones abajo/estadistica/Control/paneles/panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/modo" to="Apartado de opciones abajo/estadistica/Control/paneles" method="_botton_modo_desplegable"]
 [connection signal="pressed" from="Apartado de opciones abajo/estadistica/Control/paneles/panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/solo" to="Apartado de opciones abajo/estadistica/Control/paneles" method="_solo"]
 [connection signal="pressed" from="Apartado de opciones abajo/estadistica/Control/paneles/panel_modo/ESC_de_hbox_container/Panel/panel_total_modo/panel_modo/1c1" to="Apartado de opciones abajo/estadistica/Control/paneles" method="_1c1"]

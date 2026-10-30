@@ -72,3 +72,5 @@ SEC30,30 seg,30 sec,30 seg,30 sec,30 sec,30 сек,30 秒,30 초
 SEC60,60 seg,60 sec,60 seg,60 sec,60 sec,60 сек,60 秒,60 초
 SECX,X seg,X sec,X seg,X sec,X sec,X сек,X 秒,X 초
 MAX_CLICK,MAX Click:,MAX Clicks:,MAX Cliques:,MAX clics:,MAX Click:,МАКС. клики:,最大クリック数:,최대 클릭 수:
+ID,ESP,ING,POR,FRA,ITA,RUS,JPN,KOR
+ACT,Actual,Current,Atual,Actuel,Attuale,Текущий,現在,현재

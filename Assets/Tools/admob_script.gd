@@ -27,7 +27,8 @@ func _on_ads_initialized(_status) -> void:
 func _crear_banner(_banner_ID):
 	#var _x = DisplayServer.window_get_size().x
 	#var ad_size = AdSize.new(_x,(_x * 0.15625)) # 50/320
-	var ad_size = AdSize.new(0,0)
+	#var ad_size = AdSize.new(0,0)
+	var ad_size = AdSize.new(320,50)
 	_ad_view = AdView.new(
 		_banner_ID,
 		ad_size,
@@ -62,4 +63,5 @@ func mostrar_intersticial(_intersticial_ID) -> void:
 		_interstitial_ad = null
 		_cargar_intersticial(_intersticial_ID)
 	else:
+		_cargar_intersticial(_intersticial_ID)
 		print("El intersticial todavía no está cargado")
