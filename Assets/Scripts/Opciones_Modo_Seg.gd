@@ -31,6 +31,28 @@ func _ready() -> void:
 		$"../../..".seg_0.connect(_vacio_seg)
 	_procesar_objetos()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if contador_panel_modo == 1 or contador_panel_seg == 1:
+			var mouse = get_global_mouse_position()
+			var sobre_menu = false
+
+			var botones = [
+				botton_modo, modo_solo, modo_1c1, modo_2c2, modo_3p, modo_4p,
+				botton_seg, seg_1, seg_10, seg_20, seg_30, seg_60, seg_x
+			]
+
+			for boton in botones:
+				if boton.is_visible_in_tree() and boton.get_global_rect().has_point(mouse):
+					sobre_menu = true
+					break
+
+			if not sobre_menu:
+				contador_panel_modo = 0
+				contador_panel_seg = 0
+				contenedor_modo.visible = false
+				contenedor_seg.visible = false
+
 func _vacio_seg():
 	_seg("XD",1)
 

@@ -1020,6 +1020,9 @@ var hme1
 var iniciador = 0
 var B_inicio
 var animatic_Go
+var record = 0
+var record_bucle = 0
+var _dic = [1,10,20,30,60]
 
 #guardado:
 const RUTA_GUARDADO = "user://ClickSpeed.deker"
@@ -1515,19 +1518,24 @@ func _corrector_grafica(
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
 func _finalizar_desafio():
-	panel_eleccion_principal.visible = false
-	guardar_datos_para_grafica(1)
-	guardar_datos_para_grafica(2)
-	_X(0)
-	_grafica_final()
-	guardar_datos_para_grafica(0)
-	Segundos_personalizados = 0
+	if max_segundos > 0:
+		if record == 1:
+			if XDIC["confeti"] == 1:
+				confeti_señal.confeti.emit()
+			$Node2D/PanelContainer/Panel_final/Panel2/New_Record.visible = true
+			record = 0
+		panel_eleccion_principal.visible = false
+		guardar_datos_para_grafica(1)
+		guardar_datos_para_grafica(2)
+		_X(0)
+		_grafica_final()
+		guardar_datos_para_grafica(0)
+		guardar()
 	t_entrado_personalizada.text = ""
 	iniciador = 0
 	max_segundos = 0
 	seg_0.emit()
 	segundos = 0
-	guardar()
 	Segundos_personalizados = 0
 	counter = 0
 	counter_J2 = 0
@@ -1545,6 +1553,11 @@ func _finalizar_desafio():
 
 #CONFIGURACION PARA UN DESAFIO INFINITO O NO
 func _bucle_desafio():
+	if record_bucle == 1:
+		if XDIC["confeti"] == 1:
+			confeti_señal.confeti.emit()
+		record_bucle = 0
+		record = 0
 	guardar()
 	counter = 0
 	counter_J2 = 0
@@ -1603,7 +1616,7 @@ func logica_desafio():
 		_auto("_30")
 	elif max_segundos == 60:
 		_auto("_60")
-	elif max_segundos == Segundos_personalizados and Segundos_personalizados > 0:
+	elif max_segundos == Segundos_personalizados and Segundos_personalizados > 0 and Segundos_personalizados not in _dic:
 		_auto("_Personalizado")
 
 
@@ -1685,17 +1698,18 @@ func _automatizacion_logica_desafio(_tipo, _a, _b, _d, _e, _f):
 			_c = cps_actual_J4
 			_counter = counter_J4
 
-	if _c > XDIC[_g][_b]:
+	if _c > XDIC[_g][_b] and max_segundos in _dic:
 		XDIC[_g][_b] = _c
 		_cuando_el_mejor_cps_es_mayor(_c)
+	elif record == 1 and max_segundos not in _dic:
+		XDIC[_g][_b] = _c
 	XDIC[_g][_e] = _c
 	XDIC[_g][_f] = _counter
 
-
 func _cuando_el_mejor_cps_es_mayor(_a):
-	if _a != 0 and XDIC["confeti"] == 1:
-		confeti_señal.confeti.emit()
-
+	record = 1
+	if bucle_desafio == 1:
+		record_bucle = 1
 
 #TODO LA LOGICA PRINCIPAL DE ESTADISTICAS
 #logita para saber q hacen los botones de estadisticas de las opciones.
@@ -2435,21 +2449,30 @@ _f
 	elif (_counter + 1) > _Mejor_cliks60 and desafio == true and max_segundos == 60: # superar el record del desafio 60
 		XDIC[_simplificador(_tipo)][_e] = _counter+1
 
-	elif (_counter + 1) > _Mejor_cliksx and desafio == true and max_segundos == Segundos_personalizados: # superar el record del desafio personalizado
+	elif (_counter + 1) > _Mejor_cliksx and desafio == true and max_segundos == Segundos_personalizados and Segundos_personalizados not in _dic: # superar el record del desafio personalizado
 		XDIC[_simplificador(_tipo)][_f] = _counter+1
+		_cuando_el_mejor_cps_es_mayor(0)
 	if max_segundos == Segundos_personalizados:
 		if _numero_player == 1:
-			XDIC[_simplificador(_tipo)]["SEG"] = Segundos_personalizados
-			XDIC[_simplificador(_tipo)]["Actual_SEG"] = Segundos_personalizados
+			if record == 1 and Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["SEG"] = Segundos_personalizados
+			if Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["Actual_SEG"] = Segundos_personalizados
 		elif _numero_player == 2:
-			XDIC[_simplificador(_tipo)]["SEG2"] = Segundos_personalizados
-			XDIC[_simplificador(_tipo)]["Actual_SEG2"] = Segundos_personalizados
+			if record == 1 and Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["SEG2"] = Segundos_personalizados
+			if Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["Actual_SEG2"] = Segundos_personalizados
 		elif _numero_player == 3:
-			XDIC[_simplificador(_tipo)]["SEG3"] = Segundos_personalizados
-			XDIC[_simplificador(_tipo)]["Actual_SEG3"] = Segundos_personalizados
+			if record == 1 and Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["SEG3"] = Segundos_personalizados
+			if Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["Actual_SEG3"] = Segundos_personalizados
 		else:
-			XDIC[_simplificador(_tipo)]["SEG4"] = Segundos_personalizados
-			XDIC[_simplificador(_tipo)]["Actual_SEG4"] = Segundos_personalizados
+			if record == 1 and Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["SEG4"] = Segundos_personalizados
+			if Segundos_personalizados not in _dic:
+				XDIC[_simplificador(_tipo)]["Actual_SEG4"] = Segundos_personalizados
 	guardar()
 
 func _simplificador(
@@ -2546,17 +2569,20 @@ func _on_home_pressed() -> void: ## MODO CASA/HOGAR ( NORMAL )
 	hme1.texture_normal = th_texture1 # define una textura si se cumple la func
 func _on_estadist_pressed() -> void: ## MODO DE ESTADISTICAS
 	panel_final.visible = false
+	$Node2D/PanelContainer/Panel_final/Panel2/New_Record.visible = false
 	panel_eleccion_principal.visible = true
 	_estadisticas_mostrar_texto_parasiempre()
 	SD_estadisticas = SD_esta
 	_para_estadisticas_opciones()
 func _on_skins_pressed() -> void: ## MODO DE SKINS
 	panel_final.visible = false
+	$Node2D/PanelContainer/Panel_final/Panel2/New_Record.visible = false
 	panel_eleccion_principal.visible = true
 	a_click.play()
 	_botones_abajo(2)
 func _on_opcion_pressed() -> void: ## MODO DE OPCIONES
 	panel_final.visible = false
+	$Node2D/PanelContainer/Panel_final/Panel2/New_Record.visible = false
 	panel_eleccion_principal.visible = true
 	a_click.play()
 	_botones_abajo(3)

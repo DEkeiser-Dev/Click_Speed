@@ -12,24 +12,72 @@ position = Vector2(608.945, 170)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("1_v07rk")
 
-[node name="Icon2" type="Sprite2D" parent="Icon" unique_id=1354164077]
-position = Vector2(-1369.3795, -36.148148)
-scale = Vector2(1.1178281, 1.1263227)
-texture = ExtResource("1_v07rk")
-
 [node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=498968750]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-373.8704, 329.62964)
-scale = Vector2(5.5555544, 1.3888887)
+position = Vector2(-714.61115, 268.5185)
+scale = Vector2(9.837963, 1.1863419)
 texture = ExtResource("2_scoyp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Icon/Sprite2D" unique_id=1775056718]
-self_modulate = Color(0.7604001, 0.8629873, 0.8684304, 1)
+self_modulate = Color(0.653685, 0.85534877, 0.9803656, 1)
 position = Vector2(2.0000002, -7.9999604)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("2_scoyp")
 
 [node name="IconText" type="Sprite2D" parent="Icon" unique_id=561821210]
+visible = false
 position = Vector2(-366.66663, 81.4814)
 scale = Vector2(1.1337566, 1.1998941)
 texture = ExtResource("2_v07rk")
+
+[node name="Icon2" type="Sprite2D" parent="Icon" unique_id=1354164077]
+position = Vector2(-1370.1665, -62.962975)
+scale = Vector2(1.1467634, 1.1800596)
+texture = ExtResource("1_v07rk")
+
+[node name="Label" type="Label" parent="." unique_id=1475796508]
+offset_left = 400.0
+offset_top = 226.00002
+offset_right = 591.0
+offset_bottom = 273.0
+scale = Vector2(0.9495148, 0.7615724)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 44
+text = "CPS - TEST"
+
+[node name="Label" type="Label" parent="Label" unique_id=1604094134]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -5.0
+offset_right = 195.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 44
+text = "CPS - TEST"
+
+[node name="CLICK" type="Label" parent="." unique_id=735765363]
+offset_left = 371.0
+offset_top = 58.000004
+offset_right = 607.0
+offset_bottom = 271.0
+scale = Vector2(1.0785636, 0.9825099)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/line_spacing = -40
+theme_override_font_sizes/font_size = 104
+text = "CLICK
+SPEED"
+
+[node name="CLICK" type="Label" parent="CLICK" unique_id=877347343]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 245.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/line_spacing = -40
+theme_override_font_sizes/font_size = 104
+text = "CLICK
+SPEED"

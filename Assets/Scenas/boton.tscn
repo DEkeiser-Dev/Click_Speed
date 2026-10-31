@@ -1301,7 +1301,7 @@ position = Vector2(-272, 920)
 position = Vector2(-272, 1032)
 
 [node name="reset" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/datos" unique_id=602613597]
-position = Vector2(88, 584)
+position = Vector2(16, 592)
 texture_normal = ExtResource("5_h3ung")
 texture_pressed = ExtResource("6_0euow")
 

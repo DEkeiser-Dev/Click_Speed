@@ -38,6 +38,7 @@ func _datos(_player: int,_a: Dictionary,_b: Dictionary,_c: Dictionary,_d: Dictio
 	_centrar_panel()
 
 func _on_x_button_pressed() -> void:
+	$Panel2/New_Record.visible = false
 	$"../../click".play()
 	$"../../Botones_ocultar desafio/paneles".visible = true
 	main.visible = false

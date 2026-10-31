@@ -11,7 +11,7 @@ script = ExtResource("1_3mi76")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=647373237]
 stream = ExtResource("4_dq40c")
-volume_db = -20.577
+volume_db = -3.0
 autoplay = true
 mix_target = 2
 bus = &"music"
