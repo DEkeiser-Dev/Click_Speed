@@ -32,26 +32,42 @@ func _ready() -> void:
 	_procesar_objetos()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if contador_panel_modo == 1 or contador_panel_seg == 1:
-			var mouse = get_global_mouse_position()
-			var sobre_menu = false
+	var posicion = Vector2.ZERO
+	var presionado = false
 
-			var botones = [
-				botton_modo, modo_solo, modo_1c1, modo_2c2, modo_3p, modo_4p,
-				botton_seg, seg_1, seg_10, seg_20, seg_30, seg_60, seg_x
-			]
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			posicion = get_global_mouse_position()
+			presionado = true
 
-			for boton in botones:
-				if boton.is_visible_in_tree() and boton.get_global_rect().has_point(mouse):
+	elif event is InputEventScreenTouch:
+		if event.pressed:
+			var local = get_global_transform_with_canvas().affine_inverse() * event.position
+			posicion = get_global_transform() * local
+			presionado = true
+
+	if not presionado:
+		return
+
+	if contador_panel_modo == 1 or contador_panel_seg == 1:
+		var botones = [
+			botton_modo, modo_solo, modo_1c1, modo_2c2, modo_3p, modo_4p,
+			botton_seg, seg_1, seg_10, seg_20, seg_30, seg_60, seg_x
+		]
+
+		var sobre_menu = false
+
+		for boton in botones:
+			if is_instance_valid(boton) and boton.is_visible_in_tree():
+				if boton.get_global_rect().has_point(posicion):
 					sobre_menu = true
 					break
 
-			if not sobre_menu:
-				contador_panel_modo = 0
-				contador_panel_seg = 0
-				contenedor_modo.visible = false
-				contenedor_seg.visible = false
+		if not sobre_menu:
+			contador_panel_modo = 0
+			contador_panel_seg = 0
+			contenedor_modo.visible = false
+			contenedor_seg.visible = false
 
 func _vacio_seg():
 	_seg("XD",1)

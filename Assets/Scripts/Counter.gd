@@ -721,8 +721,8 @@ var XDIC = {
 	"confeti": 1,
 	"vibracion": 1,
 	"+1": 1,
-	"volumen_effect": 1,
-	"volumen_music": 1,
+	"volumen_effect": 1.5,
+	"volumen_music": 1.5,
 	"AYuda_Deker": 0
 }
 
@@ -978,8 +978,8 @@ var suma_total
 
 #repetidor de desafios:
 var rd_repetidor_desafios
-var rd_texture1 = preload("res://Assets/Arte2d/Colores_posicion_botones/t3.jpg")
-var rd_texture2 = preload("res://Assets/Arte2d/Colores_posicion_botones/t4.jpg")
+var rd_texture1 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/bucle_selector.svg")
+var rd_texture2 = preload("res://Assets/Arte2d/opciones/opciones_cuadrado/bucle.svg")
 
 #audio:
 var a_click
@@ -1052,6 +1052,10 @@ func _modo(valor: Vector2):
 	else:
 		estadistica_modo_tipo = int(valor.x)
 		_on_estadist_pressed()
+		if int(valor.x) == 0:
+			$"Apartado de opciones abajo/estadistica/Control/Marcadores".visible = true
+		else:
+			$"Apartado de opciones abajo/estadistica/Control/Marcadores".visible = false
 
 func _seg(valor: Vector2):
 	if int(valor.y) == 0:
@@ -1147,6 +1151,7 @@ func _process(_delta: float) -> void:
 		_datos_iniciar_desafios(0)
 		aparecer_botones.emit(0)
 
+
 func _logica_de_desafios_modos_de_equipos_tipo_contador_barra():
 	suma_total = int(t_lado_a.text) + int(t_lado_b.text)
 	if suma_total > 0:
@@ -1175,7 +1180,7 @@ func _procesardor_de_objetos():
 	b_desafio_p_oculto = $"Node2D/Botones_ocultar desafio/TouchScreenButton"
 	b_reset_counter = $"Node2D/Botones_ocultar desafio/reset_counter"
 	b_opciones = $"Node2D/Botones_ocultar desafio/opciones"
-	b_opciones2 = $"Node2D/Botones_ocultar desafio/opciones2"
+	b_opciones2 = $"Node2D/Botones_ocultar desafio/START/opciones2"
 	t_entrado_personalizada = $"Node2D/Botones_ocultar desafio/EntradaPersonalizada"
 	t_counter = $Node2D/Boton/prueba/counter
 	t_counter2 = $Node2D/Boton2/prueba/counter
@@ -1255,7 +1260,7 @@ func _procesardor_de_objetos():
 	panel_eleccion_principal = $"Node2D/Botones_ocultar desafio/paneles"
 	panel_xd = $"Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect/Panel"
 	panel_eleccion_estadistica = $"Apartado de opciones abajo/estadistica/Control/paneles"
-	animatic_Go = $"Node2D/Botones_ocultar desafio/opciones2/Go!"
+	animatic_Go = $"Node2D/Botones_ocultar desafio/START/opciones2/Go!"
 
 #sirve para decirle al texto en donde colocarse exactamente segun los datos
 func _posicionamiento_del_texto(_a,_b): #dato,,x
@@ -1276,7 +1281,8 @@ func _on_timer_timeout() -> void:
 		logica_desafio()
 		if max_segundos == 1:
 			_primer_segundo = false
-		guardar_datos_para_grafica(0)
+		if counter > 0 or counter_J2 > 0 or counter_J3 > 0 or counter_J4 > 0:
+			guardar_datos_para_grafica(0)
 		segundos += 1
 
 
@@ -1307,7 +1313,29 @@ func guardar_datos_para_grafica(_a):
 			_nom = "3P"
 		4:
 			_nom = "4P"
-	if _a == 0:
+	if _a == 7:
+		var _JJ = ""
+		if tipo_de_modo_jugadores == 0:
+			datos_1 = XDIC[_nom][_num]
+		elif tipo_de_modo_jugadores == 1 or tipo_de_modo_jugadores == 2:
+			datos_1 = XDIC[_nom][_num]
+			_JJ = "_j2"
+			datos_2 = XDIC[_nom][_num+_JJ]
+		elif tipo_de_modo_jugadores == 3:
+			datos_1 = XDIC[_nom][_num]
+			_JJ = "_j2"
+			datos_2 = XDIC[_nom][_num+_JJ]
+			_JJ = "_j3"
+			datos_3 = XDIC[_nom][_num+_JJ]
+		elif tipo_de_modo_jugadores == 4:
+			datos_1 = XDIC[_nom][_num]
+			_JJ = "_j2"
+			datos_2 = XDIC[_nom][_num+_JJ]
+			_JJ = "_j3"
+			datos_3 = XDIC[_nom][_num+_JJ]
+			_JJ = "_j4"
+			datos_4 = XDIC[_nom][_num+_JJ]
+	elif _a == 0:
 		if segundos == 0:
 			datos_1 = {
 				"M_Clicks": 0,
@@ -1517,14 +1545,18 @@ func _corrector_grafica(
 			_a["M_Clicks"] = _max
 
 #CONFIGURACION PARA SALIR DE UN DESAFIO
-func _finalizar_desafio():
+func _finalizar_desafio(_a = 0):
 	if max_segundos > 0:
 		if record == 1:
 			if XDIC["confeti"] == 1:
 				confeti_señal.confeti.emit()
+			if tipo_de_modo_jugadores == 0:
+				marcadores(0)
 			$Node2D/PanelContainer/Panel_final/Panel2/New_Record.visible = true
 			record = 0
 		panel_eleccion_principal.visible = false
+		if iniciar_desafio == 0:
+			guardar_datos_para_grafica(7)
 		guardar_datos_para_grafica(1)
 		guardar_datos_para_grafica(2)
 		_X(0)
@@ -1534,6 +1566,7 @@ func _finalizar_desafio():
 	t_entrado_personalizada.text = ""
 	iniciador = 0
 	max_segundos = 0
+	marcadores(0,1)
 	seg_0.emit()
 	segundos = 0
 	Segundos_personalizados = 0
@@ -2184,6 +2217,11 @@ event
 	if event.is_action_pressed("enter"):
 		if t_entrado_personalizada.text != "" and t_entrado_personalizada.visible == true:
 			_segundos_modos(0,-1,1)
+	if event.is_action_pressed("720.D"):
+		counter = 720
+		counter_J2 = 720
+		counter_J3 = 720
+		counter_J4 = 720
 
 func _no_quiero_escrbir_esta_linea_de_desactivacion_siempre_parte2(
 _a
@@ -2217,7 +2255,7 @@ _nu
 ## BOTONES QUE SALEN AL INICIAR UN DESAFIO
 func _on_salir_desafios_pressed() -> void:
 	segundos = 0
-	_finalizar_desafio()
+	_finalizar_desafio(1)
 
 func _forzar_cero_datos():
 	var _num = ""
@@ -2413,14 +2451,14 @@ _b,
 _c,
 _d,
 _e,
-_f
+_f 
 ):
+	logros(_counter)
 	total_counter += 1
 	XDIC["Total_Clicks"] = total_counter
 	if XDIC["vibracion"] == 1:
 		_vibracion(0)
 	a_click.play()
-	logros(_counter)
 
 	if desafio == true: # si hay desafio
 		if _numero_player == 1:
@@ -2695,6 +2733,27 @@ func guardar():
 	var archivo = FileAccess.open(RUTA_GUARDADO,FileAccess.WRITE)
 	archivo.store_var(XDIC)
 	archivo.close()
+	if comprobar_todo(XDIC):
+		L(3)
+
+func comprobar_todo(dato) -> bool:
+	if dato is Dictionary:
+		for key in dato:
+			var valor = dato[key]
+
+			if str(key).begins_with("Mejor_cps"):
+				if valor < 12:
+					return false
+
+			elif not comprobar_todo(valor):
+				return false
+
+	elif dato is Array:
+		for elemento in dato:
+			if not comprobar_todo(elemento):
+				return false
+
+	return true
 
 ## SISTEMA DE SIMPLIFICADO DECIMAL
 # (redondeo) 
@@ -3168,3 +3227,36 @@ func _text_grafica_final(_modos,_sg):
 			_d = _text
 
 	return (_emcabezado + _a + _b + _c + _d)
+
+func marcadores(_a,_b = 0):
+	match _a:
+		0:
+			if _b == 0:
+				PlayGameServices.guardar_puntuacion(max_segundos,counter)
+			else:
+				PlayGameServices.guardar_puntuacion(max_segundos,total_counter)
+		1:
+			PlayGameServices.mostrar_marcador(max_segundos)
+		2:
+			PlayGameServices.mostrar_marcadores()
+		3:
+			var _xx = 0
+			match estadistica_seg_tipo:
+				1:
+					_xx = 1
+				2:
+					_xx = 10
+				3:
+					_xx = 20
+				4:
+					_xx = 30
+				5:
+					_xx = 60
+			PlayGameServices.mostrar_marcador(_xx)
+
+
+func _on_estadistica_especifica_pressed() -> void:
+	marcadores(3)
+
+func _on_marcador_opcion_pressed() -> void:
+	marcadores(2)

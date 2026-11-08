@@ -18,6 +18,7 @@ var cambio = 0
 var no_cambies = 0
 
 func _ready() -> void:
+	GodotPlayGameServices.initialize()
 	AdMob_Script._cargar_intersticial(_RAMDOM())
 	a_music = $AudioStreamPlayer
 	a_music.finished.connect(_repetir_song)

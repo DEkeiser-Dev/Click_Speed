@@ -1,6 +1,6 @@
 extends Node
 
-func _GAMES_SERVICES(_a):
+func _GAMES_SERVICES(_a) -> String:
 	var id_logro := ""
 	match _a:
 		0: # primer click
@@ -19,5 +19,33 @@ func _GAMES_SERVICES(_a):
 			id_logro = "CgkI8ryZof4ZEAIQBQ"
 
 		_:
+			id_logro = ""
 			print("ERROR: logro inexistente: ", _a)
 	return id_logro
+
+
+func _MARKERS(_a) -> String:
+	var id_marcador := ""
+	match _a:
+		0: # total click
+			id_marcador = "CgkI8ryZof4ZEAIQCw"
+
+		1: # click 1
+			id_marcador = "CgkI8ryZof4ZEAIQBw"
+
+		10: # click 10
+			id_marcador = "CgkI8ryZof4ZEAIQBg"
+
+		20: # click 20
+			id_marcador = "CgkI8ryZof4ZEAIQCA"
+
+		30: # click 30
+			id_marcador = "CgkI8ryZof4ZEAIQCQ"
+
+		60: # click 60
+			id_marcador = "CgkI8ryZof4ZEAIQCg"
+
+		_:
+			id_marcador = ""
+			print("ERROR: marcador inexistente: ", _a)
+	return id_marcador
