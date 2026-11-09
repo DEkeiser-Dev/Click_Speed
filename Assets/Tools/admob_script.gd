@@ -97,6 +97,11 @@ func mostrar_intersticial(_interstitial_ID) -> void:
 
 		_cargar_intersticial(_interstitial_ID)
 	else:
-		_interstitial_pendiente = true
-		_cargar_intersticial(_interstitial_ID)
 		print("El intersticial todavía no está cargado")
+		_interstitial_pendiente = true
+		var _aa = randi_range(0,1)
+		match _aa:
+			0:
+				_cargar_intersticial(_interstitial_ID)
+			1:
+				_cargar_intersticial(AD_CONFIG._ADS(4))

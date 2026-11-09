@@ -74,3 +74,6 @@ SECX,X seg,X sec,X seg,X sec,X sec,X сек,X 秒,X 초
 MAX_CLICK,MAX Click:,MAX Clicks:,MAX Cliques:,MAX clics:,MAX Click:,МАКС. клики:,最大クリック数:,최대 클릭 수:
 ID,ESP,ING,POR,FRA,ITA,RUS,JPN,KOR
 ACT,Actual,Current,Atual,Actuel,Attuale,Текущий,現在,현재
+HELP_AD,Ayuda\n(AD),Help\n(AD),Ajuda\n(AD),Aide\n(AD),Aiuto\n(AD),Помощь\n(AD),ヘルプ\n(AD),도움말\n(AD)
+CREDITS,Créditos,Credits,Créditos,Crédits,Crediti,Титры,クレジ\nット,크레딧
+ABOUT_DEV,Sobre el dev:,About Dev:,Sobre o dev:,À propos:,Info dev:,О разработчике:,開発者:,개발자:

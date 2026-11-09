@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://y08ns4be5xra" path="res://Assets/Arte2d/opciones/opciones_cuadrado/opciones.svg" id="5_4b525"]
 [ext_resource type="Texture2D" uid="uid://da7ymn74rx6rv" path="res://Assets/Arte2d/Colores_posicion_botones/1c1.jpg" id="5_h3ung"]
 [ext_resource type="Texture2D" uid="uid://capopobp0ndvq" path="res://Assets/Arte2d/Colores_posicion_botones/t3.jpg" id="6_0euow"]
+[ext_resource type="Texture2D" uid="uid://bkl3cpl601nmt" path="res://Assets/Arte2d/opciones/opciones_cuadrado/Exit.svg" id="6_dck2f"]
 [ext_resource type="Texture2D" uid="uid://boxj7xhx2g80m" path="res://Assets/Arte2d/Colores_posicion_botones/t4.jpg" id="7_2acba"]
 [ext_resource type="Texture2D" uid="uid://bxiyuvne7brin" path="res://Assets/Arte2d/opciones/opciones_cuadrado/bucle.svg" id="7_57s6u"]
 [ext_resource type="Texture2D" uid="uid://bnbg8orqp5ij" path="res://Assets/Arte2d/opciones/opciones_cuadrado/estadistica normal.svg" id="8_eivc3"]
@@ -39,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://f1yr1i7scc7s" path="res://Assets/Arte2d/Dev/devicon.png" id="31_8yer3"]
 [ext_resource type="Texture2D" uid="uid://ddbjuued7782k" path="res://Assets/Arte2d/opciones/opciones_cuadrado/tienda.svg" id="31_h0h6r"]
 [ext_resource type="Script" uid="uid://xb0qeqt5wb13" path="res://Assets/Scripts/mirandaYT.gd" id="34_kmjfm"]
+[ext_resource type="Texture2D" uid="uid://d2elpyrlo0cvx" path="res://Assets/Arte2d/botones/Boton_Click/boton.svg" id="35_dof4d"]
 
 [sub_resource type="Animation" id="Animation_pjjqg"]
 resource_name = "GO!"
@@ -395,12 +397,12 @@ text = "Time"
 position = Vector2(-720, -88)
 
 [node name="Salir_desafios" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=661339132]
-position = Vector2(64, 1296.0001)
-scale = Vector2(1.736, 1.68)
-texture_normal = ExtResource("5_h3ung")
+position = Vector2(72, 1256)
+scale = Vector2(1.886179, 1.9401636)
+texture_normal = ExtResource("6_dck2f")
 
 [node name="repetidor_desafios_indefinidos" type="TouchScreenButton" parent="Node2D/Botones_aparecer desafio" unique_id=1329555792]
-position = Vector2(432, 1296.0001)
+position = Vector2(424, 1272.0001)
 scale = Vector2(1.736, 1.68)
 texture_normal = ExtResource("7_57s6u")
 texture_pressed = ExtResource("8_kmjfm")
@@ -572,6 +574,7 @@ texture_normal = ExtResource("5_4b525")
 position = Vector2(-6.6666665, 15.833334)
 
 [node name="opciones2" type="TouchScreenButton" parent="Node2D/Botones_ocultar desafio/START" unique_id=1109510672]
+visible = false
 position = Vector2(-399.99994, 522.5)
 scale = Vector2(1.734417, 1.7344176)
 texture_normal = ExtResource("5_4b525")
@@ -1343,14 +1346,53 @@ texture_pressed = ExtResource("6_0euow")
 [node name="palabras_de_desarrolador_deker" type="Node2D" parent="Apartado de opciones abajo/opcion" unique_id=1554042705]
 position = Vector2(-272, 1168)
 
+[node name="PanelContainer" type="PanelContainer" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=679633327]
+self_modulate = Color(0.68235296, 0.68235296, 0.68235296, 1)
+offset_left = 73.0
+offset_right = 468.0
+offset_bottom = 229.0
+
+[node name="Label" type="Label" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker/PanelContainer" unique_id=1379699458]
+layout_mode = 2
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=319623228]
-position = Vector2(144, 48)
-texture_normal = ExtResource("6_0euow")
-texture_pressed = ExtResource("6_0euow")
+position = Vector2(108, 41)
+scale = Vector2(0.19, 0.19)
+texture_normal = ExtResource("35_dof4d")
+texture_pressed = ExtResource("35_dof4d")
 
 [node name="Dekeiser_Declaracion" type="TouchScreenButton" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1335583333]
-position = Vector2(280, 48)
-texture_normal = ExtResource("7_2acba")
+position = Vector2(276, 41)
+scale = Vector2(0.19, 0.19)
+texture_normal = ExtResource("35_dof4d")
+
+[node name="Label" type="Label" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1812652224]
+offset_left = 113.0
+offset_top = 40.0
+offset_right = 272.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 35
+text = "HELP_AD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1771434614]
+offset_left = 277.0
+offset_top = 41.0
+offset_right = 445.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 31
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Apartado de opciones abajo/opcion/palabras_de_desarrolador_deker" unique_id=1796386043]
+offset_left = 87.0
+offset_top = 11.0
+offset_right = 314.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 27
+text = "ABOUT_DEV"
 
 [node name="Dekeiser_declaracion" type="Node2D" parent="Apartado de opciones abajo" unique_id=153723521]
 position = Vector2(3240, 0)
@@ -1389,7 +1431,7 @@ mouse_filter = 2
 
 [node name="info" type="Label" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/PanelContainer" unique_id=1374591712]
 layout_mode = 2
-text = "Click Speed V 1.3"
+text = "Click Speed V 1.4"
 horizontal_alignment = 1
 
 [node name="DEV_DECLARATION" type="PanelContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=254399618]
@@ -1416,7 +1458,7 @@ theme_override_fonts/normal_font = ExtResource("13_57s6u")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "Music created by 
-mirandacraft ([url=https://www.youtube.com/@mirandacraft_11][color=#0000EE]YouTube[/color][/url])"
+mirandacraft ([url=https://www.youtube.com/@mirandacraft_11][color=#93c4fcff]YouTube[/color][/url])"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

@@ -13,3 +13,5 @@ func _ready() -> void:
 func _confeti():
 	$confeti_1.mi_señal.emit()
 	$confeti_2.mi_señal.emit()
+	$confeti_3.mi_señal.emit()
+	$confeti_4.mi_señal.emit()

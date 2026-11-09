@@ -15,6 +15,8 @@ func _ADS(_a):
 		3: # interstitial_height
 			id_ads = "ca-app-pub-5066256392694449/1004776624"
 
+		4: # interstitial_3
+			id_ads = "ca-app-pub-5066256392694449/8081549771"
 		_:
 			print("ERROR: anuncio inexistente: ", id_ads)
 	return id_ads
