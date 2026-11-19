@@ -1,10 +1,40 @@
 extends Node
 
+@onready var sign_in_client = $PlayGamesSignInClient
 @onready var achievements_client = $PlayGamesAchievementsClient
 @onready var leaderboards_client = $PlayGamesLeaderboardsClient
 
-func _ready() -> void:
+signal autenticacion_finalizada(autenticado: bool)
+
+var comprobando_sesion = false
+var iniciando_sesion = false
+
+func _enter_tree() -> void:
 	GodotPlayGameServices.initialize()
+
+func _ready() -> void:
+	sign_in_client.user_authenticated.connect(_al_autenticar)
+
+func comprobar_sesion() -> void:
+	if comprobando_sesion or iniciando_sesion:
+		return
+	comprobando_sesion = true
+	sign_in_client.is_authenticated()
+
+func _al_autenticar(autenticado: bool) -> void:
+	if comprobando_sesion:
+		comprobando_sesion = false
+		if not autenticado:
+			iniciando_sesion = true
+			sign_in_client.sign_in()
+			return
+	elif iniciando_sesion:
+		iniciando_sesion = false
+
+	autenticacion_finalizada.emit(autenticado)
+
+func iniciar_sesion() -> void:
+	sign_in_client.sign_in()
 
 func logros(_a: int) -> void:
 	var id_logro = PGS_CONFIG._GAMES_SERVICES(_a)
@@ -19,9 +49,7 @@ func guardar_puntuacion(_a: int, puntuacion: int) -> void:
 func mostrar_marcador(_a: int) -> void:
 	var id_marcador = PGS_CONFIG._MARKERS(_a)
 	if id_marcador != "":
-		#leaderboards_client.load_top_scores(id_marcador)
 		leaderboards_client.show_leaderboard(id_marcador)
-		#top_scores_loaded(leaderboard_id, leaderboard_scores)
 
 func mostrar_marcadores() -> void:
 	leaderboards_client.show_all_leaderboards()

@@ -4,17 +4,17 @@ mode_10sec,MODO 10S\n,10S MODE\n,MODO 10S\n,MODE 10 S\n,MODALITÀ 10S\n,РЕЖИ
 mode_20sec,MODO 20S\n,20S MODE\n,MODO 20S\n,MODE 20 S\n,MODALITÀ 20S\n,РЕЖИМ 20С\n,20秒モード\n,20초 모드\n
 mode_30sec,MODO 30S\n,30S MODE\n,MODO 30S\n,MODE 30 S\n,MODALITÀ 30S\n,РЕЖИМ 30С\n,30秒モード\n,30초 모드\n
 mode_60sec,MODO 60S\n,60S MODE\n,MODO 60S\n,MODE 60 S\n,MODALITÀ 60S\n,РЕЖИМ 60С\n,60秒モード\n,60초 모드\n
-mode_custom,SEGUNDO(s)\nPERSONALIZADO(s) = ,SECOND(s)\nCUSTOM(s) = ,SEGUNDO(s)\nPERSONALIZADO(s) = ,SEC.(s)\nPERSO.(s) = ,SEC.(i)\nPERS.(i) = ,СЕК.(с)\nПОЛЬЗ.(с) = ,秒\nカスタム秒数 = ,초\n사용자 지정 초 =
-sec,sec\n,sec\n,seg\n,sec\n,sec\n,сек\n,秒\n,초\n
+mode_custom,SEGUNDO(s)\nPERSONALIZADO(s) = ,CUSTOM\nSECOND(s) = ,SEGUNDO(s)\nPERSONALIZADO(s) = ,SEC.(s)\nPERSO. = ,SEC.(i)\nPERS. = ,ПОЛЬЗ.\nСЕК.(ы) = ,カスタム\n秒数 = ,사용자 지정\n초 = 
+sec,seg\n,sec\n,seg\n,sec\n,sec\n,сек\n,秒\n,초\n
 limit_value,99999999,99999999,99999999,99999999,99999999,99999999,99999999,99999999
 valid_value,AÑADE UN \nDATO VALIDO...,ADD A \nVALID VALUE...,ADICIONE UM \nDADO VÁLIDO...,AJOUTEZ UNE \nVALEUR VALIDE...,INSERISCI UN \nVALORE VALIDO...,ВВЕДИТЕ \nДОПУСТИМОЕ ЗНАЧЕНИЕ...,有効な\n値を入力してください...,유효한\n값을 입력하세요...
 activated,ACTIVADO,ACTIVATED,ATIVADO,ACTIVÉ,ATTIVO,АКТИВИРОВАНО,有効,활성화됨
-solo_mode,MODO SOLITARIO\n,MODO SOLO\n,MODO SOLO\n,MODE SOLO\n,MODALITÀ SOLITARIO\n,ОДИНОЧНЫЙ РЕЖИМ\n,ソロモード\n,싱글 플레이 모드\n
-mode_1c1,MODO 1C1\n,1V1 MODE\n,MODO 1V1\n,MODE 1V1\n,1V1\n,РЕЖИМ 1 НА 1\n,1対1モード\n,1대1 모드\n
-mode_2c2,MODO 2C2\n,2V2 MODE\n,MODO 2V2\n,MODE 2V2\n,2V2\n,РЕЖИМ 2 НА 2\n,2対2モード\n,2대2 모드\n
-mode_t3,MODO 3 PLAYERS\n,3 PLAYER MODE\n,MODO 3 JOGADORES\n,MODE 3 JOUEURS\n,3 GIOCATORI\n,РЕЖИМ 3 ИГРОКОВ\n,3人モード\n,3인 플레이어 모드\n
-mode_t4,MODO 4 PLAYERS\n,4 PLAYER MODE\n,MODO 4 JOGADORES\n,MODE 4 JOUEURS\n,4 GIOCATORI\n,РЕЖИМ 4 ИГРОКОВ\n,4人モード\n,4인 플레이어 모드\n
-deactivated,APAGADO,OFF,DESLIGADO,DÉSACTIVÉ,DISATTIVO,ОТКЛЮЧЕНО,無効,비활성화됨
+solo_mode,MODO SOLITARIO\n,SOLO MODE\n,MODO SOLO\n,MODE SOLO\n,MODALITÀ SOLO\n,ОДИНОЧНЫЙ РЕЖИМ\n,ソロモード\n,솔로 모드\n
+mode_1c1,MODO 1C1\n,1V1 MODE\n,MODO 1V1\n,MODE 1V1\n,1V1\n,РЕЖИМ 1В1\n,1対1モード\n,1대1 모드\n
+mode_2c2,MODO 2C2\n,2V2 MODE\n,MODO 2V2\n,MODE 2V2\n,2V2\n,РЕЖИМ 2В2\n,2対2モード\n,2대2 모드\n
+mode_t3,MODO 3 PLAYERS\n,3 PLAYER MODE\n,MODO 3 JOGADORES\n,MODE 3 JOUEURS\n,3 GIOCATORI\n,РЕЖИМ 3 ИГРОКОВ\n,3人モード\n,3인 모드\n
+mode_t4,MODO 4 PLAYERS\n,4 PLAYER MODE\n,MODO 4 JOGADORES\n,MODE 4 JOUEURS\n,4 GIOCATORI\n,РЕЖИМ 4 ИГРОКОВ\n,4人モード\n,4인 모드\n
+deactivated,APAGADO,OFF,DESLIGADO,DÉSACTIVÉ,SPENTO,ВЫКЛ.,オフ,꺼짐
 best_clicks,Mejor clicks,Best clicks,Melhores cliques,Meilleurs clics,Migliori click,Лучшие клики,最高クリック数,최고 클릭 수
 best_cps,Mejor CPS,Best CPS,Melhor CPS,Meilleur CPS,Miglior CPS,Лучший CPS,最高CPS,최고 CPS
 player_1,Jugador 1,Player 1,Jogador 1,Joueur 1,Giocatore 1,Игрок 1,プレイヤー1,플레이어 1
@@ -23,17 +23,17 @@ player_3,Jugador 3,Player 3,Jogador 3,Joueur 3,Giocatore 3,Игрок 3,プレ�
 player_4,Jugador 4,Player 4,Jogador 4,Joueur 4,Giocatore 4,Игрок 4,プレイヤー4,플레이어 4
 normal,Normal,Normal,Normal,NORM.,NORMALE,НОРМ.,ノーマル,일반
 x,X,X,X,X,X,X,X,X
-save,Guarda,Save,Guardar,Sauvegarder,Salva,Сохранить,保存,저장
+save,Guarda,Save,Guardar,Sauver,Salva,Сохранить,保存,저장
 best,Mejor,Best,Melhor,TOP,MIGLIOR,ЛУЧШИЙ,最高,최고
 clicks,Clicks,Clicks,Cliques,Clics,Clic,Клики,クリック,클릭
 cps,CPS,CPS,CPS,CPS,CPS,CPS,CPS,CPS
-player,Jugador,Player,Jogador,Joueur,Gicatore,Игрок,プレイヤー,플레이어
+player,Jugador,Player,Jogador,Joueur,Giocatore,Игрок,プレイヤー,플레이어
 max,MAX,MAX,MAX,MAX,MAX,МАКС,最大,최대
 maximum,MÁXIMO,MAXIMUM,MÁXIMO,MAXIMUM,MAX,МАКСИМУМ,最大,최대
 sec2,seg,sec,seg,sec,sec,сек,秒,초
 AUDIO,AUDIO,AUDIO,ÁUDIO,AUDIO,AUDIO,АУДИО,オーディオ,오디오
-Volumen Musica,Volumen Música,Music Volume,Volume da Música,Volume de la musique,Volume musica,Громкость музыки,音楽の音量,음악 볼륨
-Volumen Efectos,Volumen de Efectos,Effects Volume,Volume dos Efeitos,Volume des effets,Volume effetti,Громкость эффектов,効果音の音量,효과음 볼륨
+Volumen Musica,Volumen Música,Music Volume,Volume da Música,Volume musique,Volume musica,Громкость музыки,音楽の音量,음악 볼륨
+Volumen Efectos,Volumen de Efectos,Effects Volume,Volume dos Efeitos,Volume effets,Volume effetti,Громкость эффектов,効果音の音量,효과음 볼륨
 PANTALLA,PANTALLA,DISPLAY,TELA,ÉCRAN,SCHERMO,ЭКРАН,画面,화면
 Vibracion,Vibración,Vibration,Vibração,Vibration,Vibrazione,Вибрация,振動,진동
 Confeti,Confeti,Confetti,Confetes,Confettis,Coriandoli,Конфетти,紙吹雪,색종이
@@ -41,7 +41,7 @@ Temas,Temas,Themes,Temas,Thèmes,Temi,Темы,テーマ,테마
 coming_soon,Próximamente\n...,Coming Soon\n...,Em breve\n...,Bientôt\n...,Prossimamente\n...,Скоро\n...,近日公開\n...,출시 예정\n...
 DATOS,DATOS,DATA,DADOS,DONNÉES,DATI,ДАННЫЕ,データ,데이터
 IDIOMA,IDIOMA,LANGUAGE,IDIOMA,LANGUE,LINGUA,ЯЗЫК,言語,언어
-NUMBER,NÚMERO,NUMBER,NÚMERO,NOMBRE,NUMERO,ЧИСЛО,番号,번호
+NUMBER,NÚMERO,NUMBER,NÚMERO,NUMÉRO,NUMERO,ЧИСЛО,番号,번호
 ESP,Español,Spanish,Espanhol,Espagnol,Spagnolo,Испанский,スペイン語,스페인어
 ING,Inglés,English,Inglês,Anglais,Inglese,Английский,英語,영어
 FRA,Francés,French,Francês,Français,Francese,Французский,フランス語,프랑스어
@@ -53,14 +53,14 @@ KOR,Coreano,Korean,Coreano,Coréen,Coreano,Корейский,韓国語,한국�
 LOADING,CARGANDO\n...,LOADING\n...,CARREGANDO\n...,CHARGEMENT\n...,CARICAMENTO\n...,ЗАГРУЗКА\n...,読み込み中\n...,로딩 중\n...
 NEW_RECORD,NUEVO RÉCORD,NEW RECORD,NOVO RECORDE,NOUVEAU RECORD,NUOVO RECORD,НОВЫЙ РЕКОРД,新記録,신기록
 DEV_DECLARATION,"Hola.\n\nJajaja, soy Dekeiser, el que creó, programó y diseñó esta app móvil de clicks. Y, para ser sincero, estoy feliz de haberla terminado. Me gusta este mundo y este pequeño proyecto es solo un paso para crear cosas más complejas. A lo mejor un videojuego 3D o 2D, o incluso una experiencia de realidad virtual; no lo sé, el tiempo lo dirá.\n\nPor ahora, debo seguir practicando con proyectos pequeños como este :D\n\nEsta app la creé porque las demás apps de clicker no me convencían. Algunas no tenían opciones básicas y otras no funcionaban como me gustaría. Así que pensé: ""¿Por qué no hago mi propia versión?""\n\nAdemás, la idea nació porque unos amigos me dijeron que muevo muy rápido el dedo de arriba abajo. Quise comprobarlo y competir con ellos para ver quién tenía más CPS.\n\nY, sinceramente, he llegado a unos 14–16 CPS en un segundo. Ahora toca seguir practicando para intentar llegar a los 18 CPS.\n\nGracias por leer esto. Intentaré seguir mejorando como desarrollador y como persona.","Hello.\n\nHaha, I'm Dekeiser, the one who created, coded, and designed this mobile clicker app. And, to be honest, I'm really happy to have finished it. I like this world, and this small project is just one step toward creating more complex things. Maybe a 2D or 3D video game, or even a virtual reality experience; I don't know, time will tell.\n\nFor now, I need to keep practicing with small projects like this :D\n\nI created this app because the other clicker apps didn't convince me. Some didn't have basic options, while others didn't work the way I wanted. So I thought: ""Why not make my own version?""\n\nThe idea also came from some friends who told me that I move my finger very quickly up and down. I wanted to test it and compete with them to see who could get the highest CPS.\n\nAnd, honestly, I've reached around 14–16 CPS in one second. Now I just need to keep practicing and try to reach 18 CPS.\n\nThanks for reading this. I'll keep trying to improve as a developer and as a person.","Olá.\n\nHaha, sou o Dekeiser, a pessoa que criou, programou e projetou este app móvel de cliques. E, para ser sincero, estou muito feliz por tê-lo terminado. Gosto deste mundo, e este pequeno projeto é apenas um passo para criar coisas mais complexas. Talvez um jogo 2D ou 3D, ou até mesmo uma experiência de realidade virtual; não sei, o tempo dirá.\n\nPor enquanto, preciso continuar praticando com projetos pequenos como este :D\n\nCriei este app porque os outros aplicativos de cliques não me convenciam. Alguns não tinham opções básicas, enquanto outros não funcionavam como eu gostaria. Então pensei: ""Por que não fazer minha própria versão?""\n\nA ideia também surgiu porque alguns amigos me disseram que movo o dedo muito rapidamente para cima e para baixo. Quis testar isso e competir com eles para ver quem conseguia fazer mais CPS.\n\nE, sinceramente, já cheguei a cerca de 14–16 CPS em um segundo. Agora preciso continuar praticando para tentar chegar aos 18 CPS.\n\nObrigado por ler. Vou continuar tentando melhorar como desenvolvedor e como pessoa.","Salut.\n\nHaha, je suis Dekeiser, celui qui a créé, programmé et conçu cette application mobile de clics. Et, pour être honnête, je suis vraiment heureux de l'avoir terminée. J'aime cet univers, et ce petit projet n'est qu'une étape vers la création de choses plus complexes. Peut-être un jeu vidéo 2D ou 3D, ou même une expérience de réalité virtuelle ; je ne sais pas, le temps nous le dira.\n\nPour l'instant, je dois continuer à m'entraîner avec de petits projets comme celui-ci :D\n\nJ'ai créé cette application parce que les autres applications de clics ne me convenaient pas. Certaines n'avaient pas les options de base et d'autres ne fonctionnaient pas comme je le souhaitais. Alors je me suis dit : ""Pourquoi ne pas créer ma propre version ?""\n\nL'idée est aussi venue de quelques amis qui m'ont dit que je bougeais très rapidement le doigt de haut en bas. J'ai voulu le vérifier et rivaliser avec eux pour voir qui pouvait obtenir le plus de CPS.\n\nEt, honnêtement, j'ai atteint environ 14–16 CPS en une seconde. Maintenant, je dois continuer à m'entraîner pour essayer d'atteindre 18 CPS.\n\nMerci d'avoir lu. Je vais continuer à m'améliorer en tant que développeur et en tant que personne.","Ciao.\n\nHaha, sono Dekeiser, quello che ha creato, programmato e progettato questa app mobile per i click. E, a dire il vero, sono davvero felice di averla finita. Mi piace questo mondo e questo piccolo progetto è solo un passo verso la creazione di cose più complesse. Forse un videogioco 2D o 3D, o persino un'esperienza di realtà virtuale; non lo so, sarà il tempo a dirlo.\n\nPer ora, devo continuare a fare pratica con piccoli progetti come questo :D\n\nHo creato questa app perché le altre app per i click non mi convincevano. Alcune non avevano le opzioni di base e altre non funzionavano come volevo. Quindi ho pensato: ""Perché non fare la mia versione?""\n\nL'idea è nata anche perché alcuni amici mi hanno detto che muovo il dito molto velocemente su e giù. Ho voluto verificarlo e competere con loro per vedere chi riusciva a ottenere più CPS.\n\nE, sinceramente, sono arrivato a circa 14–16 CPS in un secondo. Ora devo continuare ad allenarmi per provare ad arrivare a 18 CPS.\n\nGrazie per aver letto. Continuerò a migliorare come sviluppatore e come persona.","Привет.\n\nХаха, я Dekeiser — создатель, программист и дизайнер этого мобильного приложения для кликов. И, честно говоря, я очень рад, что смог его закончить. Мне нравится этот мир, а этот небольшой проект — всего лишь один шаг к созданию более сложных вещей. Возможно, это будет 2D- или 3D-игра или даже проект в виртуальной реальности; не знаю, время покажет.\n\nА пока мне нужно продолжать практиковаться на небольших проектах вроде этого :D\n\nЯ создал это приложение, потому что другие приложения для кликов меня не устраивали. В некоторых не было базовых функций, а другие работали не так, как мне хотелось. Поэтому я подумал: ""Почему бы не сделать свою версию?""\n\nИдея также появилась после того, как друзья сказали мне, что я очень быстро двигаю пальцем вверх и вниз. Я решил проверить это и посоревноваться с ними, чтобы узнать, кто сможет набрать больше CPS.\n\nИ, честно говоря, мне уже удалось достичь примерно 14–16 CPS за одну секунду. Теперь нужно продолжать тренироваться и попытаться достичь 18 CPS.\n\nСпасибо, что прочитали. Я буду продолжать становиться лучше как разработчик и как человек.","こんにちは。\n\nハハ、Dekeiserです。このクリックアプリを作り、プログラムを書いて、デザインもしました。そして、正直、完成させることができてとても嬉しいです。この世界が好きで、この小さなプロジェクトは、もっと複雑なものを作るための一歩にすぎません。2Dや3Dのゲーム、あるいはVR体験を作るかもしれません。まだ分かりません。時間が教えてくれるでしょう。\n\n今は、こういう小さなプロジェクトを作りながら、もっと練習していきたいです :D\n\nこのアプリを作ったのは、他のクリックアプリが自分には合わなかったからです。基本的な機能がなかったり、自分の思った通りに動かなかったりするものがありました。だから思いました。""自分で作ってみよう""\n\nそれに、友達から指を上下にとても速く動かすと言われたこともきっかけです。自分のCPSを試して、友達と競争し、誰が一番高いCPSを出せるのか確かめたくなりました。\n\nそして、正直、1秒で14～16 CPSくらいを出せました。これからも練習して、18 CPSを目指します。\n\n読んでくれてありがとう。これからも開発者として、そして一人の人間として成長していきたいです。","안녕하세요.\n\n하하, 저는 Dekeiser입니다. 이 클릭 앱을 만들고, 코딩하고, 디자인했습니다. 그리고 솔직히 완성해서 정말 기쁩니다. 저는 이 분야가 좋고, 이 작은 프로젝트는 더 복잡한 것을 만들기 위한 한 걸음일 뿐입니다. 어쩌면 2D나 3D 게임을 만들 수도 있고, VR 경험을 만들어 볼 수도 있겠죠. 아직은 모릅니다. 시간이 알려주겠죠.\n\n지금은 이런 작은 프로젝트를 만들면서 계속 연습하려고 합니다 :D\n\n이 앱은 다른 클릭 앱들이 마음에 들지 않아서 만들었습니다. 어떤 앱은 기본적인 기능이 없었고, 어떤 앱은 제가 원하는 방식으로 작동하지 않았습니다. 그래서 생각했습니다. ""그럼 내가 직접 만들면 되잖아?""\n\n친구들이 제가 손가락을 위아래로 아주 빠르게 움직인다고 말한 것도 계기였습니다. 제 CPS를 직접 확인하고 친구들과 경쟁해서 누가 더 높은 CPS를 기록할 수 있는지 보고 싶었습니다.\n\n그리고 솔직히 1초에 약 14–16 CPS까지 기록했습니다. 이제 계속 연습해서 18 CPS에 도전해 보려고 합니다.\n\n읽어주셔서 감사합니다. 앞으로도 개발자로서, 그리고 한 사람으로서 계속 성장하겠습니다."
-YES,SI,Yes,Sim,Oui,Sì,Да,はい,예
-NOT,No,No,Não,Non,No,НЕТ,いいえ,아니요
+YES,SÍ,Yes,Sim,Oui,Sì,Да,はい,예
+NOT,No,No,Não,Non,No,Нет,いいえ,아니요
 MODE,Modo,Mode,Modo,Mode,Modalità,Режим,モード,모드
 UNO_CONTRA_UNO,1C1,1v1,1v1,1v1,1v1,1v1,1v1,1v1
 DOS_CONTRA_DOS,2C2,2v2,2v2,2v2,2v2,2v2,2v2,2v2
 PLAYERS,Jugadores,Players,Jogadores,Joueurs,Giocatori,Игроки,プレイヤー,플레이어
-PLAYERS3,Jugadores 3,Players 3,Jogadores 3,Joueurs 3,Giocatori 3,Игроки 3 ,プレイヤー 3,플레이어 3
-PLAYERS4,Jugadores 4,Players 4,Jogadores 4,Joueurs 4,Giocatori 4,Игроки 4 ,プレイヤー 4,플레이어 4
+PLAYERS3,Jugadores 3,Players 3,Jogadores 3,Joueurs 3,Giocatori 3,Игроки 3,プレイヤー 3,플레이어 3
+PLAYERS4,Jugadores 4,Players 4,Jogadores 4,Joueurs 4,Giocatori 4,Игроки 4,プレイヤー 4,플레이어 4
 SOLITARIO,Solitario,Solo,Solo,Solitaire,Solitario,Соло,ソロ,솔로
 TEAM,Equipo,Team,Equipe,Équipe,Squadra,Команда,チーム,팀
 TEAM1,Equipo 1,Team 1,Equipe 1,Équipe 1,Squadra 1,Команда 1,チーム 1,팀 1
@@ -72,7 +72,7 @@ SEC30,30 seg,30 sec,30 seg,30 sec,30 sec,30 сек,30 秒,30 초
 SEC60,60 seg,60 sec,60 seg,60 sec,60 sec,60 сек,60 秒,60 초
 SECX,X seg,X sec,X seg,X sec,X sec,X сек,X 秒,X 초
 MAX_CLICK,MAX Click:,MAX Clicks:,MAX Cliques:,MAX clics:,MAX Click:,МАКС. клики:,最大クリック数:,최대 클릭 수:
-ID,ESP,ING,POR,FRA,ITA,RUS,JPN,KOR
+ID,ESP,ENG,POR,FRA,ITA,RUS,JPN,KOR
 ACT,Actual,Current,Atual,Actuel,Attuale,Текущий,現在,현재
 HELP_AD,Ayuda\n(AD),Help\n(AD),Ajuda\n(AD),Aide\n(AD),Aiuto\n(AD),Помощь\n(AD),ヘルプ\n(AD),도움말\n(AD)
 CREDITS,Créditos,Credits,Créditos,Crédits,Crediti,Титры,クレジ\nット,크레딧

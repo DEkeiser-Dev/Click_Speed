@@ -9,6 +9,22 @@
 [ext_resource type="AudioStream" uid="uid://bvg4c3esmw7db" path="res://Assets/Banda_Sonora/effects/Click.mp3" id="7_xixia"]
 [ext_resource type="AudioStream" uid="uid://ky0su8mtjeh7" path="res://Assets/Banda_Sonora/effects/BipPC.mp3" id="8_7v3fl"]
 
+[sub_resource type="Animation" id="Animation_uw7yb"]
+resource_name = "Desaparecer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_h6lew"]
 length = 0.001
 tracks/0/type = "value"
@@ -24,42 +40,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_uw7yb"]
-resource_name = "animacion"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kais2"]
 _data = {
-&"RESET": SubResource("Animation_h6lew"),
-&"animacion": SubResource("Animation_uw7yb")
+&"Desaparecer": SubResource("Animation_uw7yb"),
+&"RESET": SubResource("Animation_h6lew")
 }
 
 [node name="loading" type="Node2D" unique_id=1594368151]
 script = ExtResource("1_gmskc")
 
-[node name="Banner" type="Sprite2D" parent="." unique_id=1134051179]
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1134051179]
 modulate = Color(0.42352942, 0.7372549, 0.47843137, 1)
 position = Vector2(360, 804.00006)
 scale = Vector2(0.49999997, 0.4962962)
 texture = ExtResource("2_uw7yb")
 hframes = 4
 
-[node name="CLICKSPEED" parent="." unique_id=40769402 instance=ExtResource("2_gmskc")]
+[node name="ClickSpeed" parent="." unique_id=40769402 instance=ExtResource("2_gmskc")]
 position = Vector2(-32, 456)
 
-[node name="LOADING NEGRO" type="RichTextLabel" parent="." unique_id=498953473]
+[node name="Loading_Negro" type="RichTextLabel" parent="." unique_id=498953473]
 modulate = Color(0, 0, 0, 1)
 offset_left = 72.00001
 offset_top = 824.0
@@ -73,7 +73,7 @@ bbcode_enabled = true
 text = "LOADING"
 script = ExtResource("4_h6lew")
 
-[node name="LOADING" type="RichTextLabel" parent="." unique_id=1662047977]
+[node name="Loading" type="RichTextLabel" parent="." unique_id=1662047977]
 offset_left = 80.0
 offset_top = 832.0
 offset_right = 1087.0571
@@ -86,27 +86,27 @@ bbcode_enabled = true
 text = "LOADING"
 script = ExtResource("4_h6lew")
 
-[node name="Banner2" type="Sprite2D" parent="." unique_id=1483650390]
+[node name="Morado(702fff)" type="Sprite2D" parent="." unique_id=1483650390]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(368, 802.00006)
 scale = Vector2(0.68055546, 0.5123457)
 texture = ExtResource("2_uw7yb")
 hframes = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Banner2" unique_id=1964172858]
+[node name="Anim_Desaparecer" type="AnimationPlayer" parent="Morado(702fff)" unique_id=1964172858]
 libraries/ = SubResource("AnimationLibrary_kais2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2057362209]
+[node name="Music_Sonido" type="AudioStreamPlayer" parent="." unique_id=2057362209]
 stream = ExtResource("6_kais2")
 volume_db = -11.624
 
-[node name="click" type="AudioStreamPlayer" parent="." unique_id=370636983]
+[node name="Click_Sonido" type="AudioStreamPlayer" parent="." unique_id=370636983]
 stream = ExtResource("7_xixia")
 volume_db = 4.497
 pitch_scale = 2.34
 bus = &"effect"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1330167669]
+[node name="BipPC_Sonido" type="AudioStreamPlayer" parent="." unique_id=1330167669]
 stream = ExtResource("8_7v3fl")
 volume_db = -20.577
 autoplay = true

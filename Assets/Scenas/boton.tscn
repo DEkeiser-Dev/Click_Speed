@@ -1431,7 +1431,7 @@ mouse_filter = 2
 
 [node name="info" type="Label" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer/PanelContainer" unique_id=1374591712]
 layout_mode = 2
-text = "Click Speed V 1.4"
+text = "Click Speed V 1.5"
 horizontal_alignment = 1
 
 [node name="DEV_DECLARATION" type="PanelContainer" parent="Apartado de opciones abajo/Dekeiser_declaracion/Control/ScrollContainer/VBoxContainer" unique_id=254399618]
