@@ -8,6 +8,9 @@ signal autenticacion_finalizada(autenticado: bool)
 
 var comprobando_sesion = false
 var iniciando_sesion = false
+var selector_mostrado = false
+
+const RUTA_CONFIG = "user://playgames.cfg"
 
 func _enter_tree() -> void:
 	GodotPlayGameServices.initialize()
@@ -15,25 +18,42 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	sign_in_client.user_authenticated.connect(_al_autenticar)
 
+	var config = ConfigFile.new()
+	if config.load(RUTA_CONFIG) == OK:
+		selector_mostrado = config.get_value("PlayGames", "selector_mostrado", false)
+
 func comprobar_sesion() -> void:
 	if comprobando_sesion or iniciando_sesion:
 		return
+
 	comprobando_sesion = true
 	sign_in_client.is_authenticated()
 
 func _al_autenticar(autenticado: bool) -> void:
 	if comprobando_sesion:
 		comprobando_sesion = false
-		if not autenticado:
+
+		if not autenticado and not selector_mostrado:
+			selector_mostrado = true
+
+			var config = ConfigFile.new()
+			config.set_value("PlayGames", "selector_mostrado", true)
+			config.save(RUTA_CONFIG)
+
 			iniciando_sesion = true
 			sign_in_client.sign_in()
 			return
+
 	elif iniciando_sesion:
 		iniciando_sesion = false
 
 	autenticacion_finalizada.emit(autenticado)
 
 func iniciar_sesion() -> void:
+	if iniciando_sesion:
+		return
+
+	iniciando_sesion = true
 	sign_in_client.sign_in()
 
 func logros(_a: int) -> void:
@@ -53,3 +73,4 @@ func mostrar_marcador(_a: int) -> void:
 
 func mostrar_marcadores() -> void:
 	leaderboards_client.show_all_leaderboards()
+
