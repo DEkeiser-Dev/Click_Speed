@@ -1,63 +1,89 @@
 extends Node2D
+
+## ESTE SCRIPT SE DEDICA A:
+## TODA LA LOGICA DE PARTICULAS DEL CONFETI DESDE CUANDO
+## DEBE DE INICIAR EL CONFETI Y HAZTA CUANTAS PARTICULAS
+## SE DEBEN DE EMITIR, ( ESE SCRIPT SE REPARTE EN 4 CONFETIS )
+
 # señal que dira si se emitira las particulas
 signal mi_señal
 
-# variable que se especializa en limitar la emision de particulas
-# (mas exactamente dice que a menos que cambie a uno puede emitir)
-var yes_or_not = 0
+# variable que da el visto bueno para emitir las particulas
+var particulas_emision = 0
 
-# particulas de confeti por color
-var a # maron
-var b # rosa
-var c # verde
-var d # naranja
-var e # azul
+# particulas del confeti por color
+var maron
+var rosa
+var verde
+var naranja
+var azul
 
-# desde el inicio se llaman proces_obj y _confeti y se define 
-# que cuando mi_señal sea conectada llame a la funcion  
-# _on_touch_screen_button_pressed
+# animacion global de las particulas
+var animacion_confeti
+
+
+# se dedica a asignarle a las varibles una ruta 
+func _carga_de_objetos():
+# colores de las particulas
+	maron = $Maron
+	rosa = $Rosa
+	verde = $Verde
+	naranja = $Naranja
+	azul = $Azul
+
+# animacion global 
+	animacion_confeti = $"../Ani_Confeti_Aparicion"
+
+
 func _ready() -> void:
-	_proces_obj()
+	_carga_de_objetos()
 	_confeti()
-	mi_señal.connect(_on_touch_screen_button_pressed)
 
-# asigna a las variables de las particulas su objeto.
-func _proces_obj():
-	a = $CPUParticles2D
-	b = $CPUParticles2D2
-	c = $CPUParticles2D3
-	d = $CPUParticles2D4
-	e = $CPUParticles2D5
+# espera la señal mi_señal para llamar a _particulas_emision
+	mi_señal.connect(_particulas_emision)
 
+
+# encargado de decir si las particulas del confeti inician o no
 func _confeti():
-# ejecuta la animacion global de las particulas
-# llama a _logica_particulas(...) por cada particula
-	if yes_or_not == 1:
-		$"../AnimationPlayer".play("confetiar")
-		_logica_particulas(a,21,41)
-		_logica_particulas(b,26,46)
-		_logica_particulas(c,22,42)
-		_logica_particulas(d,16,36)
-		_logica_particulas(e,29,49)
+# inician
+	if particulas_emision == 1:
+		# se reproduce la animacion global 
+		animacion_confeti.play("iniciar_confeti")
 
-# no permitir la emision de las particulas
-	elif yes_or_not == 0:
-		a.emitting = false
-		b.emitting = false
-		c.emitting = false
-		d.emitting = false
-		e.emitting = false
+		# parametros que controlan la particula y lo minimo o maximo
+		# de particulas
+		_logica_particulas(maron,12,23)
+		_logica_particulas(rosa,15,25)
+		_logica_particulas(verde,13,23)
+		_logica_particulas(naranja,10,20)
+		_logica_particulas(azul,16,26)
 
-# le dice la particula que se emita una vez
-# le dice que produzca n particulas siendo n un numero ramdon entre _min y _max
-# y reinicia el ciclo desde el principio
-func _logica_particulas(_particula,_min,_max):
+# no emiten ( solo se usa una vez esta parte ( el inicio ) )
+	elif particulas_emision == 0:
+		maron.emitting = false
+		rosa.emitting = false
+		verde.emitting = false
+		naranja.emitting = false
+		azul.emitting = false
+
+# encargado de decir cuantas particulas habra
+# ademas decir que inicien de verdad y al final que se reinicie
+func _logica_particulas(
+_particula, # variable de x particula
+_min, # valor minimo de particulas
+_max # valor maximo de particulas
+):
+# se emite una vez la particula
 	_particula.one_shot = true
+
+# con el randi_range y las variables se define la cantidad de particulas
 	_particula.amount = randi_range(_min,_max)
+
+# se reinicia
 	_particula.restart()
 
-# cuando se llame esta func (llamese .connet() o signal) se da la orden de alfin permitir 
-# la emision de particulas y llama a la func _confeti()
-func _on_touch_screen_button_pressed() -> void:
-	yes_or_not = 1
+
+# al llamarse se da el visto bueno de comenzar a reproducir las particulas
+func _particulas_emision() -> void:
+	particulas_emision = 1
 	_confeti()

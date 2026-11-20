@@ -1,15 +1,16 @@
 extends Node2D
 
+## ESTE SCRIPT ESTA DEDICADO A:
+## LLAMAR A TODOS LOS CONFETIS SI A EL LE LLAMAN
+
 # señal para llamar al confeti
 signal confeti
 
-# si el confeti es llamado ( cuando el usuario quiera gracias al connect())
-# llamara la funcion _confeti
+# cuando confiti es llamado llama a la func _confeti
 func _ready() -> void:
 	confeti.connect(_confeti)
 
-# les enviara la señal a los dos confetis de emitir sus particulas
-# (son 2 confetis (derecha e izquierda))
+# al ser llamado se emite la señal a todos los confetis
 func _confeti():
 	$confeti_1.mi_señal.emit()
 	$confeti_2.mi_señal.emit()

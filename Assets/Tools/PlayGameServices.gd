@@ -73,4 +73,3 @@ func mostrar_marcador(_a: int) -> void:
 
 func mostrar_marcadores() -> void:
 	leaderboards_client.show_all_leaderboards()
-

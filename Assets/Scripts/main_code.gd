@@ -1182,10 +1182,10 @@ func _procesardor_de_objetos():
 	b_opciones = $"Node2D/Botones_ocultar desafio/opciones"
 	b_opciones2 = $"Node2D/Botones_ocultar desafio/START/opciones2"
 	t_entrado_personalizada = $"Node2D/Botones_ocultar desafio/EntradaPersonalizada"
-	t_counter = $Node2D/Boton/prueba/counter
-	t_counter2 = $Node2D/Boton2/prueba/counter
-	t_counter3 = $Node2D/Boton3/prueba/counter
-	t_counter4 = $Node2D/Boton4/prueba/counter
+	t_counter = $Node2D/Boton/Contador/Counter_Negro
+	t_counter2 = $Node2D/Boton2/Contador/Counter_Negro
+	t_counter3 = $Node2D/Boton3/Contador/Counter_Negro
+	t_counter4 = $Node2D/Boton4/Contador/Counter_Negro
 	t_time_text = $Node2D/Time
 	t_time_contorno_text = $Node2D/Time/Time
 	t_lado_a = $"Node2D/Botones_aparecer desafio/barra de quien va ganando/lado a"
@@ -2901,37 +2901,37 @@ func _texto_presionar_plus_one(_a): # _a es la ruta del boton(donde suele salir 
 			0:
 				_tex = _a
 			1:
-				_tex = _a.get_node("prueba/xxx/1")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/1")
 			2:
-				_tex = _a.get_node("prueba/xxx/2")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/2")
 			3:
-				_tex = _a.get_node("prueba/xxx/3")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/3")
 			4:
-				_tex = _a.get_node("prueba/xxx/4")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/4")
 			5:
-				_tex = _a.get_node("prueba/xxx/5")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/5")
 			6:
-				_tex = _a.get_node("prueba/xxx/6")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/6")
 			7:
-				_tex = _a.get_node("prueba/xxx/7")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/7")
 			8:
-				_tex = _a.get_node("prueba/xxx/8")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/8")
 			9:
-				_tex = _a.get_node("prueba/xxx/9")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/9")
 			10:
-				_tex = _a.get_node("prueba/xxx/10")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/10")
 			11:
-				_tex = _a.get_node("prueba/xxx/11")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/11")
 			12:
-				_tex = _a.get_node("prueba/xxx/12")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/12")
 			13:
-				_tex = _a.get_node("prueba/xxx/13")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/13")
 			14:
-				_tex = _a.get_node("prueba/xxx/14")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/14")
 			15:
-				_tex = _a.get_node("prueba/xxx/15")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/15")
 			16:
-				_tex = _a.get_node("prueba/xxx/16")
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/16")
 		texto.global_position = _tex.global_position
 		texto.position.x -= texto.size.x / _size
 		texto.position.y -= 20

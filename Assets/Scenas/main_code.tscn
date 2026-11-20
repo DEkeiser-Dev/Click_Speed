@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6i8bc05nm2cc"]
 
-[ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/Counter.gd" id="1_rkc3o"]
+[ext_resource type="Script" uid="uid://cguvkwb80egii" path="res://Assets/Scripts/main_code.gd" id="1_rkc3o"]
 [ext_resource type="Texture2D" uid="uid://dw8luttbfbi52" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_rojo.svg" id="2_8yer3"]
 [ext_resource type="Texture2D" uid="uid://d2ugenr06iaka" path="res://Assets/Arte2d/botones/Cuadrados/fondo_retro_verde.svg" id="2_71wrj"]
 [ext_resource type="PackedScene" uid="uid://s63xc8ryt5ia" path="res://Assets/Scenas/Jugador.tscn" id="2_l5g0r"]
@@ -333,7 +333,7 @@ _data = {
 &"aparecer": SubResource("Animation_kmjfm")
 }
 
-[node name="Boton" type="CanvasLayer" unique_id=2051950697]
+[node name="main_code" type="CanvasLayer" unique_id=2051950697]
 script = ExtResource("1_rkc3o")
 posicion_noto_botones_x = Vector2(0, -91)
 
@@ -362,15 +362,12 @@ position = Vector2(-719.99994, 1504)
 
 [node name="Boton2" parent="Node2D" unique_id=2048963771 instance=ExtResource("2_l5g0r")]
 position = Vector2(-719.99994, 1920)
-valiable = 2
 
 [node name="Boton3" parent="Node2D" unique_id=593215789 instance=ExtResource("2_l5g0r")]
 position = Vector2(-399.99982, 1504)
-valiable = 3
 
 [node name="Boton4" parent="Node2D" unique_id=1851618136 instance=ExtResource("2_l5g0r")]
 position = Vector2(-399.99994, 1920)
-valiable = 4
 
 [node name="Time" type="Label" parent="Node2D" unique_id=956847629]
 self_modulate = Color(0, 0, 0, 1)
@@ -605,6 +602,7 @@ offset_right = 157.66669
 offset_bottom = 306.49994
 scale = Vector2(0.80300725, 0.8854648)
 script = ExtResource("23_pjjqg")
+metadata/_edit_use_anchors_ = true
 
 [node name="panel_modo" type="HBoxContainer" parent="Node2D/Botones_ocultar desafio/paneles" unique_id=698347463]
 layout_mode = 2

@@ -56,7 +56,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_u2n5n"]
-resource_name = "confetiar"
+resource_name = "iniciar_confeti"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -110,10 +110,10 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0nnqp"]
 _data = {
 &"RESET": SubResource("Animation_vf0dl"),
-&"confetiar": SubResource("Animation_u2n5n")
+&"iniciar_confeti": SubResource("Animation_u2n5n")
 }
 
-[node name="confeti_full" type="Node2D" unique_id=351680083]
+[node name="Confeti_Victoria" type="Node2D" unique_id=351680083]
 script = ExtResource("1_vf0dl")
 
 [node name="confeti_1" parent="." unique_id=838177522 instance=ExtResource("1_82akf")]
@@ -136,12 +136,14 @@ position = Vector2(5.0000005, 1034.0001)
 rotation = 0.68606323
 scale = Vector2(15.721025, 38.748344)
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1698232360]
-position = Vector2(23, -175)
+[node name="Boton_De_Confeti" type="TouchScreenButton" parent="." unique_id=1698232360]
+position = Vector2(395, 584)
 texture_normal = ExtResource("2_fe2u8")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635737964]
+[node name="Ani_Confeti_Aparicion" type="AnimationPlayer" parent="." unique_id=635737964]
 libraries/ = SubResource("AnimationLibrary_0nnqp")
 
-[connection signal="pressed" from="TouchScreenButton" to="confeti_1" method="_on_touch_screen_button_pressed"]
-[connection signal="pressed" from="TouchScreenButton" to="confeti_2" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Boton_De_Confeti" to="confeti_1" method="_particulas_emision"]
+[connection signal="pressed" from="Boton_De_Confeti" to="confeti_2" method="_particulas_emision"]
+[connection signal="pressed" from="Boton_De_Confeti" to="confeti_3" method="_particulas_emision"]
+[connection signal="pressed" from="Boton_De_Confeti" to="confeti_4" method="_particulas_emision"]
