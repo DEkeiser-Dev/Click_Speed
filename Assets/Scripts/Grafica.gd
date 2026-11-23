@@ -49,6 +49,10 @@ func _ready() -> void:
 	eje_y = $"EJE Y"
 	cps = $cps
 	sec = $sec
+	$J1.gui_input.connect(_presionar_label.bind(1))
+	$J2.gui_input.connect(_presionar_label.bind(2))
+	$J3.gui_input.connect(_presionar_label.bind(3))
+	$J4.gui_input.connect(_presionar_label.bind(4))
 
 func _Graficar(_x):
 	_mostrar_grafica()
@@ -262,7 +266,7 @@ func _dibujar_grafica(_vector2, _linea, _p = 0) -> void:
 
 		if _p == 0:
 			var _punto = Polygon2D.new()
-			var _radio = 8.0
+			var _radio = 6.0
 			var _vertices = PackedVector2Array()
 
 			for i in 16:
@@ -417,3 +421,63 @@ func _limpiar_poligonos():
 	for _hijo in panel.get_children():
 		if _hijo is Polygon2D:
 			_hijo.queue_free()
+
+func _presionar_label(event: InputEvent, nombre: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_si_label_esta_visible(nombre)
+		else:
+			_si_label_esta_visible(nombre,1)
+
+func _si_label_esta_visible(_num, _si = 0):
+	var _x
+	var _y
+	var _z
+
+	var _a
+	var _b
+	var _c
+
+	var _w
+	match  _num:
+		1:
+			_x = linea_2
+			_y = linea_3
+			_z = linea_4
+			_a = $J2
+			_b = $J3
+			_c = $J4
+		2:
+			_x = linea
+			_y = linea_3
+			_z = linea_4
+			_a = $J1
+			_b = $J3
+			_c = $J4
+		3:
+			_x = linea
+			_y = linea_2
+			_z = linea_4
+			_a = $J1
+			_b = $J2
+			_c = $J4
+		4:
+			_x = linea
+			_y = linea_2
+			_z = linea_3
+			_a = $J1
+			_b = $J2
+			_c = $J3
+
+	for i in 6:
+		match i:
+			0: _w = _x
+			1: _w = _y
+			2: _w = _z
+			3: _w = _a
+			4: _w = _b
+			5: _w = _c
+		if _w.visible == true and _si == 0:
+			_w.modulate.a = 0.1
+		else:
+			_w.modulate.a = 1

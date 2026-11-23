@@ -1,45 +1,80 @@
 extends Node2D
 
-var code_main
-var a_music
+## ESTE SCRIP SE DECIDA A:
+## CARGAR Y MOSTRAR EL BANNER Y EL INTERSTICIAL CUANDO SEA REQUERIDO
+## EN EL MAIN_CODE, ADEMAS DE TENER LA LOGICA PRINCIPAL DE LA MUSICA
+## DE LA ESCENA ANTES MENCIONADA
+
+# variables que son para objetos
+var code_main # todo la escena principal
+var a_music # objeto principal de musica
+
+# Array con toda la music del juego.
+var music = [
+# mirandas songs
+	preload("res://Assets/Banda_Sonora/music/normalizados/Fatherday.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/Game.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/Purpose Of Living Music.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/-Nostalgia-.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/-Paz-.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/-Run-.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/-Tensión-.mp3"),
+	preload("res://Assets/Banda_Sonora/music/normalizados/-El-momento-de-llorar-.mp3"), 
+	preload("res://Assets/Banda_Sonora/music/normalizados/-La-búsqueda-.mp3"),
+
+# dekeisers songs
+	preload("res://Assets/Banda_Sonora/effects/Loading.mp3")
+]
+
+# variable que permite que no se repita musica 2 veces seguidas
 var ramdom = -1
 
-var music = {
-	"uno" : preload("res://Assets/Banda_Sonora/music/normalizados/Fatherday.mp3"),
-	"dos" : preload("res://Assets/Banda_Sonora/music/normalizados/Game.mp3"),
-	"tres" : preload("res://Assets/Banda_Sonora/music/normalizados/Purpose Of Living Music.mp3"),
-	"cuatro" : preload("res://Assets/Banda_Sonora/music/normalizados/-Nostalgia-.mp3"),
-	"cinco" : preload("res://Assets/Banda_Sonora/music/normalizados/-Paz-.mp3"),
-	"seis" : preload("res://Assets/Banda_Sonora/music/normalizados/-Run-.mp3"),
-	"siete" : preload("res://Assets/Banda_Sonora/music/normalizados/-Tensión-.mp3"),
-	"ocho" : preload("res://Assets/Banda_Sonora/music/normalizados/-El-momento-de-llorar-.mp3"),
-	"nueve" : preload("res://Assets/Banda_Sonora/music/normalizados/-La-búsqueda-.mp3")
-}
+# dice que tipo de cancion se toca
+var cancion_miranda_o_dekeiser = 0 # 0 miranda, 1 dekeiser
 
-var dekeiser_sentimental = preload("res://Assets/Banda_Sonora/effects/Loading.mp3")
-var cambio = 0
-var no_cambies = 0
+## if the Miranda song is real, and another Miranda song needs to be real
+# esta variable sirve para no quitar una cancion de miranda para poner otra cancion de miranda
+var itmsiraamsntbr = false ## false significa que no puede cambiar, true significa que si
 
+
+# func para cargar variable con un onjetivo
 func _cargar_objetos():
 	a_music = $Music
 	code_main = $main_code
 
+
 func _ready() -> void:
 	_cargar_objetos()
-	AdMob_Script._cargar_intersticial(_RAMDOM())
+
+# carga los intersticiales
+	CargaIntersticiales._carga_intersticiales()
+
+# cuando la musica acabe que se repita
 	a_music.finished.connect(_repetir_song)
+
+# se espera 1 segundo para crear el banner con el ID 1
 	await get_tree().create_timer(1.0).timeout
 	AdMob_Script._crear_banner(AD_CONFIG._ADS(1))
+
+# signals de la escena principal
+# cuando se da click al "Ayuda (AD)"
 	code_main.Interticial_apoyo_dekeiser.connect(_interstitial)
+# para el ciclo de canciones normales ( pasa 0 )
 	code_main.Dekeiser_NO_sentimental.connect(_cancion)
+# para poner la song de dekeiser ( pasa 1 ) ( se reproduce en los creditos )
 	code_main.Dekeiser_sentimental.connect(_cancion)
 
 
+# func para mostrar el intersticial con el numero de _RAMDOM()
 func _interstitial():
 	AdMob_Script.mostrar_intersticial(_RAMDOM())
 
+
+# retorna un ID de intersticial gracias a un numero ramdom de 1-10
 func _RAMDOM():
+# un numero del 1 - 10
 	var numero = randi_range(1, 10)
+
 	if numero <= 7:
 		# 70%
 		return AD_CONFIG._ADS(2)
@@ -49,51 +84,53 @@ func _RAMDOM():
 
 
 func _poner_otra_cancion() -> void:
-	var nueva = randi_range(0, 8)
+# se asigna un valor de 0 - (tamaño del array menos 2)
+# ( se coloca el -2 porque un -1 corrige el desfase de 10 a 9 
+# (porque se necesita el index y el index empieza por 0 y no 1,asi que se debe de restar 1)
+# y el otro -1 quita la cancion de dekeiser, ideal para colocar mas canciones de miranda
+# sin cambiar codigo logico
+	var nueva = randi_range(0, music.size() - 2)
 
+# como en el principio ramdom = -1 se omite
+# esta linea de codigo es para nunca repetir la misma cancion
 	while nueva == ramdom:
-		nueva = randi_range(0, 8)
+		nueva = randi_range(0, music.size() -2 )
 
+# ramdom tiene el valor de nueva
 	ramdom = nueva
 
-	match ramdom:
-		0:
-			a_music.stream = music["uno"]
-		1:
-			a_music.stream = music["dos"]
-		2:
-			a_music.stream = music["tres"]
-		3:
-			a_music.stream = music["cuatro"]
-		4:
-			a_music.stream = music["cinco"]
-		5:
-			a_music.stream = music["seis"]
-		6:
-			a_music.stream = music["siete"]
-		7:
-			a_music.stream = music["ocho"]
-		8:
-			a_music.stream = music["nueve"]
-
+# el objeto de musica sera igual a la ruta del array de music y con index del ramdom
+	a_music.stream = music[ramdom]
+# se reproduce
 	a_music.play()
 
+
+# se retipe la tipo de song ( dekeiser o miranda )
 func _repetir_song():
-	no_cambies = 0
-	_cancion(cambio)
+	itmsiraamsntbr = true
+	_cancion(cancion_miranda_o_dekeiser)
 
-func _cancion(_cancio = 0,_u = 0):
-	if _u == 0:
-		cambio = _cancio
-	if cambio == 1:
-		a_music.stop()
-		await get_tree().create_timer(0.2).timeout
-		_cancion_dekeiser()
-		no_cambies = 0
-	elif cambio == 0 and no_cambies == 0:
-		no_cambies = 1
-		_poner_otra_cancion()
 
+func _cancion(
+_cancio = 0, # que tipo de cancion ( dekeiser o miranda )
+):
+
+# se guarda para saber que tipo de cancion repetir
+	cancion_miranda_o_dekeiser = _cancio
+
+	match cancion_miranda_o_dekeiser:
+		0:
+			# musica miranda
+			if itmsiraamsntbr == true:
+				itmsiraamsntbr = false
+				_poner_otra_cancion()
+		1:
+			# musica de dekeiser
+			itmsiraamsntbr = true
+			_cancion_dekeiser()
+
+
+# se asigna el valor index de la Array para que sea la musica de dekeiser y se reproduce
 func _cancion_dekeiser() -> void:
-	a_music.stream = dekeiser_sentimental
+	a_music.stream = music[9]
 	a_music.play()

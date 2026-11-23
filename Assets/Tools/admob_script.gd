@@ -2,14 +2,14 @@ extends Node2D
 
 # variable que dicen como son los anuncios
 var _ad_view: AdView
-var _interstitial_ad: InterstitialAd
-var _interstitial_loader: InterstitialAdLoader
+var _interstitial_ads := {}
+var _interstitial_loaders := {}
+var _interstitial_loading := {}
+var _interstitial_pendiente := false
+var _interstitial_ID_actual := ""
 
 # para iniciar el MobileAds
 var _ads_initialized := false
-var _interstitial_loading := false
-var _interstitial_pendiente := false
-var _interstitial_ID_actual := ""
 
 var _initialization_listener := OnInitializationCompleteListener.new()
 
@@ -53,31 +53,33 @@ func _cargar_intersticial(_interstitial_ID) -> void:
 		print("AdMob todavía no está inicializado")
 		return
 
-	if _interstitial_loading or _interstitial_ad:
+	if _interstitial_loading.get(_interstitial_ID, false) or _interstitial_ads.has(_interstitial_ID):
 		return
 
-	_interstitial_loading = true
-	_interstitial_ID_actual = _interstitial_ID
+	_interstitial_loading[_interstitial_ID] = true
 
-	_interstitial_loader = InterstitialAdLoader.new()
+	var loader = InterstitialAdLoader.new()
+	_interstitial_loaders[_interstitial_ID] = loader
+
 	var ad_request = AdRequest.new()
 	var callback = InterstitialAdLoadCallback.new()
 
 	callback.on_ad_loaded = func(ad: InterstitialAd):
-		print("Intersticial cargado")
-		_interstitial_loading = false
-		_interstitial_ad = ad
+		#print("Intersticial cargado " + str(_interstitial_ID))
+		_interstitial_loading[_interstitial_ID] = false
+		_interstitial_ads[_interstitial_ID] = ad
+		_interstitial_loaders.erase(_interstitial_ID)
 
-		if _interstitial_pendiente:
+		if _interstitial_pendiente and _interstitial_ID_actual == _interstitial_ID:
 			_interstitial_pendiente = false
 			mostrar_intersticial(_interstitial_ID_actual)
 
 	callback.on_ad_failed_to_load = func(error):
 		print("Error cargando intersticial: ", error)
-		_interstitial_loading = false
-		_interstitial_ad = null
+		_interstitial_loading[_interstitial_ID] = false
+		_interstitial_loaders.erase(_interstitial_ID)
 
-	_interstitial_loader.load(_interstitial_ID, ad_request, callback)
+	loader.load(_interstitial_ID, ad_request, callback)
 
 
 ## se dedica a mostrar el intersticial y cargarlo
@@ -89,9 +91,9 @@ func mostrar_intersticial(_interstitial_ID) -> void:
 		print("AdMob todavía no está inicializado")
 		return
 
-	if _interstitial_ad:
-		var anuncio = _interstitial_ad
-		_interstitial_ad = null
+	if _interstitial_ads.has(_interstitial_ID):
+		var anuncio = _interstitial_ads[_interstitial_ID]
+		_interstitial_ads.erase(_interstitial_ID)
 
 		anuncio.show()
 
@@ -99,9 +101,7 @@ func mostrar_intersticial(_interstitial_ID) -> void:
 	else:
 		print("El intersticial todavía no está cargado")
 		_interstitial_pendiente = true
-		var _aa = randi_range(0,1)
-		match _aa:
-			0:
-				_cargar_intersticial(_interstitial_ID)
-			1:
-				_cargar_intersticial(AD_CONFIG._ADS(4))
+		_interstitial_ID_actual = _interstitial_ID
+
+		if not _interstitial_loading.get(_interstitial_ID, false):
+			_cargar_intersticial(_interstitial_ID)

@@ -137,7 +137,7 @@ rotation = 0.68606323
 scale = Vector2(15.721025, 38.748344)
 
 [node name="Boton_De_Confeti" type="TouchScreenButton" parent="." unique_id=1698232360]
-position = Vector2(395, 584)
+position = Vector2(-8, -144)
 texture_normal = ExtResource("2_fe2u8")
 
 [node name="Ani_Confeti_Aparicion" type="AnimationPlayer" parent="." unique_id=635737964]

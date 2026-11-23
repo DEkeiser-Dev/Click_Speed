@@ -2900,38 +2900,8 @@ func _texto_presionar_plus_one(_a): # _a es la ruta del boton(donde suele salir 
 		match __a:
 			0:
 				_tex = _a
-			1:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/1")
-			2:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/2")
-			3:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/3")
-			4:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/4")
-			5:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/5")
-			6:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/6")
-			7:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/7")
-			8:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/8")
-			9:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/9")
-			10:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/10")
-			11:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/11")
-			12:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/12")
-			13:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/13")
-			14:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/14")
-			15:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/15")
-			16:
-				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/16")
+			_:
+				_tex = _a.get_node("Contador/Puntos_De_Generacion_+1/" + str(__a))
 		texto.global_position = _tex.global_position
 		texto.position.x -= texto.size.x / _size
 		texto.position.y -= 20

@@ -3,7 +3,8 @@ extends Node2D
 ## ESTE SCRIPT SE DEDICA A:
 ## CUANDO SE INICIA LA APP SE DIRA CUANDO SE HACEN LAS COSAS
 ## ( await get_tree().create_timer() )
-## ( SONIDO, CARGA DE ADMOB(BANNER) Y PLAYGAMESERVICES Y IDA A LA SCENA MAIN )
+## ( SONIDO, CARGA DE ADMOB(BANNER) T CARGA LOS INTERSTICIALES
+## Y PLAYGAMESERVICES Y IDA A LA SCENA MAIN )
 
 func _ready() -> void:
 # iniciar PlayGameServices (Seleccion de cuenta o Bienvenida de usuario)
@@ -18,13 +19,15 @@ func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout
 	$Music_Sonido.play()
 
-# esperar 1 segundo para iniciar/crear un banner gracias a admob
+# esperar 1 segundo para iniciar/crear un banner gracias a admob y carga los interticiales
 	await get_tree().create_timer(1.0).timeout
 	AdMob_Script._crear_banner(AD_CONFIG._ADS(0))
+	CargaIntersticiales._carga_intersticiales()
 
 # esperar 5.5 segundos para iniciar la animacion de desaparecer
 	await get_tree().create_timer(5.5).timeout
 	$"Morado(702fff)/Anim_Desaparecer".play("Desaparecer")
+
 
 # esperar 1 segundo para ir a la siguiente escena ( la princial )
 	await get_tree().create_timer(1).timeout
