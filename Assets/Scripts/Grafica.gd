@@ -1,28 +1,44 @@
 extends Sprite2D
 
+# variable que apuntara al panel
 var panel
+
+# datos importantes para la grafica
+# ( en su mayoria son labels )
 var eje_x
 var eje_y
 var cps
 var sec
 var num_seg
 var num_cps
+
+# lineas que representaran el jugador(es)/equipo(s)
 var linea
 var linea_2
 var linea_3
 var linea_4
+
+# label(texto) de jugador(es)/equipo(s)
 var label_player_1
 var label_player_2
 var label_player_3
 var label_player_4
 
-var players = {
-	"1": [],
-	"2": [],
-	"3": [],
-	"4": []
-}
+# contenedor de datos de grafica por jugador
+# ( estructura por jugador 
+# [
+# "CPS": [], # lista de datos, por segundo ( 0 - X )
+# "M_Clicks": 0, # maximo de click registrado
+# "M_Seg": 0 # maximo de segundos ( X )
+# ]
+var players := [
+	[], # player 1
+	[], # player 2
+	[], # player 3
+	[] # player 4
+	]
 
+# todos los colores posibles para la grafica
 var Colors = {
 	"rojo": Color.RED,
 	"rojo_p": Color.DARK_RED,
@@ -39,141 +55,220 @@ var Colors = {
 	"Morado": Color.MEDIUM_PURPLE
 }
 
+# listado de elementos en su orden
+var lineas_Array := []
+var labels_Array := []
+var colors_Array := []
+
+# variables que diran que color sera la linea o el punto
+# ( dependiendo del jugador etc )
 var Color_Line2D_Is = "verde"
 var Color_Point_Is = "verde_p"
 
-func _ready() -> void:
-	num_seg = $num_seg
-	num_cps = $num_cps
+
+# cargar los objetos en variables.
+func _cargar_objetos():
 	panel = self
-	linea = $Line2D
-	linea_2 = $Line2D2
-	linea_3 = $Line2D3
-	linea_4 = $Line2D4
 	eje_x = $"EJE X"
 	eje_y = $"EJE Y"
 	cps = $cps
 	sec = $sec
+	num_seg = $num_seg
+	num_cps = $num_cps
+	linea = $Line2D
+	linea_2 = $Line2D2
+	linea_3 = $Line2D3
+	linea_4 = $Line2D4
 	label_player_1 = $Jugadores/J1
 	label_player_2 = $Jugadores/J2
 	label_player_3 = $Jugadores/J3
 	label_player_4 = $Jugadores/J4
+	lineas_Array = [ linea, linea_2, linea_3, linea_4 ]
+	labels_Array = [ label_player_1, label_player_2, label_player_3, label_player_4 ]
+	colors_Array = [ Colors["verde_p"], Colors["rojo_p"], Colors["gris_p"], Colors["azul_p"] ]
+
+
+# al iniciar :V
+func _ready() -> void:
+	_cargar_objetos()
+
+	# se hace la conectada a gui_input y si detecta algo
+	# manda los datos asignados en el .bind a la func
+	# _presionar_label
 	label_player_1.gui_input.connect(_presionar_label.bind(1,label_player_1))
 	label_player_2.gui_input.connect(_presionar_label.bind(2,label_player_2))
 	label_player_3.gui_input.connect(_presionar_label.bind(3,label_player_3))
 	label_player_4.gui_input.connect(_presionar_label.bind(4,label_player_4))
 
-func _Graficar(_x):
-	_mostrar_grafica()
+
+# graficar un solo jugador
+func _Graficar(
+_x # diccionario del jugador
+):
+# mostrar los labels importantes
+	_mostrar_ocultar_grafica(true)
+
+# limpiar los puntos anteriores ( si hay )
 	_limpiar_poligonos()
+
+# asignador de color ( base )
 	_Elegir_Color(0)
+
+# dibuja la grafica con los datos que le da la func 
+# _grafica_logica_matematica con el diccionario _x
+# y usa la linea base
 	_dibujar_grafica(_grafica_logica_matematica(_x), linea)
+
+# asignar al label_1 con el ID de player_1
+# de resto los demas vacios.
 	label_player_1.text = "player_1"
 	label_player_2.text = ""
 	label_player_3.text = ""
 	label_player_4.text = ""
 
-func _Grafica_Comparativa(_players, _x, _y = {}, _z = {}, _w = {}, _p = 0):
-	#print(_players)
-	#print(_x)
-	#print(_y)
-	#print(_z)
-	#print(_w)
-	#print(_p)
-	_mostrar_grafica()
+
+# grafica hazta 4 jugadores, ademas de mandar a las demas funciones a dibujar lo que ella le mandaron
+# y tiene un valor especial que le dice si hay puntos en esa graficacion o no ( _p )
+func _Grafica_Comparativa(
+_players, # cuantos jugadores se mostraran
+_x, # diccionario player_1
+# ( se colocan en vacio ({}) para no tener errores y tenerlo por default )
+_y = {}, # diccionario player_2
+_z = {}, # diccionario player_3
+_w = {}, # diccionario player_4
+_p = 0 # si se hace los puntos en la grafica o no
+):
+# mostrar los labels importantes
+	_mostrar_ocultar_grafica(true)
+
+# limpiar los puntos anteriores ( si hay )
 	_limpiar_poligonos()
+
+# guarda los diccionarios en el Array de players y ademas
+# busca en los diccionarios datos el "M_Clicks" mas alto y lo coloca
+# en cada diccionario del array para poder hacer mejores comparaciones
 	_convercion_datos_player(_players, _x, _y, _z, _w)
+
+# limitar los datos de 1-4, si es mejor a 1 sera 1 o mayor a 4 sera 4.
 	_players = clampi(_players, 1, 4)
 
+# se restablece el estado original de las lineas ( vacias o sin nada )
 	for _line in [linea, linea_2, linea_3, linea_4]:
 		_line.clear_points()
 
+# limpia los label de los jugadores
 	label_player_1.text = ""
 	label_player_2.text = ""
 	label_player_3.text = ""
 	label_player_4.text = ""
 
-	for i in range(_players):
-		var _v
-		var _u
 
-		match i:
-			0:
-				_v = players["1"]
-				_u = linea
-				label_player_1.text = "player_1"
-			1:
-				_v = players["2"]
-				_u = linea_2
-				label_player_1.text = "TEAM1"
-				label_player_2.text = "TEAM2"
-			2:
-				_v = players["3"]
-				_u = linea_3
-				label_player_1.text = "player_1"
-				label_player_2.text = "player_2"
-				label_player_3.text = "player_3"
-			3:
-				_v = players["4"]
-				_u = linea_4
-				label_player_1.text = "player_1"
-				label_player_2.text = "player_2"
-				label_player_3.text = "player_3"
-				label_player_4.text = "player_4"
+# se manda a crear las lineas y demas dependiendo de player
+	for i in _players:
+		var _v = players[i] # diccionario de player
+		var _u = lineas_Array[i] # linea de player
+		
+		# basicamente hace esto:
+		# ( estos son los ID y seran para que mostrar el label )
+		# i == 0: [ "player_1", "", "", ""]
+		# i == 1: [ "TEAM1", "TEAM2", "", ""]
+		# i == 2: [ "player_1", "player_2", "player_3", ""]
+		# i == 3: [ "player_1", "player_2", "player_3", "player_4"]
+		label_player_1.text = "TEAM1" if i == 1 else "player_1"
+		if i == 0:
+			label_player_2.text = ""
+		elif i != 0:
+			label_player_2.text = "TEAM2" if i == 1 else "player_2"
+		label_player_3.text = "" if i < 2 else "player_3"
+		label_player_4.text = "" if i < 3 else "player_4"
 
+	# si _v no es un diccionario entonces se salta esta iteracion y continua
+	# ( y eso hace que lo siguiente no se ejecute )
 		if not _v is Dictionary:
 			continue
 
+	# asignador de color ( i )
 		_Elegir_Color(i)
+
+	# dibuja la grafica con los datos, y como es for, esto hace que el maximo sea 4
+	# llamados para cada linea.
 		_dibujar_grafica(_grafica_logica_matematica(_v), _u, _p)
 
-func _convercion_datos_player(_players, _x, _y, _z, _w):
+
+# guarda los diccionarios en el Array de players y ademas
+# busca en los diccionarios datos el "M_Clicks" mas alto y lo coloca
+# en cada diccionario del array para poder hacer mejores comparaciones
+func _convercion_datos_player(
+_players, # cuantos jugadores se mostraran
+_x, # diccionario player_1
+_y, # diccionario player_2
+_z, # diccionario player_3
+_w  # diccionario player_4
+):
+	# maximo ( lit ) de click 
+	# encargada de guaradar el "M_Clicks" mas grande
 	var _peak = 0
+
+ # limitar los valores de (1-4)
 	_players = clampi(_players, 1, 4)
-	players["1"] = _x
-	players["2"] = _y
-	players["3"] = _z
-	players["4"] = _w
+
+ # asignar los valores de los diccionarios en el Array de diccionarios 
+# que representan los jugadores
+	players[0] = _x
+	players[1] = _y
+	players[2] = _z
+	players[3] = _w
+
+# hace que todos los diccionarios de los jugadores tengan
+# el mismo maximo de click, amacenando el valor mas algo si suporo
+# al anterior y despues a todos se les iguala a ese valor para 
+# asi poder comparar mejor 
+	for i in _players:
+		# si ese jugador en "M_Clicks" es mayor a maximo
+		if players[(i)]["M_Clicks"] > _peak:
+			# maximo se actualiza con ese dato
+			_peak = players[(i)]["M_Clicks"]
 
 	for i in _players:
-		if players[str(i + 1)]["M_Clicks"] > _peak:
-			_peak = players[str(i + 1)]["M_Clicks"]
+		# todos los "M_Clicks" seran el maximo registrado
+		players[(i)]["M_Clicks"] = _peak
 
-	for i in _players:
-		players[str(i + 1)]["M_Clicks"] = _peak
 
-func _Elegir_Color(_x):
+# func para asignar el color del label y el color de los puntos
+# cosa muy importante la vdd para diferenciar los datos
+func _Elegir_Color(
+_x # numero de que representara que color dar.
+):
 	match _x:
+		# color usado para jugador 2 o team 2
 		1:
 			Color_Line2D_Is = "rojo"
 			Color_Point_Is = "rojo_p"
+		# color usado para jugador 3
 		2:
 			Color_Line2D_Is = "amarillo"
 			Color_Point_Is = "gris_p"
+		# color usado para jugador 4
 		3:
 			Color_Line2D_Is = "azul"
 			Color_Point_Is = "azul_p"
+		# color base
 		_:
 			Color_Line2D_Is = "verde"
 			Color_Point_Is = "verde_p"
 
-func _ocultar():
-	panel.self_modulate = Color(1, 1, 1, 0)
-	eje_x.visible = false
-	eje_y.visible = false
-	cps.visible = false
-	sec.visible = false
-	num_seg.visible = false
-	num_cps.visible = false
 
-func _mostrar_grafica():
-	panel.self_modulate = Color.WHITE
-	eje_x.visible = true
-	eje_y.visible = true
-	cps.visible = true
-	sec.visible = true
-	num_seg.visible = true
-	num_cps.visible = true
+# mostrar/ocultar los datos ( label ) cuando se inicia la grafica
+# o cuando se necesita y ya
+func _mostrar_ocultar_grafica( _bool ):
+	panel.self_modulate = Color.WHITE if _bool else Color(1, 1, 1, 0)
+	eje_x.visible = true if _bool else false
+	eje_y.visible = true if _bool else false
+	cps.visible = true if _bool else false
+	sec.visible = true if _bool else false
+	num_seg.visible = true if _bool else false
+	num_cps.visible = true if _bool else false
+
 
 func _grafica_logica_matematica(_x):
 	var _tamaño_panel = 1.0
@@ -235,21 +330,51 @@ func _grafica_logica_matematica(_x):
 
 	return _vector2
 
-func _datos_linea(_x, _y, _z = Vector2.ZERO):
+
+# func para decir como se define o inicia una linea
+# ademas de decirle que dibuje
+func _datos_linea(
+_x, # crear linea o dibujar
+_y, # la linea como tal
+# desde la poscion 0.0 del padre se mueve a esa coordenada, el 0 del padre es su centro practicamente
+# de su plano cartesiano ps 
+_z = Vector2.ZERO # coordenadas
+):
+	# representa la linea
 	var line_x = _y
 
 	if _x == 0:
+		# parametros necesarios antes de colocar el punto
+		# el color por determinado
 		line_x.default_color = Colors[Color_Line2D_Is]
+
+		# se coloca en la posicion 0.0 del padre
 		line_x.position = Vector2.ZERO
+
+		# su escala sera ( 1, 1 )
 		line_x.scale = Vector2.ONE
+
+		# se limpia la linea
 		line_x.clear_points()
+
+		# grosor de la linea
 		line_x.width = 1.6
+
+		# bordes suaves activado
 		line_x.antialiased = true
+
+		# union redondeada
 		line_x.joint_mode = Line2D.LINE_JOINT_ROUND
+		
+		# inicia o finaliza redondeo
 		line_x.begin_cap_mode = Line2D.LINE_CAP_ROUND
 		line_x.end_cap_mode = Line2D.LINE_CAP_ROUND
 	else:
+		# dibuja la linea con las coordenadas
+		# mas exactamente las de un punto
 		line_x.add_point(_z)
+
+
 
 func _dibujar_grafica(_vector2, _linea, _p = 0) -> void:
 	var _coordenadas = _vector2["coordenadas"]
@@ -310,6 +435,8 @@ func _dibujar_grafica(_vector2, _linea, _p = 0) -> void:
 
 	_actualizar_richs_segmentos(panel, _vector2)
 
+
+
 func _crear_segmentos_dinamicos(_panel, _cantidad_x, _cantidad_y):
 	var _eje_x = _panel.get_node("EJE X")
 	var _eje_y = _panel.get_node("EJE Y")
@@ -345,6 +472,8 @@ func _crear_segmentos_dinamicos(_panel, _cantidad_x, _cantidad_y):
 			_nuevo.name = str(i)
 			_eje_y.add_child(_nuevo)
 
+
+
 func _actualizar_visibilidad_segmentos(_panel, _cantidad_x, _cantidad_y):
 	var _eje_x = _panel.get_node("EJE X")
 	var _eje_y = _panel.get_node("EJE Y")
@@ -356,6 +485,8 @@ func _actualizar_visibilidad_segmentos(_panel, _cantidad_x, _cantidad_y):
 	for _hijo in _eje_y.get_children():
 		if _hijo.name.is_valid_int():
 			_hijo.visible = int(_hijo.name) <= _cantidad_y
+
+
 
 func _actualizar_richs_segmentos(_panel, _vector2):
 	var _segmento_x = _vector2["segmentoX"]
@@ -426,100 +557,103 @@ func _actualizar_richs_segmentos(_panel, _vector2):
 			var _label = _eje.get_node_or_null("o_" + _hijo.name)
 			_hijo.visible = _label != null and _label.visible
 
+
+# func para eliminar los puntos de la grafica
+# para mostrar otra grafica :D
 func _limpiar_poligonos():
+	# cada vuelta el _hijo sera
+	# apuntando a algun hijo del panel
 	for _hijo in panel.get_children():
+		# si ese hijo es tipo Polygon2D
 		if _hijo is Polygon2D:
+			# ese hijo se borra o se libera.
 			_hijo.queue_free()
 
-func _presionar_label(event: InputEvent, nombre: int, node = Label) -> void:
+
+# func para verificar si se le dio click izquierdo
+# y mandar los datos a _si_label_esta_visible
+func _presionar_label(
+event: InputEvent, # ni lo explicare :/, aver.
+nombre: int, # numero de jugador
+node = Label # label el cual le precionaste o no
+) -> void:
+	# click izquierdo
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		# si esta precionado
 		if event.pressed:
 			_si_label_esta_visible(nombre,1,node)
+		# si no esta precionado
 		else:
 			_si_label_esta_visible(nombre,0,node)
 
-func _si_label_esta_visible(_num, _si = 1, _node = Label):
-	var _x
-	var _y
-	var _z
 
-	var _a
-	var _b
-	var _c
+# func para ocultar las lineas y los puntos de las graficas
+# ( solo se enfoca una solamente y las otras se ponen opacas )
+func _si_label_esta_visible(
+_num, # numero de jugador de label que le diste click
+_si = 1, # si esta precionado o no ( 0/1 == false/true )
+_node = Label # label del que le diste click
+):
+# dependiendo de el _num se asigna a cada variable los datos
+# que seran utilizados para desaparecerlos despues.
 
-	var _d
-	var _e
-	var _f
+# basicamente los 3 grupos ancontinuacion al baserse por el num
+# lleguan a la misma secuencia, solo cambia a que array le dicen:
 
+# num 1: 1 2 3
+# num 2: 0 2 3
+# num 3: 0 1 3
+# num 4: 0 1 2
+ 
+# varibles de lineas
+	var _x = lineas_Array[1] if _num < 2 else lineas_Array[0]
+	var _y = lineas_Array[2] if _num < 3 else lineas_Array[1]
+	var _z = lineas_Array[3] if _num < 4 else lineas_Array[2]
+
+# variables de labels
+	var _a = labels_Array[1] if _num < 2 else labels_Array[0]
+	var _b = labels_Array[2] if _num < 3 else labels_Array[1]
+	var _c = labels_Array[3] if _num < 4 else labels_Array[2]
+
+# variables de colores de los puntos
+	var _d = colors_Array[1] if _num < 2 else colors_Array[0]
+	var _e = colors_Array[2] if _num < 3 else colors_Array[1]
+	var _f = colors_Array[3] if _num < 4 else colors_Array[2]
+
+# listado de variables
+	var _abecedario_Array := [ _x, _y, _z, _a, _b, _c, _d, _e, _f ]
+
+# escoje la variable que representa ( representante )
 	var _w
-	match  _num:
-		1:
-			_x = linea_2
-			_y = linea_3
-			_z = linea_4
-			_a = label_player_2
-			_b = label_player_3
-			_c = label_player_4
-			_d = Colors["rojo_p"]
-			_e = Colors["gris_p"]
-			_f = Colors["azul_p"]
-		2:
-			_x = linea
-			_y = linea_3
-			_z = linea_4
-			_a = label_player_1
-			_b = label_player_3
-			_c = label_player_4
-			_d = Colors["verde_p"]
-			_e = Colors["gris_p"]
-			_f = Colors["azul_p"]
-		3:
-			_x = linea
-			_y = linea_2
-			_z = linea_4
-			_a = label_player_1
-			_b = label_player_2
-			_c = label_player_4
-			_d = Colors["verde_p"]
-			_e = Colors["rojo_p"]
-			_f = Colors["azul_p"]
-		4:
-			_x = linea
-			_y = linea_2
-			_z = linea_3
-			_a = label_player_1
-			_b = label_player_2
-			_c = label_player_3
-			_d = Colors["verde_p"]
-			_e = Colors["rojo_p"]
-			_f = Colors["gris_p"]
 
-	if !(_node.text == ""):
-		for i in 9:
-			match i:
-				0: _w = _x
-				1: _w = _y
-				2: _w = _z
-				3: _w = _a
-				4: _w = _b
-				5: _w = _c
-				6: _w = _d
-				7: _w = _e 
-				8: _w = _f
+# para continuar la logica se debe de cumplir la condicion de
+# " si el texto del nodo es distinto a ("") " continuara, ya que
+# si no se cumple significara q ese nodo ( que es un label )
+# no esta presente en ese modo ( si estas en el modo 3, obviamente 
+# no se cumplira si le das al nodo 4 que esta vacio )
+	if _node.text != "":
+		# el _abecedario_Array.size() son los elementos que asignamos anteriormente
+		for i in (_abecedario_Array.size()):
+			# cada vez que se haga una "vuelta", obviamente i aumenta
+			# pero justo despues se asigna a la variable _w un valor
+			# del Array _abecedario_Array
+			_w = _abecedario_Array[i]
 
+# si _w es distinto a ser un color
+# ( entonces es una linea o un label )
 			if !(_w is Color):
-				if _w.visible == true and _si == 1:
-					_w.modulate.a = 0.24
-				else:
-					_w.modulate.a = 1
+				# el _si es "esta precionado"
+				# opacar el alpha ( 0.24 )
+				# normalizar el alpha. ( 1 )
+				_w.modulate.a = 0.24 if _w.visible and _si == 1 else 1.0
 
-			elif _w is Color and _si == 1:
+# si _w es color ( entonces este elif sera para los puntos de las graficas)
+			elif _w is Color:
+				# se daran vueltas y cada vez el _hijo
+				# sera asignado aun hijo del panel
 				for _hijo in panel.get_children():
-					if _hijo is Polygon2D:
-						if _hijo.color == _w:
-							_hijo.modulate.a = 0.24
-			else:
-				for _hijo in panel.get_children():
-					if _hijo is Polygon2D:
-						if _hijo.color == _w:
-							_hijo.modulate.a = 1
+					# si ese _hijo es de tipo Polygon2D y si tiene el mismo color que _w
+					if _hijo is Polygon2D and _hijo.color == _w:
+							# opacar el alpha ( 0.24 )
+							# normalizar el alpha. ( 1 )
+							_hijo.modulate.a = 0.24 if _si == 1 else 1.0

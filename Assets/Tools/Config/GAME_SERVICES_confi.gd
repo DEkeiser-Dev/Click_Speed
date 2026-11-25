@@ -1,5 +1,11 @@
 extends Node
 
+## ESTE SCRIPT SE DEDICA A:
+## COLOCAR EN UN SOLO LUGAR TODO LOS ID PARA LLAMARLOS EN 
+## CUALQUIER LUGAR ( RETURN )
+## COMO DE LOS LOGROS Y DE LOS MARCADORES
+
+# lista de logros de PlayGames
 func _GAMES_SERVICES(_a) -> String:
 	var id_logro := ""
 	match _a:
@@ -24,6 +30,7 @@ func _GAMES_SERVICES(_a) -> String:
 	return id_logro
 
 
+# lista de marcadores de PlayGames ( tops )
 func _MARKERS(_a) -> String:
 	var id_marcador := ""
 	match _a:
