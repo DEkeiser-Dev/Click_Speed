@@ -12,7 +12,6 @@ var velocidad_scroll: float = 0.0
 
 
 func _ready():
-
 	# Desactivar completamente el scroll horizontal.
 	horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 
@@ -36,14 +35,10 @@ func _gui_input(event):
 	# =========================
 	# TOQUE
 	# =========================
-
 	if event is InputEventScreenTouch:
-
 		if event.pressed:
-
 			posicion_anterior = event.position
 			acumulado = 0.0
-
 			# Detener la inercia al volver a tocar.
 			velocidad_scroll = 0.0
 

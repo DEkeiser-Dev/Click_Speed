@@ -8,8 +8,8 @@ extends Node2D
 
 func _ready() -> void:
 # iniciar PlayGameServices (Seleccion de cuenta o Bienvenida de usuario)
-# if OS.get_name() == "Android":
-# PlayGameServices.comprobar_sesion()
+	if OS.get_name() == "Android":
+		PlayGameServices.comprobar_sesion()
 
 # esperar 0.2 segundos para reproducir "click" (literalmente es un sonido de click)
 	await get_tree().create_timer(0.2).timeout

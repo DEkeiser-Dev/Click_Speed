@@ -735,8 +735,8 @@ layout_mode = 2
 script = ExtResource("15_71wrj")
 
 [node name="Panel" parent="Node2D/PanelContainer/Panel_final" unique_id=111847670 instance=ExtResource("14_8yer3")]
-position = Vector2(298.92715, 331.8506)
-scale = Vector2(3.4958642, 3.005278)
+position = Vector2(270.00003, 333)
+scale = Vector2(3.2054508, 3.005278)
 
 [node name="Panel2" type="VBoxContainer" parent="Node2D/PanelContainer/Panel_final" unique_id=111102807]
 layout_mode = 2
@@ -842,7 +842,7 @@ layout_mode = 2
 texture = ExtResource("21_71wrj")
 
 [node name="Panel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer/TextureRect" unique_id=22370181 instance=ExtResource("14_8yer3")]
-position = Vector2(288, 311.99997)
+position = Vector2(240, 311.99997)
 scale = Vector2(3.2, 3.2)
 
 [node name="ESTA GLOB" type="RichTextLabel" parent="Apartado de opciones abajo/estadistica/Control/ScrollContainer/VBoxContainer" unique_id=72244122]

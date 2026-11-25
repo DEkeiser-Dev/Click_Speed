@@ -5,7 +5,7 @@ extends Node
 ## ADEMAS DE ESPERAR 3 MINUTOS Y VOLVER A LLAMARLOS
 
 # contador
-var time := 0.0
+var time := 160.0
 
 # func que el la que otros scripts llaman para cargar todo
 func _carga_intersticiales():

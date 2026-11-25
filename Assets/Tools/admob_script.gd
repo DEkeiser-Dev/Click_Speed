@@ -14,7 +14,7 @@ var _ads_initialized := false
 var _initialization_listener := OnInitializationCompleteListener.new()
 
 # inicia MobileAds
-func _ready() -> void:
+func _enter_tree() -> void:
 	_initialization_listener.on_initialization_complete = _on_ads_initialized
 	MobileAds.initialize(_initialization_listener)
 
@@ -23,6 +23,7 @@ func _ready() -> void:
 func _on_ads_initialized(_status) -> void:
 	print("AdMob TERMINÓ de inicializar")
 	_ads_initialized = true
+	CargaIntersticiales._carga_intersticiales()
 
 
 ## logica de banner

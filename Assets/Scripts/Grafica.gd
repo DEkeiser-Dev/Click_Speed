@@ -11,6 +11,11 @@ var linea
 var linea_2
 var linea_3
 var linea_4
+var label_player_1
+var label_player_2
+var label_player_3
+var label_player_4
+
 var players = {
 	"1": [],
 	"2": [],
@@ -49,20 +54,24 @@ func _ready() -> void:
 	eje_y = $"EJE Y"
 	cps = $cps
 	sec = $sec
-	$J1.gui_input.connect(_presionar_label.bind(1))
-	$J2.gui_input.connect(_presionar_label.bind(2))
-	$J3.gui_input.connect(_presionar_label.bind(3))
-	$J4.gui_input.connect(_presionar_label.bind(4))
+	label_player_1 = $Jugadores/J1
+	label_player_2 = $Jugadores/J2
+	label_player_3 = $Jugadores/J3
+	label_player_4 = $Jugadores/J4
+	label_player_1.gui_input.connect(_presionar_label.bind(1,label_player_1))
+	label_player_2.gui_input.connect(_presionar_label.bind(2,label_player_2))
+	label_player_3.gui_input.connect(_presionar_label.bind(3,label_player_3))
+	label_player_4.gui_input.connect(_presionar_label.bind(4,label_player_4))
 
 func _Graficar(_x):
 	_mostrar_grafica()
 	_limpiar_poligonos()
 	_Elegir_Color(0)
 	_dibujar_grafica(_grafica_logica_matematica(_x), linea)
-	$J1.text = "player_1"
-	$J2.text = ""
-	$J3.text = ""
-	$J4.text = ""
+	label_player_1.text = "player_1"
+	label_player_2.text = ""
+	label_player_3.text = ""
+	label_player_4.text = ""
 
 func _Grafica_Comparativa(_players, _x, _y = {}, _z = {}, _w = {}, _p = 0):
 	#print(_players)
@@ -79,10 +88,10 @@ func _Grafica_Comparativa(_players, _x, _y = {}, _z = {}, _w = {}, _p = 0):
 	for _line in [linea, linea_2, linea_3, linea_4]:
 		_line.clear_points()
 
-	$J1.text = ""
-	$J2.text = ""
-	$J3.text = ""
-	$J4.text = ""
+	label_player_1.text = ""
+	label_player_2.text = ""
+	label_player_3.text = ""
+	label_player_4.text = ""
 
 	for i in range(_players):
 		var _v
@@ -92,25 +101,25 @@ func _Grafica_Comparativa(_players, _x, _y = {}, _z = {}, _w = {}, _p = 0):
 			0:
 				_v = players["1"]
 				_u = linea
-				$J1.text = "player_1"
+				label_player_1.text = "player_1"
 			1:
 				_v = players["2"]
 				_u = linea_2
-				$J1.text = "TEAM1"
-				$J2.text = "TEAM2"
+				label_player_1.text = "TEAM1"
+				label_player_2.text = "TEAM2"
 			2:
 				_v = players["3"]
 				_u = linea_3
-				$J1.text = "player_1"
-				$J2.text = "player_2"
-				$J3.text = "player_3"
+				label_player_1.text = "player_1"
+				label_player_2.text = "player_2"
+				label_player_3.text = "player_3"
 			3:
 				_v = players["4"]
 				_u = linea_4
-				$J1.text = "player_1"
-				$J2.text = "player_2"
-				$J3.text = "player_3"
-				$J4.text = "player_4"
+				label_player_1.text = "player_1"
+				label_player_2.text = "player_2"
+				label_player_3.text = "player_3"
+				label_player_4.text = "player_4"
 
 		if not _v is Dictionary:
 			continue
@@ -422,14 +431,14 @@ func _limpiar_poligonos():
 		if _hijo is Polygon2D:
 			_hijo.queue_free()
 
-func _presionar_label(event: InputEvent, nombre: int) -> void:
+func _presionar_label(event: InputEvent, nombre: int, node = Label) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			_si_label_esta_visible(nombre)
+			_si_label_esta_visible(nombre,1,node)
 		else:
-			_si_label_esta_visible(nombre,1)
+			_si_label_esta_visible(nombre,0,node)
 
-func _si_label_esta_visible(_num, _si = 0):
+func _si_label_esta_visible(_num, _si = 1, _node = Label):
 	var _x
 	var _y
 	var _z
@@ -438,46 +447,79 @@ func _si_label_esta_visible(_num, _si = 0):
 	var _b
 	var _c
 
+	var _d
+	var _e
+	var _f
+
 	var _w
 	match  _num:
 		1:
 			_x = linea_2
 			_y = linea_3
 			_z = linea_4
-			_a = $J2
-			_b = $J3
-			_c = $J4
+			_a = label_player_2
+			_b = label_player_3
+			_c = label_player_4
+			_d = Colors["rojo_p"]
+			_e = Colors["gris_p"]
+			_f = Colors["azul_p"]
 		2:
 			_x = linea
 			_y = linea_3
 			_z = linea_4
-			_a = $J1
-			_b = $J3
-			_c = $J4
+			_a = label_player_1
+			_b = label_player_3
+			_c = label_player_4
+			_d = Colors["verde_p"]
+			_e = Colors["gris_p"]
+			_f = Colors["azul_p"]
 		3:
 			_x = linea
 			_y = linea_2
 			_z = linea_4
-			_a = $J1
-			_b = $J2
-			_c = $J4
+			_a = label_player_1
+			_b = label_player_2
+			_c = label_player_4
+			_d = Colors["verde_p"]
+			_e = Colors["rojo_p"]
+			_f = Colors["azul_p"]
 		4:
 			_x = linea
 			_y = linea_2
 			_z = linea_3
-			_a = $J1
-			_b = $J2
-			_c = $J3
+			_a = label_player_1
+			_b = label_player_2
+			_c = label_player_3
+			_d = Colors["verde_p"]
+			_e = Colors["rojo_p"]
+			_f = Colors["gris_p"]
 
-	for i in 6:
-		match i:
-			0: _w = _x
-			1: _w = _y
-			2: _w = _z
-			3: _w = _a
-			4: _w = _b
-			5: _w = _c
-		if _w.visible == true and _si == 0:
-			_w.modulate.a = 0.1
-		else:
-			_w.modulate.a = 1
+	if !(_node.text == ""):
+		for i in 9:
+			match i:
+				0: _w = _x
+				1: _w = _y
+				2: _w = _z
+				3: _w = _a
+				4: _w = _b
+				5: _w = _c
+				6: _w = _d
+				7: _w = _e 
+				8: _w = _f
+
+			if !(_w is Color):
+				if _w.visible == true and _si == 1:
+					_w.modulate.a = 0.24
+				else:
+					_w.modulate.a = 1
+
+			elif _w is Color and _si == 1:
+				for _hijo in panel.get_children():
+					if _hijo is Polygon2D:
+						if _hijo.color == _w:
+							_hijo.modulate.a = 0.24
+			else:
+				for _hijo in panel.get_children():
+					if _hijo is Polygon2D:
+						if _hijo.color == _w:
+							_hijo.modulate.a = 1

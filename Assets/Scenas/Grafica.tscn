@@ -117,54 +117,45 @@ text = "14"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="J1" type="Label" parent="." unique_id=1866289807]
-modulate = Color(2.2140146e-06, 0.87704843, 0.6191667, 1)
+[node name="Jugadores" type="VBoxContainer" parent="." unique_id=1962043461]
 offset_left = 66.10171
-offset_top = 20.338999
-offset_right = 1529.1017
-offset_bottom = 318.339
-scale = Vector2(0.02707864, 0.03028126)
+offset_top = -33.898304
+offset_right = 2249.1018
+offset_bottom = 1762.1017
+scale = Vector2(0.025479756, 0.03513564)
+
+[node name="J4" type="Label" parent="Jugadores" unique_id=566804114]
+modulate = Color(0, 0.19590843, 1, 1)
+layout_mode = 2
 mouse_filter = 0
 theme_override_constants/outline_size = 61
-theme_override_font_sizes/font_size = 280
-text = "TEAM1"
+theme_override_font_sizes/font_size = 420
+text = "player_4"
 metadata/_edit_use_anchors_ = true
 
-[node name="J2" type="Label" parent="." unique_id=1147462878]
-modulate = Color(0.93333334, 0, 0.42352942, 1)
-offset_left = 66.1017
-offset_top = 11.864409
-offset_right = 1594.1017
-offset_bottom = 309.8644
-scale = Vector2(0.02707864, 0.03028126)
-mouse_filter = 0
-theme_override_constants/outline_size = 61
-theme_override_font_sizes/font_size = 280
-text = "TEAM2"
-metadata/_edit_use_anchors_ = true
-
-[node name="J3" type="Label" parent="." unique_id=1386950805]
+[node name="J3" type="Label" parent="Jugadores" unique_id=1386950805]
 modulate = Color(1, 0.95686275, 0, 1)
-offset_left = 66.1017
-offset_top = 3.389831
-offset_right = 1598.1017
-offset_bottom = 301.38983
-scale = Vector2(0.02707864, 0.030281262)
+layout_mode = 2
 mouse_filter = 0
 theme_override_constants/outline_size = 61
-theme_override_font_sizes/font_size = 280
+theme_override_font_sizes/font_size = 420
 text = "player_3"
 metadata/_edit_use_anchors_ = true
 
-[node name="J4" type="Label" parent="." unique_id=566804114]
-modulate = Color(0, 0.19590843, 1, 1)
-offset_left = 66.1017
-offset_top = -5.084746
-offset_right = 1611.1017
-offset_bottom = 292.91525
-scale = Vector2(0.02707864, 0.030281289)
+[node name="J2" type="Label" parent="Jugadores" unique_id=1147462878]
+modulate = Color(0.93333334, 0, 0.42352942, 1)
+layout_mode = 2
 mouse_filter = 0
 theme_override_constants/outline_size = 61
-theme_override_font_sizes/font_size = 280
-text = "player_4"
+theme_override_font_sizes/font_size = 420
+text = "TEAM2"
+metadata/_edit_use_anchors_ = true
+
+[node name="J1" type="Label" parent="Jugadores" unique_id=1866289807]
+modulate = Color(2.2140146e-06, 0.87704843, 0.6191667, 1)
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/outline_size = 61
+theme_override_font_sizes/font_size = 420
+text = "TEAM1"
 metadata/_edit_use_anchors_ = true

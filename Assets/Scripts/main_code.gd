@@ -723,8 +723,10 @@ var XDIC = {
 	"+1": 1,
 	"volumen_effect": 1.5,
 	"volumen_music": 1.5,
-	"AYuda_Deker": 0
+	"AYuda_Deker": 0,
+	"al_menos_una": 0
 }
+
 
 #traducion
 var ram_dic = {
@@ -1935,6 +1937,7 @@ _NUM = "", # numero de grupo
 _TIPO = 0 # si es mejor o actual 
 ):
 	var _mejor = ""
+	var _codigo_color_jugador = "[color=#FFFFFF] "
 	match _TIPO:
 		0:
 			_mejor = ram_dic[25]
@@ -1943,7 +1946,21 @@ _TIPO = 0 # si es mejor o actual
 	var _text = ""
 	match _tipo:
 		0:
-			_text = "\n[bgcolor=#4B3F72][color=#FFFFFF] " + t(str(ram_dic[_jugador])) + "" + _NUM + ":" + "[/color][/bgcolor]"
+			match _jugador:
+				18:
+					_codigo_color_jugador = "[color=#00e09e] "
+				19:
+					_codigo_color_jugador = "[color=#ee006c] "
+				20:
+					_codigo_color_jugador = "[color=#fff400] "
+				21:
+					_codigo_color_jugador = "[color=#0032ff] "
+				48:
+					if _NUM == "1":
+						_codigo_color_jugador = "[color=#00e09e] "
+					elif _NUM == "2":
+						_codigo_color_jugador = "[color=#ee006c] "
+			_text = "\n[bgcolor=#4B3F72]" + _codigo_color_jugador + t(str(ram_dic[_jugador])) + "" + _NUM + ":" + "[/color][/bgcolor]"
 		1:
 			_text = "\n[color=#777777]──────────────[/color]\t"
 		2:
@@ -2787,6 +2804,14 @@ func cargar():
 		if XDIC.has("Total_Clicks"):
 			total_counter = XDIC["Total_Clicks"]
 			print(total_counter)
+		if XDIC.has("al_menos_una"):
+			if XDIC["al_menos_una"] <1:
+				print("al menos una")
+				XDIC["+1"] = 1
+				XDIC["confeti"] = 1
+				XDIC["vibracion"] = 1
+				XDIC["al_menos_una"] = 1
+				guardar()
 		CB_plus1.button_pressed = CheckButtons(XDIC,"+1",XDIC["+1"])
 		CB_confeti.button_pressed = CheckButtons(XDIC,"confeti",XDIC["confeti"])
 		CB_vibracion.button_pressed = CheckButtons(XDIC,"vibracion",XDIC["vibracion"])
