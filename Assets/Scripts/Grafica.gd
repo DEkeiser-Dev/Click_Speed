@@ -270,51 +270,67 @@ func _mostrar_ocultar_grafica( _bool ):
 	num_cps.visible = true if _bool else false
 
 
+# basicamente hace que el diccionario dado sea compatible con la logica del sistema
+# normaliza las coordenadas, crea las coordenadas de los segmentos en X Y
+# ( normalizados y originales ) y retorna los datos
 func _grafica_logica_matematica(_x):
+# lo que mira un lado del panel ( para hacer una conversion )
 	var _tamaño_panel = 1.0
+
+# se guarda los datos ( maximo de click 
+#  y en seg se resta 1 porque es num_seg + 0 y despues se busca
+# el valor mas grande de 0 a x)
+## maxi(a,b) BUSCA EL VALOR MAS ALTO DE LOS 2 VALORES
 	var _n = int(_x["M_Clicks"])
 	var _seg = maxi(_x["CPS"].size() - 1, 0)
 
+# se actualiza los labels para la grafica
+# ( click maximo y maximo de segundos )
 	num_cps.text = str(_n)
 	num_seg.text = str(int(_x["M_Seg"]))
 
+# listas temporales( locales ) para segmentos
 	var _Y = {}
 	var _X = {}
 
+# de diccionario a diccionario con datos como en que lugar se ponen los
+# segmentos de divicion para ser mas dinamico
 	var _vector2 = {
-		"coordenadas": {},
-		"segmentoX": {},
-		"segmentoY": {},
-		"valoresX": {},
-		"valoresY": {}
+		"coordenadas": {}, # guarda vector2
+		"segmentoX": {}, # lista de coordenadas de segmeto X normalizados
+		"segmentoY": {}, # lista de coordenadas de segmeto Y normalizados
+		"valoresX": {}, # lista de coordenadas de segmeto X original
+		"valoresY": {} # lista de coordenadas de segmeto Y original
 	}
 
+ # valor especializado para los 2 segmentos
 	var _trayectoria = 0
 
+# 2 vueltas para los 2 segmentos
 	for i in 2:
+		# si trayectoria es 0 sera igual _n, de lo contrario _seg
 		var _N = _n if _trayectoria == 0 else _seg
-		var _S = log(maxf(float(_N), 1.0)) / log(2.0)
-		var _S_int = max(int(_S) if (_S - int(_S)) < 0.6 else int(_S) + 1, 1)
 
-		for a in range(_S_int + 1):
-			var _M = int((float(a) * _N) / _S_int)
-
-			if _trayectoria == 0:
-				_Y[a] = _M
-				_vector2["valoresX"][a] = _M
-			else:
-				_X[a] = _M
-				_vector2["valoresY"][a] = _M
-
+		# guarda las listas de manera local y de manera "guardarla para mas adelante"
+		# y obviamente llama a la func especializada para crear las coorde de los segmentos
 		if _trayectoria == 0:
-			var _ultimo = float(_Y.values()[-1])
-			for e in _Y.keys():
-				_Y[e] = float(_Y[e]) / maxf(_ultimo, 1.0) * _tamaño_panel
+			_X = _metodos_de_divicion_segmentos(_N)
+			_vector2["valoresX"] = _X.duplicate()
 		else:
-			var _ultimo = float(_X.values()[-1])
-			for e in _X.keys():
-				_X[e] = float(_X[e]) / maxf(_ultimo, 1.0) * _tamaño_panel
+			_Y = _metodos_de_divicion_segmentos(_N)
+			_vector2["valoresY"] = _Y.duplicate()
 
+		# normalizar los valores locales de 0 - 1
+		if _trayectoria == 0:
+			var _ultimo = _X[_X.size() - 1]
+			for e in _X.size():
+				_X[e] = float(_X[e]) / maxf(_ultimo, 1.0) * _tamaño_panel
+		else:
+			var _ultimo = _Y[_Y.size() - 1]
+			for e in _Y.size():
+				_Y[e] = float(_Y[e]) / maxf(_ultimo, 1.0) * _tamaño_panel
+
+		# cambio para el siguiente segmento
 		_trayectoria += 1
 
 	for u in range(_x["CPS"].size()):
@@ -322,13 +338,89 @@ func _grafica_logica_matematica(_x):
 		var Y = float(_x["CPS"][u]) / maxf(float(_n), 1.0)
 		_vector2["coordenadas"][u] = Vector2(X, Y)
 
-	for u in range(_X.size()):
-		_vector2["segmentoY"][u] = _X[u]
-
+	# guarda las coordenadas de los segmetos normalizados en el diccionario.
 	for u in range(_Y.size()):
-		_vector2["segmentoX"][u] = _Y[u]
+		_vector2["segmentoY"][u] = _Y[u]
+
+	for u in range(_X.size()):
+		_vector2["segmentoX"][u] = _X[u]
 
 	return _vector2
+
+
+# logica para la creacion de listas para los segmetos
+func _metodos_de_divicion_segmentos(
+_c = 0 # cantidad
+):
+	# 0 metodo robar metodo
+	# 1 metodo un segmento
+	# 2 metodo dos segmentos
+	# 3 metodo tres segmentos
+	# 4 metodo cuatro segmentos
+	# 5 metodo cinco segmentos
+	var _x = 1 # metodo
+	var _list = {} # listado de coordenadas
+	# si cantidad esta de 1 - 10
+	if _c < 11:
+		# si la cantidad es mayor a 3
+		if _c > 3:
+			@warning_ignore("integer_division")
+			# modo sera igual a la divicion de la cantidad si _c % 1
+			# de lo contrario 0
+			_x = _c / 2 if _c % 1 else 0
+		else:
+			# modo es igual a cantidad
+			_x = _c
+	else:
+		# ramdom de 0.0 a 1.0
+		var _ramdom = randf_range(0.0,1.0)
+		# _c es multiplo de 3 y tambien de 5
+		if _c % 3 == 0 and _c % 5 == 0:
+			# 3 26% 5 74%
+			_x = 3 if _ramdom < 0.26 else 5
+		# _c es multiplo de 5
+		elif _c % 5 == 0:
+			_x = 5
+		# _c es multiplo de 3
+		elif _c % 3 == 0:
+			_x = 3
+		else:
+			_x = 4
+
+# formar las listas
+	match _x:
+		# si metodo es 0 se restara 1 en la cantidad y se volvera a mirar
+		# el metodo, despues se colocara 0 1 y se quita el primer numero
+		# cuando vuelve a mirar y se fuciona
+		# list [ 0, 1, ((listado - el primer valor) + 1 cada index)]
+		0:
+			var _c2 = _metodos_de_divicion_segmentos(_c-1)
+			# se suma +1 porque al agregar valores antes el tamaño como no es
+			# 0-x es de 1-x o sea ya tiene un numero de mas pero falta el otro
+			for i in (_c2.size() + 1):
+				# se coloca el 0 y el 1
+				if i == 0:
+					_list[i] = 0
+					continue
+				elif i == 1:
+					_list[i] = 1
+					continue
+				# se resta uno porque el tiene un desfase, (la suma del 1) y no se suma 2 porque
+				# pues el primer valor ( index 0 ) es 0 y no vale la pena. y se suma 1
+				# porque se agrego el 1 asi que todos se suman 1, porque como es unas coordenadas
+				# [ 0, 2, 2 ] no puede ser [ 0, 1, 2, 2 ] porque seria lo mismo, entonces seria
+				# [ 0, 1+1, 2+1, 2+1 ]
+				_list[i] = _c2[ i - 1 ] + 1
+
+		# si es uno pues solo puede existir esto teoricamente
+		1:
+			_list = [0,1]
+
+		# los demas metodos
+		_:
+			for i in range(_x + 1):
+				_list[i] = int(float(_c) * i /_x)
+	return _list
 
 
 # func para decir como se define o inicia una linea
